@@ -104,7 +104,8 @@ app.u.initMVC = function(attempts){
 		percentComplete = 100;
 		}
 
-	$('#appPreViewProgressBar','#appPreView').val(percentComplete);
+	//$('#appPreViewProgressBar','#appPreView').val(percentComplete);
+	$('#appPreViewProgressBar','#appPreView').css('bottom',percentComplete-100);
 	$('#appPreViewProgressText','#appPreView').empty().append(percentComplete+"% Complete");
 
 	if(resourcesLoaded == app.vars.rq.length)	{
