@@ -46,7 +46,9 @@ css files should be included before any .js file to ensure they are downloaded i
 <link rel="stylesheet" type="text/css" href="app-quickstart.css" />
 <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/ui-lightness/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="_nyci_styles.css" />
-
+<!--
+<link rel="stylesheet" type="text/css" href="_ggs.css" />
+-->
 
 <!-- ** 201338 -> jquery and jquery ui are pivotal to the functionality of the app. load them first -->
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -54,7 +56,8 @@ css files should be included before any .js file to ensure they are downloaded i
 
 <script type="text/javascript" src="loadscript.js"></script>
 
-
+<!-- FOR USE DURING DEV ONLY, REMOVE AT DEPLOYMENT -->
+<script type="text/javascript" src="ggs.js"></script>
 
 
 <script type="text/javascript">
@@ -110,17 +113,36 @@ ANIMATION TESTING
 	<button class='displayNone prodDetailPrevItemButton' data-app-role='prodDetailPrevItemButton'>Previous</button>
 </div>
 
+<!--
 <header>
-	<a class='deliciousFasions floatLeft'>
-		See our high fashion clothes and accessories at &#187;
-		<span class='floatRight'></span>
-	</a>
-	<div class='mcAfee floatLeft'></div>
-	<div class='contact floatLeft'></div>
-	<div class='cart floatRight'></div>
-	<div class='search floatRight'></div>
-	<div class='chat floatRight'></div>
-	<div class='topNav floatLeft'></div>
+	<div class='wrapper'>
+		<div class='title colu1'></div>
+		<div class='title colu2'></div>
+		<div class='title colu3'></div>
+		<div class='title colu4'></div>
+		<div class='title colu5'></div>
+		<div class='title colu6'></div>
+		<div class='title colu7'></div>
+		<div class='title colu8'></div>
+	</div>
+</header>
+-->
+
+<header> 
+	<div class='wrapper'>
+		<div class='headerWrap'>	
+			<div class='deliciousFashions colu4'>
+				See our high fashion clothes and accessories at &#187;
+				<img src='images/nyci_10_header_deliciousfashion_logo-96x33.png'></img>
+			</div>
+			<div class='mcAfee floatLeft'></div>
+			<div class='contact floatLeft'></div>
+			<div class='cart floatRight'></div>
+			<div class='search floatRight'></div>
+			<div class='chat floatRight'></div>
+			<div class='topNav floatLeft'></div>
+		</div>
+	</div>
 </header>
 
 
@@ -128,7 +150,7 @@ ANIMATION TESTING
 
 
 <footer>
-	
+	<div class='wrapper'></div>
 </footer>
 <!-- ... your html ends -->
 <!-- /VIEW CONTENT -->
@@ -174,7 +196,15 @@ COMMONLY EDITED TEMPLATES
 the homepageTemplate template is loaded into mainContentArea by default when the application loads
 -->
 <div id='homepageTemplate' class='homeTemplate'>
-	
+
+
+
+
+
+
+
+
+<!-- ORIG DEFAULT HP JAZZ:	
 	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul>
 
 	<ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; hide_summary:1; before:<h2>Featured Items</h2>; withReviews:1;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
