@@ -34,6 +34,9 @@ var store_nyci = function() {
 		init : {
 			onSuccess : function()	{
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
+				
+				app.u.dump('--> NYCI Ext Started');
+				app.ext.store_nyci.u.bindOnclick();
 
 			//	app.u.loadResourceFile(['script',0,'putthepathhere.js']);
 				
@@ -77,7 +80,17 @@ var store_nyci = function() {
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
 		u : {
-			}, //u [utilities]
+		
+					//make crawl-able links
+				bindOnclick : function() {
+					$('body').off('click', 'a[data-onclick]').on('click', 'a[data-onclick]', function(event){
+						 var $this = $(this);
+						 var P = app.ext.myRIA.u.parseAnchor($this.data('onclick'));
+						 return app.ext.myRIA.a.showContent('',P);
+					});
+				},
+		
+		}, //u [utilities]
 
 //app-events are added to an element through data-app-event="extensionName|functionName"
 //right now, these are not fully supported, but they will be going forward. 
