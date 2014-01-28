@@ -10,16 +10,6 @@ body {margin:0 auto; font-family:Arial, Helvetica, sans-serif;}
 a:link, a:visited, a:hover, a:active {text-decoration:none;}
 a:visited, a:hover {color:#f05524;}
 
-
-/*
-*  Eight-column grid active
-*  ----------------------------------------------------------------------
-*  Margin   | #  1     2     3     4     5     6     7     8   |   Margin
-*  5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
-*/
-.wrapper {height:100%; max-width:56.88em; margin:0 auto;}
-.colu1{width:12.5%} .colu2 {width:25%} .colu3{width:37.5%} .colu4{width:50%} 
-.colu5{width:62.5%} .colu6{width:75%} .colu7{width:87.5%} .colu8{width:100%}
 	
 /*****************************************************************
 end global
@@ -55,6 +45,12 @@ header .deliciousFashions {text-align:center; margin:0.7em 0 0 0; line-height:2e
 .headerCall {text-align:right;}
 .headerCall span {font-size:0.7em; color:#cccccc;}
 header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; border-bottom:1px dashed #000000; clear:both;}
+
+.popOutLinks {height:2em; background:#ffffff;}
+.popOutLinks > div {height:100%; width:2em;}
+.popSearch {background:blue;}
+.popCart {background:red;}
+.popFavs {background:green;}
 
 header .cart {text-align:right; font-size:0.8em; line-height:1.9em; padding:0 0.6em 0 0; color:#666666;}
 header .cart span {color:#97AE3C;}
@@ -100,26 +96,17 @@ media queries
 	
 }
 
+
 /*MEDIA 768 8col*/
 @media screen and (max-width: 48em) {
 	.wrapper {height:100%; max-width:42.66666em; margin:0 auto;}
 }
 
-/*
-*  Four-column grid active
-*  ----------------------------------------
-*  Margin   | #  1   2   3   4   |   Margin
-*  5.55555% | %  25  50  75  100 | 5.55555%
-	.colu1{width:12.5%} .colu2 {width:25%} .colu3{width:37.5%} .colu4{width:50%} 
-	.colu5{width:62.5%} .colu6{width:75%} .colu7{width:87.5%} .colu8{width:100%}
-*/
 
 /*MEDIA 720 4col*/
 @media screen and (max-width: 45em) {
 	.wrapper {height:100%; max-width:40em; margin:0 auto;}
-	.colu1,.colu2 {width:25%} .colu4,.colu3 {width:50%} .colu6,.colu7 {width:75%} .colu5,.colu8 {width:100%}
-	
-	/*.headerWrap {font-size:0.7em;}*/
+
 }
 
 
@@ -127,22 +114,17 @@ media queries
 @media screen and (max-width: 40em) {
 	.wrapper {height:100%; max-width:35.55555em; margin:0 auto;}
 	
-	.title {height:1em; background-color:red;}
 }
 
 /*MEDIA 480*/
 @media screen and (max-width: 30em) {
-	body {font-size:1.0625em;}
 	.wrapper {height:100%; max-width:26.66666em; margin:0 auto;}
 	
-	header .headerLogo, .headerRight {width:50%;}
-	.deliciousFashions  {clear:both; width:100%}
 }
 
 /*MEDIA 320*/
 @media screen and (max-width: 20em) {
 	.wrapper {height:100%; max-width:17.77777em; margin:0 auto;}
-	
 	
 }
 
