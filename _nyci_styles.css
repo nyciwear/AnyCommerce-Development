@@ -43,8 +43,11 @@ end appPreview
 header
 *****************************************************************/
 
-header .wrapper {height:1em; background-color:green;}
 header .deliciousFashions {text-align:center; line-height:2em; font-size:0.85em; color:#666666; background-color:#eeeeee;}
+.headerContact {color:#666666;}
+.headerContact .links {font-size:0.7em; padding:0.2em 0.8em 0 0.8em; color:#333333;}
+.headerCall {padding:0 0 0 0.8em;}
+.headerCall span {font-size:0.7em; color:#cccccc;}
 
 
 /*****************************************************************
