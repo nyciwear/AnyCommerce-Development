@@ -10,7 +10,7 @@ body {margin:0 auto; font-family:Arial, Helvetica, sans-serif; background-color:
 a:link, a:visited, a:hover, a:active {text-decoration:none;}
 a:visited, a:hover {color:#f05524;}
 
-.wrapper {height:100%; max-width:56.88em; margin:0 auto;}
+.wrapper {height:100%; max-width:58.125em; margin:0 auto;}
 	
 /*****************************************************************
 end global
@@ -20,7 +20,7 @@ end global
 appPreview
 *****************************************************************/
 
-body #appPreView	{width:1024px; height:400px; margin:10% auto 0 auto;}
+body #appPreView	{width:64em; height:25em; margin:10% auto 0 auto;}
 #appPreView #loader {height:70%; widht:100%;}
 #appPreView #loader .alignCenter {height:70%; width:100%; position:relative; overflow:hidden;}
 .previewLogo {height:27%; width:19%; margin:0 0 0 -10%; background:transparent url('images/nyci_logo2_2.png') no-repeat center center; position:absolute; left:50%; bottom:-1%;}
@@ -36,8 +36,8 @@ end appPreview
 header
 *****************************************************************/
 
-.aboveHeader {height:50px; width:100%; background-color:#ffffff;}
-.headerWrapper {max-width:930px; margin:0 auto; padding:0; width:100%;}
+.aboveHeader {height:3.125em; width:100%; background-color:#ffffff;}
+.headerWrapper {max-width:58.125em; margin:0 auto; padding:0; width:100%;}
 .headerLogo {height:100%; background:#ffffff; padding:0 0 0 0.375em;}
 .headerLogo img {max-width:100%;}
 .deliciousFashions {text-align:center; margin:0.8em 0 0 2em; padding:0 1em; line-height:2em; font-size:0.85em; color:#666666; background-color:#eeeeee;}
@@ -49,10 +49,9 @@ header
 .headerCall span {font-size:0.7em; color:#cccccc;}
 
 
-header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; border-bottom:1px dashed #000000; clear:both;}
 
-.popOutLinks {height:2em; background:#ffffff;}
-.popOutLinks > div {height:100%; width:2em;}
+.popOutLinks {height:2em; width:10.563em; background:#ffffff; padding:0 0 0 0.375em;}
+.popOutLinks > div {height:100%; width:2em; margin:0 6%;}
 .popSearch {background:blue;}
 .popCart {background:red;}
 .popFavs {background:green;}
@@ -64,6 +63,7 @@ header .cart span {color:#97AE3C;}
 .productSearchKeyword {height:100%; border:solid 1px #666666; border-right:0;}
 #headerSearchSubmit {height:100%; color:#ffffff; font-weight:bold; background-color:#f05524; border:none;}
 
+header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; border-bottom:1px dashed #000000; clear:both;}
 /*****************************************************************
 end header
 *****************************************************************/
