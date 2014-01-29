@@ -113,38 +113,43 @@ ANIMATION TESTING
 	<button class='displayNone prodDetailPrevItemButton' data-app-role='prodDetailPrevItemButton'>Previous</button>
 </div>
 
-
-<header class='wrapper'> 
-	<div class='headerWrap'>	
-		<div class='headerLogo floatLeft colu2'>
-		<a data-onclick="#!category?navcat=." href="#!category?navcat=.">
-			<img src='images/nyci_logo-169x50.png'></img></div>
-		</a>
-		<div class='headerRight colu2 floatRight'>
-			<div class='headerCall floatRight'>
-				<span>Call Us at </span>800-830-9003
+	<div class='aboveHeader'>
+		<div class='headerWrapper'>	
+			<div class='headerLogo floatLeft'>
+				<a data-onclick="#!category?navcat=." href="#!category?navcat=.">
+					<img src='images/nyci_logo-169x50.png'></img>
+				</a>
 			</div>
-			<div class='links floatRight'>
-				<a class='pointer' data-onclick="#!customer?show=myaccount" href="#!customer?show=myaccount">Log In</a> | <a href="#!company?show=contact" data-onclick="#!company?show=contact">Contact Us</a>
+			<div class='headerRight floatRight'>
+				<div class='headerCall floatRight'>
+					<span>Call Us at </span>800-830-9003
+				</div>
+				<div class='links floatRight'>
+					<a class='pointer' data-onclick="#!customer?show=myaccount" href="#!customer?show=myaccount">Log In</a> | <a href="#!company?show=contact" data-onclick="#!company?show=contact">Contact Us</a>
+				</div>
+			</div>
+			<div class='deliciousFashions floatLeft centerAt900'>
+				See our high fashion clothes and accessories at &#187;
+				<img src='images/nyci_10_header_deliciousfashion_logo-96x33.png'></img>
 			</div>
 		</div>
-		<div class='deliciousFashions colu4 floatLeft'>
-			See our high fashion clothes and accessories at &#187;
-			<img src='images/nyci_10_header_deliciousfashion_logo-96x33.png'></img>
-		</div>
+	</div>
+		
+<div class='wrapper'>
+	<header> 
 		<div class='separator'></div>
-		<div class='popOutLinks colu2 floatLeft'>
+		<div class='popOutLinks floatLeft'>
 			<div class='popSearch floatLeft'></div>
 			<div class='popCart floatLeft'></div>
 			<div class='popFavs floatLeft'></div>
 		</div>
-		<div class='cart floatRight colu2'>
+		<div class='cart floatRight >
 			<img src='images/nyci_10_icn_cart--27x23.gif' alt='cart'></img>&#32;Shopping Bag &#32;<span class='cartItemCount'></span><span>&#32;Items</span>
 		</div>
 		<div class='search floatRight'>
 			 <form id="headerSearchFrm" name="headerSearchFrm" action="#" class="productSearchForm" method="get">
                 <input name="KEYWORDS" value="" placeholder=' Enter Keyword' class="productSearchKeyword handleDefault" type="search">
-				<input class="searchButton floatRight" id="headerSearchSubmit" value="SEARCH" type="submit">
+				<input class="searchButton floatRight pointer" id="headerSearchSubmit" value="SEARCH" type="submit">
             </form>
 		</div>
 		<div class='floatRight liveHelp marginRight hideMed'>
@@ -160,10 +165,9 @@ ANIMATION TESTING
 			</noscript>
 			<!-- END ProvideSupport.com Text Chat Link Code -->	
         </div>	
-	</div>
-</header>
+	</header>
 
-		<div class='floatLeft clearfix colu2'>
+		<div class='floatLeft clearfix'>
 			<!-- START SCANALERT CODE -->
 				<a class='mcAfee' target="_blank" href="https://www.mcafeesecure.com/RatingVerify?ref=www.nyciwear.com"><img width="115" height="30" border="0" src="https://images.scanalert.com/meter/www.nyciwear.com/12.gif" alt="HACKER SAFE certified sites prevent over 99.9% of hacker crime." oncontextmenu="alert#'Copying Prohibited by Law - HACKER SAFE is a Trademark of ScanAlert'#; return false;"></a>
 			<!-- END SCANALERT CODE -->
@@ -172,12 +176,13 @@ ANIMATION TESTING
 			<div class='topNav floatLeft'></div>
 
 
-<div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
+	<div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
 
 
-<footer>
-	<div class='wrapper'></div>
-</footer>
+	<footer>
+		<div class='wrapper'></div>
+	</footer>
+</div>
 <!-- ... your html ends -->
 <!-- /VIEW CONTENT -->
 </div>
