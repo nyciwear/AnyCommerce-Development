@@ -48,13 +48,14 @@ header
 .headerCall {text-align:right; padding:0 0 0 0.375em;}
 .headerCall span {font-size:0.7em; color:#cccccc;}
 
-
-
+/*header drop-downs*/
 .popOutLinks {height:2em; width:10.563em; background:#ffffff; padding:0 0 0 0.375em;}
-.popOutLinks > div {height:100%; width:2em; margin:0 6%;}
+.popSearch,.popCart, .popFavs {height:100%; width:2em; margin:0 6%;}
 .popSearch {background:blue;}
 .popCart {background:red;}
 .popFavs {background:green;}
+.popOutLinks .dropdown {}
+
 
 header .cart {text-align:right; font-size:0.8em; line-height:1.9em; padding:0 0.6em 0 0; color:#666666;}
 header .cart span {color:#97AE3C;}

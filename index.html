@@ -139,10 +139,17 @@ ANIMATION TESTING
 	<header> 
 		<div class='separator'></div>
 		<div class='popOutLinks floatLeft'>
-			<div class='popSearch floatLeft'></div>
+			<div class='popSearch floatLeft' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+				<div class='dropdown displayNone' data-height='20'>Hi mom!</div>
+			</div>
 			<div class='popCart floatLeft'></div>
 			<div class='popFavs floatLeft'></div>
 		</div>
+		
+		
+		
+		
+		
 		<div class='cart floatRight >
 			<img src='images/nyci_10_icn_cart--27x23.gif' alt='cart'></img>&#32;Shopping Bag &#32;<span class='cartItemCount'></span><span>&#32;Items</span>
 		</div>
@@ -166,15 +173,13 @@ ANIMATION TESTING
 			<!-- END ProvideSupport.com Text Chat Link Code -->	
         </div>	
 	</header>
-
-		<div class='floatLeft clearfix'>
-			<!-- START SCANALERT CODE -->
-				<a class='mcAfee' target="_blank" href="https://www.mcafeesecure.com/RatingVerify?ref=www.nyciwear.com"><img width="115" height="30" border="0" src="https://images.scanalert.com/meter/www.nyciwear.com/12.gif" alt="HACKER SAFE certified sites prevent over 99.9% of hacker crime." oncontextmenu="alert#'Copying Prohibited by Law - HACKER SAFE is a Trademark of ScanAlert'#; return false;"></a>
-			<!-- END SCANALERT CODE -->
-		</div>
-			<div class='chat floatRight'></div>
-			<div class='topNav floatLeft'></div>
-
+<!--
+<div class='floatLeft clearfix'>
+	<!-- START SCANALERT CODE --><!--
+		<a class='mcAfee' target="_blank" href="https://www.mcafeesecure.com/RatingVerify?ref=www.nyciwear.com"><img width="115" height="30" border="0" src="https://images.scanalert.com/meter/www.nyciwear.com/12.gif" alt="HACKER SAFE certified sites prevent over 99.9% of hacker crime." oncontextmenu="alert#'Copying Prohibited by Law - HACKER SAFE is a Trademark of ScanAlert'#; return false;"></a>
+	<!-- END SCANALERT CODE --><!--
+</div>
+-->
 
 	<div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
 
