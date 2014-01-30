@@ -48,10 +48,13 @@ header
 .headerCall {text-align:right; padding:0 0 0 0.375em;}
 .headerCall span {font-size:0.7em; color:#cccccc;}
 
+header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; border-bottom:1px dashed #000000; clear:both;}
+
 /*header drop-downs*/
 .navList {height:2em; width:100%; background-color:#ffffff; position:relative;}
 .popOutLinks {height:2em; width:10.563em; background:#ffffff; padding:0 0 0 0.375em;}
-.popOutLinks .dropdown {width:10.563em; padding:0; position:absolute; left:0; top:2em; background-color:#ffffff; box-shadow:2px 2px 1px 0px #000000;}
+.popOutLinks .dropdown {width:10.563em; padding:0; position:absolute; left:0; top:2em; z-index:100; background-color:#ffffff; box-shadow:2px 2px 1px 0px #000000;}
+
 .popSearch,.popCart, .popFavs {height:100%; width:2em; margin:0 6%;}
 .popSearch {background:#ffffff url(images/search_icon_green-28x23.png) no-repeat 0.15em 0.3em;}
 #headerSearchFrm {width:100%; height:5em; padding:1em 0 0 0;}
@@ -60,23 +63,16 @@ header
 
 .popCart {background:#ffffff url(images/nyci_10_icn_cart-27x23.gif) no-repeat 0.15em 0.3em;}
 .popCart .cart {text-align:center; font-size:0.8em; line-height:1.9em; padding:1em 0.6em 0 0; color:#666666;}
+header .cart span {color:#97AE3C;}
+.popFavs {background:#ffffff url(images/green_glasses-28x14.jpg) no-repeat 0.15em 0.6em;}
 
-.popFavs {background:#ffffff url(images/green_glasses-28x14.jpg) no-repeat 0.15em 0.6em;}
-.navListList {width:75%; float:left; list-style:none; margin:0.375em 0 0 0;}
+.navListList {width:75%; float:left; list-style:none; margin:0.375em 0 0 0;}
 .navListItem {float:left; padding:0 0 0 9%;}
 .navListItem:first-child {float:left; padding:0 0 0 5%;}
-.navListItem .dropdown {width:58.125em; position:absolute; left:0; top:2em; background:#ffffff;}
+.navListItem .dropdown {width:58.125em; position:absolute; left:0; top:2em; z-index:100; background:#ffffff;}
+/*end header drop-downs*/
 
 
-
-
-
-
-
-header .cart span {color:#97AE3C;}
-
-
-header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; border-bottom:1px dashed #000000; clear:both;}
 /*****************************************************************
 end header
 *****************************************************************/
@@ -97,6 +93,19 @@ end footer
 homepage
 *****************************************************************/
 
+.homeBannersCont {width:100%; background:pink; font-style:italic; clear:both; margin:0 0 0.5em 0;}
+.bannerTop {height:1.75em; width:100%; background:#ffffff url(images/df_footer_tit_bg-7x29.gif) repeat-x; margin:0 0 0.5em 0;}
+.bannerTop > p {background-color:#2e2e2e; color:#ffffff; display:inline-block; float:left; line-height:1.75em; margin:0; padding:0 1em;}
+.bannerTop > img {float:left;}
+
+.mainBannerCont {max-height:22.875em; width:75%; position:relative;}
+.mainBanner {background:gray; overflow:hidden; }
+.mainBanner img {max-height:22.875em;}
+.mainBannerPagination {position:absolute; top:2em; right:4em;}
+.mainBannerPagination a {height:1.3em; width:1.3em; background-color:#97AE3C; color:#ffffff; display:inline-block; margin:0 0.5em 0 0; text-align:center;}
+.mainBannerPagination a.selected {background-color:#ffffff; color:#97AE3C;}
+
+.sideBanner {height:22.875em; width:25%; background:red;}
 
 
 /*****************************************************************

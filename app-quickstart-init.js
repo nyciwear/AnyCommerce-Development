@@ -28,6 +28,7 @@ app.rq.push(['extension',1,'tools_ABtesting','extensions/tools_ABtesting.js']);
 
 app.rq.push(['extension',0,'store_nyci','extensions/store_nyci.js']); //general app specific functions
 app.rq.push(['extension',0,'store_dropdown','extensions/store_dropdown.js']); //creates drop-downs
+app.rq.push(['extension',0,'store_carousel','extensions/store_carousel.js']); //creates carousels using carouFedSel
 
 app.rq.push(['script',0,(document.location.protocol == 'file:') ? app.vars.testURL+'jsonapi/config.js' : app.vars.baseURL+'jsonapi/config.js']); //The config.js is dynamically generated.
 app.rq.push(['script',0,app.vars.baseURL+'model.js']); //'validator':function(){return (typeof zoovyModel == 'function') ? true : false;}}
@@ -38,6 +39,8 @@ app.rq.push(['script',0,app.vars.baseURL+'controller.js']);
 app.rq.push(['script',0,app.vars.baseURL+'resources/jquery.showloading-v1.0.jt.js']); //used pretty early in process..
 app.rq.push(['script',0,app.vars.baseURL+'resources/jquery.ui.anyplugins.js']); //in zero pass in case product page is first page.
 app.rq.push(['css',1,app.vars.baseURL+'resources/anyplugins.css']);
+app.rq.push(['script',0,app.vars.baseURL+'resources/jquery.carouFredSel-6.2.0.min.js']); //used for carousels.
+app.rq.push(['script',0,app.vars.baseURL+'resources/jquery.touchSwipe-1.3.3.min.js']); //used w/ carouFedSel.
 
 
 
