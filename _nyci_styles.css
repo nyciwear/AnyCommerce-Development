@@ -72,6 +72,8 @@ header .cart span {color:#97AE3C;}
 .navListItem .dropdown {width:58.125em; position:absolute; left:0; top:2em; z-index:100; background:#ffffff;}
 /*end header drop-downs*/
 
+.discountBanner {height:2em; width:100%; background-color:#97AE3C; color:#ffffff; clear:both; font-size:1.5em; line-height:2em; margin:0 0 0.5em 0; text-align:center;}
+
 
 /*****************************************************************
 end header
