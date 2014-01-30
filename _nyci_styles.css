@@ -49,20 +49,32 @@ header
 .headerCall span {font-size:0.7em; color:#cccccc;}
 
 /*header drop-downs*/
+.navList {height:2em; width:100%; background-color:#ffffff; position:relative;}
 .popOutLinks {height:2em; width:10.563em; background:#ffffff; padding:0 0 0 0.375em;}
+.popOutLinks .dropdown {width:10.563em; padding:0; position:absolute; left:0; top:2em; background-color:#ffffff; box-shadow:2px 2px 1px 0px #000000;}
 .popSearch,.popCart, .popFavs {height:100%; width:2em; margin:0 6%;}
-.popSearch {background:blue;}
-.popCart {background:red;}
-.popFavs {background:green;}
-.popOutLinks .dropdown {}
+.popSearch {background:#ffffff url(images/search_icon_green-28x23.png) no-repeat 0.15em 0.3em;}
+#headerSearchFrm {width:100%; height:5em; padding:1em 0 0 0;}
+.productSearchKeyword {height:2em; border:inset 1px #666666; display:block; margin:0 auto;}
+#headerSearchSubmit {height:2em; color:#ffffff; font-weight:bold; background-color:#f05524; border:none; display:block; margin:0.25em auto 0 auto;}
+
+.popCart {background:#ffffff url(images/nyci_10_icn_cart-27x23.gif) no-repeat 0.15em 0.3em;}
+.popCart .cart {text-align:center; font-size:0.8em; line-height:1.9em; padding:1em 0.6em 0 0; color:#666666;}
+
+.popFavs {background:#ffffff url(images/green_glasses-28x14.jpg) no-repeat 0.15em 0.6em;}
+.navListList {width:75%; float:left; list-style:none; margin:0.375em 0 0 0;}
+.navListItem {float:left; padding:0 0 0 9%;}
+.navListItem:first-child {float:left; padding:0 0 0 5%;}
+.navListItem .dropdown {width:58.125em; position:absolute; left:0; top:2em; background:#ffffff;}
 
 
-header .cart {text-align:right; font-size:0.8em; line-height:1.9em; padding:0 0.6em 0 0; color:#666666;}
+
+
+
+
+
 header .cart span {color:#97AE3C;}
 
-#headerSearchFrm {width:100%; height:1.5em;}
-.productSearchKeyword {height:100%; border:solid 1px #666666; border-right:0;}
-#headerSearchSubmit {height:100%; color:#ffffff; font-weight:bold; background-color:#f05524; border:none;}
 
 header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; border-bottom:1px dashed #000000; clear:both;}
 /*****************************************************************

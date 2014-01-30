@@ -138,27 +138,59 @@ ANIMATION TESTING
 <div class='wrapper'>
 	<header> 
 		<div class='separator'></div>
-		<div class='popOutLinks floatLeft'>
-			<div class='popSearch floatLeft' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
-				<div class='dropdown displayNone' data-height='20'>Hi mom!</div>
+			<div class='navList'>
+				<div class='popOutLinks floatLeft'>
+					<div class='popSearch floatLeft' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+						<div class='dropdown displayNone'>
+							<form id="headerSearchFrm" name="headerSearchFrm" action="#" class="productSearchForm" method="get">
+								<input name="KEYWORDS" value="" placeholder=' Enter Keyword' class="productSearchKeyword handleDefault" type="search">
+								<input class="searchButton pointer" id="headerSearchSubmit" value="SEARCH" type="submit">
+							</form>
+						</div>
+					</div>
+					<div class='popCart floatLeft' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+						<div class='dropdown displayNone'>
+							<div class='cart'>
+								&#32;Shopping Bag&#58; &#32;<span class='cartItemCount'></span><span>&#32;Items</span>
+							</div>
+						</div>
+					</div>
+					<div class='popFavs floatLeft' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+						<div class='dropdown displayNone'><div>Recently</div><div>viewed</div><div>can go</div><div>here</div></div>
+					</div>
+				</div>
+			
+				<div class='navListList'>
+					<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+						Sunglasses
+						<div class='dropdown displayNone' data-height='300'></div>
+					</div>
+					<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+						Eyeglasses
+						<div class='dropdown displayNone' data-height='300'></div>
+					</div>
+					<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+						Brands
+						<div class='dropdown displayNone' data-height='300'></div>
+					</div>
+					<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+						Any
+						<div class='dropdown displayNone' data-height='300'></div>
+					</div>
+					<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+						Other
+						<div class='dropdown displayNone' data-height='300'></div>
+					</div>
+					<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+						Nav
+						<div class='dropdown displayNone' data-height='300'></div>
+					</div>
+				</div>
 			</div>
-			<div class='popCart floatLeft'></div>
-			<div class='popFavs floatLeft'></div>
-		</div>
 		
 		
 		
 		
-		
-		<div class='cart floatRight >
-			<img src='images/nyci_10_icn_cart--27x23.gif' alt='cart'></img>&#32;Shopping Bag &#32;<span class='cartItemCount'></span><span>&#32;Items</span>
-		</div>
-		<div class='search floatRight'>
-			 <form id="headerSearchFrm" name="headerSearchFrm" action="#" class="productSearchForm" method="get">
-                <input name="KEYWORDS" value="" placeholder=' Enter Keyword' class="productSearchKeyword handleDefault" type="search">
-				<input class="searchButton floatRight pointer" id="headerSearchSubmit" value="SEARCH" type="submit">
-            </form>
-		</div>
 		<div class='floatRight liveHelp marginRight hideMed'>
     		<!-- BEGIN ProvideSupport.com Text Chat Link Code --> 
 			<div id="ci5ALC" style="z-index:100;position:absolute"></div>
