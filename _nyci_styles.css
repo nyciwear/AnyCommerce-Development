@@ -107,7 +107,14 @@ homepage
 .mainBannerPagination a {height:1.3em; width:1.3em; background-color:#97AE3C; color:#ffffff; display:inline-block; margin:0 0.5em 0 0; text-align:center;}
 .mainBannerPagination a.selected {background-color:#ffffff; color:#97AE3C;}
 
-.sideBanner {height:22.875em; width:25%; background:red;}
+.sideBannerCont {height:22.875em; width:25%; background:red; font-style:normal; color:#97AE3C; overflow:hidden;}
+.sideBannerCont .title {height:14%; width:100%; background-color:blue;}
+.sideBannerCont .mpControlContainer {display:none;} /*can be removed if this goes to search from $list*/
+.sideBannerCont .sideBannerProductListTemplate {height:100%; width:100%; margin:0; padding:2em;}
+.sideBannerCont h5 {color:#ffffff; margin:0 0 0.5em 0; padding:0 1em;}
+.sideBannerCont h6 {color:#ffffff;}
+
+
 
 
 /*****************************************************************
