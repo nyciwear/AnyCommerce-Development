@@ -38,6 +38,7 @@ var store_carousel = function() {
 				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_carousel.u.runHomeBannerCarousel($context);
+					app.ext.store_carousel.u.runSideBannerCarousel($context);
 				}]);
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
@@ -100,6 +101,37 @@ var store_carousel = function() {
 							prev		: '.caroPrev1',
 							next		: '.caroNext1',
 							pagination	: '.mainBannerPagination',
+							swipe: {
+								onMouse	: true,
+								onTouch	: true
+							}
+						});
+					},2000);
+				}
+			},
+			
+			runSideBannerCarousel : function($context) {
+				var $target = $('.sideBanner',$context);
+				if($target.data('isCarousel')) {} //only make it a carousel once.
+				else {
+					$target.data('isCarousel',true);
+					//for whatever reason, caroufredsel needs to be executed after a moment.
+					setTimeout(function(){
+						$target.carouFredSel({
+							width		: '99%',
+							height		: 'variable',
+							responsive	: true,
+							items		: 
+							{
+								minimum : 1,
+								visible	: 1
+							},
+							auto		: false,
+					//		{
+					//			pauseOnHover	: 'immediate'
+					//		},
+							prev		: '.sideBannerPrev',
+							next		: '.sideBannerNext',
 							swipe: {
 								onMouse	: true,
 								onTouch	: true

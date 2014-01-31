@@ -215,7 +215,34 @@ ANIMATION TESTING
 		
 
 	<footer>
-		<div></div>
+		<div>
+			<div class='footerListItem'>
+				<div>Customer Service</div>
+				<ul>
+					<li>Contact Us</li>
+					<li>Order Status</li>
+					<li>FAQ</li>
+					<li>Policies</li>
+					<li>Sitemap</li>
+				</ul>
+			</div>
+			<div class='footerListItem'>
+				<div>Social Networks</div>
+				<ul>
+					<li>Facebook</li>
+					<li>Twitter</li>
+				</ul>
+			</div>
+			<div class='footerListItem'>
+				<div>About Us</div>
+				
+				<ul>
+					<li>Company Info</li>
+					<li>Why Us?</li>
+				</ul>
+			</div>
+			<img src='images/df_mid_tit_bg_right-20x28.png'>
+		</div>
 	</footer>
 	
 </div> <!-- end wrapper -->
@@ -284,11 +311,17 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 		</div>
 			
 		<div class='sideBannerCont floatRight'>
-			<div class='title'></div>
-			<ul data-bind="var: list($arnette.@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: sideBannerProductListTemplate; withReviews:1; items_per_page: 25;" class="listStyleNone fluidList clearfix noPadOrMargin productList"></ul>
+			<div class='title'>
+				<span></span>
+				<p>HOT ITEMS</p>
+			</div>
+			<ul data-bind="var: list($arnette.@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: sideBannerProductListTemplate; withReviews:1; items_per_page: 25;" class="listStyleNone fluidList clearfix noPadOrMargin productList sideBanner"></ul>
+			<div class='sideBannerPrev displayNone'></div>
+			<div class='sideBannerNext displayNone'></div>
 		</div>
 	</div>
 
+	<div class="clear"></div>
 
 
 
@@ -479,7 +512,7 @@ container ul should have lineItemProdlist class on it instead of productList
 	</div>
 	<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
 	<h2 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Only: ;'></h2>
-	<div class='pointer' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')})">more details</div>
+	<div class='pointer more' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')})"><span></span>more details</div>
 </li>
 
 
