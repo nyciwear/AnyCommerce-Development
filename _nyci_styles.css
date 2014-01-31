@@ -8,6 +8,7 @@ global
 body {margin:0 auto; font-family:Arial, Helvetica, sans-serif; background-color:orange;}
 *, *:before, *:after {-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}
 a:link, a:visited, a:hover, a:active {text-decoration:none;}
+a:link {color:#2e2e2e;}
 a:visited, a:hover {color:#f05524;}
 
 .wrapper {height:100%; max-width:58.125em; margin:0 auto;}
@@ -114,7 +115,7 @@ homepage
 .mainBannerPagination a.selected {background-color:#ffffff; color:#97AE3C;}
 
 .sideBannerCont {height:22.875em; width:25%; background:#2e2e2e; font-style:normal; color:#97AE3C; overflow:hidden; position:relative;}
-.sideBannerCont .title {height:14%; width:100%; background-color:#666666; color:#ffffff; font-family:Courier; font-size:2em; text-align:center; line-height:1.7em;}
+.sideBannerCont .title {height:13.9%; width:100%; background-color:#666666; color:#ffffff; font-family:Courier; font-size:2em; text-align:center; line-height:1.7em;}
 .sideBannerCont .title span {height:100%; width:13%; background:#666666 url(images/nyc11_tit_hotitemsblock-29x51.jpg) no-repeat left top; display:inline-block; float:left;}
 .sideBannerCont .mpControlContainer {display:none;} /*can be removed if this goes to search from $list*/
 .sideBannerCont .sideBannerProductListTemplate {height:100%; width:100%; margin:0; padding:2em;}
