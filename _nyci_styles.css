@@ -13,6 +13,7 @@ a:visited, a:hover {color:#f05524;}
 
 .wrapper {height:100%; max-width:58.125em; margin:0 auto;}
 .clear {clear:both;}
+.productList {width:54.4em; margin:0 auto;}
 	
 /*****************************************************************
 end global
@@ -86,7 +87,7 @@ end header
 footer
 *****************************************************************/
 
-footer {width:100%; background:#ffffff url(images/df_footer_tit_bg-7x29.gif) repeat-x top ; float:left; margin:0.5em 0 0 0;}
+footer {width:100%; background:#ffffff url(images/df_footer_tit_bg-7x29.gif) repeat-x top ; float:left;}
 .footerListItem {width:11em; text-indent:1em; float:left;}
 .footerListItem > div {height: 1.75em; background:#2e2e2e; line-height:1.75em; color:#B3EBFF;}
 .footerListItem > img {float:right;}
@@ -129,11 +130,12 @@ homepage
 .mainBannerPagination a.selected {background-color:#ffffff; color:#97AE3C;}
 
 .sideBannerCont {height:22.875em; width:25%; background:#2e2e2e; font-style:normal; color:#97AE3C; overflow:hidden; position:relative;}
-.sideBannerCont .title {height:13.9%; width:100%; background-color:#666666; color:#ffffff; font-family:Courier; font-size:2em; text-align:center; line-height:1.7em;}
+.sideBannerCont .title {height:1.55em; width:100%; background-color:#666666; color:#ffffff; font-family:Courier; font-size:2em; text-align:center; line-height:1.7em;}
 .sideBannerCont .title span {height:100%; width:13%; background:#666666 url(images/nyc11_tit_hotitemsblock-29x51.jpg) no-repeat left top; display:inline-block; float:left;}
 .sideBannerCont .mpControlContainer {display:none;} /*can be removed if this goes to search from $list*/
-.sideBannerCont .sideBannerProductListTemplate {height:100%; width:100%; margin:0; padding:2em;}
+.sideBannerCont .sideBannerProductListTemplate {height:24.8em; width:100%; margin:0; padding:2em;}
 .sideBannerCont .prodThumbContainer {margin:0 0 0.5em 0;}
+.sideBannerCont img {height:auto; max-width:100%;}
 .sideBannerCont h5 {color:#ffffff; margin:0 0 0.5em 0; padding:0 1em;}
 .sideBannerCont h6 {color:#ffffff;}
 .sideBannerPrev, .sideBannerNext {height:1.5em; width:1.1em; position:absolute; left:0.2em; top:11em; background:url(images/carousel_nav_nyc_v1-290x139.png) no-repeat 0 -6.362em;}
@@ -141,6 +143,11 @@ homepage
 .sideBannerPrev:hover {background-position:-5em -6.362em;}
 .sideBannerNext:hover {background-position:-16.9em -6.362em;}
 .sideBannerProductListTemplate .more > span  {height:1em; width:1em; background:#2e2e2e url(images/orange_arrow_seedetails-10x11.png) no-repeat center bottom; display:inline-block;}
+
+.homeSellMid, .homeSellBottom {margin:0.5em 0 0 0;}
+
+
+
 
 /*****************************************************************
 end homepage
@@ -155,38 +162,53 @@ media queries
 @media screen and (max-width: 56.25em) {
 	.wrapper {height:100%; max-width:50em; margin:0 auto;}
 	.centerAt900 {width:100%; margin:auto;}
+	.productList {width:43.5em;}
+/*header*/
+	.navListItem {padding:0 0 0 8%;}
+/*homepage*/
+	.sideBannerCont {height:32.875em; font-size:0.7em;}
+	.productList li.sideBannerProductListTemplate {font-size:1em;}
+	.sideBannerPrev {background-position:0 -9.462em;}
+	.sideBannerNext {background-position:-17.4em -9.362em;}
+	.sideBannerPrev:hover {background-position:-7.2em -9.462em;}
+	.sideBannerNext:hover {background-position:-24.6em -9.462em;}
+	#homepageTemplate_ {max-width:52.5em;}
+	#homeProdSearchBestSellers {max-width:50em;}
 }
 
 
 /*MEDIA 768 8col*/
 @media screen and (max-width: 48em) {
 	.wrapper {height:100%; max-width:42.66666em; margin:0 auto;}
+	.productList {width:32.7em;}
+	.navListItem {padding:0 0 0 5%;}
 }
 
 
 /*MEDIA 720 4col*/
 @media screen and (max-width: 45em) {
 	.wrapper {height:100%; max-width:40em; margin:0 auto;}
-
+	.navListList {width:72%;}
 }
 
 
 /*MEDIA 640*/
 @media screen and (max-width: 40em) {
 	.wrapper {height:100%; max-width:35.55555em; margin:0 auto;}
-	
+	.navList {height:4em;}
+	.navListList {width:100%;}
 }
 
 /*MEDIA 480*/
 @media screen and (max-width: 30em) {
 	.wrapper {height:100%; max-width:26.66666em; margin:0 auto;}
-	
+	.productList {width:21.8em;}
 }
 
 /*MEDIA 320*/
 @media screen and (max-width: 20em) {
 	.wrapper {height:100%; max-width:17.77777em; margin:0 auto;}
-	
+	.productList {width:11.2em;}
 }
 
 

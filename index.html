@@ -337,7 +337,29 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 			<div class='sideBannerNext displayNone'></div>
 		</div>
 	</div>
-
+	
+	<div class="clear"></div>
+	<div class='homeSellMid'>
+		<div class='bannerTop'>
+			<p>
+				Top Designer Brands
+			</p>
+			<img src='images/df_mid_tit_bg_right-20x28.png'>
+		</div>
+		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; bgcolor: TTTTTT; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin'></ul>
+	</div>
+	
+	<div class="clear"></div>
+	<div class='homeSellBottom'>
+		<div class='bannerTop'>
+			<p>
+				Best Sellers
+			</p>
+			<img src='images/df_mid_tit_bg_right-20x28.png'>
+		</div>
+		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"10","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResults' class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+	</div>
+	
 	<div class="clear"></div>
 
 
@@ -550,7 +572,7 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 <li id='productListTemplateResults' class='loadingBG searchResultsProduct ' >
 	<div onClick="app.ext.myRIA.a.handleProdPreview($(this).parent().attr('data-pid'));" class='pointer'>
 		<div class='prodThumbContainer'>
-		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='120' height='120' />
+		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL;isElastic:1;bgcolor:ffffff;' width='150' height='120' />
 		</div>
 
 		<h5 class='hideInMinimalMode' data-bind='var: product(prod_name); format:text;'></h5>
