@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201346.20140123144300",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201346.20140204151700",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -146,6 +146,7 @@ ANIMATION TESTING
 					<div class='dropdown displayNone'>
 						<div class='cart'>
 							&#32;Shopping Bag&#58; &#32;<span class='cartItemCount'></span><span>&#32;Items</span>
+							<div class='quickviewCart'><span>blah</span></div>
 						</div>
 					</div>
 				</div>
@@ -857,7 +858,22 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 
 
 
+<ul>
+	<li id='quickviewCartTemplate'>
 
+		<ul id='cartStuffList' data-bind="var: cart(@ITEMS); format:stuffList; loadsTemplate:productListTemplateCart;" class='listStyleNone fluidList clearfix noPadOrMargin productList lineItemProdlist'></ul>
+	
+		<div class='floatLeft'><img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); defaultVar: product(%attribs.zoovy:prod_image1); format:imageURL;' width='75' height='75' /></div>
+
+		<h4 data-bind='var: product(prod_name); format:text; '></h4>
+
+		<div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div>
+
+		<div>
+			qty: <input type='number' class='qtyInput numberInput' onChange="app.ext.store_cart.u.updateCartQty($(this)); app.model.dispatchThis('immutable');"  data-bind='format:cartItemQty;extension:store_cart;useParentData:true;' />
+		</div>
+	</li>
+</ul>
 
 
 
