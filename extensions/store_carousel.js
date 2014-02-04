@@ -91,6 +91,8 @@ var store_carousel = function() {
 							responsive	: true,
 							items		: 
 							{
+								width	: 691,
+								height	: '100%',
 								minimum : 1,
 								visible	: 1
 							},
@@ -119,7 +121,6 @@ var store_carousel = function() {
 					setTimeout(function(){
 						$target.carouFredSel({
 							width		: '99%',
-							height		: 'variable',
 							responsive	: true,
 							items		: 
 							{

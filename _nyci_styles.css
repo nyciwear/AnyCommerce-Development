@@ -49,7 +49,8 @@ header
 .headerRight .links a {font-size:0.7em; padding:0.2em 0; color:#333333;}
 .headerRight .links a:hover {color:#f05524;}
 .headerCall {text-align:right; padding:0 0 0 0.375em;}
-.headerCall span {font-size:0.7em; color:#cccccc;}
+.headerCall a {padding:0.2em 0;}
+.headerCall span, .headerCall a {font-size:0.7em; color:#cccccc;}
 
 header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; border-bottom:1px dashed #000000; clear:both;}
 
@@ -123,17 +124,17 @@ homepage
 .bannerTop > img {float:left;}
 
 .mainBannerCont {max-height:22.875em; width:75%; position:relative;}
-.mainBanner {background:gray; overflow:hidden; }
+.mainBanner {overflow:hidden; }
 .mainBanner img {max-height:22.875em;}
 .mainBannerPagination {position:absolute; top:2em; right:4em;}
 .mainBannerPagination a {height:1.3em; width:1.3em; background-color:#97AE3C; color:#ffffff; display:inline-block; margin:0 0.5em 0 0; text-align:center;}
 .mainBannerPagination a.selected {background-color:#ffffff; color:#97AE3C;}
 
-.sideBannerCont {height:22.875em; width:25%; background:#2e2e2e; font-style:normal; color:#97AE3C; overflow:hidden; position:relative;}
+.sideBannerCont {height:100%; width:25%; background:#2e2e2e; font-style:normal; color:#97AE3C; overflow:hidden; position:relative;}
 .sideBannerCont .title {height:1.55em; width:100%; background-color:#666666; color:#ffffff; font-family:Courier; font-size:2em; text-align:center; line-height:1.7em;}
 .sideBannerCont .title span {height:100%; width:13%; background:#666666 url(images/nyc11_tit_hotitemsblock-29x51.jpg) no-repeat left top; display:inline-block; float:left;}
 .sideBannerCont .mpControlContainer {display:none;} /*can be removed if this goes to search from $list*/
-.sideBannerCont .sideBannerProductListTemplate {height:24.8em; width:100%; margin:0; padding:2em;}
+.sideBannerCont .sideBannerProductListTemplate {height:317px; width:100%; margin:0; padding:2em;}
 .sideBannerCont .prodThumbContainer {margin:0 0 0.5em 0;}
 .sideBannerCont img {height:auto; max-width:100%;}
 .sideBannerCont h5 {color:#ffffff; margin:0 0 0.5em 0; padding:0 1em;}
@@ -166,7 +167,8 @@ media queries
 /*header*/
 	.navListItem {padding:0 0 0 8%;}
 /*homepage*/
-	.sideBannerCont {height:32.875em; font-size:0.7em;}
+	.sideBannerCont {font-size:0.7em;}
+	.sideBannerCont .caroufredsel_wrapper {height:325px;}
 	.productList li.sideBannerProductListTemplate {font-size:1em;}
 	.sideBannerPrev {background-position:0 -9.462em;}
 	.sideBannerNext {background-position:-17.4em -9.362em;}
@@ -181,7 +183,10 @@ media queries
 @media screen and (max-width: 48em) {
 	.wrapper {height:100%; max-width:42.66666em; margin:0 auto;}
 	.productList {width:32.7em;}
+/*header*/
 	.navListItem {padding:0 0 0 5%;}
+/*homepage*/	
+	.sideBannerCont {height:27.3875em;}
 }
 
 
@@ -189,26 +194,47 @@ media queries
 @media screen and (max-width: 45em) {
 	.wrapper {height:100%; max-width:40em; margin:0 auto;}
 	.navListList {width:72%;}
+	.sideBannerCont {max-height:25.6875em;}
 }
 
 
 /*MEDIA 640*/
 @media screen and (max-width: 40em) {
 	.wrapper {height:100%; max-width:35.55555em; margin:0 auto;}
+/*header*/
 	.navList {height:4em;}
 	.navListList {width:100%;}
+/*homepage*/
+	.sideBannerCont {font-size:0.6em; max-height:26.6875em;}
+	.mainBannerPagination {font-size:0.7em;}
 }
 
 /*MEDIA 480*/
 @media screen and (max-width: 30em) {
+	.hidePhoneLandscape {display:none !important;}
+	.displayNone.showPhoneLandscape {display:block;}
 	.wrapper {height:100%; max-width:26.66666em; margin:0 auto;}
 	.productList {width:21.8em;}
+/*header*/
+	.discountBanner {font-size:0.7em;}
+	.headerRight {float:none;}
+	.headerCall {width:100%; text-align:center;}
+/*homepage*/
+	.navList {height:6.5em;}
+	.navListItem {padding:2% 0 0 18%;}
+	.navListItem:first-child {padding:2% 0 0 6%;}
 }
 
 /*MEDIA 320*/
 @media screen and (max-width: 20em) {
+	.hidePhonePortrait {display:none !important;}
+	.displayNone.showPhonePortrait {display:block;}
 	.wrapper {height:100%; max-width:17.77777em; margin:0 auto;}
 	.productList {width:11.2em;}
+/*header*/
+	.navList {height:6.5em;}
+	.navListItem {padding:2% 0 0 10%;}
+	.navListItem:first-child {padding:2% 0 0 17%;}
 }
 
 

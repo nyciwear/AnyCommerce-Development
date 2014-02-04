@@ -118,10 +118,8 @@ ANIMATION TESTING
 			</div>
 			<div class='headerRight floatRight'>
 				<div class='headerCall floatRight'>
-					<span>Call Us at </span>800-830-9003
-				</div>
-				<div class='links floatRight'>
 					<a class='pointer' data-onclick="#!customer?show=myaccount" href="#!customer?show=myaccount">Log In</a> | <a href="#!company?show=contact" data-onclick="#!company?show=contact">Contact Us</a>
+					<span>Call Us at </span>800-830-9003
 				</div>
 			</div>
 			<div class='deliciousFashions floatLeft centerAt900'>
@@ -156,7 +154,8 @@ ANIMATION TESTING
 				</div>
 			</div>
 		
-			<div class='navListList'>
+				<!-- This list shows until 480res -->
+			<div class='navListList hidePhoneLandscape hidePhonePortrait'>
 				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
 					Sunglasses
 					<div class='dropdown displayNone' data-height='402'></div>
@@ -182,7 +181,18 @@ ANIMATION TESTING
 					<div class='dropdown displayNone' data-height='402'></div>
 				</div>
 			</div>
+			
+				<!-- This list shows after 480res -->
+			<div class='navListList displayNone showPhoneLandscape showPhonePortrait'>
+				<div class='navListItem'>Sunglassed</div>
+				<div class='navListItem'>Eyeglasses</div>
+				<div class='navListItem'>Brands</div>
+				<div class='navListItem'>Any</div>
+				<div class='navListItem'>Other</div>
+				<div class='navListItem'>Nav</div>
+			</div>
 		</div>
+		
 		<div class='discountBanner'>Ya&#33; We&#39;ll put some righteous discounts here for sure&#33;&#33;</div>
 		
 <!-- NEEDS A HOME!!
@@ -308,7 +318,7 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 -->
 <div id='homepageTemplate' class='homeTemplate'>
 
-	<div class='homeBannersCont'>
+	<div class='homeBannersCont hidePhoneLandscape hidePhonePortrait'>
 		<div class='bannerTop'>
 			<p>
 				Discount Designer Sunglasses Satisfaction Guaranteed
