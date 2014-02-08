@@ -146,7 +146,7 @@ ANIMATION TESTING
 					<div class='dropdown displayNone'>
 						<div class='cart'>
 							&#32;Shopping Bag&#58; &#32;<span class='cartItemCount'></span><span>&#32;Items</span>
-							<div class='quickviewCart'><span>blah</span></div>
+							<div class='quickCart'><span>blah</span></div>
 						</div>
 					</div>
 				</div>
@@ -859,22 +859,26 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 
 
 <ul>
-	<li id='quickviewCartTemplate'>
-
-		<ul id='cartStuffList' data-bind="var: cart(@ITEMS); format:stuffList; loadsTemplate:productListTemplateCart;" class='listStyleNone fluidList clearfix noPadOrMargin productList lineItemProdlist'></ul>
-	
-		<div class='floatLeft'><img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); defaultVar: product(%attribs.zoovy:prod_image1); format:imageURL;' width='75' height='75' /></div>
-
-		<h4 data-bind='var: product(prod_name); format:text; '></h4>
-
-		<div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div>
-
-		<div>
-			qty: <input type='number' class='qtyInput numberInput' onChange="app.ext.store_cart.u.updateCartQty($(this)); app.model.dispatchThis('immutable');"  data-bind='format:cartItemQty;extension:store_cart;useParentData:true;' />
-		</div>
+	<li id='quickCartTemplate'>
+		<ul id='cartStuffList' data-bind="var: cart(@ITEMS); format:stuffList; loadsTemplate:productListTemplateQuickCart;" class='listStyleNone fluidList clearfix noPadOrMargin productList lineItemProdlist'></ul>
 	</li>
 </ul>
 
+
+
+<ul>
+	<li id='productListTemplateQuickCart' class='padMargBorderBottom clearfix productListTemplateQuickCart'>
+		<!--
+		<button class='floatRight removeButton' data-bind='format:removeItemBtn; extension:store_cart; useParentData:true;' >Remove Item From Cart</button>
+		<button class='floatRight moveToWishlist marginRight' data-bind='format:moveToWishlistButton; extension:myRIA; useParentData:true;' >Move to Wishlist</button>
+		-->
+		<div class='floatLeft'><img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); defaultVar: product(%attribs.zoovy:prod_image1); format:imageURL;' width='50' height='50' /></div>
+
+		<div class='floatLeft' data-bind='var: product(prod_name); format:text; '></div>
+		<!-- <div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div> -->
+		<span data-bind='var:product(qty); format:text; pretext:Quantity: ;'></span>
+	</li>
+</ul>
 
 
 

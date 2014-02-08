@@ -28,7 +28,7 @@ var myRIA = function() {
 //if this is a custom extension and you are loading system extensions (prodlist, etc), then load ALL templates you'll need here.
 		"templates" : [
 //custom app specific templates		
-			'quickviewCartTemplate',
+			'quickCartTemplate',
 			'sideBannerProductListTemplate',
 //the list of templates that are commonly edited (same order as they appear in appTemplates
 			'homepageTemplate',	'categoryTemplate',
@@ -3125,7 +3125,7 @@ else	{
 				$('.cartSubtotal',$appView).text(app.u.formatMoney(subtotal,'$',2,false));
 				$('.cartTotal',$appView).text(app.u.formatMoney(total,'$',2,false));
 				
-/*nyci*/		$('.quickviewCart',$appView).empty().anycontent({'templateID':'quickviewCartTemplate','datapointer':'cartDetail'});
+/*nyci*/		$('.quickCart',$appView).empty().anycontent({'templateID':'quickCartTemplate','datapointer':'cartDetail'});
 
 				//no error for cart data not being present. It's a passive function.
 				return r;
@@ -3136,7 +3136,7 @@ else	{
 			createTemplateFunctions : function()	{
 
 				app.ext.myRIA.template = {};
-				var pageTemplates = new Array('quickviewCartTemplate','sideBannerProductListTemplate','categoryTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
+				var pageTemplates = new Array('quickCartTemplate','sideBannerProductListTemplate','categoryTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
 				var L = pageTemplates.length;
 				for(var i = 0; i < L; i += 1)	{
 					app.ext.myRIA.template[pageTemplates[i]] = {"onCompletes":[],"onInits":[],"onDeparts":[]};
