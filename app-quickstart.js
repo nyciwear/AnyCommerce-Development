@@ -3125,7 +3125,7 @@ else	{
 				$('.cartSubtotal',$appView).text(app.u.formatMoney(subtotal,'$',2,false));
 				$('.cartTotal',$appView).text(app.u.formatMoney(total,'$',2,false));
 				
-				$('.quickviewCart',$appView).empty().anycontent({'templateid':'quickviewCartTemplate','datapointer':'cartDetail'});
+/*nyci*/		$('.quickviewCart',$appView).empty().anycontent({'templateID':'quickviewCartTemplate','datapointer':'cartDetail'});
 
 				//no error for cart data not being present. It's a passive function.
 				return r;
