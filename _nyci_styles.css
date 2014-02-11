@@ -14,6 +14,7 @@ a:visited, a:hover {color:#f05524;}
 .wrapper {height:100%; max-width:58.125em; margin:0 auto;}
 .clear {clear:both;}
 .productList, .categoryList {width:54.4em; margin:0 auto;}
+.minimalMode .productList {width:16.4em;} 
 .catName {text-align:center;}
 .quickView {color:#ffffff; background-color:#F05524; border:1px outset;}
 .quickView:hover {color:#F05524; background-color:#ffffff;}
@@ -213,6 +214,8 @@ media queries
 @media screen and (max-width: 48em) {
 	.wrapper {height:100%; max-width:42.66666em; margin:0 auto;}
 	.productList, .categoryList {width:32.7em;}
+	.minimalMode  .productList {width:8.9em;}
+	.minimalMode .searchResultsProduct {width:150px;}
 /*header*/
 	.navListItem {padding:0 0 0 5%;}
 /*homepage*/	
