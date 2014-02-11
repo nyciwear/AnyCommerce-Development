@@ -87,7 +87,6 @@ header .cart span {color:#97AE3C;}
 
 .discountBanner {height:2em; width:100%; background-color:#97AE3C; color:#ffffff; clear:both; font-size:1.5em; line-height:2em; margin:0 0 0.5em 0; text-align:center;}
 
-
 /*****************************************************************
 end header
 *****************************************************************/
@@ -116,7 +115,6 @@ footer {width:100%; background:#ffffff url(images/df_footer_tit_bg-7x29.gif) rep
 
 .footerBottom {height:4.6875em; width:100%; text-align:center; padding:1em 0 0 0;}
 .footerBottom span {margin:0 1em; display:inline-block;}
-
 
 /*****************************************************************
 end footer
@@ -156,9 +154,6 @@ homepage
 
 .homeSellMid, .homeSellBottom {margin:0.5em 0 0 0;}
 
-
-
-
 /*****************************************************************
 end homepage
 *****************************************************************/
@@ -179,7 +174,6 @@ productListTemplate, productListTemplateResults
 .pLT form button, .pLTR .moreDetails {height:1.5em; width:100%; background:#97AE3C url('images/prodList_atc_corner-16x16.png') no-repeat left top; border: 1px outset; border-radius:0; color:#ffffff; text-align:center;}
 .pLT form button:hover, .pLTR .moreDetails:hover {color:#1C94C4;}
 .pLT form button span.ui-button-text {padding:0;}
-
 
 /*****************************************************************
 end productListTemplate
