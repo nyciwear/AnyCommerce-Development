@@ -162,6 +162,24 @@ end homepage
 
 
 /*****************************************************************
+productListTemplate
+*****************************************************************/
+
+.productListTemplate {}
+.productListTemplate h5 {font-weight:normal; color:#4D8092;}
+.productListTemplate h5:hover {font-weight:normal; color:#404040;}
+.productListTemplate h6 {font-weight:normal; color:#58595B;}
+.productListTemplate .msrpPrice {text-decoration:line-through;}
+.productListTemplate .price, .productListTemplate .price span.cents {font-weight:bold; color:#97AE3C;}
+.productListTemplate .price span {font-weight:normal; color:#58595B;}
+
+
+/*****************************************************************
+end productListTemplate
+*****************************************************************/
+
+
+/*****************************************************************
 media queries
 *****************************************************************/
 
