@@ -181,6 +181,20 @@ end productListTemplate
 
 
 /*****************************************************************
+productTemplate
+*****************************************************************/
+
+.imageContainer {width:40%; padding:0 1.5em 0 0; float:left;}
+.imageContainer img {height:auto; max-width:100%;}
+.prodSummaryContainer {width:50%; float:left;}
+.tabbedProductContentTD {clear:both;}
+
+/*****************************************************************
+end productTemplate
+*****************************************************************/
+
+
+/*****************************************************************
 media queries
 *****************************************************************/
 
@@ -201,6 +215,8 @@ media queries
 	.sideBannerNext:hover {background-position:-24.6em -9.462em;}
 	#homepageTemplate_ {max-width:52.5em;}
 	#homeProdSearchBestSellers {max-width:50em;}
+/*product page*/
+	/*.prodSummaryContainer {float:right;}*/
 }
 
 
@@ -222,6 +238,8 @@ media queries
 	.wrapper {height:100%; max-width:40em; margin:0 auto;}
 	.navListList {width:72%;}
 	.sideBannerCont {max-height:25.6875em;}
+/*product page*/
+/*	.prodSummaryContainer {width:40%;}*/
 }
 
 
@@ -234,6 +252,9 @@ media queries
 /*homepage*/
 	.sideBannerCont {font-size:0.6em; max-height:26.6875em;}
 	.mainBannerPagination {font-size:0.7em;}
+/*product page*/
+	.imageContainer {width:70%; margin:0 auto; padding:0; float:none;}
+	.prodSummaryContainer {width:90%; margin:0 auto; float:none; clear:both;}
 }
 
 /*MEDIA 480*/
