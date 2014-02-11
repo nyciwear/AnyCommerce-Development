@@ -13,7 +13,8 @@ a:visited, a:hover {color:#f05524;}
 
 .wrapper {height:100%; max-width:58.125em; margin:0 auto;}
 .clear {clear:both;}
-.productList {width:54.4em; margin:0 auto;}
+.productList, .categoryList {width:54.4em; margin:0 auto;}
+.catName {text-align:center;}
 	
 /*****************************************************************
 end global
@@ -123,7 +124,7 @@ end footer
 homepage
 *****************************************************************/
 
-.homeBannersCont {width:100%; background:pink; font-style:italic; clear:both; margin:0 0 0.5em 0;}
+.homeBannersCont {max-height:25.875em; width:100%; font-style:italic; clear:both; margin:0 0 0.5em 0; overflow:hidden;}
 .bannerTop {height:1.75em; width:100%; background:#ffffff url(images/df_footer_tit_bg-7x29.gif) repeat-x; margin:0 0 0.5em 0;}
 .bannerTop > p {background-color:#2e2e2e; color:#ffffff; display:inline-block; float:left; line-height:1.75em; margin:0; padding:0 1em;}
 .bannerTop > img {float:left;}
@@ -168,7 +169,7 @@ media queries
 @media screen and (max-width: 56.25em) {
 	.wrapper {height:100%; max-width:50em; margin:0 auto;}
 	.centerAt900 {width:100%; margin:auto;}
-	.productList {width:43.5em;}
+	.productList, .categoryList {width:43.5em;}
 /*header*/
 	.navListItem {padding:0 0 0 8%;}
 /*homepage*/
@@ -187,7 +188,7 @@ media queries
 /*MEDIA 768 8col*/
 @media screen and (max-width: 48em) {
 	.wrapper {height:100%; max-width:42.66666em; margin:0 auto;}
-	.productList {width:32.7em;}
+	.productList, .categoryList {width:32.7em;}
 /*header*/
 	.navListItem {padding:0 0 0 5%;}
 /*homepage*/	
@@ -219,7 +220,7 @@ media queries
 	.hidePhoneLandscape {display:none !important;}
 	.displayNone.showPhoneLandscape {display:block;}
 	.wrapper {height:100%; max-width:26.66666em; margin:0 auto;}
-	.productList {width:21.8em;}
+	.productList, .categoryList {width:21.8em;}
 /*header*/
 	.discountBanner {font-size:0.7em;}
 	.headerRight {float:none;}
@@ -235,7 +236,7 @@ media queries
 	.hidePhonePortrait {display:none !important;}
 	.displayNone.showPhonePortrait {display:block;}
 	.wrapper {height:100%; max-width:17.77777em; margin:0 auto;}
-	.productList {width:11.2em;}
+	.productList, .categoryList {width:11.2em;}
 /*header*/
 	.navList {height:6.5em;}
 	.navListItem {padding:2% 0 0 10%;}
