@@ -15,6 +15,8 @@ a:visited, a:hover {color:#f05524;}
 .clear {clear:both;}
 .productList, .categoryList {width:54.4em; margin:0 auto;}
 .catName {text-align:center;}
+.quickView {color:#ffffff; background-color:#F05524; border:1px outset;}
+.quickView:hover {color:#F05524; background-color:#ffffff;}
 	
 /*****************************************************************
 end global
@@ -165,13 +167,16 @@ end homepage
 productListTemplate
 *****************************************************************/
 
-.productListTemplate {}
-.productListTemplate h5 {font-weight:normal; color:#4D8092;}
+.productListTemplate h5 {height:4.3em; font-weight:normal; color:#4D8092;}
 .productListTemplate h5:hover {font-weight:normal; color:#404040;}
 .productListTemplate h6 {font-weight:normal; color:#58595B;}
 .productListTemplate .msrpPrice {text-decoration:line-through;}
 .productListTemplate .price, .productListTemplate .price span.cents {font-weight:bold; color:#97AE3C;}
 .productListTemplate .price span {font-weight:normal; color:#58595B;}
+.productListTemplate form {margin:0.5em 0;}
+.productListTemplate form button {height:1.5em; width:100%; background:#97AE3C url('images/prodList_atc_corner-16x16.png') no-repeat left top; border: 1px outset; border-radius:0; color:#ffffff;}
+.productListTemplate form button:hover {color:#1C94C4;}
+.productListTemplate form button span.ui-button-text {padding:0;}
 
 
 /*****************************************************************
