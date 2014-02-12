@@ -474,7 +474,7 @@ remember to NOT put the button inside the 'onclick' container or two events will
 
 	<div onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer'>
 		<div class='prodThumbContainer' data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>
-		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='120' height='120' />
+			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='120' height='120' />
 		</div>
 
 		<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
@@ -489,7 +489,7 @@ remember to NOT put the button inside the 'onclick' container or two events will
 	
 	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this),{'action':'modal'}); return false;">
 		<input type='hidden' name='qty' value='1' />
-		<button data-bind='format:addToCartButton; extension:myRIA; useParentData:true;'>more details</button>
+		<button class='cornerButton' data-bind='format:addToCartButton; extension:myRIA; useParentData:true;'>more details</button>
 	</form>
 	
 </li>
@@ -599,7 +599,7 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 		<h6 class='hideInMinimalMode' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price; pretext: <span>Our Price: </span>;'></h6>
 		
 	</div>
-	<div class='hideInMinimalMode pointer moreDetails' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')});">MORE DETAILS</div>
+	<div class='hideInMinimalMode pointer moreDetails cornerButton' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')});">MORE DETAILS</div>
 </li>
 
 <li id='productListTemplateResultsNoPreview' class='loadingBG searchResultsProduct ' >
@@ -652,7 +652,7 @@ this will likely become more flexible in the future. ###
 			<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).attr("data-pid")});' class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
 				<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-				<img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='340' height='340' />
+				<img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='320' height='320' />
 
 			</div>
 
@@ -669,17 +669,17 @@ this will likely become more flexible in the future. ###
 		</div>
 
 		<div class='prodSummaryContainer marginBottom no_underline'>
-			<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
-
+			<h3 data-bind='var: product(zoovy:prod_name); format:text;'></h3>
+<!--
 			<hgroup class='marginBottom'>
 				<h5 class='stid' data-bind='var: product(pid); format:text; pretext: Sku: ;'></h5>
 				<h5 data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: Mfg: ;'></h5>
 				<h5 data-bind='var: product(zoovy:prod_mfgid); format:text; pretext: Mfg ID: ;'></h5>
 			</hgroup>
-
+-->
 			<div class='priceContainer marginBottom'>
-				<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
-				<h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: MSRP: ;'></h5>
+				<h5 class='prodMSRP msrpPrice' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: MSRP: ;'></h5>
+				<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: <span class="pretext">Our Price: </span>;'></h4>
 				<span class='savings'>
 					<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
 					<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
@@ -692,22 +692,22 @@ this will likely become more flexible in the future. ###
 				<div data-bind="var: product(zoovy:grp_children); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateChildren;hide_summary:true; withInventory:1; withVariations:1;"></div>
 			</div>
 
+			<div class='floatRight'>
+				<div data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships in ;posttext: day(s);' class='latency marginBottom'></div>
+				<div data-app-role='timeInTransit' class='displayNone'></div>
 
-			<div data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships in ;posttext: day(s);' class='latency marginBottom'></div>
-			<div data-app-role='timeInTransit' class='displayNone'></div>
+				<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'modal'}); return false;">
 
-			<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'modal'}); return false;">
-
-				<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
-				<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:1;' class='borderNone'></fieldset>
-
-				<input type='submit' value='Add to Cart' class='ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
-			</form>
-
+	<!--				<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset> -->
+					<input type='submit' value='Add to Bag' class='floatRight ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone cornerButton' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
+					<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Qty: ; defaultValue:1;' class='borderNone floatRight'></fieldset>
+				</form>
+			</div>
+			
 			<div data-bind='var:product(zoovy:prod_cpsiawarning); format:cpsiaWarning; extension:myRIA;'></div>
 			<div data-bind='var:product(zoovy:qty_price);format:quantityDiscounts; extension:store_product; pretext:Quantity Discounts:; className:marginBottom;'></div>
 
-			<section class='marginBottom'>
+			<section class='marginBottom clearfix'>
 				<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
 				<span data-bind='var: reviews(reviews.total); format:text;posttext: from ;posttext: reviews; className:numReviews;'></span>
 			</section>
@@ -751,7 +751,6 @@ this will likely become more flexible in the future. ###
 				<div class='tabContent' data-anytab-content='prodFeatures'>
 					<div data-bind='var: product(zoovy:prod_features); format:wiki; wikiFormats:myRIA;'></div>
 				</div>
-
 
 				<div  class='tabContent' data-anytab-content='prodReviews'>
 

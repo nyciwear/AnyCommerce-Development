@@ -18,7 +18,8 @@ a:visited, a:hover {color:#f05524;}
 .catName {text-align:center;}
 .quickView {color:#ffffff; background-color:#F05524; border:1px outset;}
 .quickView:hover {color:#F05524; background-color:#ffffff;}
-	
+button.cornerButton, input.cornerButton, .cornerButton {height:1.5em; width:100%; background:#97AE3C url('images/prodList_atc_corner-16x16.png') no-repeat left top; border: 1px outset; border-radius:0; color:#ffffff; text-align:center; padding:0;}
+button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:#1C94C4;}
 /*****************************************************************
 end global
 *****************************************************************/
@@ -166,13 +167,11 @@ productListTemplate, productListTemplateResults
 .pLT h5, .pLTR h5 {height:4.3em; font-weight:normal; color:#4D8092;}
 .pLT h5:hover,.pLTR h5:hover {font-weight:normal; color:#404040;}
 .pLT h6, .pLTR h6 {font-weight:normal; color:#58595B;}
-.pLT .msrpPrice {text-decoration:line-through;}
+.msrpPrice {text-decoration:line-through; font-weight:normal;}
 .pLT .price, .pLT .price span.cents, .pLTR .price, .pLTR .price span.cents  {font-weight:bold; color:#97AE3C;}
 .pLT .price span {font-weight:normal; color:#58595B;}
 .pLT form {margin:0.5em 0;}
 .pLTR .moreDetails {padding:0.1em; margin:0.5em 0;}
-.pLT form button, .pLTR .moreDetails {height:1.5em; width:100%; background:#97AE3C url('images/prodList_atc_corner-16x16.png') no-repeat left top; border: 1px outset; border-radius:0; color:#ffffff; text-align:center;}
-.pLT form button:hover, .pLTR .moreDetails:hover {color:#1C94C4;}
 .pLT form button span.ui-button-text {padding:0;}
 
 /*****************************************************************
@@ -184,10 +183,19 @@ end productListTemplate
 productTemplate
 *****************************************************************/
 
-.imageContainer {width:40%; padding:0 1.5em 0 0; float:left;}
+.prodViewerContainer {width:90%; margin:0 auto;}
+.imageContainer {max-height:270px; width:40%; padding:0 1.5em 0 0; float:left;}
 .imageContainer img {height:auto; max-width:100%;}
+
 .prodSummaryContainer {width:50%; float:left;}
 .tabbedProductContentTD {clear:both;}
+.priceContainer {color:#808284; line-height:1.5em; font-weight:normal; margin:0.7em 0 0 0;}
+.basePrice, .basePrice span.cents {color:#F05524;  font-weight:bold; font-size:1.5em;}
+.basePrice span.cents {font-size:1em;}
+.basePrice span.pretext {color:#808284; font-weight:normal;  font-size:0.7em;}
+.latency {font-size:0.75em; text-align:right; color:#808284; margin:0 0 0.5em 0;}
+.productPage .prodViewerAddToCartForm {float:right; color:#808284;}
+.productPage .prodViewerAddToCartForm .cornerButton {width:10em; margin:0 0 0 1em; }
 
 /*****************************************************************
 end productTemplate
@@ -252,9 +260,6 @@ media queries
 /*homepage*/
 	.sideBannerCont {font-size:0.6em; max-height:26.6875em;}
 	.mainBannerPagination {font-size:0.7em;}
-/*product page*/
-	.imageContainer {width:70%; margin:0 auto; padding:0; float:none;}
-	.prodSummaryContainer {width:90%; margin:0 auto; float:none; clear:both;}
 }
 
 /*MEDIA 480*/
@@ -271,6 +276,10 @@ media queries
 	.navList {height:6.5em;}
 	.navListItem {padding:2% 0 0 18%;}
 	.navListItem:first-child {padding:2% 0 0 6%;}
+/*product page*/
+	.prodViewerContainer {font-size:0.8em;}
+	.imageContainer {width:70%; margin:0 auto; padding:0; float:none;}
+	.prodSummaryContainer {width:90%; margin:0 auto; float:none; clear:both;}
 }
 
 /*MEDIA 320*/
