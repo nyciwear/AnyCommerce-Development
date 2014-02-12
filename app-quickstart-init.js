@@ -19,7 +19,7 @@ app.rq.push(['extension',0,'entomologist','extensions/entomologist/extension.js'
 app.rq.push(['extension',0,'tools_animation','extensions/tools_animation.js']);
 
 //app.rq.push(['extension',1,'google_analytics','extensions/partner_google_analytics.js','startExtension']);
-app.rq.push(['extension',1,'tools_ABtesting','extensions/tools_ABtesting.js']);
+app.rq.push(['extension',1,'tools_ab_testing','extensions/tools_ABtesting.js']);
 //app.rq.push(['extension',0,'partner_addthis','extensions/partner_addthis.js']);
 //app.rq.push(['extension',1,'resellerratings_survey','extensions/partner_buysafe_guarantee.js','startExtension']); /// !!! needs testing.
 //app.rq.push(['extension',1,'buysafe_guarantee','extensions/partner_buysafe_guarantee.js','startExtension']);
