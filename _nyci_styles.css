@@ -44,7 +44,7 @@ end appPreview
 header
 *****************************************************************/
 
-.aboveHeader {height:3.125em; width:100%; background-color:#ffffff;}
+.aboveHeader {height:3.125em; width:100%; background-color:#ffffff; margin:1em 0 0 0;}
 .headerWrapper {max-width:58.125em; margin:0 auto; padding:0; width:100%;}
 .headerLogo {height:100%; background:#ffffff; padding:0 0 0 0.375em;}
 .headerLogo img {max-width:100%;}
