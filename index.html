@@ -359,22 +359,22 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 	<div class='homeSellMid'>
 		<div class='bannerTop'>
 			<p>
-				Top Designer Brands
+				Best Sellers
 			</p>
 			<img src='images/df_mid_tit_bg_right-20x28.png'>
 		</div>
-		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; bgcolor: TTTTTT; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin'></ul>
+		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"10","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResults' class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
 	</div>
 	
 	<div class="clear"></div>
 	<div class='homeSellBottom'>
 		<div class='bannerTop'>
 			<p>
-				Best Sellers
+				Top Designer Brands
 			</p>
 			<img src='images/df_mid_tit_bg_right-20x28.png'>
 		</div>
-		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"10","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResults' class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; bgcolor: TTTTTT; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin'></ul>
 	</div>
 	
 	<div class="clear"></div>
