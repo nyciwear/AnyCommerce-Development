@@ -154,6 +154,13 @@ homepage
 .sideBannerProductListTemplate .more > span  {height:1em; width:1em; background:#2e2e2e url(images/orange_arrow_seedetails-10x11.png) no-repeat center bottom; display:inline-block;}
 
 .homeSellMid, .homeSellBottom {margin:0.5em 0 0 0;}
+.upSell {width:100%;}
+.upSell .left, .upSell .middle, .upSell .right {height:auto; width:33%; margin:0 0 0.5em 0; display:inline-block; position:relative;}
+.upSell .middle {margin:0 auto 0.5em auto;}
+.upSell .left:hover div, .upSell .middle:hover div, .upSell .right:hover div {height:100%; width:100%; display:block; position:absolute; top:0; left:0; padding:1em; background-color:rgba(255,255,255,0.75);}
+.upSell h3, .upSell span {font-style:italic; margin:0 0 1em 0;}
+.upSell span:hover {color:#F05524;}
+.upSell div img {max-width:100%;}
 
 /*****************************************************************
 end homepage

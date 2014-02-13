@@ -157,11 +157,11 @@ ANIMATION TESTING
 		
 				<!-- This list shows until 480res -->
 			<div class='navListList hidePhoneLandscape hidePhonePortrait'>
-				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));' onclick="return showContent('category',{'navcat':'.sunglasses'});">
 					Sunglasses
 					<div class='dropdown wrapper displayNone' data-height='402'></div>
 				</div>
-				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));' onclick="return showContent('category',{'navcat':'.eyeglasses'});">
 					Eyeglasses
 					<div class='dropdown wrapper displayNone' data-height='402'></div>
 				</div>
@@ -185,8 +185,8 @@ ANIMATION TESTING
 			
 				<!-- This list shows after 480res -->
 			<div class='navListList displayNone showPhoneLandscape showPhonePortrait'>
-				<div class='navListItem'>Sunglassed</div>
-				<div class='navListItem'>Eyeglasses</div>
+				<div class='navListItem pointer' onclick="return showContent('category',{'navcat':'.sunglasses'});">Sunglassed</div>
+				<div class='navListItem pointer' onclick="return showContent('category',{'navcat':'.eyeglasses'});">Eyeglasses</div>
 				<div class='navListItem'>Brands</div>
 				<div class='navListItem'>Any</div>
 				<div class='navListItem'>Other</div>
@@ -370,11 +370,45 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 	<div class='homeSellBottom'>
 		<div class='bannerTop'>
 			<p>
-				Top Designer Brands
+				Special Offers...
 			</p>
 			<img src='images/df_mid_tit_bg_right-20x28.png'>
 		</div>
-		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; bgcolor: TTTTTT; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin'></ul>
+		<div class='upSell'>
+			<div class='left'>
+				<div class='displayNone pointer' onclick="return showContent('category',{'navcat':'.sunglasses'});">
+					<h3>Arnette...</h3>
+					<p>
+						Put some content here to describe how awesome this product is
+						<br>and why the user should buy!
+					</p>
+					<span>Shop Arnette Now &#62; &#62;</span>
+				</div>
+				<img src='images/test/arnette-341x227.jpeg' alt='Arnette Promo'>
+			</div>
+			<div class='middle'>
+				<div class='displayNone pointer' onclick="return showContent('category',{'navcat':'.sunglasses.ray_ban'});">
+					<h3>Polarized...</h3>
+					<p>
+						Why buy polarized sunglasses? 
+						<br>because they block more light waves giving you a better scene.
+					</p>
+					<span>Checkout Polarized Specials &#62; &#62;</span>
+				</div>
+				<img src='images/test/polarized_light-341x227.jpg' alt='Polorized Promo'>
+			</div>
+			<div class='right'>
+				<div class='displayNone pointer' onclick="return showContent('category',{'navcat':'.eyeglasses'});">
+					<h3>Eyeglasses...</h3>
+					<p>
+						Not everybody needs them
+						<br>but you can stand apart in style else with these. 
+					</p>
+					<span>Get the eyeglasses that are you &#62; &#62;</span>
+				</div>
+				<img src='images/test/clear-341x227.jpg' alt='Eyeglasses Promo'>
+			</div>
+		</div>
 	</div>
 	
 	<div class="clear"></div>
