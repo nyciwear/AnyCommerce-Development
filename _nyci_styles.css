@@ -29,10 +29,10 @@ appPreview
 *****************************************************************/
 
 body #appPreView	{width:64em; height:25em; margin:10% auto 0 auto;}
-#appPreView #loader {height:70%; widht:100%;}
+#appPreView #loader {height:70%; width:100%;}
 #appPreView #loader .alignCenter {height:70%; width:100%; position:relative; overflow:hidden;}
 .previewLogo {height:27%; width:19%; margin:0 0 0 -10%; background:transparent url('images/nyci_logo2_2.png') no-repeat center center; position:absolute; left:50%; bottom:-1%;}
-#appPreViewProgressBar {height:52%; width:10%; background-color:#f9fa57; margin:0 0 0 -5%; box-shadow:0px 0px 4px 1px orange; border-radius:50%; position:absolute; left:50%; bottom:-29%;}
+#appPreViewProgressBar {height:52%; width:10%; background-color:#f9fa57; margin:0 0 0 -5%; box-shadow:0 0s 4px 1px orange; border-radius:50%; position:absolute; left:50%; bottom:-29%;}
 #appPreViewProgressText {text-align:center;}
 
 /*****************************************************************
@@ -62,7 +62,7 @@ header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; clear:both;} /*
 /*header drop-downs*/
 .navList {height:2em; width:100%; background-color:#ffffff; position:relative;}
 .popOutLinks {height:2em; width:10.563em; background:#ffffff; padding:0 0 0 0.375em;}
-.popOutLinks .dropdown {width:10.563em; padding:0; position:absolute; right:0; top:2em; z-index:100; background-color:#ffffff; box-shadow:2px 2px 1px 0px #000000;}
+.popOutLinks .dropdown {width:10.563em; padding:0; position:absolute; right:0; top:2em; z-index:100; background-color:#ffffff; box-shadow:2px 2px 1px 0 #000000;}
 
 .popSearch,.popCart, .popFavs {height:100%; width:2em; margin:0 6%;}
 .popSearch {background:#ffffff url(images/search_icon_green-28x23.png) no-repeat 0.15em 0.3em;}
@@ -128,7 +128,7 @@ homepage
 
 .homeBannersCont {max-height:25.875em; width:100%; font-style:italic; clear:both; margin:0 0 0.5em 0; overflow:hidden;}
 .bannerTop {height:1.75em; width:100%; background:#ffffff url(images/df_footer_tit_bg-7x29.gif) repeat-x; margin:0 0 0.5em 0;}
-.bannerTop > p {background-color:#2e2e2e; color:#ffffff; display:inline-block; float:left; line-height:1.75em; margin:0; padding:0 1em;}
+.bannerTop > p {background-color:#2e2e2e; color:#ffffff; float:left; line-height:1.75em; margin:0; padding:0 1em;}
 .bannerTop > img {float:left;}
 
 .mainBannerCont {max-height:22.875em; width:75%; position:relative;}
@@ -136,11 +136,11 @@ homepage
 .mainBanner img {max-height:22.875em;}
 .mainBannerPagination {position:absolute; top:2em; right:4em;}
 .mainBannerPagination a {height:1.3em; width:1.3em; background-color:#97AE3C; color:#ffffff; display:inline-block; margin:0 0.5em 0 0; text-align:center;}
-.mainBannerPagination a.selected {background-color:#ffffff; color:#97AE3C;}
+.mainBannerPagination .selected {background-color:#ffffff; color:#97AE3C;}
 
 .sideBannerCont {height:100%; width:25%; background:#2e2e2e; font-style:normal; color:#97AE3C; overflow:hidden; position:relative;}
 .sideBannerCont .title {height:1.55em; width:100%; background-color:#666666; color:#ffffff; font-family:Courier; font-size:2em; text-align:center; line-height:1.7em;}
-.sideBannerCont .title span {height:100%; width:13%; background:#666666 url(images/nyc11_tit_hotitemsblock-29x51.jpg) no-repeat left top; display:inline-block; float:left;}
+.sideBannerCont .title span {height:100%; width:13%; background:#666666 url(images/nyc11_tit_hotitemsblock-29x51.jpg) no-repeat left top; float:left;}
 .sideBannerCont .mpControlContainer {display:none;} /*can be removed if this goes to search from $list*/
 .sideBannerCont .sideBannerProductListTemplate {height:317px; width:100%; margin:0; padding:2em;}
 .sideBannerCont .prodThumbContainer {margin:0 0 0.5em 0;}
@@ -157,7 +157,7 @@ homepage
 .upSell {width:100%;}
 .upSell .left, .upSell .middle, .upSell .right {height:auto; width:33%; margin:0 0 0.5em 0; display:inline-block; position:relative;}
 .upSell .middle {margin:0 auto 0.5em auto;}
-.upSell .left:hover div, .upSell .middle:hover div, .upSell .right:hover div {height:100%; width:100%; display:block; position:absolute; top:0; left:0; padding:1em; background-color:rgba(255,255,255,0.75);}
+.upSell .left:hover div, .upSell .middle:hover div, .upSell .right:hover div {height:100%; width:100%; display:block; position:absolute; top:0; left:0; padding:1em; background-color:#ffffff; background-color:rgba(255,255,255,0.75);}
 .upSell h3, .upSell span {font-style:italic; margin:0 0 1em 0;}
 .upSell span:hover {color:#F05524;}
 .upSell div img {max-width:100%;}
@@ -179,7 +179,7 @@ productListTemplate, productListTemplateResults
 .pLT .price span {font-weight:normal; color:#58595B;}
 .pLT form {margin:0.5em 0;}
 .pLTR .moreDetails {padding:0.1em; margin:0.5em 0;}
-.pLT form button span.ui-button-text {padding:0;}
+.pLT form button .ui-button-text {padding:0;}
 
 /*****************************************************************
 end productListTemplate
@@ -199,7 +199,7 @@ productTemplate
 .priceContainer {color:#808284; line-height:1.5em; font-weight:normal; margin:0.7em 0 0 0;}
 .basePrice, .basePrice span.cents {color:#F05524;  font-weight:bold; font-size:1.5em;}
 .basePrice span.cents {font-size:1em;}
-.basePrice span.pretext {color:#808284; font-weight:normal;  font-size:0.7em;}
+.basePrice .pretext {color:#808284; font-weight:normal;  font-size:0.7em;}
 .latency {font-size:0.75em; text-align:right; color:#808284; margin:0 0 0.5em 0;}
 .productPage .prodViewerAddToCartForm {float:right; color:#808284;}
 .productPage .prodViewerAddToCartForm .cornerButton {width:10em; margin:0 0 0 1em; }
