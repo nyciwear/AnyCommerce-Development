@@ -62,7 +62,7 @@ header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; clear:both;} /*
 /*header drop-downs*/
 .navList {height:2em; width:100%; background-color:#ffffff; position:relative;}
 .popOutLinks {height:2em; width:10.563em; background:#ffffff; padding:0 0 0 0.375em;}
-.popOutLinks .dropdown {width:10.563em; padding:0; position:absolute; left:0; top:2em; z-index:100; background-color:#ffffff; box-shadow:2px 2px 1px 0px #000000;}
+.popOutLinks .dropdown {width:10.563em; padding:0; position:absolute; right:0; top:2em; z-index:100; background-color:#ffffff; box-shadow:2px 2px 1px 0px #000000;}
 
 .popSearch,.popCart, .popFavs {height:100%; width:2em; margin:0 6%;}
 .popSearch {background:#ffffff url(images/search_icon_green-28x23.png) no-repeat 0.15em 0.3em;}
@@ -83,7 +83,7 @@ header .cart span {color:#97AE3C;}
 .navListList {width:75%; float:left; list-style:none; margin:0.375em 0 0 0;}
 .navListItem {float:left; padding:0 0 0 9%;}
 .navListItem:first-child {float:left; padding:0 0 0 5%;}
-.navListItem .dropdown {width:58.125em; position:absolute; left:0; top:2em; z-index:100; background:#ffffff;}
+.navListItem .dropdown {width:58.125em; position:absolute; left:0; top:2em; z-index:100; background:#ffffff; border-top:1px solid #000;}
 /*end header drop-downs*/
 
 .discountBanner {height:2em; width:100%; background-color:#97AE3C; color:#ffffff; clear:both; font-size:1.5em; line-height:2em; margin:0 0 0.5em 0; text-align:center;}
@@ -244,7 +244,9 @@ media queries
 /*MEDIA 720 4col*/
 @media screen and (max-width: 45em) {
 	.wrapper {height:100%; max-width:40em; margin:0 auto;}
+/*header*/
 	.navListList {width:72%;}
+/*homepage*/
 	.sideBannerCont {max-height:25.6875em;}
 /*product page*/
 /*	.prodSummaryContainer {width:40%;}*/
@@ -256,7 +258,8 @@ media queries
 	.wrapper {height:100%; max-width:35.55555em; margin:0 auto;}
 /*header*/
 	.navList {height:4em;}
-	.navListList {width:100%;}
+	.navListList {width:90%; clear:both; float:none; margin:0 auto; padding:0.375em 0 0 0;}
+	.navListItem .dropdown {top:4em;}
 /*homepage*/
 	.sideBannerCont {font-size:0.6em; max-height:26.6875em;}
 	.mainBannerPagination {font-size:0.7em;}
