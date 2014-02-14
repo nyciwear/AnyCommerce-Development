@@ -341,7 +341,7 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 				<img src='images/carrera_banner_6000s_600w.jpg'>
 				<img src='images/gucci_banner.jpg'>
 			</div>
-			<div class='mainBannerPagination'></div>
+			<div class='mainBannerPagination carPagination'></div>
 		</div>
 			
 		<div class='sideBannerCont floatRight'>
@@ -352,8 +352,8 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 			<ul id='homeSideBanner' data-bind='var: elastic-native({"size":"10","mode":"elastic-native","filter":{"term":{"tags":"IS_NEWARRIVAL"}}}); format: productSearch; extension: myRIA; loadsTemplate: sideBannerProductSearchTemplate;' class='listStyleNone fluidList clearfix noPadOrMargin productList sideBanner'></ul>
 			<!-- UNCOMMENT THE UL BELOW, AND COMMENT OUT THE ONE ABOVE TO WORK W/ LISTS IN THE AREA INSTEAD OF SEARCH RESULTS (MAY ALSO NEED TO CHANGE THE LIST ;P )
 			<ul data-bind="var: list($arnette.@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: sideBannerProductListTemplate; withReviews:1; items_per_page: 25;" class="listStyleNone fluidList clearfix noPadOrMargin productList sideBanner"></ul> -->
-			<div class='sideBannerPrev displayNone'></div>
-			<div class='sideBannerNext displayNone'></div>
+			<div class='sideBannerPrev smPrvArrow'></div>
+			<div class='sideBannerNext smNxtArrow'></div>
 			<div class='all pointer' onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'tags':'IS_NEWARRIVAL'}}}});">SEE THEM ALL</div>
 		</div>
 	</div>
@@ -366,7 +366,10 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 			</p>
 			<img src='images/df_mid_tit_bg_right-20x28.png'>
 		</div>
-		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"10","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResults' class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"30","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResults' class='listStyleNone fluidList clearfix noPadOrMargin productList bestSellerCar'></ul>
+		<div class='bestPrev smPrvArrow floatLeft'></div>
+		<div class='bestNext smNxtArrow floatRight'></div>
+		<div class='bestBannerPagination carPagination'></div>
 	</div>
 	
 	<div class="clear"></div>
@@ -405,7 +408,7 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 					<h3>Eyeglasses...</h3>
 					<p>
 						Not everybody needs them
-						<br>but you can stand apart in style else with these. 
+						<br>but you can stand apart in style with these. 
 					</p>
 					<span>Get the eyeglasses that are you &#62; &#62;</span>
 				</div>
@@ -614,9 +617,9 @@ container ul should have lineItemProdlist class on it instead of productList
 <!-- Used with elastic search on homepage for small banner next to main banner. Only has link to product, no quickview or atc -->
 <li id='sideBannerProductSearchTemplate' class='loadingBG sideBannerProductListTemplate floatLeft' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" >
 	<div class='pointer' onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
-		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL; isElastic:1; bgcolor:ffffff;' width='181' height='181' />
+		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(images); format:imageURL; isElastic:1; bgcolor:ffffff;' width='170' height='170' />
 	</div>
-	<h5 data-bind='var: product(prod_name); format:truncText; numCharacters:45;'></h5>
+	<h5 data-bind='var: product(prod_name); format:truncText; numCharacters:60;'></h5>
 	<h2 data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price; pretext: Only: ;'></h2>
 	<div class='pointer more' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')})"><span></span>more details</div>
 </li>

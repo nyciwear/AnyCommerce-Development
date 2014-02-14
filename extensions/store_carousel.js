@@ -39,6 +39,7 @@ var store_carousel = function() {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
 					app.ext.store_carousel.u.runHomeBannerCarousel($context);
 					app.ext.store_carousel.u.runSideBannerCarousel($context);
+					app.ext.store_carousel.u.runHomeBestSellerCarousel($context);
 				}]);
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
@@ -121,18 +122,50 @@ var store_carousel = function() {
 					setTimeout(function(){
 						$target.carouFredSel({
 							width		: '99%',
+							height		: '550px',
 							responsive	: true,
 							items		: 
 							{
 								minimum : 1,
 								visible	: 1
 							},
-							auto		: //false,
+							auto		: false,
+					//		{
+					//			pauseOnHover	: 'immediate'
+					//		},
+							prev		: '.sideBannerPrev',
+							next		: '.sideBannerNext',
+							swipe: {
+								onMouse	: true,
+								onTouch	: true
+							}
+						});
+					},2000);
+				}
+			},
+			
+			runHomeBestSellerCarousel : function($context) {
+				var $target = $('.bestSellerCar',$context);
+				if($target.data('isCarousel')) {} //only make it a carousel once.
+				else {
+					$target.data('isCarousel',true);
+					//for whatever reason, caroufredsel needs to be executed after a moment.
+					setTimeout(function(){
+						$target.carouFredSel({
+							width		: '99%',
+							responsive	: true,
+							items		: 
+							{
+								minimum : 1,
+								visible	: 5
+							},
+							auto		: 
 							{
 								pauseOnHover	: 'immediate'
 							},
-							prev		: '.sideBannerPrev',
-							next		: '.sideBannerNext',
+							prev		: '.bestPrev',
+							next		: '.bestNext',
+							pagination	: '.bestBannerPagination',
 							swipe: {
 								onMouse	: true,
 								onTouch	: true
