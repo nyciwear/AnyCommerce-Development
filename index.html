@@ -382,7 +382,7 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 		</div>
 		<div class='upSell'>
 			<div class='left'>
-				<div class='displayNone pointer' onclick="return showContent('category',{'navcat':'.sunglasses'});">
+				<div class='displayNone pointer' onclick="return showContent('category',{'navcat':'.sunglasses.arnette'});">
 					<h3>Arnette...</h3>
 					<p>
 						Put some content here to describe how awesome this product is
@@ -735,6 +735,7 @@ this will likely become more flexible in the future. ###
 					<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
 					<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
 				</span>
+				<div data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: More Products by ; className:searchLink;'></div>
 			</div>
 			<div class="socialLinks"></div>
 
