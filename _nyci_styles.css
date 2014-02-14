@@ -16,10 +16,13 @@ a:visited, a:hover {color:#f05524;}
 .productList, .categoryList {width:54.4em; margin:0 auto;}
 .minimalMode .productList {width:16.4em;} 
 .catName {text-align:center;}
+
 .quickView {color:#ffffff; background-color:#F05524; border:1px outset;}
 .quickView:hover {color:#F05524; background-color:#ffffff;}
+
 button.cornerButton, input.cornerButton, .cornerButton {height:1.5em; width:100%; background:#97AE3C url('images/prodList_atc_corner-16x16.png') no-repeat left top; border: 1px outset; border-radius:0; color:#ffffff; text-align:center; padding:0;}
 button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:#1C94C4;}
+
 .carPagination a {height:1.3em; width:1.3em; background-color:#97AE3C; color:#ffffff; display:inline-block; margin:0 0.5em 0 0; text-align:center;}
 .carPagination .selected {background-color:#ffffff; color:#97AE3C;}
 .smPrvArrow {height:1.5em; width:1.1em; background:url(images/carousel_nav_nyc_v1-290x139.png) no-repeat 0 -6.362em; display:none; cursor:pointer;}
