@@ -28,6 +28,40 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 .smPrvArrow {height:1.5em; width:1.1em; background:url(images/carousel_nav_nyc_v1-290x139.png) no-repeat 0 -6.362em; display:none; cursor:pointer;}
 .smNxtArrow {height:1.5em; width:1.1em; background:url(images/carousel_nav_nyc_v1-290x139.png) no-repeat -11.9em -6.362em;  display:none; cursor:pointer;}
 
+/*tabs*/
+.tabbedProductContent.ui-tabs .ui-tabs-nav li{
+	background:none; border:none; margin:1px 0 -1px 0;
+}	
+/*prodReviewsTab ui-state-default ui-corner-top*/
+.tabbedProductContent .ui-state-default .ui-tabs-anchor{
+	/*background:url("images/df_tab_2-157x30.gif") no-repeat scroll right center #F05524;*/ background-color:#000000; border:none; z-index:1;
+}
+/*prodReviewsTab ui-state-default ui-corner-top ui-state-active ui-tabs-active*/
+.tabbedProductContent .ui-state-default.ui-state-active.ui-tabs-active .ui-tabs-anchor {
+	background:url("images/df_tab_1-157x30.gif") no-repeat scroll left #F05524; border:none; z-index:10;
+}
+/*prodDescTab ui-state-default ui-corner-top*/
+.tabbedProductContent .prodDescTab.ui-state-default .ui-tabs-anchor {
+	/*background:url("images/df_tab_4-17x28.png") no-repeat scroll left #000000;*/ background-color:#000000; border:none; z-index:10;
+}
+/*prodDescTab ui-state-default ui-corner-top ui-state-active ui-tabs-active*/
+.tabbedProductContent .prodDescTab.ui-state-default.ui-state-active.ui-tabs-active .ui-tabs-anchor {
+	background:url("images/df_tab_3-17x28.png") no-repeat scroll right bottom #F05524; border:none; z-index:10;
+}
+.tabbedProductContent.ui-tabs .ui-tabs-nav .ui-tabs-anchor {width:9.8125em; padding:0.2em 3em;}
+
+
+
+
+/*.shadetabs li a{ background:url(/media/merchant/nyciwear/_ticket_360735/df_tab_2-157x30.gif) no-repeat left top; color:#FFFFFF; height:30px; line-height:30px; text-align:center; font-size:12px; text-decoration:none; width:157px; display:block; float:left; /*margin-right:-19px;*/ z-index:1; position:relative;}
+/*.shadetabs li a.selected{ background:url(/media/merchant/nyciwear/_ticket_360735/df_tab_1-157x30.gif) no-repeat left; position:relative; z-index:10; /*margin-right:19px;*/}
+
+
+/*.shadetabs li.first a{background:url(/media/merchant/nyciwear/_ticket_360735/df_tab_4-157x30.gif) no-repeat left; position:relative; z-index:10; /*margin-left:0px;*/}
+/*.shadetabs li.first a.selected{background:url(/media/merchant/nyciwear/_ticket_360735/df_tab_3-157x30.gif) no-repeat left; position:relative; z-index:10; /*margin-right:19px;*/}
+
+
+
 /*****************************************************************
 end global
 *****************************************************************/
