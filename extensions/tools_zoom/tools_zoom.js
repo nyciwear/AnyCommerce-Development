@@ -84,7 +84,7 @@ optional:
 	theight - A height to be passed to the app.u.makeImage call for the thumbnail image(s).
 	twidth - A width to be passed to the app.u.makeImage call for the thumbnail image(s).
 	zheight - A height to be passed to the app.u.makeImage call for the larger, zoom size image.
-	zwidth - TA width to be passed to the app.u.makeImage call for the larger, zoom size image.
+	zwidth - A width to be passed to the app.u.makeImage call for the larger, zoom size image.
 	
 !!This extension will work with the tools_lightbox extension using the bindData params: hrefAttr, w, & h.
 	(doesn't actually use the extension for anything but to load the lightbox plugin, which could be done

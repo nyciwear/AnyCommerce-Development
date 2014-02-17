@@ -29,6 +29,7 @@ app.rq.push(['extension',1,'tools_ab_testing','extensions/tools_ABtesting.js']);
 app.rq.push(['extension',0,'store_nyci','extensions/store_nyci.js']); //general app specific functions
 app.rq.push(['extension',0,'store_dropdown','extensions/store_dropdown.js']); //creates drop-downs
 app.rq.push(['extension',0,'store_carousel','extensions/store_carousel.js']); //creates carousels using carouFedSel
+app.rq.push(['extension',0,'tools_zoom','extensions/tools_zoom/tools_zoom.js']); //enables zoomed images
 
 app.rq.push(['script',0,(document.location.protocol == 'file:') ? app.vars.testURL+'jsonapi/config.js' : app.vars.baseURL+'jsonapi/config.js']); //The config.js is dynamically generated.
 app.rq.push(['script',0,app.vars.baseURL+'model.js']); //'validator':function(){return (typeof zoovyModel == 'function') ? true : false;}}
