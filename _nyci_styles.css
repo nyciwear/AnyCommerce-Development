@@ -50,8 +50,7 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 }
 .tabbedProductContent.ui-tabs .ui-tabs-nav .ui-tabs-anchor {width:9.8125em; padding:0.2em 3em;}
 .tabContinuation {height:1.7em; width:62%; background-color:#000000; position:absolute; top:0.46em; right:0.2em; z-index:0;}
-
-
+.tabbedProductContent .ui-button.ui-state-default {padding:.1em 0.3em;}
 
 
 /*.shadetabs li a{ background:url(/media/merchant/nyciwear/_ticket_360735/df_tab_2-157x30.gif) no-repeat left top; color:#FFFFFF; height:30px; line-height:30px; text-align:center; font-size:12px; text-decoration:none; width:157px; display:block; float:left; /*margin-right:-19px;*/ z-index:1; position:relative;}
