@@ -49,6 +49,7 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 	background:url("images/df_tab_3-17x28.png") no-repeat scroll right bottom #F05524; border:none; z-index:10;
 }
 .tabbedProductContent.ui-tabs .ui-tabs-nav .ui-tabs-anchor {width:9.8125em; padding:0.2em 3em;}
+.tabContinuation {height:1.7em; width:62%; background-color:#000000; position:absolute; top:0.46em; right:0.2em; z-index:0;}
 
 
 
