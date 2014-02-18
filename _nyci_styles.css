@@ -235,7 +235,7 @@ productTemplate
 .prodViewerContainer {width:90%; margin:0 auto;}
 .imageContainer {max-height:270px; width:40%; padding:0 1.5em 0 0; float:left;}
 .imageContainer img {height:auto; max-width:100%;}
-.lb-outerContainer {height:510px !important; width:510px !important;}
+.lb-outerContainer {height:580px !important; width:580px !important;}
 
 .prodSummaryContainer {width:50%; float:left;}
 .tabbedProductContentTD {clear:both;}
@@ -252,8 +252,9 @@ productTemplate
 .productListTemplateThumb .prodThumbContainer {border:1px solid #6b6b6b;}
 .productListTemplateThumb .thumbImage {position:relative;}
 .prodThumbZoom {height:12.5em; width:12.5em; top:5em; left:-4.75em; position:absolute; z-index:10; border:1px solid #6b6b6b;}
+.zoomHeader {height:auto; width:100%; padding:0.2em; color:#ffffff; background-color:#6b6b6b; position:absolute; top:0; left:0; z-index:11; font-size:0.6em; text-align:center;}
 .productPage .prodViewerAddToCartForm {float:right; color:#808284;}
-.productPage .prodViewerAddToCartForm .cornerButton {width:10em; margin:0 0 0 1em; }
+.productPage .prodViewerAddToCartForm .cornerButton {width:10em; margin:0 0 0 1em;}
 
 /*****************************************************************
 end productTemplate

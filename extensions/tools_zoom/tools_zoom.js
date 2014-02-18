@@ -97,24 +97,33 @@ these extensions.
 ****************************************/
 		
 			imageZoom : function($tag, data) {
-		//		app.u.dump('data.value:'); app.u.dump(data.value); app.u.dump('thumbclass'); app.u.dump($tag.data('thumbclass'));
+				app.u.dump('data.value:'); app.u.dump(data.value); app.u.dump('thumbclass'); app.u.dump($tag.data('thumbclass'));
 				var pid = app.u.makeSafeHTMLId(data.value.pid);
 				
 					//create containers & classes for images
-				var $mainImageCont = ('<div class="mainImageCont_'+data.value.pid+'"></div>');
-
+				var $mainImageCont = $('<div class="mainImageCont_'+data.value.pid+'"></div>');
+				
 					//if the zoom will not be in the original image container, different properties are needed
 				if($tag.data('zoomclass')) {
-					var $zoomImageCont = ('<div class="displayNone '+$tag.data('zoomclass')+' '+$tag.data('zoomclass')+'_'+data.value.pid+'"></div>');
+					var $zoomImageCont = $('<div class="displayNone '+$tag.data('zoomclass')+' '+$tag.data('zoomclass')+'_'+data.value.pid+'"></div>');
 					var zoomImageClass = '.'+$tag.data('zoomclass')+'_'+data.value.pid;
 					var seperateZoomIn = function() {$(zoomImageClass).show();};
 					var seperateZoomOut = function() {$(zoomImageClass).hide();};
 					$tag.append($mainImageCont).append($zoomImageCont);
+					
+						//check if there needs to be a header on the main image and add if sort
+					if($tag.data('zoomheader')) {
+						var header = data.bindData.isElastic ? data.value.$tag.data('zoomHeader') : data.value['%attribs']['zoovy:'+$tag.data('zoomheader')];
+						var $zoomHeader = $('<span class="zoomHeader zoomHeader_'+pid+'">'+header+'</span>');
+						$zoomImageCont.append($zoomHeader);
+					}
 				}
 				else {
 					var zoomImageClass = '.mainImageCont_'+data.value.pid;
 					$tag.append($mainImageCont)
 				}
+				
+				
 				$mainImageCont = $('.mainImageCont_'+data.value.pid,$tag);
 								
 				

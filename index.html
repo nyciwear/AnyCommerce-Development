@@ -630,7 +630,7 @@ container ul should have lineItemProdlist class on it instead of productList
 	<div class='prodThumbContainer pointer' onClick="showContent('product',{'pid':$(this).attr('data-pid')});" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' data-toolTipThumb="data-toolTipThumb">
 		<!-- <img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='55' height='55' /> -->
 			<!-- IF height or width ARE CHANGED BELOW, ALSO CHANGE ON THE data-zoomclass IN CSS -->
-		<a class='thumbImage' data-bind="useParentData:true; format:imageZoom; extension:tools_zoom;"  height='35' width='35' zheight='200' zwidth='200' data-zoomclass='prodThumbZoom'></a>
+		<a class='thumbImage' data-bind="useParentData:true; format:imageZoom; extension:tools_zoom;"  height='35' width='35' zheight='200' zwidth='200' data-zoomclass='prodThumbZoom' data-zoomHeader='prod_name'></a>
 	</div>
 </li>
 
@@ -713,7 +713,7 @@ this will likely become more flexible in the future. ###
 			<div class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
 				<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-				<a data-bind="useParentData:true; format:imageZoom; extension:tools_zoom; isThumbs:1; hrefAttr:%attribs.zoovy:prod_image1; w:500; h:500;"  height='320' width='320' zheight='800' zwidth='800' theight='50' twidth='50'></a>
+				<a data-bind="useParentData:true; format:imageZoom; extension:tools_zoom; isThumbs:1; hrefAttr:%attribs.zoovy:prod_image1; w:570; h:570;"  height='320' width='320' zheight='800' zwidth='800' theight='50' twidth='50'></a>
 
 			</div>
 <!--
