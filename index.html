@@ -626,6 +626,13 @@ container ul should have lineItemProdlist class on it instead of productList
 </li>
 
 
+<li id='productListTemplateThumb' class='loadingBG productListTemplateThumb' >
+	<div class='prodThumbContainer pointer' onClick="showContent('product',{'pid':$(this).attr('data-pid')});" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' data-toolTipThumb="data-toolTipThumb">
+		<img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='55' height='55' />
+	</div>
+</li>
+
+
 </ul>
 
 
@@ -739,7 +746,10 @@ this will likely become more flexible in the future. ###
 				<div data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: More Products by ; className:searchLink;'></div>
 			</div>
 			<div class="socialLinks"></div>
-
+			
+			<div id='prodSiblings' class='clearfix prodSiblings'>
+				<ul class='listStyleNone noPadOrMargin fluidList clearfix' data-bind="var: product(zoovy:prod_list1); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateThumb; hide_multipage: true;before:<span class='colorHeader'>Colors</span>; withInventory:1; withVariations:1;"></ul>
+			</div>
 
 			<div class='marginBottom fullWidth gridTable' data-app-role='childrenSiblingsContainer'>
 				<div data-bind="var: product(zoovy:grp_children); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateChildren;hide_summary:true; withInventory:1; withVariations:1;"></div>

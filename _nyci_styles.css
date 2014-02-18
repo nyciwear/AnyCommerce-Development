@@ -235,6 +235,7 @@ productTemplate
 .prodViewerContainer {width:90%; margin:0 auto;}
 .imageContainer {max-height:270px; width:40%; padding:0 1.5em 0 0; float:left;}
 .imageContainer img {height:auto; max-width:100%;}
+.lb-outerContainer {height:510px !important; width:510px !important;}
 
 .prodSummaryContainer {width:50%; float:left;}
 .tabbedProductContentTD {clear:both;}
@@ -246,9 +247,11 @@ productTemplate
 .searchLink span {text-decoration:none;}
 .searchLink span:hover {color:#2E2E2E;}
 .latency {font-size:0.75em; text-align:right; color:#808284; margin:0 0 0.5em 0;}
+.colorHeader {height:auto; width:100%; display:block; font-size:0.7em; padding:0 0 0.2em 0.5em; background:#6B6B6B url(images/df_whiteangle-45x45.png) no-repeat right center; color:#ffffff;}
+.fluidList  .productListTemplateThumb  {margin:0.2em;}
+.productListTemplateThumb .prodThumbContainer {border:1px solid #6b6b6b;}
 .productPage .prodViewerAddToCartForm {float:right; color:#808284;}
 .productPage .prodViewerAddToCartForm .cornerButton {width:10em; margin:0 0 0 1em; }
-.lb-outerContainer {height:510px !important; width:510px !important;}
 
 /*****************************************************************
 end productTemplate
