@@ -20,6 +20,7 @@
 
 //	Intended as a free, open source alternative to 3rd party plugins like Magic Zoom Plus.
 //	Utilizes the jQuery Zoom jQuery plugin: http://jacklmoore.com/zoom/
+//	Utilizes the Lightbox 2 jQuery plugin: http://lokeshdhakar.com/projects/lightbox2/
 
 var tools_zoom = function() {
 	var theseTemplates = new Array('');
@@ -33,6 +34,9 @@ var tools_zoom = function() {
 				var r = false; 
 
 				app.u.loadResourceFile(['script',0,'extensions/tools_zoom/zoom/js/jquery.zoom.min.js']);
+				
+				app.u.loadResourceFile(['script',0,'extensions/tools_lightbox/lightbox/js/lightbox-2.6.min.js']);
+				app.u.loadResourceFile(['css',0,'extensions/tools_lightbox/lightbox/css/lightbox.css','css-lightbox']);
 				
 				r = true;
 
@@ -84,12 +88,11 @@ optional:
 	theight - A height to be passed to the app.u.makeImage call for the thumbnail image(s).
 	twidth - A width to be passed to the app.u.makeImage call for the thumbnail image(s).
 	zheight - A height to be passed to the app.u.makeImage call for the larger, zoom size image.
-	zwidth - A width to be passed to the app.u.makeImage call for the larger, zoom size image.
+	zwidth - TA width to be passed to the app.u.makeImage call for the larger, zoom size image.
 	
-!!This extension will work with the tools_lightbox extension using the bindData params: hrefAttr, w, & h.
-	(doesn't actually use the extension for anything but to load the lightbox plugin, which could be done
-		independently of the extension this will be changed later)
-	
+!!This extension loads lightbox.js, but works independently of the lightbox extension. Lightbox can be used 
+here, but if the lightbox extension is turned on for other uses, be sure to only load lightbox.js in one of
+these extensions.
 					 
 ****************************************/
 		

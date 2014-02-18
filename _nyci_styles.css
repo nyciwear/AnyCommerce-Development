@@ -53,15 +53,6 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 .tabbedProductContent .ui-button.ui-state-default {padding:.1em 0.3em;}
 
 
-/*.shadetabs li a{ background:url(/media/merchant/nyciwear/_ticket_360735/df_tab_2-157x30.gif) no-repeat left top; color:#FFFFFF; height:30px; line-height:30px; text-align:center; font-size:12px; text-decoration:none; width:157px; display:block; float:left; /*margin-right:-19px;*/ z-index:1; position:relative;}
-/*.shadetabs li a.selected{ background:url(/media/merchant/nyciwear/_ticket_360735/df_tab_1-157x30.gif) no-repeat left; position:relative; z-index:10; /*margin-right:19px;*/}
-
-
-/*.shadetabs li.first a{background:url(/media/merchant/nyciwear/_ticket_360735/df_tab_4-157x30.gif) no-repeat left; position:relative; z-index:10; /*margin-left:0px;*/}
-/*.shadetabs li.first a.selected{background:url(/media/merchant/nyciwear/_ticket_360735/df_tab_3-157x30.gif) no-repeat left; position:relative; z-index:10; /*margin-right:19px;*/}
-
-
-
 /*****************************************************************
 end global
 *****************************************************************/
@@ -257,6 +248,7 @@ productTemplate
 .latency {font-size:0.75em; text-align:right; color:#808284; margin:0 0 0.5em 0;}
 .productPage .prodViewerAddToCartForm {float:right; color:#808284;}
 .productPage .prodViewerAddToCartForm .cornerButton {width:10em; margin:0 0 0 1em; }
+.lb-outerContainer {height:510px !important; width:510px !important;}
 
 /*****************************************************************
 end productTemplate

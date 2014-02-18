@@ -701,13 +701,13 @@ this will likely become more flexible in the future. ###
 	
 		<div class='imageContainer'>
 
-			<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).attr("data-pid")});' class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
+			<div class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
 				<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-				<div data-bind="useParentData:true; format:imageZoom; extension:tools_zoom; isThumbs:1;"  height='320' width='320' zheight='800' zwidth='800' theight='50' twidth='50'></div>
+				<a data-bind="useParentData:true; format:imageZoom; extension:tools_zoom; isThumbs:1; hrefAttr:%attribs.zoovy:prod_image1; w:500; h:500;"  height='320' width='320' zheight='800' zwidth='800' theight='50' twidth='50'></a>
 
 			</div>
-
+<!--
 			<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs'>
 
 				<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL;' alt='' width='100' height='100' /></div>
@@ -717,7 +717,7 @@ this will likely become more flexible in the future. ###
 				<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL;' alt='' width='100' height='100' /></div>
 
 			</div>
-
+-->
 		</div>
 
 		<div class='prodSummaryContainer marginBottom no_underline'>
