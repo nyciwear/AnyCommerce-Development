@@ -250,6 +250,8 @@ productTemplate
 .colorHeader {height:auto; width:100%; display:block; font-size:0.7em; padding:0 0 0.2em 0.5em; background:#6B6B6B url(images/df_whiteangle-45x45.png) no-repeat right center; color:#ffffff;}
 .fluidList  .productListTemplateThumb  {margin:0.2em;}
 .productListTemplateThumb .prodThumbContainer {border:1px solid #6b6b6b;}
+.productListTemplateThumb .thumbImage {position:relative;}
+.prodThumbZoom {height:12.5em; width:12.5em; top:5em; left:-4.75em; position:absolute; z-index:10; border:1px solid #6b6b6b;}
 .productPage .prodViewerAddToCartForm {float:right; color:#808284;}
 .productPage .prodViewerAddToCartForm .cornerButton {width:10em; margin:0 0 0 1em; }
 
