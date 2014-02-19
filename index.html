@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201346.20140210112100",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201346.20140218174100",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -147,7 +147,14 @@ ANIMATION TESTING
 					<div class='dropdown displayNone'>
 						<div class='cart'>
 							&#32;Shopping Bag&#58; &#32;<span class='cartItemCount'></span><span>&#32;Items</span>
-							<div class='quickCart'><span>blah</span></div>
+							<div class='quickCart'><span></span></div>
+							<div class='paymentTypes'>
+								<div class='visa'></div>
+								<div class='mc'></div>
+								<div class='amex'></div>
+								<div class='disc'></div>
+								<div class='payp'></div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -254,6 +261,7 @@ ANIMATION TESTING
 			</div>
 			<img src='images/df_mid_tit_bg_right-20x28.png'>
 		</div>
+<!--
 		<div class='footerPurchase'>
 			<div class='footerCart pointer' onclick="return showContent('cart',{});">SHOPPING BAG</div>
 			<div class='paymentTypes'>
@@ -264,6 +272,12 @@ ANIMATION TESTING
 				<div class='payp'></div>
 			</div>
 		</div>
+-->
+		<div class='policyGraphics floatRight'>
+			<div></div>
+			<div></div>
+		</div>
+		
 		<div class='copyright'>Copyright &#169; 2014 NYCI Wear &#124; Delicious Fashions<br><a href='https://www.zoovy.com' target='_blank' alt='Zoovy, Inc.'>Powered by Zoovy</a></div>
 		<div class='footerBottom'>
 			<span>

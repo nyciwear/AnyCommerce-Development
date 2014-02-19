@@ -139,8 +139,11 @@ footer {width:100%; background:#ffffff url(images/df_footer_tit_bg-7x29.gif) rep
 .footerListItem ul li {font-size:0.8em; color:#2e2e2e;}
 
 .footerPurchase {float:right; margin:0.5em 0.5em 0 0;}
+.policyGraphics > div:first-child {background:#ffffff url('images/nyci_10_bnr_left_bestqua_164x163.jpg') no-repeat center center; background-size:100%}
+.policyGraphics > div {height:6em; width:6em; background:#ffffff url('images/nyci_10_bnr_left_freedelivery_164x163.jpg') no-repeat center center; background-size:100%; margin:0.5em 0 0.5em 1em; float:right;}
 .footerCart {background:#97AE3C url(images/nyci_10_icn_cart-27x23.gif) no-repeat 0.15em 0.15em; padding:0.25em 0.5em; color:#ffffff; text-align:center;}
-.paymentTypes div {height:1.3125em; width:2.0625em; margin:0.125em; float:left; margin:0.2em;}
+.paymentTypes {height:2em; width:100%;}
+.paymentTypes div {height:1.3125em; width:2.0625em; display:inline-block; margin:0.1em;}
 .paymentTypes .visa {background:#ffffff url(images/cc_visa-33x21.gif) no-repeat center center;}
 .paymentTypes .mc {background:#ffffff url(images/cc_mc-33x21.gif) no-repeat center center;}
 .paymentTypes .amex {background:#ffffff url(images/cc_amex-33x21.gif) no-repeat center center;}
@@ -300,6 +303,8 @@ media queries
 	.minimalMode .searchResultsProduct {width:150px;}
 /*header*/
 	.navListItem {padding:0 0 0 5%;}
+/*footer*/
+	.policyGraphics {font-size:0.8em;}
 /*homepage*/	
 	.sideBannerCont {height:27.3875em;}
 }
