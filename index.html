@@ -147,6 +147,7 @@ ANIMATION TESTING
 					<div class='dropdown displayNone'>
 						<div class='cart'>
 							&#32;Shopping Bag&#58; &#32;<span class='cartItemCount'></span><span>&#32;Items</span>
+								<!-- quickCart content populated through anycontent call in quickstart.js, search nyci or quickcart to find -->
 							<div class='quickCart'><span></span></div>
 							<div class='paymentTypes'>
 								<div class='visa'></div>
@@ -159,7 +160,13 @@ ANIMATION TESTING
 					</div>
 				</div>
 				<div class='popFavs floatLeft' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
-					<div class='dropdown displayNone'><div>Recently</div><div>viewed</div><div>can go</div><div>here</div></div>
+					<div class='dropdown displayNone'>
+						<h4 class='marginTop'>Items You've<br>Recently Viewed:</h4>
+						<div class='noRecent'>None... yet!</div>
+						<div id='recentlyViewedItemsContainer'>
+							<ul data-bind="var: session(recentlyViewedItems); format:productList; extension:store_prodlist; loadsTemplate:recentlyListTemplate; hide_summary:1; hide_pagination:1;" class='listStyleNone noPadOrMargin fluidList clearfix productList lineItemProdlist'></ul>
+						</div>
+					</div>
 				</div>
 			</div>
 		
@@ -725,7 +732,7 @@ this will likely become more flexible in the future. ###
 		
 		<div class='imageContainer'>
 
-			<div class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
+			<div class='pointer clearfix prodPagePid'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
 				<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
 				<a data-bind="useParentData:true; format:imageZoom; extension:tools_zoom; isThumbs:1; hrefAttr:%attribs.zoovy:prod_image1; w:570; h:570;"  height='320' width='320' zheight='800' zwidth='800' theight='50' twidth='50'></a>
@@ -957,10 +964,17 @@ this will likely become more flexible in the future. ###
 		-->
 		<div class='floatLeft'><img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); defaultVar: product(%attribs.zoovy:prod_image1); format:imageURL;' width='50' height='50' /></div>
 
-		<div class='floatLeft' data-bind='var: product(prod_name); format:text; '></div>
+		<div class='floatLeft' data-bind='var: product(prod_name); format:text;'></div>
 		<!-- <div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div> -->
 		<span data-bind='var:product(qty); format:text; pretext:Quantity: ;'></span>
 	</li>
+	
+	<li id='recentlyListTemplate' class='padMargBorderBottom clearfix recentlyListTemplate'>
+		<div class='floatLeft'><img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); defaultVar: product(%attribs.zoovy:prod_image1); format:imageURL;' width='50' height='50' /></div>
+		<div class='floatLeft' data-bind='var: product(zoovy:prod_name); format:text; '></div>
+		<!-- <div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div> -->
+	</li>
+	
 </ul>
 
 

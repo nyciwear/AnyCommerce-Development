@@ -32,6 +32,7 @@ var myRIA = function() {
 			'sideBannerProductListTemplate',
 			'sideBannerProductSearchTemplate',
 			'productListTemplateThumb',
+			'recentlyListTemplate',
 //the list of templates that are commonly edited (same order as they appear in appTemplates
 			'homepageTemplate',	'categoryTemplate',
 			'categoryListTemplate',
@@ -920,15 +921,16 @@ for legacy browsers. That means old browsers will use the anchor to retain 'back
 				switch(pageType)	{
 
 					case 'product':
-	//add item to recently viewed list IF it is not already in the list.				
-						if($.inArray(infoObj.pid,app.ext.myRIA.vars.session.recentlyViewedItems) < 0)	{
-							app.ext.myRIA.vars.session.recentlyViewedItems.unshift(infoObj.pid);
-							}
-						else	{
+//nyci 	THIS CONTENT MOVED TO store_recentlyViewed.js for to afford more control over it.
+	//add item to recently viewed list IF it is not already in the list.	
+//nyci					if($.inArray(infoObj.pid,app.ext.myRIA.vars.session.recentlyViewedItems) < 0)	{
+//nyci							app.ext.myRIA.vars.session.recentlyViewedItems.unshift(infoObj.pid);
+//nyci							}
+//nyci						else	{
 // ** 201332 indexOf changed to $.inArray for IE8 compatibility, since IE8 only supports the indexOf method on Strings
 							//the item is already in the list. move it to the front.
-							app.ext.myRIA.vars.session.recentlyViewedItems.splice(0, 0, app.ext.myRIA.vars.session.recentlyViewedItems.splice($.inArray(infoObj.pid, app.ext.myRIA.vars.session.recentlyViewedItems), 1)[0]);
-							}
+//nyci							app.ext.myRIA.vars.session.recentlyViewedItems.splice(0, 0, app.ext.myRIA.vars.session.recentlyViewedItems.splice($.inArray(infoObj.pid, app.ext.myRIA.vars.session.recentlyViewedItems), 1)[0]);
+//nyci							}
 						infoObj.parentID = app.ext.myRIA.u.showProd(infoObj);
 						break;
 	
@@ -3138,7 +3140,7 @@ else	{
 			createTemplateFunctions : function()	{
 
 				app.ext.myRIA.template = {};
-				var pageTemplates = new Array('quickCartTemplate','sideBannerProductSearchTemplate','sideBannerProductListTemplate','productListTemplateThumb','categoryTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
+				var pageTemplates = new Array('quickCartTemplate','sideBannerProductSearchTemplate','sideBannerProductListTemplate','productListTemplateThumb','recentlyListTemplate','categoryTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
 				var L = pageTemplates.length;
 				for(var i = 0; i < L; i += 1)	{
 					app.ext.myRIA.template[pageTemplates[i]] = {"onCompletes":[],"onInits":[],"onDeparts":[]};

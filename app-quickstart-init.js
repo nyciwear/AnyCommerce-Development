@@ -31,6 +31,8 @@ app.rq.push(['extension',0,'store_dropdown','extensions/store_dropdown.js']); //
 app.rq.push(['extension',0,'store_carousel','extensions/store_carousel.js']); //creates carousels using carouFedSel
 app.rq.push(['extension',0,'tools_zoom','extensions/tools_zoom/tools_zoom.js']); //enables zoomed images
 //app.rq.push(['extension',0,'tools_lightbox','extensions/tools_lightbox/tools_lightbox.js']); //opens lightbox to show larger version of images. 
+app.rq.push(['extension',0,'store_recentlyViewed','extensions/store_recentlyViewed.js']); //products that have been viewed previously
+
 
 app.rq.push(['script',0,(document.location.protocol == 'file:') ? app.vars.testURL+'jsonapi/config.js' : app.vars.baseURL+'jsonapi/config.js']); //The config.js is dynamically generated.
 app.rq.push(['script',0,app.vars.baseURL+'model.js']); //'validator':function(){return (typeof zoovyModel == 'function') ? true : false;}}

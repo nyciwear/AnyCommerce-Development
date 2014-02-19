@@ -104,15 +104,16 @@ header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; clear:both;} /*
 #headerSearchSubmit {height:2em; color:#ffffff; font-weight:bold; background-color:#f05524; border:none; display:block; margin:0.25em auto 0 auto;}
 
 .popCart {background:#ffffff url(images/nyci_10_icn_cart-27x23.gif) no-repeat 0.15em 0.3em;}
-.popCart .cart {text-align:center; font-size:0.8em; line-height:1.9em; padding:1em 0 0 0; color:#666666; list-style:none;}
+.popCart .cart, #recentlyViewedItemsContainer {text-align:center; font-size:0.8em; line-height:1.9em; padding:1em 0 0 0; color:#666666; list-style:none;}
 header .cart span {color:#97AE3C;}
-.quickCart ul {height:auto; width:100%;}
-.quickCart li.productListTemplateQuickCart {padding:1em;}
-.quickCart li.productListTemplateQuickCart div {height:auto; width:50%; line-height:1.2em;}
+.quickCart ul, #recentlyViewedItemsContainer .lineItemProdlist {height:auto; width:100%;}
+.quickCart li.productListTemplateQuickCart, #recentlyViewedItemsContainer .recentlyListTemplate {padding:1em; margin:0;}
+.quickCart li.productListTemplateQuickCart div, .recentlyListTemplate div {height:auto; width:50%; line-height:1.2em;}
 .quickCart li.productListTemplateQuickCart span{clear:both; float:left; line-height:0.2em; padding:0 0 0 1em;}
 
 
-.popFavs {background:#ffffff url(images/green_glasses-28x14.jpg) no-repeat 0.15em 0.6em;}
+.popFavs {background:#ffffff url(images/green_glasses-28x14.jpg) no-repeat 0.15em 0.6em; text-align:center;}
+.noRecent {height:2em; width:100%; line-height:2em; color:red; font-style:italic;}
 
 .navListList {width:75%; float:left; list-style:none; margin:0.375em 0 0 0;}
 .navListItem {float:left; padding:0 0 0 9%;}
