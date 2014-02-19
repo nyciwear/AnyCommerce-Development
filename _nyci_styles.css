@@ -238,7 +238,6 @@ productTemplate
 .lb-outerContainer {height:580px !important; width:580px !important;}
 
 .prodSummaryContainer {width:50%; float:left;}
-.tabbedProductContentTD {clear:both;}
 .priceContainer {color:#808284; line-height:1.5em; font-weight:normal; margin:0.7em 0 0 0;}
 .basePrice, .basePrice span.cents {color:#F05524;  font-weight:bold; font-size:1.5em;}
 .basePrice span.cents {font-size:1em;}
@@ -247,14 +246,20 @@ productTemplate
 .searchLink span {text-decoration:none;}
 .searchLink span:hover {color:#2E2E2E;}
 .latency {font-size:0.75em; text-align:right; color:#808284; margin:0 0 0.5em 0;}
-.colorHeader {height:auto; width:100%; display:block; font-size:0.7em; padding:0 0 0.2em 0.5em; background:#6B6B6B url(images/df_whiteangle-45x45.png) no-repeat right center; color:#ffffff;}
+
+.colorHeader, .label_radio {height:auto; width:100%; display:block; font-size:0.7em; padding:0 0 0.2em 0.5em; background:#6B6B6B url(images/df_whiteangle-45x45.png) no-repeat right center; color:#ffffff;}
 .fluidList  .productListTemplateThumb  {margin:0.2em;}
 .productListTemplateThumb .prodThumbContainer {border:1px solid #6b6b6b;}
 .productListTemplateThumb .thumbImage {position:relative;}
 .prodThumbZoom {height:12.5em; width:12.5em; top:5em; left:-4.75em; position:absolute; z-index:10; border:1px solid #6b6b6b;}
 .zoomHeader {height:auto; width:100%; padding:0.2em; color:#ffffff; background-color:#6b6b6b; position:absolute; top:0; left:0; z-index:11; font-size:0.6em; text-align:center;}
-.productPage .prodViewerAddToCartForm {float:right; color:#808284;}
+
+.productPage .prodViewerAddToCartForm .variations {height:auto; width:100%; float:left;}
+.variation_A3, .variation_A4, .variation_A5, .variation_A6, .variation_A7, .variation_A8, .variation_A9, .variation_AA {display:none;}
+.productPage .prodViewerAddToCartForm {height:auto; width:100%; float:right; color:#808284;}
 .productPage .prodViewerAddToCartForm .cornerButton {width:10em; margin:0 0 0 1em;}
+
+.tabbedProductContentTD {clear:both;}
 
 /*****************************************************************
 end productTemplate

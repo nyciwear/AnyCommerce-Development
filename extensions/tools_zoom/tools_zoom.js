@@ -83,6 +83,8 @@ optional:
 	data-thumbclass - A class that will be added to the container that holds the thumbnails.
 	data-zoomclass - Indicates that the zoomed image should be created in a separate container. 
 					 It's value is added as a class to that container.
+	data-zoomheader - A zoovy: attrib that can be used to put a header above the zoomed images	
+					  if the zoomclass is used for a separate zoom container (usually prod_name).
 	height - A height to be passed to the app.u.makeImage call for the main, standard size image.
 	width -	A width to be passed to the app.u.makeImage call for the main, standard size image.
 	theight - A height to be passed to the app.u.makeImage call for the thumbnail image(s).

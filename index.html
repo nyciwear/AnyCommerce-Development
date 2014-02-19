@@ -628,7 +628,6 @@ container ul should have lineItemProdlist class on it instead of productList
 
 <li id='productListTemplateThumb' class='loadingBG productListTemplateThumb' >
 	<div class='prodThumbContainer pointer' onClick="showContent('product',{'pid':$(this).attr('data-pid')});" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' data-toolTipThumb="data-toolTipThumb">
-		<!-- <img src='blank.gif' class='prodThumb' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='55' height='55' /> -->
 			<!-- IF height or width ARE CHANGED BELOW, ALSO CHANGE ON THE data-zoomclass IN CSS -->
 		<a class='thumbImage' data-bind="useParentData:true; format:imageZoom; extension:tools_zoom;"  height='35' width='35' zheight='200' zwidth='200' data-zoomclass='prodThumbZoom' data-zoomHeader='prod_name'></a>
 	</div>
@@ -747,6 +746,7 @@ this will likely become more flexible in the future. ###
 				</span>
 				<div data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: More Products by ; className:searchLink;'></div>
 			</div>
+			
 			<div class="socialLinks"></div>
 			
 			<div id='prodSiblings' class='clearfix prodSiblings'>
@@ -757,17 +757,17 @@ this will likely become more flexible in the future. ###
 				<div data-bind="var: product(zoovy:grp_children); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateChildren;hide_summary:true; withInventory:1; withVariations:1;"></div>
 			</div>
 
-			<div class='floatRight'>
+			
 				<div data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships in ;posttext: day(s);' class='latency marginBottom'></div>
 				<div data-app-role='timeInTransit' class='displayNone'></div>
 
 				<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'modal'}); return false;">
 
-	<!--				<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset> -->
+					<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone variations'></fieldset>
 					<input type='submit' value='Add to Bag' class='floatRight ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone cornerButton' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
 					<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Qty: ; defaultValue:1;' class='borderNone floatRight'></fieldset>
 				</form>
-			</div>
+			
 			
 			<div data-bind='var:product(zoovy:prod_cpsiawarning); format:cpsiaWarning; extension:myRIA;'></div>
 			<div data-bind='var:product(zoovy:qty_price);format:quantityDiscounts; extension:store_product; pretext:Quantity Discounts:; className:marginBottom;'></div>
