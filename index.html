@@ -707,6 +707,8 @@ this will likely become more flexible in the future. ###
 
 	<div class='prodViewerContainer'>
 	
+		<div class="socialLinks floatRight marginBottom"></div>
+		
 		<div class='imageContainer'>
 
 			<div class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
@@ -717,17 +719,13 @@ this will likely become more flexible in the future. ###
 			</div>
 <!--
 			<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs'>
-
 				<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL;' alt='' width='100' height='100' /></div>
-
 				<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"3"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL;' alt=''  width='100' height='100' /></div>
-
 				<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL;' alt='' width='100' height='100' /></div>
-
 			</div>
 -->
 		</div>
-
+		
 		<div class='prodSummaryContainer marginBottom no_underline'>
 			<h3 data-bind='var: product(zoovy:prod_name); format:text;'></h3>
 <!--
@@ -746,8 +744,6 @@ this will likely become more flexible in the future. ###
 				</span>
 				<div data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: More Products by ; className:searchLink;'></div>
 			</div>
-			
-			<div class="socialLinks"></div>
 			
 			<div id='prodSiblings' class='clearfix prodSiblings'>
 				<ul class='listStyleNone noPadOrMargin fluidList clearfix' data-bind="var: product(zoovy:prod_list1); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateThumb; hide_multipage: true;before:<span class='colorHeader'>Colors</span>; withInventory:1; withVariations:1;"></ul>

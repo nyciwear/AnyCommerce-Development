@@ -99,7 +99,7 @@ these extensions.
 ****************************************/
 		
 			imageZoom : function($tag, data) {
-				app.u.dump('data.value:'); app.u.dump(data.value); app.u.dump('thumbclass'); app.u.dump($tag.data('thumbclass'));
+//				app.u.dump('data.value:'); app.u.dump(data.value); app.u.dump('thumbclass'); app.u.dump($tag.data('thumbclass'));
 				var pid = app.u.makeSafeHTMLId(data.value.pid);
 				
 					//create containers & classes for images
