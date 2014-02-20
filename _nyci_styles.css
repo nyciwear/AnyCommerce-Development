@@ -215,7 +215,7 @@ end homepage
 
 
 /*****************************************************************
-productListTemplate, productListTemplateResults
+productListTemplate, productListTemplateResults, productListTemplateResultsNoPreview
 *****************************************************************/
 
 .pLT h5, .pLTR h5 {height:4em; font-weight:normal; color:#4D8092; overflow:hidden;}
