@@ -773,16 +773,17 @@ this will likely become more flexible in the future. ###
 				<div data-bind="var: product(zoovy:grp_children); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateChildren;hide_summary:true; withInventory:1; withVariations:1;"></div>
 			</div>
 
+			<div class='sizeLink pointer' onclick='app.ext.store_nyci.a.showSizeGuide();'>size guide</div>
 			
-				<div data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships in ;posttext: day(s);' class='latency marginBottom'></div>
-				<div data-app-role='timeInTransit' class='displayNone'></div>
+			<div data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships in ;posttext: day(s);' class='latency marginBottom'></div>
+			<div data-app-role='timeInTransit' class='displayNone'></div>
 
-				<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'modal'}); return false;">
+			<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'modal'}); return false;">
 
-					<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone variations'></fieldset>
-					<input type='submit' value='Add to Bag' class='floatRight ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone cornerButton' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
-					<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Qty: ; defaultValue:1;' class='borderNone floatRight'></fieldset>
-				</form>
+				<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone variations'></fieldset>
+				<input type='submit' value='Add to Bag' class='floatRight ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone cornerButton' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
+				<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Qty: ; defaultValue:1;' class='borderNone floatRight'></fieldset>
+			</form>
 			
 			
 			<div data-bind='var:product(zoovy:prod_cpsiawarning); format:cpsiaWarning; extension:myRIA;'></div>
@@ -977,7 +978,9 @@ this will likely become more flexible in the future. ###
 </ul>
 
 
-
+<div id='sizingGuideTemplate'>
+	<img src='images/size_guide_pop_up-459x212.png' alt='Sizing Guide'>
+</div>
 
 
 

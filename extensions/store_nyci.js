@@ -64,7 +64,11 @@ var store_nyci = function() {
 //actions are functions triggered by a user interaction, such as a click/tap.
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
-
+		
+			showSizeGuide : function() {
+				$('#sizingGuideTemplate').dialog({'modal':'true', 'title':'Sizing Guide','width':'38%', 'max-height':275});
+			},
+		
 			}, //Actions
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

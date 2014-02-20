@@ -249,6 +249,9 @@ productTemplate
 .searchLink {font-size:0.7em;}
 .searchLink span {text-decoration:none;}
 .searchLink span:hover {color:#2E2E2E;}
+.sizeLink {text-decoration:underline; font-size:0.75em;}
+.sizeLink:hover {color:#808284;}
+#sizingGuideTemplate img {height:auto; max-width:100%;}
 .latency {font-size:0.75em; text-align:right; color:#808284; margin:0 0 0.5em 0;}
 
 .colorHeader, .label_radio {height:auto; width:100%; display:block; font-size:0.7em; padding:0 0 0.2em 0.5em; background:#6B6B6B url(images/df_whiteangle-45x45.png) no-repeat right center; color:#ffffff;}
