@@ -387,10 +387,10 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 			</p>
 			<img src='images/df_mid_tit_bg_right-20x28.png'>
 		</div>
-		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"30","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResults' class='listStyleNone fluidList clearfix noPadOrMargin productList bestSellerCar'></ul>
-		<div class='bestPrev smPrvArrow floatLeft'></div>
-		<div class='bestNext smNxtArrow floatRight'></div>
-		<div class='bestBannerPagination carPagination'></div>
+		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"30","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResults' class='listStyleNone fluidList clearfix noPadOrMargin productList bestSellerCar listCar'></ul>
+		<div class='bestPrev smPrvArrow listCarPrev floatLeft'></div>
+		<div class='bestNext smNxtArrow listCarNext floatRight'></div>
+		<div class='bestBannerPagination carPagination carPaginationCont'></div>
 	</div>
 	
 	<div class="clear"></div>
@@ -860,10 +860,25 @@ this will likely become more flexible in the future. ###
 		</div>
 	
 	</div>
-	
+<!--	
 	<div class='prodlistRelatedContainer'>
 		<ul class='listStyleNone fluidList clearfix noPadOrMargin productList' data-bind="var: product(zoovy:related_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; before:<h2>Similar Items</h2>; withReviews:1;"></ul>
 	</div>
+-->	
+	
+	<div class='prodlistRelatedContainer displayNone' data-bind='var:product(zoovy:related_products); format=showIfSet;'>
+		<div class='bannerTop'>
+			<p>
+				You May Also Like
+			</p>
+			<img src='images/df_mid_tit_bg_right-20x28.png'>
+		</div>
+		<ul class='listStyleNone fluidList clearfix noPadOrMargin productList prodPageRelatedCar listCar' data-bind="var: product(zoovy:related_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; withReviews:1;"></ul> -->
+		<div class='prodlistRelatedPrev smPrvArrow listCarPrev floatLeft'></div>
+		<div class='prodlistRelatedNext smNxtArrow listCarNext floatRight'></div>
+		<div class='prodlistRelatedPagination carPagination carPaginationCont'></div>
+	</div>
+	
 
 </div><!-- productTemplate -->
 

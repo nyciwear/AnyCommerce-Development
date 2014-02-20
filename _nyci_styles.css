@@ -23,10 +23,17 @@ a:visited, a:hover {color:#f05524;}
 button.cornerButton, input.cornerButton, .cornerButton {height:1.5em; width:100%; background:#97AE3C url('images/prodList_atc_corner-16x16.png') no-repeat left top; border: 1px outset; border-radius:0; color:#ffffff; text-align:center; padding:0;}
 button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:#1C94C4;}
 
+/*banners*/
+.listCar.productList > li {height:210px}
+.carPaginationCont {width:50%; margin:0 auto; text-align:center;}
 .carPagination a {height:1.3em; width:1.3em; background-color:#97AE3C; color:#ffffff; display:inline-block; margin:0 0.5em 0 0; text-align:center;}
 .carPagination .selected {background-color:#ffffff; color:#97AE3C;}
 .smPrvArrow {height:1.5em; width:1.1em; background:url(images/carousel_nav_nyc_v1-290x139.png) no-repeat 0 -6.362em; display:none; cursor:pointer;}
 .smNxtArrow {height:1.5em; width:1.1em; background:url(images/carousel_nav_nyc_v1-290x139.png) no-repeat -11.9em -6.362em;  display:none; cursor:pointer;}
+.listCarPrev {margin:0 0 0 12em; background-position:-5em -6.362em;}
+.listCarNext {margin:0 12em 0 0; background-position:-16.9em -6.362em;}
+.listCarPrev:hover {background-position:0 -6.362em}
+.listCarNext:hover {background-position:-11.9em -6.362em}
 
 /*tabs*/
 .tabbedProductContent.ui-tabs .ui-tabs-nav li{
@@ -192,13 +199,7 @@ homepage
 .sideBannerCont .all:hover {color:#97AE3C; background-color:#2E2E2E;}
 
 .homeSellMid, .homeSellBottom {margin:0.5em 0 0 0;}
-.bestSellerCar.productList > li {height:210px}
-.bestBannerPagination {width:50%; margin:0 auto; text-align:center;}
 .bestBannerPagination a {margin:0 1em;}
-.bestPrev {margin:0 0 0 12em; background-position:-5em -6.362em;}
-.bestNext {margin:0 12em 0 0; background-position:-16.9em -6.362em;}
-.bestPrev:hover {background-position:0 -6.362em}
-.bestNext:hover {background-position:-11.9em -6.362em}
 
 .upSell {width:100%;}
 .upSell .left, .upSell .middle, .upSell .right {height:auto; width:33%; margin:0 0 0.5em 0; display:inline-block; position:relative;}

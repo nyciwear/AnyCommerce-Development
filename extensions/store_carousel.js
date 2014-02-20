@@ -41,6 +41,12 @@ var store_carousel = function() {
 					app.ext.store_carousel.u.runSideBannerCarousel($context);
 					app.ext.store_carousel.u.runHomeBestSellerCarousel($context);
 				}]);
+
+				app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj) {
+					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.ext.store_carousel.u.runProdPageRelatedCarCarousel($context);
+				}]);
+
 				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 				r = true;
@@ -166,6 +172,37 @@ var store_carousel = function() {
 							prev		: '.bestPrev',
 							next		: '.bestNext',
 							pagination	: '.bestBannerPagination',
+							swipe: {
+								onMouse	: true,
+								onTouch	: true
+							}
+						});
+					},2000);
+				}
+			},
+			
+			runProdPageRelatedCarCarousel : function($context) {
+				var $target = $('.prodPageRelatedCar',$context);
+				if($target.data('isCarousel')) {} //only make it a carousel once.
+				else {
+					$target.data('isCarousel',true);
+					//for whatever reason, caroufredsel needs to be executed after a moment.
+					setTimeout(function(){
+						$target.carouFredSel({
+							width		: '99%',
+							responsive	: true,
+							items		: 
+							{
+								minimum : 1,
+								visible	: 5
+							},
+							auto		: 
+							{
+								pauseOnHover	: 'immediate'
+							},
+							prev		: '.prodlistRelatedPrev',
+							next		: '.prodlistRelatedNext',
+							pagination	: '.prodlistRelatedPagination',
 							swipe: {
 								onMouse	: true,
 								onTouch	: true
