@@ -77,7 +77,7 @@ var store_nyci = function() {
 			renderSubCatsAsList : {
 				onSuccess : function(responseData) {
 			//		app.u.dump(app.data[responseData.datapointer]);
-					$('.sunglassesDD').anycontent({"templateID":"dropdownCategoryListTemplate","datapointer":responseData.datapointer});
+					$('.sunglassesDD').anycontent({"templateID":"subCategoryTemplate","datapointer":responseData.datapointer});
 				},
 				onError : function(responseData){
 					app.u.dump('Error in extension: store_nyci_renderSubCatsAsList');

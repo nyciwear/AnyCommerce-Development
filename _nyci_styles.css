@@ -223,6 +223,20 @@ end homepage
 
 
 /*****************************************************************
+dropdownCategoryTemplate
+*****************************************************************/
+
+/*.dropdownCategoryList li {height:7.5em; width:8.75em;}*/
+.dropdownCategoryList li {height:145px; width:150px; padding:0 5px; box-shadow:1px 1px 1px 1px #2b2b2b;}
+.dropdownCategoryList li:hover {box-shadow:0 0 0 0; border:1px solid #cccccc;}
+.dropdownCategoryList li .thumbContainer {height:120px; width:100%;}
+
+/*****************************************************************
+end dropdownCategoryTemplate
+*****************************************************************/
+
+
+/*****************************************************************
 productListTemplate, productListTemplateResults, productListTemplateResultsNoPreview
 *****************************************************************/
 

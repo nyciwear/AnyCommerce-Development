@@ -498,7 +498,10 @@ don't modify the 'data-templateid' unless you are changing template names and up
 </div>
 
 
-
+	<!-- anycontent a subcat with this template to put it wherever you want (created in to work in conjunction with dropdownCategoryListTemplate -->
+<div id='subCategoryTemplate'>
+	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: dropdownCategoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList dropdownCategoryList'></ul><!-- outputs a list of subcategories -->
+</div>
 
 
 
@@ -522,8 +525,12 @@ don't modify the 'data-templateid' unless you are changing template names and up
 
 	<!-- used to display a targeted category's subcats, created for the drop-down menus in header -->
 <li id='dropdownCategoryListTemplate'>
-	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
+	<div onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});" class='pointer'>
+		<div class='thumbContainer'><img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='140' height='120' /></div>
+		<div class='catName white2LGray'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
+	</div>
 </li>
+
 
 </ul>
 
