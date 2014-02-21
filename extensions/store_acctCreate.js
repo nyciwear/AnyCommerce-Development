@@ -18,9 +18,9 @@
 
 
 
-//    !!! ->   TODO: replace 'username' in the line below with the merchants username.     <- !!!
 
-var store_acct = function() {
+
+var store_acctCreate = function() {
 	var theseTemplates = new Array('');
 	var r = {
 
@@ -36,6 +36,17 @@ var store_acct = function() {
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
+
+				app.rq.push(["templateFunction","customerTemplate","onCompletes",function(infoObj){
+					var $sideline = $('.customerSideline', $(app.u.jqSelector('#',infoObj.parentID)));
+					if(infoObj.show == "createaccount"){
+						$sideline.hide();
+					}
+					else {
+						$sideline.show();
+					}
+				}]);
+
 				r = true;
 
 				return r;
@@ -55,8 +66,33 @@ var store_acct = function() {
 //actions are functions triggered by a user interaction, such as a click/tap.
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
+		
+				//copied from app-quickstart.js so additional parameter could be used to assign the error location (for diff. login screens)
+			loginFrmSubmit : function(email,password,errorDiv)	{
+				var errors = '';
+				$errorDiv = errorDiv.empty(); //make sure error screen is empty. do not hide or callback errors won't show up.
 
-			}, //Actions
+				if(app.u.isValidEmail(email) == false){
+					errors += "Please provide a valid email address<br \/>";
+					}
+				if(!password)	{
+					errors += "Please provide your password<br \/>";
+					}
+				if(errors == ''){
+					app.calls.appBuyerLogin.init({"login":email,"password":password},{'callback':'authenticateBuyer','extension':'myRIA'});
+					app.calls.refreshCart.init({},'immutable'); //cart needs to be updated as part of authentication process.
+//					app.calls.buyerProductLists.init('forgetme',{'callback':'handleForgetmeList','extension':'store_prodlist'},'immutable');
+					if(localStorage.appPreferences !== 'signedUp') {localStorage.appPreferences = 'signedUp';} //set preference to bypass loading offer in case it was nuked elsewhere
+					app.model.dispatchThis('immutable');
+					}
+				else {
+					$errorDiv.anymessage({'message':errors});
+					}
+				showContent('customer',{'show':'myaccount'})
+				//showContent('homepage',{})
+			}, //loginFrmSubmit
+
+		}, //Actions
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -71,7 +107,38 @@ var store_acct = function() {
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
 		u : {
-			}, //u [utilities]
+		
+			handleAppLoginCreate : function($form)	{
+				if($form)	{
+					var formObj = $form.serializeJSON();
+		//			app.u.dump('--> Form Object'); app.u.dump(formObj); 			
+					if(formObj.pass !== formObj.pass2) {
+						app.u.throwMessage('Sorry, your passwords do not match! Please re-enter your password');
+						return;
+					}
+					
+					var tagObj = {
+						'callback':function(rd) {
+							if(app.model.responseHasErrors(rd)) {
+								$form.anymessage({'message':rd});
+							}
+							else {
+								showContent('customer',{'show':'myaccount'});
+								app.u.throwMessage(app.u.successMsgObject("Your account has been created! You may now log-in"));
+							}
+						}
+					}
+					
+					formObj._vendor = "nyciwear";
+					app.calls.appBuyerCreate.init(formObj,tagObj,'immutable');				
+					app.model.dispatchThis('immutable');
+				}
+				else {
+					$('#globalMessaging').anymessage({'message':'$form not passed into store_acctCreate.u.handleAppLoginCreate','gMessage':true});
+				}
+			},
+		
+		}, //u [utilities]
 
 //app-events are added to an element through data-app-event="extensionName|functionName"
 //right now, these are not fully supported, but they will be going forward. 

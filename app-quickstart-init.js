@@ -30,8 +30,9 @@ app.rq.push(['extension',0,'store_nyci','extensions/store_nyci.js','startExtensi
 app.rq.push(['extension',0,'store_dropdown','extensions/store_dropdown.js']); //creates drop-downs
 app.rq.push(['extension',0,'store_carousel','extensions/store_carousel.js']); //creates carousels using carouFedSel
 app.rq.push(['extension',0,'tools_zoom','extensions/tools_zoom/tools_zoom.js']); //enables zoomed images
-//app.rq.push(['extension',0,'tools_lightbox','extensions/tools_lightbox/tools_lightbox.js']); //opens lightbox to show larger version of images. 
+//app.rq.push(['extension',0,'tools_lightbox','extensions/tools_lightbox/tools_lightbox.js']); //opens lightbox to show larger version of images
 app.rq.push(['extension',0,'store_recentlyViewed','extensions/store_recentlyViewed.js']); //products that have been viewed previously
+app.rq.push(['extension',0,'store_acctCreate','extensions/store_acctCreate.js']); //login and acct creation workings
 
 
 app.rq.push(['script',0,(document.location.protocol == 'file:') ? app.vars.testURL+'jsonapi/config.js' : app.vars.baseURL+'jsonapi/config.js']); //The config.js is dynamically generated.
