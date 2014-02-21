@@ -10,6 +10,7 @@ body {margin:0 auto; font-family:Arial, Helvetica, sans-serif;}
 a:link, a:visited, a:hover, a:active {text-decoration:none;}
 a:link {color:#2e2e2e;}
 a:visited, a:hover {color:#f05524;}
+.dynamicImage {height:auto; width:100%;}
 
 .wrapper {height:100%; max-width:58.125em; margin:0 auto;}
 .clear {clear:both;}
@@ -109,6 +110,7 @@ header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; clear:both;} /*
 
 /*header drop-downs*/
 .navList {height:2em; width:100%; background-color:#ffffff; position:relative;}
+.imageDropdownText {height:auto; width:5em; position:absolute; top:3em; right:3em; font-size:2em; font-style:italic; text-shadow:-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000000; color:#ffffff; font-weight:bold; text-align:right;}
 .popOutLinks {height:2em; width:10.563em; background:#ffffff; padding:0 0 0 0.375em;}
 .popOutLinks .dropdown {width:10.563em; padding:0; position:absolute; right:0; top:2em; z-index:100; background-color:#ffffff; box-shadow:2px 2px 1px 0 #000000;}
 
