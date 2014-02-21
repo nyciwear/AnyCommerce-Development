@@ -26,7 +26,7 @@ app.rq.push(['extension',0,'partner_addthis','extensions/partner_addthis.js']);
 //app.rq.push(['extension',1,'powerReviews_reviews','extensions/partner_powerreviews_reviews.js','startExtension']);
 //app.rq.push(['extension',0,'magicToolBox_mzp','extensions/partner_magictoolbox_mzp.js','startExtension']); // (not working yet - ticket in to MTB)
 
-app.rq.push(['extension',0,'store_nyci','extensions/store_nyci.js']); //general app specific functions
+app.rq.push(['extension',0,'store_nyci','extensions/store_nyci.js','startExtension']); //general app specific functions
 app.rq.push(['extension',0,'store_dropdown','extensions/store_dropdown.js']); //creates drop-downs
 app.rq.push(['extension',0,'store_carousel','extensions/store_carousel.js']); //creates carousels using carouFedSel
 app.rq.push(['extension',0,'tools_zoom','extensions/tools_zoom/tools_zoom.js']); //enables zoomed images

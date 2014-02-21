@@ -174,7 +174,7 @@ ANIMATION TESTING
 			<div class='navListList hidePhoneLandscape hidePhonePortrait'>
 				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));' onclick="return showContent('category',{'navcat':'.sunglasses'});">
 					Sunglasses
-					<div class='dropdown wrapper displayNone' data-height='402'></div>
+					<div class='dropdown wrapper displayNone sunglassesDD'></div> <!--  data-height='402' -->
 				</div>
 				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));' onclick="return showContent('category',{'navcat':'.eyeglasses'});">
 					Eyeglasses
@@ -347,6 +347,7 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 <div id='homepageTemplate' class='homeTemplate'>
 
 	<div class='homeBannersCont hidePhoneLandscape hidePhonePortrait'>
+	<!-- <ul data-bind="var: category(@subcategoryDetail); format: categoryList; bgcolor: TTTTTT; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin'></ul> -->
 		<div class='bannerTop'>
 			<p>
 				Discount Designer Sunglasses Satisfaction Guaranteed
@@ -517,6 +518,11 @@ don't modify the 'data-templateid' unless you are changing template names and up
 		<div class='thumbContainer'><img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='35' height='35' /></div>
 		<div class='catName'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
 	</div>
+</li>
+
+	<!-- used to display a targeted category's subcats, created for the drop-down menus in header -->
+<li id='dropdownCategoryListTemplate'>
+	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
 </li>
 
 </ul>

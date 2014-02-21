@@ -37,7 +37,11 @@ var store_nyci = function() {
 				
 				app.u.dump('--> NYCI Ext Started');
 				app.ext.store_nyci.u.bindOnclick();
-
+				
+			//	setTimeout(function(){
+					//app.ext.store_nyci.u.loadSubCatsAsList('.sunglasses');
+			//	},2000);
+				
 			//	app.u.loadResourceFile(['script',0,'putthepathhere.js']);
 				
 			//	app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
@@ -54,7 +58,33 @@ var store_nyci = function() {
 //you may or may not need it.
 				app.u.dump('BEGIN admin_orders.callbacks.init.onError');
 				}
+			},
+			
+			startExtension : {
+				onSuccess : function() {
+					app.u.dump('app.ext.store_nyci.callbacks.startExtension started');
+					if(app.ext.myRIA && app.ext.myRIA.template && app.ext.store_navcats){
+						app.ext.store_nyci.u.loadSubCatsAsList('.sunglasses');
+					} else	{
+						setTimeout(function(){app.ext.store_nyci.callbacks.startExtension.onSuccess()},250);
+					}
+				},
+				onError : function (){
+					app.u.dump('BEGIN app.ext.store_nyci.callbacks.startExtension.onError');
+				}
+			},
+			
+			renderSubCatsAsList : {
+				onSuccess : function(responseData) {
+			//		app.u.dump(app.data[responseData.datapointer]);
+					$('.sunglassesDD').anycontent({"templateID":"dropdownCategoryListTemplate","datapointer":responseData.datapointer});
+				},
+				onError : function(responseData){
+					app.u.dump('Error in extension: store_nyci_renderSubCatsAsList');
+					app.u.dump(responseData);
+				}
 			}
+			
 		}, //callbacks
 
 
@@ -97,6 +127,19 @@ var store_nyci = function() {
 						 return app.ext.myRIA.a.showContent('',P);
 					});
 				},
+				
+					//loads product in hompage accessories tab	
+				loadSubCatsAsList :function(passedCat) {
+				
+					var _tag = {
+						"callback":"renderSubCatsAsList",
+						"extension":"store_nyci"
+					}
+					app.ext.store_navcats.calls.appNavcatDetail.init(passedCat, _tag,'immutable');
+		
+					app.model.dispatchThis('immutable');
+				
+				}, //loadSubCatsAsList
 		
 		}, //u [utilities]
 
