@@ -59,6 +59,14 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 .tabContinuation {height:1.7em; width:62%; background-color:#000000; position:absolute; top:0.46em; right:0.2em; z-index:0;}
 .tabbedProductContent .ui-button.ui-state-default {padding:.1em 0.3em;}
 
+/*tagspans*/
+.tagSprite {height:22px; width:85px; display:block; background:transparent url('images/tagsprite-85x100.png') no-repeat;}
+.tagSprite .is_fresh {background:none;} /*new arrival is also assigned to same items and tag gets duplicated*/
+.tagSprite.is_newarrival {background-position:0 0;}
+.tagSprite.is_best_seller {background-position:0 -27px;}
+.tagSprite.is_sale {background-position:0 -54px;}
+.tagSprite.is_clearance {background-position:0 -79px;}
+
 
 /*****************************************************************
 end global
@@ -218,6 +226,7 @@ end homepage
 productListTemplate, productListTemplateResults, productListTemplateResultsNoPreview
 *****************************************************************/
 
+.pLT .tagSprite , .pLTR .tagSprite {position:absolute; top:0; right:0;}
 .pLT h5, .pLTR h5 {height:4em; font-weight:normal; color:#4D8092; overflow:hidden;}
 .pLT h5:hover,.pLTR h5:hover {font-weight:normal; color:#404040;}
 .pLT h6, .pLTR h6 {font-weight:normal; color:#58595B;}
