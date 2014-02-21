@@ -33,6 +33,8 @@ var myRIA = function() {
 			'sideBannerProductSearchTemplate',
 			'productListTemplateThumb',
 			'recentlyListTemplate',
+			'subCategoryTemplate',
+			'dropdownCategoryListTemplate',
 //the list of templates that are commonly edited (same order as they appear in appTemplates
 			'homepageTemplate',	'categoryTemplate',
 			'categoryListTemplate',
@@ -3140,7 +3142,7 @@ else	{
 			createTemplateFunctions : function()	{
 
 				app.ext.myRIA.template = {};
-				var pageTemplates = new Array('quickCartTemplate','sideBannerProductSearchTemplate','sideBannerProductListTemplate','productListTemplateThumb','recentlyListTemplate','categoryTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
+				var pageTemplates = new Array('quickCartTemplate','sideBannerProductSearchTemplate','sideBannerProductListTemplate','productListTemplateThumb','recentlyListTemplate','subCategoryTemplate','dropdownCategoryListTemplate','categoryTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
 				var L = pageTemplates.length;
 				for(var i = 0; i < L; i += 1)	{
 					app.ext.myRIA.template[pageTemplates[i]] = {"onCompletes":[],"onInits":[],"onDeparts":[]};
