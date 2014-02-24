@@ -1176,7 +1176,7 @@ if you change these, you should move them above this comment so that when you (o
 		</nav>
 	</div>
 
-	<div class='mainColumn'>
+	<div class='mainColumn customerMainCol'> <!-- If createAccountArticle showing, this will be set to 100%, else 75% -->
 <!-- .textContentArea is used as a selector because IE8 doesn't play well  with tag type article as a selector -->
 
 <!--
@@ -1201,7 +1201,7 @@ subscribeListsArticle is used for authenticated buyers
 		<!-- <div id='createaccountTemplate' class="displayNone textContentArea"> -->
 			<p id='loginMessagingInline' class='marginBottom appMessaging'></p>
 			<div class="creatAccount">
-				<div id="gotAccount1"> 
+				<div id="gotAccount1" class='gotAccount'> 
 					<h1 class='smallcaps'>WELCOME BACK</h1>
 					<!-- Third parameter is id of message destination -->
 					<form action='#' onSubmit='app.ext.store_acct.a.loginFrmSubmit($("input[name=login]",$(this)).val(),$("input[name=password]",$(this)).val(),$("#loginMessagingInline")); return false;' id='modalLoginForm1'>
@@ -1218,7 +1218,7 @@ subscribeListsArticle is used for authenticated buyers
 					<!--<form action='#' class='inputsAsBreaks'  onSubmit="app.ext.myRIA.u.handleAppBuyerCreate($(this)); return false;">-->
 					<form action='#' class='inputsAsBreaks'  onSubmit="app.ext.store_acctCreate.u.handleAppLoginCreate($(this)); return false;">
 						<input type="hidden" name="vendor" value="nyciwear"/>
-						<h2>First Time With Us?</h2><input type='hidden' name='form' value='wholesale' />
+						<h1>First Time With Us?</h1><input type='hidden' name='form' value='wholesale' />
 						<div class="fieldM"><span class="field">First Name</span> <input name='firstname' type='text' size='30' class='textfname' placeholder='First Name' required='required' />
 						<b>Last Name</b> <input name='lastname' type='text' size='30' placeholder='Last Name' required='required' class='textflast' /></div>
 						<!--<div class="passwordInput"><b>Password</b><input name="password" size="30" placeholder="Password" required /></div>-->
@@ -1227,7 +1227,7 @@ subscribeListsArticle is used for authenticated buyers
 						<div class="fieldM stateFix"><span class="field">City</span> <input name='city' type='text' size='30' placeholder='City' required='required' class='textfcity' /> 	
 							<input name="time" type="hidden" required="required">
 							<b>State</b> 
-							<div class='selectWrapperS'>
+							<div class='selectWrapperS selectWrapper'>
 								<select name='region' class='textfstate sprite'>
 									<option value='AL'>AL</option>
 									<option value='AK'>AK</option>
@@ -1286,14 +1286,14 @@ subscribeListsArticle is used for authenticated buyers
 						</div>
 						<div class="fieldM">
 							<div class="field selectField">Country</div> 
-							<div class='selectWrapperC'>
+							<div class='selectWrapperC selectWrapper'>
 								<select name="country" class="textfcountry sprite">
 									<option value='USA'>United States of America</option>
 								</select>
 							</div>
 						</div>
-						<div class="fieldM"><span class="field">E-mail</span> <input name='email' type='email' size='30' class='textfmail' placeholder='E-mail Address' required='required' /> <b>Phone Number</b> <input name='phone' type='tel' size='12' placeholder='Phone Number' class='textfphone' required='required' /> </div>
-						<div class="fieldM"><span class="field">Password</span> <input name='pass' type='password' size='30' class='textfpass' placeholder='7-18 Characters' required='required' /> <b>Confirm Password</b> <input name='pass2' type='password' size='12' placeholder='Must be a match' class='textfphone' required='required' /> </div>
+						<div class="fieldM"><span class="field">E-mail</span> <input name='email' type='email' size='30' class='textfmailpass' placeholder='E-mail Address' required='required' /> <b>Phone Number</b> <input name='phone' type='tel' size='12' placeholder='Phone Number' class='textfphone' required='required' /> </div>
+						<div class="fieldM"><span class="field">Password</span> <input name='pass' type='password' size='30' class='textfmailpass' placeholder='7-18 Characters' required='required' /> <b>Confirm Password</b> <input name='pass2' type='password' size='12' placeholder='Must be a match' class='textfmailpass' required='required' /> </div>
 						<!--<fieldset class='marginBottom'>
 							<legend>About Your Business</legend>
 							<div class="fieldM"><input name='order_volume' type='text' size='30' placeholder='Anticipated Order Volume' />
@@ -1924,7 +1924,7 @@ The 'data-action' attribute is used to assign an onclick.
 			<button class='modalCreateButton tertiaryColorHover' onClick="app.ext.acctCreate.a.showAccountCreate();">Create an Account</button> -->
 		</div>
 
-		<div id="gotAccount"> 
+		<div id="gotAccount" class='gotAccount'> 
 			<h1 class='smallcaps'>Welcome Back</h1>
 			<!-- Third parameter is id of message destination -->
 			<form action='#' onSubmit='app.ext.store_acctCreate.a.loginFrmSubmit($("input[name=login]",$(this)).val(),$("input[name=password]",$(this)).val(),$("#loginMessaging")); return false;' id='modalLoginForm'>

@@ -38,12 +38,16 @@ var store_acctCreate = function() {
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 
 				app.rq.push(["templateFunction","customerTemplate","onCompletes",function(infoObj){
-					var $sideline = $('.customerSideline', $(app.u.jqSelector('#',infoObj.parentID)));
+					var $context = $(app.u.jqSelector('#',infoObj.parentID));
+					var $sideline = $('.customerSideline', $context);
+					var $customerMainCol = $('.customerMainCol', $context);
 					if(infoObj.show == "createaccount"){
 						$sideline.hide();
+						$customerMainCol.css('width','100%')
 					}
 					else {
 						$sideline.show();
+						$customerMainCol.css('width','75%');
 					}
 				}]);
 
