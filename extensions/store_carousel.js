@@ -135,10 +135,10 @@ var store_carousel = function() {
 								minimum : 1,
 								visible	: 1
 							},
-							auto		: false,
-					//		{
-					//			pauseOnHover	: 'immediate'
-					//		},
+							auto		: //false,
+							{
+								pauseOnHover	: 'immediate'
+							},
 							prev		: '.sideBannerPrev',
 							next		: '.sideBannerNext',
 							swipe: {
