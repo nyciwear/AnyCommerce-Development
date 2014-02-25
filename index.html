@@ -487,23 +487,17 @@ used to organize content when a category is clicked.
 each of the 'sections' are used to load another template. don't change the id.
 don't modify the 'data-templateid' unless you are changing template names and updating everywhere appropriate.
 -->
-<div id='categoryTemplate' class='loadingBG categoryTemplate'>
-
+<div id='categoryTemplate' class='loadingBG categoryTemplate'> <!-- class filteredCat will be added here to change styles for pages w/ filtered search -->
 	<ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(path); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
-
-	<img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
-
-	<h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
-
-	<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
-
-	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
-
-	<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
-
-	<p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
-
-
+	<div class='filterContainer clearfix'></div> <!-- categories w/ filter search forms will use this to split the screen and reduce the category list width -->	
+	<div class='catContainer'> 
+		<img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
+		<h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
+		<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
+		<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
+		<p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+	</div>
 </div>
 
 
@@ -1999,12 +1993,19 @@ put all filters into the appFilters container.
 
 <!-- ARNETTE FILTERS -->
     <form action='#' name='arnetteForm' id='arnetteForm' class='layeredSearch'>
-    
-        <fieldset data-elastic-key="base_price" data-filtertype="slider">
-            <legend>Price</legend>
-            <input type="text"  class='sliderValue' />
-            <div class="slider-range"></div>
-        </fieldset>
+<!-- These are to test w/...
+		<fieldset data-elastic-key="suit_style2 suit_style3" data-filtertype="checkboxes">
+            <legend>Test</legend>
+			<label class='break'><input type='checkbox' value='butterfly' /> Butterfly</label>
+			<label class='break'><input type='checkbox' value='calypso' /> Calypso</label>
+	    </fieldset>
+		
+		<fieldset data-elastic-key="suit_style5 suit_style8" data-filtertype="checkboxes">
+            <legend>Test 2</legend>
+			<label class='break'><input type='checkbox' value='crochet' /> Crochet</label>
+			<label class='break'><input type='checkbox' value='gauze' /> Gauze</label>
+	    </fieldset>        
+-->		
         
 		<!-- HIDDEN CHECKBOX THAT IS PROGRAMATICALLY CHECKED TO RETURN RESULTS FOR IT'S KEYS. ALLOWS A CATEGORY TO BE POPULATED W/ DATA THROUGH SEARCH W/OUT USER INTERACTION. -->
 		<!--
@@ -2020,30 +2021,18 @@ put all filters into the appFilters container.
 		</fieldset>
         -->
 		
-		<button class='resetButton floatRight'>RESET OPTIONS</button>
-<!--
-		<fieldset data-elastic-key="suit_style2 suit_style3" data-filtertype="checkboxes">
-            <legend>Test</legend>
-			<label class='break'><input type='checkbox' value='butterfly' /> Butterfly</label>
-			<label class='break'><input type='checkbox' value='calypso' /> Calypso</label>
-	    </fieldset>
+        <fieldset data-elastic-key="base_price" data-filtertype="slider">
+            <legend>Price</legend>
+            <input type="text"  class='sliderValue' />
+            <div class="slider-range"></div>
+        </fieldset>
 		
-		<fieldset data-elastic-key="suit_style5 suit_style8" data-filtertype="checkboxes">
-            <legend>Test 2</legend>
-			<label class='break'><input type='checkbox' value='crochet' /> Crochet</label>
-			<label class='break'><input type='checkbox' value='gauze' /> Gauze</label>
-	    </fieldset>        
--->		
+		<button class='resetButton floatRight'>RESET OPTIONS</button>
+		
         <fieldset data-elastic-key="pogs" data-filtertype="checkboxes">
-            <legend>Sizes</legend>
-            <label class='break'><input type='checkbox' value='AY00' /> XS</label>
-            <label class='break'><input type='checkbox' value='AY01' /> S</label>
-            <label class='break'><input type='checkbox' value='AY02' /> M</label>
-            <label class='break'><input type='checkbox' value='AY03' /> L</label>   
-            <label class='break'><input type='checkbox' value='AY04' /> XL</label>   
-            <label class='break'><input type='checkbox' value='AY05' /> 1X</label>
-			<label class='break'><input type='checkbox' value='AY06' /> 2X</label>
-            <label class='break'><input type='checkbox' value='AY07' /> 3X</label>
+			<legend>Gender</legend>
+            <label class='break'><input type='checkbox' value='A400' /> Men</label>
+            <label class='break'><input type='checkbox' value='A401' /> Women</label>
         </fieldset>
          
         <fieldset data-elastic-key="suit_style1 suit_style2 suit_style3 suit_style4 suit_style5 suit_style6 suit_style7 suit_style8" data-filtertype="checkboxes">

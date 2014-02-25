@@ -34,12 +34,12 @@ var store_filter = function() {
 	//key is safe id. value is name of the filter form.
 	filterMap : {
 	
-		".app-categories.arnette":{ //category for filter
+		".sunglasses.arnette":{ //category for filter
 			"filter": "arnetteForm",	//name of filter form to use for this category
 			"exec" : function($form,infoObj){
 				app.ext.store_filter.u.renderSlider($form, infoObj, {MIN:0,MAX:300});
-				app.ext.store_filter.u.renderHiddenField($form, 'arnette');
-				//app.ext.store_filter.u.triggerBox($form);
+		//		app.ext.store_filter.u.renderHiddenField($form, 'arnette');
+		//		app.ext.store_filter.u.triggerBox($form);
 			}
 		},
 				
@@ -72,6 +72,7 @@ var store_filter = function() {
 					var $context = $(app.u.jqSelector('#',infoObj.parentID)); 
 					
 					app.u.dump("BEGIN categoryTemplate onCompletes for filtering");
+					app.u.dump(app.ext.store_filter.filterMap[infoObj.navcat]);
 					if(app.ext.store_filter.filterMap[infoObj.navcat]) {
 						app.u.dump(" -> safe id DOES have a filter.");
 						
@@ -300,9 +301,9 @@ var store_filter = function() {
 				}
 			},
 		
+				//adds class to change category divs to accommodate filter
 			changeLayoutToFilter : function($context) {
-				$context.css('display','inline-block');
-				$('.catContainer',$context).css({'width':'777px','float':'left'});
+				$context.addClass('filteredCat'); //.css('display','inline-block')
 			},
 		
 			//pass in form as object.  This function will verify that each fieldset has the appropriate attributes.

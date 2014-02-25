@@ -81,8 +81,8 @@ var store_nyci = function() {
 			},
 			
 			renderSubCatsAsList : {
-				onSuccess : function(rd) {app.u.dump('--> GOT TO RENDER');
- 					app.u.dump(app.data[rd.datapointer]);
+				onSuccess : function(rd) {
+// 					app.u.dump(app.data[rd.datapointer]);
 					$(rd.element).anycontent({"templateID":"subCategoryTemplate","datapointer":rd.datapointer});
 				},
 				onError : function(rd){
