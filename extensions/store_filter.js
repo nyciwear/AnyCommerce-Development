@@ -34,10 +34,11 @@ var store_filter = function() {
 	//key is safe id. value is name of the filter form.
 	filterMap : {
 	
-		".app-categories.bikini_sets":{ //category for filter
-			"filter": "bikiniSetsForm",	//name of filter form to use for this category
+		".app-categories.arnette":{ //category for filter
+			"filter": "arnetteForm",	//name of filter form to use for this category
 			"exec" : function($form,infoObj){
 				app.ext.store_filter.u.renderSlider($form, infoObj, {MIN:0,MAX:300});
+				app.ext.store_filter.u.renderHiddenField($form, 'arnette');
 				//app.ext.store_filter.u.triggerBox($form);
 			}
 		},

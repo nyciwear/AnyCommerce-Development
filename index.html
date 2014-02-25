@@ -702,7 +702,7 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 		<h5 class='hideInMinimalMode' data-bind='var: product(prod_name); format:text;'></h5>
 
 		<h6 class='hideInMinimalMode' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price; pretext: <span>Our Price: </span>;'></h6>
-		
+<div data-bind='useParentData:true; format:test; extension:store_nyci;'></div>		
 	</div>
 	<div class='hideInMinimalMode pointer moreDetails cornerButton' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')});">MORE DETAILS</div>
 </li>
@@ -1980,6 +1980,123 @@ The 'data-action' attribute is used to assign an onclick.
 </table>
 
 </div>
+
+
+
+<!--
+#################################
+
+LAYERED SEARCH FILTERS
+
+put all filters into the appFilters container.
+
+#################################
+-->
+
+
+
+<div id='appFilters' class='displayNone'>
+
+<!-- ARNETTE FILTERS -->
+    <form action='#' name='arnetteForm' id='arnetteForm' class='layeredSearch'>
+    
+        <fieldset data-elastic-key="base_price" data-filtertype="slider">
+            <legend>Price</legend>
+            <input type="text"  class='sliderValue' />
+            <div class="slider-range"></div>
+        </fieldset>
+        
+		<!-- HIDDEN CHECKBOX THAT IS PROGRAMATICALLY CHECKED TO RETURN RESULTS FOR IT'S KEYS. ALLOWS A CATEGORY TO BE POPULATED W/ DATA THROUGH SEARCH W/OUT USER INTERACTION. -->
+		<!--
+		<fieldset class='triggerBox displayNone' data-elastic-key="item_category1 item_category2 item_category3 item_category4 item_category5 item_category6 item_category7 item_category8" data-filtertype="checkboxes">
+			<input type='checkbox' value="bikini+set"></input>
+		</fieldset>
+		-->
+		
+		<!-- HIDDEN FIELD TO LIMIT RESULTS TO A CATEGORY. MAY ALSO BE ADDED DYNAMICALLY IN STORE_FILTER IF MULTIPLE CATEGORIES USE THE SAME FORM. -->
+		<!--
+		<fieldset class='displayNone' data-elastic-key="item_category1 item_category2 item_category3 item_category4 item_category5 item_category6 item_category7 item_category8" data-filtertype="hidden">
+            <input type='hidden' name="h-bikiniset" value="bikini+set" />
+		</fieldset>
+        -->
+		
+		<button class='resetButton floatRight'>RESET OPTIONS</button>
+<!--
+		<fieldset data-elastic-key="suit_style2 suit_style3" data-filtertype="checkboxes">
+            <legend>Test</legend>
+			<label class='break'><input type='checkbox' value='butterfly' /> Butterfly</label>
+			<label class='break'><input type='checkbox' value='calypso' /> Calypso</label>
+	    </fieldset>
+		
+		<fieldset data-elastic-key="suit_style5 suit_style8" data-filtertype="checkboxes">
+            <legend>Test 2</legend>
+			<label class='break'><input type='checkbox' value='crochet' /> Crochet</label>
+			<label class='break'><input type='checkbox' value='gauze' /> Gauze</label>
+	    </fieldset>        
+-->		
+        <fieldset data-elastic-key="pogs" data-filtertype="checkboxes">
+            <legend>Sizes</legend>
+            <label class='break'><input type='checkbox' value='AY00' /> XS</label>
+            <label class='break'><input type='checkbox' value='AY01' /> S</label>
+            <label class='break'><input type='checkbox' value='AY02' /> M</label>
+            <label class='break'><input type='checkbox' value='AY03' /> L</label>   
+            <label class='break'><input type='checkbox' value='AY04' /> XL</label>   
+            <label class='break'><input type='checkbox' value='AY05' /> 1X</label>
+			<label class='break'><input type='checkbox' value='AY06' /> 2X</label>
+            <label class='break'><input type='checkbox' value='AY07' /> 3X</label>
+        </fieldset>
+         
+        <fieldset data-elastic-key="suit_style1 suit_style2 suit_style3 suit_style4 suit_style5 suit_style6 suit_style7 suit_style8" data-filtertype="checkboxes">
+            <legend>Types</legend>
+            <label class='break'><input type='checkbox' value='boy+shorts' /> Boy Shorts</label>
+            <label class='break'><input type='checkbox' value='butterfly' /> Butterfly</label>
+            <label class='break'><input type='checkbox' value='calypso' /> Calypso</label>
+            <label class='break'><input type='checkbox' value='classic+twist' /> Classic Twist</label>
+			<label class='break'><input type='checkbox' value='crochet' /> Crochet</label>
+            <label class='break'><input type='checkbox' value='full+scoop' /> Full Scoop</label>
+            <label class='break'><input type='checkbox' value='g+string' /> G-String</label>
+            <label class='break'><input type='checkbox' value='gauze' /> Gauze</label>
+            <label class='break'><input type='checkbox' value='halter' /> Halter</label>
+            <label class='break'><input type='checkbox' value='metallic' /> Metallic</label>
+            <label class='break'><input type='checkbox' value='monroe' /> Monroe</label>
+			<label class='break'><input type='checkbox' value='prints' /> Prints</label>
+            <label class='break'><input type='checkbox' value='scrunch+back+tie' /> Scrunch Back Tie</label>
+            <label class='break'><input type='checkbox' value='sheer' /> Sheer</label>
+            <label class='break'><input type='checkbox' value='skirted' /> Skirted</label>
+            <label class='break'><input type='checkbox' value='slider' /> Slider</label>
+			<label class='break'><input type='checkbox' value='solids' /> Solids</label>
+            <label class='break'><input type='checkbox' value='sport' /> Sport</label>
+            <label class='break'><input type='checkbox' value='thong' /> Thongs</label>
+            <label class='break'><input type='checkbox' value='thongs+strings' /> Thongs & Strings</label>
+			<label class='break'><input type='checkbox' value='top+shelf' /> Top Shelf</label>
+            <label class='break'><input type='checkbox' value='triangle' /> Triangle</label>
+            <label class='break'><input type='checkbox' value='underwire' /> Underwire</label>
+        </fieldset>
+        
+        <fieldset data-elastic-key="app_color1 app_color2 app_color3 app_color4 app_color5 app_color6 app_color7 app_color8 app_color9 app_color10" data-filtertype="checkboxes">
+            <legend>Colors</legend>
+            <label class='break'><input type='checkbox' value='beige' /> Beige</label>
+            <label class='break'><input type='checkbox' value='black' /> Black</label>
+            <label class='break'><input type='checkbox' value='blue' /> Blue</label>
+            <label class='break'><input type='checkbox' value='brown' /> Brown</label>
+            <label class='break'><input type='checkbox' value='gold' /> Gold</label>
+            <label class='break'><input type='checkbox' value='gray' /> Gray</label>
+            <label class='break'><input type='checkbox' value='green' /> Green</label>
+            <label class='break'><input type='checkbox' value='ivory' /> Ivory</label>
+            <label class='break'><input type='checkbox' value='multi+color' /> Multi-Color</label>
+            <label class='break'><input type='checkbox' value='orange' /> Orange</label>
+            <label class='break'><input type='checkbox' value='pink' /> Pink</label>
+            <label class='break'><input type='checkbox' value='purple' /> Purple</label>
+            <label class='break'><input type='checkbox' value='red' /> Red</label>
+            <label class='break'><input type='checkbox' value='silver' /> Sliver</label>
+            <label class='break'><input type='checkbox' value='white' /> White</label>
+            <label class='break'><input type='checkbox' value='yellow' /> Yellow</label>
+        </fieldset>
+
+    </form> <!-- //BIKINI SETS FILTERS -->
+	
+	
+</div> <!-- //Filter search forms -->
 
 
 </body>

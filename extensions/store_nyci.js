@@ -115,7 +115,7 @@ var store_nyci = function() {
 		renderFormats : {
 		
 			test : function($tag, data) {
-				app.u.dump('--> GOT HERE'); 
+				app.u.dump('--> Test Function'); app.u.dump(data.value);
 			}
 
 		}, //renderFormats
