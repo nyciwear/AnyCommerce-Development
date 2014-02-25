@@ -33,6 +33,7 @@ app.rq.push(['extension',0,'tools_zoom','extensions/tools_zoom/tools_zoom.js']);
 //app.rq.push(['extension',0,'tools_lightbox','extensions/tools_lightbox/tools_lightbox.js']); //opens lightbox to show larger version of images
 app.rq.push(['extension',0,'store_recentlyViewed','extensions/store_recentlyViewed.js']); //products that have been viewed previously
 app.rq.push(['extension',0,'store_acctCreate','extensions/store_acctCreate.js']); //login and acct creation workings
+app.rq.push(['extension',0,'prodlist_infinite','extensions/prodlist_infinite.js']); //populates list on scroll down, instead of using pagination
 
 
 app.rq.push(['script',0,(document.location.protocol == 'file:') ? app.vars.testURL+'jsonapi/config.js' : app.vars.baseURL+'jsonapi/config.js']); //The config.js is dynamically generated.
