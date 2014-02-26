@@ -38,6 +38,7 @@ var store_filter = function() {
 			"filter": "arnetteForm",	//name of filter form to use for this category
 			"exec" : function($form,infoObj){
 				app.ext.store_filter.u.renderSlider($form, infoObj, {MIN:0,MAX:300});
+				app.ext.store_filter.u.showHideFilterOptions($form);
 		//		app.ext.store_filter.u.renderHiddenField($form, 'arnette');
 		//		app.ext.store_filter.u.triggerBox($form);
 			}
@@ -235,9 +236,10 @@ var store_filter = function() {
 				
 				$('html, body').animate({scrollTop : 0},200); //new page content loading. scroll to top.
 
-		},//filter
+			},//filter
 			
-	}, //Actions
+			
+		}, //Actions
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -487,6 +489,64 @@ var store_filter = function() {
 				
 				$( ".sliderValue",$form ).val( "$" + $( ".slider-range" ).slider( "values", 0 ) + " - $" + $( ".slider-range" ).slider( "values", 1 ) );
 			}, //renderSlider
+			
+			
+			showHideFilterOptions : function($form) {
+				setTimeout(function() { //had to wait for forms to load before getting height
+					
+					var $element = $('.filterView',$form);
+					$element.each(function(){
+						
+						var curentHeight = $element.outerHeight();
+						app.u.dump("--> STATE!"); app.u.dump(curentHeight);
+						
+						$element.parent().off('click').on('click',function() {
+							var state = $element.data('filterview');
+							switch(state) {
+							case 1 : 
+								$element.animate({'height':'0px'},500);
+								$element.data('filterview',0);
+								break;
+							case 0 :
+								$element.animate({'height':curentHeight + 'px'},500);
+								$element.data('filterview',1);
+								break;
+							default :
+								//no action if no data-filterview set
+							}
+						});
+					
+					});
+					
+				},1000);
+			//	$tag.parent().on('click',function(){
+			//	});
+			
+			
+			
+		/*		var state = $this.data('filterview');
+				var height = 0;
+						height = $this.children().each(function() {
+							height += $(this).innerHeight();
+							app.u.dump(height);
+						});
+						
+				switch(state) {
+					case 1 :
+						$this.animate({'height':'10px'},500);
+						$this.data('filterview',0);
+						break;
+					case 0 : 
+						var height = 0;
+						height = $this.children().each(function() {
+							height += $(this).outerHeight();
+							app.u.dump(height);
+						});
+						$this.animate({'height':height+'px'},500);
+						$this.data('filterview',1);
+						break;
+				}
+		*/	},
 						
 		}, //u [utilities]
 
