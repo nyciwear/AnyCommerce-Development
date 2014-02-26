@@ -492,61 +492,42 @@ var store_filter = function() {
 			
 			
 			showHideFilterOptions : function($form) {
-				setTimeout(function() { //had to wait for forms to load before getting height
-					
-					var $element = $('.filterView',$form);
-					$element.each(function(){
+				setTimeout(function() { //had to wait for forms to load before getting height	
+					$('.filterView',$form).each(function(){
+						var currentHeight = $(this).outerHeight(); 	//remember the initial height for opening later
+						var $element = $(this);	
 						
-						var curentHeight = $element.outerHeight();
-						app.u.dump("--> STATE!"); app.u.dump(curentHeight);
+							//if filterview is 0 initial view should be closed, set it that way here
+						if($element.data('filterview') == 0) {
+							$('legend',$element.parent()).addClass('closedLegend pointer').removeClass('openLegend');
+							$element.css('height','0px');
+						}	//if filterview is 1 initial view should be open, set it that way here
+						if($element.data('filterview') == 1) {
+							$('legend',$element.parent()).addClass('openLegend pointer').removeClass('closedLegend');
+						}
 						
-						$element.parent().off('click').on('click',function() {
-							var state = $element.data('filterview');
+							//put a click on each fieldset legend in the form with a filterview attrib set to expand and contract its view
+						$('legend',$(this).parent()).off('click').on('click',function() {
+							var state = $element.data('filterview');	//get current opened or closed state
+//							app.u.dump('--> This State:'); app.u.dump(state);
 							switch(state) {
-							case 1 : 
-								$element.animate({'height':'0px'},500);
-								$element.data('filterview',0);
+							case 1 :
+								$element.animate({'height':'0px'},500);	//it was open, set it to be closed	
+								$element.data('filterview',0);			//change the current state to match the change
+								$('legend',$element.parent()).addClass('closedLegend').removeClass('openLegend'); //turn the arrow to indicate state to user
 								break;
 							case 0 :
-								$element.animate({'height':curentHeight + 'px'},500);
+								$element.animate({'height':currentHeight + 'px'},500);	//same as above, but opposite
 								$element.data('filterview',1);
+								$('legend',$element.parent()).addClass('openLegend').removeClass('closedLegend');
 								break;
 							default :
 								//no action if no data-filterview set
 							}
-						});
-					
-					});
-					
+						}); //legend
+					}); //.each
 				},1000);
-			//	$tag.parent().on('click',function(){
-			//	});
-			
-			
-			
-		/*		var state = $this.data('filterview');
-				var height = 0;
-						height = $this.children().each(function() {
-							height += $(this).innerHeight();
-							app.u.dump(height);
-						});
-						
-				switch(state) {
-					case 1 :
-						$this.animate({'height':'10px'},500);
-						$this.data('filterview',0);
-						break;
-					case 0 : 
-						var height = 0;
-						height = $this.children().each(function() {
-							height += $(this).outerHeight();
-							app.u.dump(height);
-						});
-						$this.animate({'height':height+'px'},500);
-						$this.data('filterview',1);
-						break;
-				}
-		*/	},
+			}, //showHideFilterOptions
 						
 		}, //u [utilities]
 

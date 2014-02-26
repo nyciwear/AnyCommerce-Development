@@ -391,7 +391,10 @@ Filter search styles
 .filterContainer .break {font-size:0.8em; display:block; margin:0 0 4px 6px; color:#2b2b2b; padding:0 0 0 23px; text-indent:-23px;}
 .layeredSearch	{height:auto; width:150px; margin:12px; color:#000000;}
 .layeredSearch legend	{font-size:1.0em; font-weight:normal; text-align:center; border:none; margin:0 0 4px 0; padding:0 5px; color:#333333;}
+.layeredSearch .openLegend, .layeredSearch .closedLegend {padding:0 5px 0 25px; background:#ffffff url('images/filter_arrow_border-26x36.png') no-repeat 1px -18px;}
+.layeredSearch .closedLegend  {background-position:1px 1px;}
 .layeredSearch fieldset {border:1px solid #b1b1b1; margin-bottom:12px;}
+.filterView {overflow:hidden;}
 .layeredSearch .ui-slider-horizontal .ui-slider-range {background:#F05524;}
 .layeredSearch .sliderValue {height:auto; width:95%; text-align:center; margin:0 0 15px 0;}
 .layeredSearch .slider-range {width:90%; margin:auto;}
