@@ -130,6 +130,12 @@ var store_carousel = function() {
 							width		: '99%',
 							height		: '550px',
 							responsive	: true,
+							scroll		: 
+							{
+								fx		: 'fade',
+								easing	: 'quadratic',
+								duration: 2000
+							},
 							items		: 
 							{
 								minimum : 1,
@@ -165,10 +171,10 @@ var store_carousel = function() {
 								minimum : 1,
 								visible	: 5
 							},
-							auto		: 
-							{
-								pauseOnHover	: 'immediate'
-							},
+							auto		: false,
+						//	{
+						//		pauseOnHover	: 'immediate'
+						//	},
 							prev		: '.bestPrev',
 							next		: '.bestNext',
 							pagination	: '.bestBannerPagination',
