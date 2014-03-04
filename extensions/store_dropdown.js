@@ -35,7 +35,7 @@ var store_dropdown = function() {
 			onSuccess : function()	{
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 
-				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
+				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.				
 				r = true;
 
 				return r;
@@ -55,6 +55,33 @@ var store_dropdown = function() {
 //actions are functions triggered by a user interaction, such as a click/tap.
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
+		
+			addOpacity : function($tag) {
+				if(!$tag.data('timeoutNoShow') || $tag.data('timeoutNoShow')=== "false") {
+					var $element = $('.opaque',$tag);
+					var opacity = 0;
+					$element.show();
+					if($tag.data('timeout') && $tag.data('timeout') !== 'false') {
+						clearTimeout($tag.data('timeout'));
+						$tag.data('timeout','false');
+					}
+				//	$element.css('display','inline-block');
+					$element.stop().animate({'opacity':'1'},500);
+					return true;
+				}
+				return false;
+			},
+			
+			removeOpacity : function($tag) {
+				$('.opaque',$tag).stop().animate({'opacity':'0'},500);
+				//$(".dropdown", $tag).stop().animate({"height":"0px"}, 500);
+				if($tag.data('timeout') && $tag.data('timeout')!== "false"){
+					$tag.data('timeout')
+					$tag.data('timeout','false');
+				}
+				$tag.data('timeout',setTimeout(function(){$(".opaque", $tag).hide();},500));
+				return true;
+			},
 		
 			showDropDown : function ($tag) {
 				//app.u.dump('showing');

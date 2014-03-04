@@ -123,9 +123,11 @@ ANIMATION TESTING
 					<span>Call Us at </span>800-830-9003
 				</div>
 			</div>
-			<div class='deliciousFashions floatLeft centerAt900'>
-				See our high fashion clothes and accessories at &#187;
-				<img src='images/nyci_10_header_deliciousfashion_logo-96x33.png'>
+			<div class='floatLeft headerShip' onmouseover='app.ext.store_dropdown.a.addOpacity($(this));' onmouseout='app.ext.store_dropdown.a.removeOpacity($(this));'>
+				<span>FREE US SHIPPING </span>
+				<div class='opaque'>
+					<div class='hiddenShip'>words about shipping that will go here so that people know what is what</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -277,24 +279,19 @@ ANIMATION TESTING
 			</div>
 			<img src='images/df_mid_tit_bg_right-20x28.png'>
 		</div>
-<!--
-		<div class='footerPurchase'>
-			<div class='footerCart pointer' onclick="return showContent('cart',{});">SHOPPING BAG</div>
-			<div class='paymentTypes'>
-				<div class='visa'></div>
-				<div class='mc'></div>
-				<div class='amex'></div>
-				<div class='disc'></div>
-				<div class='payp'></div>
-			</div>
-		</div>
--->
+
 		<div class='policyGraphics floatRight'>
 			<div></div>
 			<div></div>
 		</div>
 		
-		<div class='copyright'>Copyright &#169; 2014 NYCI Wear &#124; Delicious Fashions<br><a href='https://www.zoovy.com' target='_blank' alt='Zoovy, Inc.'>Powered by Zoovy</a></div>
+		<div class='copyright'>	
+			<div class='deliciousFashions floatLeft centerAt640'>
+				See our high fashion clothes and accessories at &#187;
+				<img src='images/nyci_10_header_deliciousfashion_logo-96x33.png'>
+			</div>
+			Copyright &#169; 2014 NYCI Wear &#124; Delicious Fashions<br><a href='https://www.zoovy.com' target='_blank' alt='Zoovy, Inc.'>Powered by Zoovy</a>
+		</div>
 		<div class='footerBottom'>
 			<span>
 				<a href='https://plus.google.com/104402329280146165477/?prsrc=3'>
@@ -2029,7 +2026,42 @@ put all filters into the appFilters container.
 		
 		<button class='resetButton floatRight'>RESET OPTIONS</button>
 		
-        <fieldset data-elastic-key="options" data-filtertype="checkboxes">
+		<fieldset data-elastic-key="!!!!!!!" data-filtertype="checkboxes">
+			<legend >Brands</legend>
+			<div class='filterView' data-filterview=1>
+				<label class='break'><input type='checkbox' value='' /> Burberry</label>
+				<label class='break'><input type='checkbox' value='' /> Carrera</label>
+				<label class='break'><input type='checkbox' value='' /> Chloe</label>
+				<label class='break'><input type='checkbox' value='' /> D&#38;G</label>
+				<label class='break'><input type='checkbox' value='' /> DKNY</label>
+				<label class='break'><input type='checkbox' value='' /> Diesel</label>
+				<label class='break'><input type='checkbox' value='' /> Dior</label>
+				<label class='break'><input type='checkbox' value='' /> Dolce &#38; Gabbana</label>
+				<label class='break'><input type='checkbox' value='' /> Dsquared</label>
+				<label class='break'><input type='checkbox' value='' /> Ed Hardy</label>
+				<label class='break'><input type='checkbox' value='' /> Gucci</label>
+				<label class='break'><input type='checkbox' value='' /> Juicy Couture</label>
+				<label class='break'><input type='checkbox' value='' /> Maui Jim</label>
+				<label class='break'><input type='checkbox' value='' /> POLO</label>
+				<label class='break'><input type='checkbox' value='' /> Persol</label>
+				<label class='break'><input type='checkbox' value='' /> Prada</label>
+				<label class='break'><input type='checkbox' value='' /> Prada Linea Rossa &#40;Sport&#41;</label>
+				<label class='break'><input type='checkbox' value='' /> Ralph Lauren</label>
+				<label class='break'><input type='checkbox' value='' /> Ray Ban</label>
+				<label class='break'><input type='checkbox' value='' /> Ray Ban Jr.</label>
+				<label class='break'><input type='checkbox' value='' /> Roberto Cavalli</label>
+				<label class='break'><input type='checkbox' value='' /> Swarovski</label>
+				<label class='break'><input type='checkbox' value='' /> Tom Ford</label>
+				<label class='break'><input type='checkbox' value='' /> Tory Burch</label>
+				<label class='break'><input type='checkbox' value='' /> Valentino</label>
+				<label class='break'><input type='checkbox' value='' /> Versace</label>
+				<label class='break'><input type='checkbox' value='' /> Vogue</label>
+				<label class='break'><input type='checkbox' value='' /> Von Zipper</label>
+				<label class='break'><input type='checkbox' value='' /> YSL</label>
+			</div>
+        </fieldset>
+		
+        <fieldset data-elastic-key="!!!!!!!!" data-filtertype="checkboxes">
 			<legend >Gender</legend>
 			<div class='filterView' data-filterview=1>
 				<label class='break'><input type='checkbox' value='A400' /> Men</label>
@@ -2037,13 +2069,20 @@ put all filters into the appFilters container.
 			</div>
         </fieldset>
          
-        <fieldset data-elastic-key="suit_style1 suit_style2 suit_style3 suit_style4 suit_style5 suit_style6 suit_style7 suit_style8" data-filtertype="checkboxes">
-            <legend>Types</legend>
+        <fieldset data-elastic-key="!!!!!!!!!" data-filtertype="checkboxes">
+            <legend>Style</legend>
             <div class='filterView' data-filterview=0>
-				<label class='break'><input type='checkbox' value='boy+shorts' /> Boy Shorts</label>
-				<label class='break'><input type='checkbox' value='butterfly' /> Butterfly</label>
-				<label class='break'><input type='checkbox' value='butterfly' /> Blah</label>
-				<label class='break'><input type='checkbox' value='butterfly' /> Zebra</label>
+				<label class='break'><input type='checkbox' value='' /> Aviator</label>
+				<label class='break'><input type='checkbox' value='' /> Butterfly</label>
+				<label class='break'><input type='checkbox' value='' /> CatEye</label>
+				<label class='break'><input type='checkbox' value='' /> Oval</label>
+				<label class='break'><input type='checkbox' value='' /> Rectangle</label>
+				<label class='break'><input type='checkbox' value='' /> Round</label>
+				<label class='break'><input type='checkbox' value='' /> Rimless</label>
+				<label class='break'><input type='checkbox' value='' /> Shield</label>
+				<label class='break'><input type='checkbox' value='' /> Square</label>
+				<label class='break'><input type='checkbox' value='' /> Wayfarer</label>
+				<label class='break'><input type='checkbox' value='' /> Wrap</label>
 			</div>
 		</fieldset>
         
