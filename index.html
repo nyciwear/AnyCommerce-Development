@@ -104,6 +104,22 @@ ANIMATION TESTING
 	
 <div id='globalMessaging' class='appMessaging'></div><!-- DO NOT REMOVE - used for some high level error handling (usually appears below breadcrumb nav or top bar) -->
 
+
+	<div class='floatRight liveHelp hideMed sideChat'>
+		<!-- BEGIN ProvideSupport.com Text Chat Link Code --> 
+		<div id="ci5ALC" style="z-index:100;position:absolute"></div>
+		<div id="sc5ALC" style="display:inline"></div>
+		<div id="sd5ALC" style="display:none"></div>
+		<script type="text/javascript">var se5ALC=document.createElement("script");se5ALC.type="text/javascript";var se5ALCs=(location.protocol.indexOf("https")==0?"https":"http")+"://image.providesupport.com/js/nyciwear/safe-standard.js?ps_h=5ALC&ps_t="+new Date().getTime();setTimeout("se5ALC.src=se5ALCs;document.getElementById('sd5ALC').appendChild(se5ALC)",1)</script>
+		<noscript>
+			<div style="display:inline">
+				<a href="http://www.providesupport.com?messenger=nyciwear">Live Assistance Chat</a>
+			</div>
+		</noscript>
+		<!-- END ProvideSupport.com Text Chat Link Code -->	
+	</div>
+
+
 <!-- These add specific functionality for the app. In most cases, you want to leave them alone. -->
 <div id='appNav'>
 	<button class='displayNone prodDetailNextItemButton' data-app-role='prodDetailNextItemButton'>Next</button>
@@ -228,21 +244,7 @@ ANIMATION TESTING
 		
 		<div class='discountBanner'>Ya&#33; We&#39;ll put some righteous discounts here for sure&#33;&#33;</div>
 		
-<!-- NEEDS A HOME!!
-		<div class='floatRight liveHelp marginRight hideMed'>
-    		<!-- BEGIN ProvideSupport.com Text Chat Link Code --> 
-<!--			<div id="ci5ALC" style="z-index:100;position:absolute"></div>
-			<div id="sc5ALC" style="display:inline"></div>
-			<div id="sd5ALC" style="display:none"></div>
-			<script type="text/javascript">var se5ALC=document.createElement("script");se5ALC.type="text/javascript";var se5ALCs=(location.protocol.indexOf("https")==0?"https":"http")+"://image.providesupport.com/js/nyciwear/safe-standard.js?ps_h=5ALC&ps_t="+new Date().getTime();setTimeout("se5ALC.src=se5ALCs;document.getElementById('sd5ALC').appendChild(se5ALC)",1)</script>
-			<noscript>
-				<div style="display:inline">
-					<a href="http://www.providesupport.com?messenger=nyciwear">Live Assistance Chat</a>
-				</div>
-			</noscript>
-			<!-- END ProvideSupport.com Text Chat Link Code -->	
-<!--        </div>
--->
+
 	</header>
 
 
@@ -390,20 +392,6 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 	<div class='homeSellMid'>
 		<div class='bannerTop'>
 			<p>
-				Best Sellers
-			</p>
-			<img src='images/df_mid_tit_bg_right-20x28.png'>
-		</div>
-		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"30","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResultsNoPreview;' class='listStyleNone fluidList clearfix noPadOrMargin productList bestSellerCar listCar'></ul>
-		<div class='bestPrev smPrvArrow listCarPrev floatLeft'></div>
-		<div class='bestNext smNxtArrow listCarNext floatRight'></div>
-		<div class='bestBannerPagination carPagination carPaginationCont'></div>
-	</div>
-	
-	<div class="clear"></div>
-	<div class='homeSellBottom'>
-		<div class='bannerTop'>
-			<p>
 				Special Offers...
 			</p>
 			<img src='images/df_mid_tit_bg_right-20x28.png'>
@@ -443,6 +431,20 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 				<img src='images/test/clear-341x227.jpg' alt='Eyeglasses Promo'>
 			</div>
 		</div>
+	</div>
+	
+	<div class="clear"></div>
+	<div class='homeSellBottom'>
+		<div class='bannerTop'>
+			<p>
+				Best Sellers
+			</p>
+			<img src='images/df_mid_tit_bg_right-20x28.png'>
+		</div>
+		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"30","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResultsNoPreview;' class='listStyleNone fluidList clearfix noPadOrMargin productList bestSellerCar listCar'></ul>
+		<div class='bestPrev smPrvArrow listCarPrev floatLeft'></div>
+		<div class='bestNext smNxtArrow listCarNext floatRight'></div>
+		<div class='bestBannerPagination carPagination carPaginationCont'></div>	
 	</div>
 	
 	<div class="clear"></div>

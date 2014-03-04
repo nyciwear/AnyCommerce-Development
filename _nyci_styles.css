@@ -69,6 +69,9 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 .tagSprite.is_sale {background-position:0 -54px;}
 .tagSprite.is_clearance {background-position:0 -79px;}
 
+/*chat*/
+.sideChat {position:fixed; top:5em; right:0;}
+
 
 /*****************************************************************
 end global
@@ -214,12 +217,12 @@ homepage
 .sideBannerCont .all {width:100%; color:#2E2E2E; background-color:#97AE3C; padding:0.3em 0 0.1em 0; text-align:center; position:absolute; bottom:0; left:0;}	
 .sideBannerCont .all:hover {color:#97AE3C; background-color:#2E2E2E;}
 
-.homeSellMid, .homeSellBottom {margin:0.5em 0 0 0;}
+.homeSellMid, .homeSellBottom {margin:0.5em 0;}
 .bestBannerPagination a {margin:0 1em;}
 
 .upSell {width:100%;}
-.upSell .left, .upSell .middle, .upSell .right {height:auto; width:33%; margin:0 0 0.5em 0; display:inline-block; position:relative;}
-.upSell .middle {margin:0 auto 0.5em auto;}
+.upSell .left, .upSell .middle, .upSell .right {height:auto; width:33%; margin:0; display:inline-block; position:relative;}
+.upSell .middle {margin:0 auto;}
 .upSell .left:hover div, .upSell .middle:hover div, .upSell .right:hover div {height:100%; width:100%; display:block; position:absolute; top:0; left:0; padding:1em; background-color:#ffffff; background-color:rgba(255,255,255,0.75);}
 .upSell h3, .upSell span {font-style:italic; margin:0 0 1em 0;}
 .upSell span:hover {color:#F05524;}
