@@ -494,7 +494,7 @@ don't modify the 'data-templateid' unless you are changing template names and up
 		<h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
 		<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
 		<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
-		<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
+		<ul data-bind="var: category(@products); format: infiniteProductList; editor: finder; extension: prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList' data-app-role='productList'></ul><!-- outputs the product list -->
 		<p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
 	</div>
 </div>
@@ -1991,7 +1991,7 @@ put all filters into the appFilters container.
 <div id='appFilters' class='displayNone'>
 
 <!-- ARNETTE FILTERS -->
-    <form action='#' name='arnetteForm' id='arnetteForm' class='layeredSearch'>
+    <form action='#' name='sunglassesForm' id='sunglassesForm' class='layeredSearch'>
 <!-- These are to test w/...
 		<fieldset data-elastic-key="suit_style2 suit_style3" data-filtertype="checkboxes">
             <legend>Test</legend>
@@ -2020,17 +2020,11 @@ put all filters into the appFilters container.
 		</fieldset>
         -->
 		
-        <fieldset data-elastic-key="base_price" data-filtertype="slider">
-            <legend>Price</legend>
-            <input type="text"  class='sliderValue' />
-            <div class="slider-range"></div>
-        </fieldset>
-		
-		<button class='resetButton floatRight'>RESET OPTIONS</button>
+		<button class='resetButton'>RESET OPTIONS</button>
 		
 		<fieldset data-elastic-key="!!!!!!!" data-filtertype="checkboxes">
 			<legend >Brands</legend>
-			<div class='filterView' data-filterview=1>
+			<div class='filterView' data-filterview=0>
 				<label class='break'><input type='checkbox' value='' /> Burberry</label>
 				<label class='break'><input type='checkbox' value='' /> Carrera</label>
 				<label class='break'><input type='checkbox' value='' /> Chloe</label>
@@ -2063,13 +2057,24 @@ put all filters into the appFilters container.
 			</div>
         </fieldset>
 		
-        <fieldset data-elastic-key="!!!!!!!!" data-filtertype="checkboxes">
-			<legend >Gender</legend>
-			<div class='filterView' data-filterview=1>
-				<label class='break'><input type='checkbox' value='A400' /> Men</label>
-				<label class='break'><input type='checkbox' value='A401' /> Women</label>
+		<fieldset data-elastic-key="!!!!!!!!!" data-filtertype="checkboxes">
+            <legend>Lens</legend>
+            <div class='filterView' data-filterview=0>
+				<label class='break'><input type='checkbox' value='' /> Polarized</label>
+				<label class='break'><input type='checkbox' value='' /> Mirrored</label>
+				<label class='break'><input type='checkbox' value='' /> Gradient</label>
+				<label class='break'><input type='checkbox' value='' /> Blue</label>
+				<label class='break'><input type='checkbox' value='' /> Gold</label>
+				<label class='break'><input type='checkbox' value='' /> Green</label>
+				<label class='break'><input type='checkbox' value='' /> Grey</label>
+				<label class='break'><input type='checkbox' value='' /> Orange</label>
+				<label class='break'><input type='checkbox' value='' /> Pink</label>
+				<label class='break'><input type='checkbox' value='' /> Purple</label>
+				<label class='break'><input type='checkbox' value='' /> Red</label>
+				<label class='break'><input type='checkbox' value='' /> Silver</label>
+				<label class='break'><input type='checkbox' value='' /> Yellow</label>
 			</div>
-        </fieldset>
+		</fieldset>
          
         <fieldset data-elastic-key="!!!!!!!!!" data-filtertype="checkboxes">
             <legend>Style</legend>
@@ -2087,16 +2092,54 @@ put all filters into the appFilters container.
 				<label class='break'><input type='checkbox' value='' /> Wrap</label>
 			</div>
 		</fieldset>
-        
-        <fieldset data-elastic-key="app_color1 app_color2 app_color3 app_color4 app_color5 app_color6 app_color7 app_color8 app_color9 app_color10" data-filtertype="checkboxes">
-            <legend>Colors</legend>
+		
+        <fieldset data-elastic-key="!!!!!!!!" data-filtertype="checkboxes">
+			<legend >Gender</legend>
 			<div class='filterView' data-filterview=1>
-				<label class='break'><input type='checkbox' value='beige' /> Beige</label>
-				<label class='break'><input type='checkbox' value='black' /> Black</label>
+				<label class='break'><input type='checkbox' value='A400' /> Men</label>
+				<label class='break'><input type='checkbox' value='A401' /> Women</label>
+			</div>
+        </fieldset>
+		
+		<fieldset data-elastic-key="base_price" data-filtertype="slider">
+            <legend>Price</legend>
+			<div class='filterView' data-filterview=0>
+				<input type="text"  class='sliderValue' />
+				<div class="slider-range"></div>
+			</div>
+		</fieldset>
+        
+        <fieldset data-elastic-key="!!!!!!!!!" data-filtertype="checkboxes">
+            <legend>Frame Color</legend>
+			<div class='filterView' data-filterview=0>
+				<label class='break'><input type='checkbox' value='beige' /> Black</label>
+				<label class='break'><input type='checkbox' value='black' /> Blue</label>
+				<label class='break'><input type='checkbox' value='black' /> Brown</label>
+				<label class='break'><input type='checkbox' value='black' /> Gold</label>
 				<label class='break'><input type='checkbox' value='black' /> Green</label>
+				<label class='break'><input type='checkbox' value='black' /> Grey</label>
+				<label class='break'><input type='checkbox' value='black' /> Gunmetal</label>
+				<label class='break'><input type='checkbox' value='black' /> Havana</label>
+				<label class='break'><input type='checkbox' value='black' /> Orange</label>
+				<label class='break'><input type='checkbox' value='black' /> Pink</label>
+				<label class='break'><input type='checkbox' value='black' /> Purple</label>
+				<label class='break'><input type='checkbox' value='black' /> Red</label>
+				<label class='break'><input type='checkbox' value='black' /> Ruthenium</label>
+				<label class='break'><input type='checkbox' value='black' /> Silver</label>
+				<label class='break'><input type='checkbox' value='black' /> White</label>
+				<label class='break'><input type='checkbox' value='black' /> Yellow</label>
 			</div>
 		</fieldset>
 
+		<fieldset data-elastic-key="!!!!!!!!!" data-filtertype="checkboxes">
+            <legend>Material</legend>
+			<div class='filterView' data-filterview=1>
+				<label class='break'><input type='checkbox' value='beige' /> Metal</label>
+				<label class='break'><input type='checkbox' value='black' /> Plastic</label>
+				<label class='break'><input type='checkbox' value='black' /> Titanium</label>
+			</div>
+		</fieldset>
+		
     </form> <!-- //BIKINI SETS FILTERS -->
 	
 	

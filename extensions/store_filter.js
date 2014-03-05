@@ -35,7 +35,7 @@ var store_filter = function() {
 	filterMap : {
 	
 		".sunglasses.arnette":{ //category for filter
-			"filter": "arnetteForm",	//name of filter form to use for this category
+			"filter": "sunglassesForm",	//name of filter form to use for this category
 			"exec" : function($form,infoObj){
 				app.ext.store_filter.u.renderSlider($form, infoObj, {MIN:0,MAX:300});
 				app.ext.store_filter.u.showHideFilterOptions($form);
@@ -43,15 +43,23 @@ var store_filter = function() {
 		//		app.ext.store_filter.u.triggerBox($form);
 			}
 		},
+		
+		".eyeglasses.burberry":{ //category for filter
+			"filter": "sunglassesForm",	//name of filter form to use for this category
+			"exec" : function($form,infoObj){
+				app.ext.store_filter.u.renderSlider($form, infoObj, {MIN:0,MAX:300});
+				app.ext.store_filter.u.showHideFilterOptions($form);
+			}
+		},
 				
-		".app-categories.tankinis":{ //category for filter
+	/*	".app-categories.tankinis":{ //category for filter
 			"filter": "sizesFormAY00",	//name of filter form to use for this category
 			"exec" : function($form,infoObj){
 				app.ext.store_filter.u.renderSlider($form, infoObj, {MIN:0,MAX:300});
 				app.ext.store_filter.u.renderHiddenField($form, 'tankini');
 			}
 		},
-		
+	*/	
 		
 	
 	}, //filterMap
@@ -198,7 +206,7 @@ var store_filter = function() {
 					app.u.dump(" -> validated Filter Properties.")
 					var query = {
 						"mode":"elastic-native",
-						"size":68,
+						"size":100,
 						"filter" : app.ext.store_filter.u.buildElasticFilters($form)
 					}//query
 					
