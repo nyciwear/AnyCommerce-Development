@@ -292,6 +292,10 @@ productTemplate
 .basePrice, .basePrice span.cents {color:#F05524;  font-weight:bold; font-size:1.5em;}
 .basePrice span.cents {font-size:1em;}
 .basePrice .pretext {color:#808284; font-weight:normal;  font-size:0.7em;}
+.seeInCartCont {position:relative;}
+.seeInCartCont h4 {display:inline-block;}
+.seeInCartCont h6 {display:inline-block; margin:0 0 0 1em; font-weight:normal;}
+.seeInCartCont:hover  > div {position:absolute; top:1em; right:-1em; display:block; background:#ffffff; box-shadow:1px 1px 2px 2px #333333; padding:0.5em;}
 .searchLink {font-size:0.7em;}
 .searchLink span {text-decoration:none;}
 .searchLink span:hover {color:#2E2E2E;}
