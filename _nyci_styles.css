@@ -269,6 +269,8 @@ productListTemplate, productListTemplateResults, productListTemplateResultsNoPre
 .msrpPrice {text-decoration:line-through; font-weight:normal;}
 .pLT .price, .pLT .price span.cents, .pLTR .price, .pLTR .price span.cents  {font-weight:bold; color:#97AE3C; margin:0.2em 0 0 0;}
 .pLT .price span {font-weight:normal; color:#58595B;}
+.seeInCartCont .hideInMinimalMode {display:inline-block;}
+.pLTR .seeInCartCont .whyInCart {font-size:0.7em; margin:0; color:#cccccc;}
 .pLT form {margin:0.5em 0;}
 .pLTR .moreDetails {padding:0.1em; margin:0.5em 0;}
 .pLT form button .ui-button-text {padding:0;}
@@ -294,7 +296,7 @@ productTemplate
 .basePrice .pretext {color:#808284; font-weight:normal;  font-size:0.7em;}
 .seeInCartCont {position:relative;}
 .seeInCartCont h4 {display:inline-block;}
-.seeInCartCont h6 {display:inline-block; margin:0 0 0 1em; font-weight:normal;}
+.seeInCartCont .whyInCart {display:inline-block; margin:0 0 0 1em; font-weight:normal;}
 .seeInCartCont:hover  > div {position:absolute; top:1em; right:-1em; display:block; background:#ffffff; box-shadow:1px 1px 2px 2px #333333; padding:0.5em;}
 .searchLink {font-size:0.7em;}
 .searchLink span {text-decoration:none;}

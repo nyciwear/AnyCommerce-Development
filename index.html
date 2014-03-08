@@ -686,6 +686,7 @@ remember to NOT put the button inside the 'onclick' container or two events will
 SANITY -> if you change the height and width of this image, change the .minimalMode .searchResultsProduct in qs_styles.css to match
 -->
 <li id='productListTemplateResults' class='loadingBG searchResultsProduct pLTR' >
+<div data-bind='useParentData:true; format:test; extension:store_nyci;'></div>		
 	<div onClick="app.ext.myRIA.a.handleProdPreview($(this).parent().attr('data-pid'));" class='pointer'>
 		<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
 		<div class='prodThumbContainer'>
@@ -694,8 +695,15 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 
 		<h5 class='hideInMinimalMode' data-bind='var: product(prod_name); format:text;'></h5>
 
-		<h6 class='hideInMinimalMode' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price; pretext: <span>Our Price: </span>;'></h6>
-<div data-bind='useParentData:true; format:test; extension:store_nyci;'></div>		
+		<div data-bind='var:product(cart_price); format:hideIfSet;'>
+			<h6 class='hideInMinimalMode' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price; pretext: <span>Our Price: </span>;'></h6>
+		</div>
+		<div class='displayNone seeInCartCont' data-bind='var:product(user:cart_price); format:showIfSet;'>
+			<h6 class='hideInMinimalMode price'><span class="pretext">Our Price: </span>See in cart</h6>
+			<span class='whyInCart'>Why?</span>
+			<div class='displayNone'>Some manufacturers do this... <br>Please provide specific text for this feature.</div>
+		</div>
+		
 	</div>
 	<div class='hideInMinimalMode pointer moreDetails cornerButton' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')});">MORE DETAILS</div>
 </li>
@@ -707,7 +715,15 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 
 		<h5 class='hideInMinimalMode' data-bind='var: product(prod_name); format:text;'></h5>
 
-		<h6 class='hideInMinimalMode' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>
+		<div data-bind='var:product(cart_price); format:hideIfSet;'>
+			<h6 class='hideInMinimalMode' data-bind='var: product(base_price); format:money; isElastic:1; currencySign: $;  hideZero:true; className:price; pretext: <span>Our Price: </span>;'></h6>
+		</div>
+		<div class='displayNone seeInCartCont' data-bind='var:product(user:cart_price); format:showIfSet;'>
+			<h6 class='hideInMinimalMode price'><span class="pretext">Our Price: </span>See in cart</h6>
+			<span class='whyInCart'>Why?</span>
+			<div class='displayNone'>Some manufacturers do this... <br>Please provide specific text for this feature.</div>
+		</div>
+		
 	<div class='hideInMinimalMode pointer moreDetails cornerButton' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')});">MORE DETAILS</div>
 </li>
 </ul>
@@ -779,7 +795,7 @@ this will likely become more flexible in the future. ###
 				</div>
 				<div class='displayNone seeInCartCont' data-bind='var:product(user:cart_price); format:showIfSet;'>
 					<h4 class='basePrice'><span class="pretext">Our Price: </span>See in cart</h4>
-					<h6>Why?</h6>
+					<h6 class='whyInCart'>Why?</h6>
 					<div class='displayNone'>Some manufacturers do this... <br>Please provide specific text for this feature.</div>
 				</div>
 				<div data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: More Products by ; className:searchLink;'></div>
@@ -926,22 +942,22 @@ this will likely become more flexible in the future. ###
 
 
 	<div class='priceContainer marginBottom'>
-				<h5 class='prodMSRP msrpPrice' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: MSRP: ;'></h5>
-				<div data-bind='var:product(user:cart_price); format:hideIfSet;'>
-					<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: <span class="pretext">Our Price: </span>;'></h4>
-					<span class='savings'>
-						<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
-						<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
-					</span>
-				</div>
-				<div class='displayNone seeInCartCont' data-bind='var:product(user:cart_price); format:showIfSet;'>
-					<h4 class='basePrice'><span class="pretext">Our Price: </span>See in cart</h4>
-					<h6>Why?</h6>
-					<div class='displayNone'>Some manufacturers do this... <br>Please provide specific text for this feature.</div>
-				</div>
-				<div data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: More Products by ; className:searchLink;'></div>
-				<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>			
-			</div>
+		<h5 class='prodMSRP msrpPrice' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: MSRP: ;'></h5>
+		<div data-bind='var:product(user:cart_price); format:hideIfSet;'>
+			<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: <span class="pretext">Our Price: </span>;'></h4>
+			<span class='savings'>
+				<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
+				<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
+			</span>
+		</div>
+		<div class='displayNone seeInCartCont' data-bind='var:product(user:cart_price); format:showIfSet;'>
+			<h4 class='basePrice'><span class="pretext">Our Price: </span>See in cart</h4>
+			<h6 class='whyInCart'>Why?</h6>
+			<div class='displayNone'>Some manufacturers do this... <br>Please provide specific text for this feature.</div>
+		</div>
+		<div data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: More Products by ; className:searchLink;'></div>
+		<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>			
+	</div>
 
 	<div data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships in ;posttext: day(s);' class='latency'></div>
 
