@@ -1,4 +1,4 @@
-/* **************************************************************
+/***************************************************************
 
    Copyright 2011 Zoovy, Inc.
 
@@ -14,7 +14,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
-************************************************************** */
+***************************************************************/
 
 /*
 An extension for acquiring and displaying 'lists' of categories.
@@ -62,7 +62,7 @@ app.u.dump("BEGIN buysafe_guarantee.startExtension.onSuccess.");
 
 //http://developer.buysafe.com/bsg_overview.php
 //http://www.buysafe.com/web/general/kickerpreview.aspx
-buySAFE.Hash = ''; //ADD HASH HERE.
+buySAFE.Hash = 'TEKsw6dQAzjfGl311zhqOzQCbM%2BDOBJYleFcfcHdKbbdsWHt2EHPopTjsC2S4LJ%2BgVzIMQoeZtpVz4MdD6IIMA%3D%3D'; //ADD HASH HERE.
 
 if(buySAFE.Hash.length > 0)	{
 	//the showContent function may have already executed prior to startExtension getting executed.
