@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201346.20140310153300",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201346.20140310160000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -840,7 +840,8 @@ this will likely become more flexible in the future. ###
 			</menu>
 
 		</div>
-	
+		
+		<span id="buySAFE_Kicker" name="buySAFE_Kicker" type="Kicker Guaranteed Transparent 33 175x30"></span>
 	
 		<div class="tabbedProductContentTD">
 			<!--
@@ -1570,6 +1571,8 @@ So the cart template should contain these two elements and the extension should 
 			<span id='amazonCheckoutButton' class='pointer' data-bind='var: cart(cart/cartid); format:amazonCheckoutButton;'></span>
 	
 		</div>
+		
+		<span id="buySAFE_Kicker" name="buySAFE_Kicker" type="Kicker Guaranteed Corners Icons 200x70"></span>
 
 	</div>
 </div>
@@ -2192,6 +2195,7 @@ put all filters into the appFilters container.
 	
 </div> <!-- //Filter search forms -->
 
+<span id="BuySafeSealSpan"></span>
 
 </body>
 </html>
