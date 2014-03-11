@@ -67,19 +67,33 @@ app.u.loadScript(app.vars.baseURL+"app-quickstart-init.js");
 <body>
 
 <!-- what is displayed onLoad until the view is loaded -->
-<div id='appPreView'>
-	<div id="loader">
-		<div class='alignCenter'>
-			<!-- <progress id="appPreViewProgressBar" max="100" value="0"></progress><br> -->
-			<div id="appPreViewProgressBar"></div>
-			<div class='previewLogo'></div>
+<div id='appPreView' class='wrapper'>
+	<div class="loderwrapper">
+		<div class="lodemid" id="loader">
+			<div id="previewContent" class="noiseBG">
+				<div class="eyeClub">
+<!-- EDIT PREVIEW HERE!! -------------------------------------------------------------------->
+					<h2>Join Our</h2>
+					<h1>Eyewear Club!</h1>
+					<h2>IT&#39;S FREE</h2>
+					<p>Receive Member Only Discounts and Specials <br />
+						Be the first to know about new Products & Events</p>
+<!-- EDIT PREVIEW HERE!! -------------------------------------------------------------------->				
+				</div>
+			</div>
+			<div class='alignCenter'>
+				<!-- <progress id="appPreViewProgressBar" max="100" value="0"></progress><br> -->
+				<div id="appPreViewProgressBar"></div>
+				<div class='previewLogo'></div>
+			</div>
+			<div id="categorySelector" class="previewButtonCont showSansPreferences">
+				<div class="categorySelectorButtonContainer floatLeft" onClick="app.u.selectPreference('signMeUp',true);"><span class="categorySelectorButton pointer"><a href="#"><img src="images/sign_up.png" alt="Sign Up" title="Sign Up" /></a></span></div>
+				<div class="categorySelectorButtonContainer floatLeft" onClick="app.u.selectPreference('logMeIn',true);"><span class="categorySelectorButton pointer"><a href="#"><img src="images/preload-login_127x34.png" alt="Log in" title="Log in" style="margin:0px;"/></a></span></div>
+				<div class="categorySelectorButtonContainer floatLeft" onClick="app.u.selectPreference('guest',true); return false;"><span class="categorySelectorButton pointer"><a href="#"><img src="images/continu_guest.png" alt="Not Now" title="Not Now" /></a></span></div>
+				<div class="clear"></div>
+			</div>
 		</div>
-		<div id='appPreViewProgressText'>0% Complete</div>
 	</div>
-	<div id="clickToLoad" class="displayNone pointer">
-		Click here to load your shopping experience!
-	</div>
-	<div class='appMessaging'></div>
 </div>
 
 

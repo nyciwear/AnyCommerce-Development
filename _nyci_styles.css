@@ -83,12 +83,19 @@ end global
 appPreview
 *****************************************************************/
 
-body #appPreView	{width:64em; height:25em; margin:10% auto 0 auto;}
+body #appPreView	{width:auto;}
 #appPreView #loader {height:70%; width:100%;}
-#appPreView #loader .alignCenter {height:70%; width:100%; position:relative; overflow:hidden;}
-.previewLogo {height:27%; width:19%; margin:0 0 0 -10%; background:transparent url('images/nyci_logo2_2.png') no-repeat center center; position:absolute; left:50%; bottom:-1%;}
-#appPreViewProgressBar {height:52%; width:10%; background-color:#f9fa57; margin:0 0 0 -5%; box-shadow:0 0s 4px 1px orange; border-radius:50%; position:absolute; left:50%; bottom:-29%;}
+#appPreView #loader .alignCenter {height:60%; width:100%; position:relative; overflow:hidden;}
+.loderwrapper {height:25em; width:65%; margin:6em auto; background:#ffffff url('images/city_sunset-600x400.jpg') no-repeat center top;}
+.previewLogo {height:27%; width:10.8em; margin:0 0 0 -5.4em; background:transparent url('images/nyci_logo_168x47.png') no-repeat center center; position:absolute; left:50%; top:9%;}
+#appPreViewProgressBar {height:41%; width:4.7em; background-color:#f9fa57; margin:0 0 0.5em -2.3em; box-shadow:0 0s 4px 1px orange; border-radius:50%; position:absolute; left:50%; top:0;}
 #appPreViewProgressText {text-align:center;}
+.eyeClub {padding:1em; text-align:center;}
+
+.categorySelectorButtonContainer {width:33%; padding:0 5%; text-align:center;}
+.categorySelectorButton {color: white; font-weight: bold; font-size: 1.3em;}
+.categorySelectorButton a {color:#97AE3C;}
+.categorySelectorButton a:hover {color:#f05524;}
 
 /*****************************************************************
 end appPreview
@@ -489,6 +496,8 @@ media queries
 @media screen and (max-width: 40em) {
 	.wrapper {height:100%; max-width:35.55555em; margin:0 auto;}
 	.centerAt640 {width:100%; margin:auto;}
+/*preview*/
+	.loderwrapper {width:85%;}
 /*header*/
 	.navList {height:4em;}
 	.navListList {width:90%; clear:both; float:none; margin:0 auto; padding:0.375em 0 0 0;}
@@ -511,6 +520,9 @@ media queries
 	.displayNone.showPhoneLandscape {display:block;}
 	.wrapper {height:100%; max-width:26.66666em; margin:0 auto;}
 	.productList, .categoryList {width:21.8em;}
+/*preview*/
+	.loderwrapper {width:95%;}
+	.loderwrapper p, .categorySelectorButtonContainer {font-size:0.7em;}
 /*header*/
 	.discountBanner {font-size:0.7em;}
 	.headerRight {float:none;}
