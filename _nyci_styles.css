@@ -21,6 +21,8 @@ a:visited, a:hover {color:#f05524;}
 .quickView {color:#ffffff; background-color:#F05524; border:1px outset;}
 .quickView:hover {color:#F05524; background-color:#ffffff;}
 
+.whyHover {position:absolute; z-index:50;}
+
 button.cornerButton, input.cornerButton, .cornerButton {height:1.5em; width:100%; background:#97AE3C url('images/prodList_atc_corner-16x16.png') no-repeat left top; border: 1px outset; border-radius:0; color:#ffffff; text-align:center; padding:0;}
 button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:#1C94C4;}
 .selectArrow {background:#ffffff url('images/select_arrow-30x30.jpg') no-repeat left top;}
@@ -270,7 +272,8 @@ productListTemplate, productListTemplateResults, productListTemplateResultsNoPre
 .pLT .price, .pLT .price span.cents, .pLTR .price, .pLTR .price span.cents  {font-weight:bold; color:#97AE3C; margin:0.2em 0 0 0;}
 .pLT .price span {font-weight:normal; color:#58595B;}
 .seeInCartCont .hideInMinimalMode {display:inline-block;}
-.pLTR .seeInCartCont .whyInCart {font-size:0.7em; margin:0; color:#cccccc;}
+.pLT .basePrice {display:inline-block;}
+.pLT .seeInCartCont .whyInCart, .pLTR .seeInCartCont .whyInCart {font-size:0.7em; margin:0; color:#cccccc;}
 .pLT form {margin:0.5em 0;}
 .pLTR .moreDetails {padding:0.1em; margin:0.5em 0;}
 .pLT form button .ui-button-text {padding:0;}
@@ -297,7 +300,7 @@ productTemplate
 .seeInCartCont {position:relative;}
 .seeInCartCont h4 {display:inline-block;}
 .seeInCartCont .whyInCart {display:inline-block; margin:0 0 0 1em; font-weight:normal;}
-.seeInCartCont:hover  > div {position:absolute; top:1em; right:-1em; display:block; background:#ffffff; box-shadow:1px 1px 2px 2px #333333; padding:0.5em;}
+.seeInCartCont .whyInCart:hover  .whyHover {position:absolute; top:1em; right:-1em; display:block; background:#ffffff; box-shadow:1px 1px 2px 2px #333333; padding:0.5em;}
 .searchLink {font-size:0.7em;}
 .searchLink span {text-decoration:none;}
 .searchLink span:hover {color:#2E2E2E;}
