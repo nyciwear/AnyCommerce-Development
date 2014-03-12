@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201346.20140310160000",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201346.20140311183700",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -86,10 +86,10 @@ app.u.loadScript(app.vars.baseURL+"app-quickstart-init.js");
 				<div id="appPreViewProgressBar"></div>
 				<div class='previewLogo'></div>
 			</div>
-			<div id="categorySelector" class="previewButtonCont showSansPreferences">
-				<div class="categorySelectorButtonContainer floatLeft" onClick="app.u.selectPreference('signMeUp',true);"><span class="categorySelectorButton pointer"><a href="#"><img src="images/sign_up.png" alt="Sign Up" title="Sign Up" /></a></span></div>
-				<div class="categorySelectorButtonContainer floatLeft" onClick="app.u.selectPreference('logMeIn',true);"><span class="categorySelectorButton pointer"><a href="#"><img src="images/preload-login_127x34.png" alt="Log in" title="Log in" style="margin:0px;"/></a></span></div>
-				<div class="categorySelectorButtonContainer floatLeft" onClick="app.u.selectPreference('guest',true); return false;"><span class="categorySelectorButton pointer"><a href="#"><img src="images/continu_guest.png" alt="Not Now" title="Not Now" /></a></span></div>
+			<div id="categorySelector" class="previewButtonCont showSansPreferences displayNone">
+				<div class="categorySelectorButtonContainer floatLeft" onClick="app.u.selectPreference('signUp','save');"><span class="categorySelectorButton pointer"><a href="#"><img src="images/sign_up.png" alt="Sign Up" title="Sign Up" /></a></span></div>
+				<div class="categorySelectorButtonContainer floatLeft" onClick="app.u.selectPreference('logIn','save');"><span class="categorySelectorButton pointer"><a href="#"><img src="images/preload-login_127x34.png" alt="Log in" title="Log in" style="margin:0px;"/></a></span></div>
+				<div class="categorySelectorButtonContainer floatLeft" onClick="app.u.selectPreference('guest','save'); return false;"><span class="categorySelectorButton pointer"><a href="#"><img src="images/continu_guest.png" alt="Not Now" title="Not Now" /></a></span></div>
 				<div class="clear"></div>
 			</div>
 		</div>

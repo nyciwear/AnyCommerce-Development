@@ -121,8 +121,22 @@ app.u.initMVC = function(attempts){
 	$('#appPreViewProgressBar','#appPreView').css('bottom',percentComplete-100);
 	$('#appPreViewProgressText','#appPreView').empty().append(percentComplete+"% Complete");
 
-	if(resourcesLoaded == app.vars.rq.length)	{
-		var clickToLoad = false;
+	
+	//if there is a preference load app, if not show the buttons that will let user select a preference
+	if(resourcesLoaded == app.vars.rq.length) {
+		
+		app.preferenceSelected = false;
+	
+		if(app.preferenceSelected) {
+			app.u.loadApp(); //load
+		}
+		else {
+			$('.previewButtonCont').fadeIn(500);
+			app.loadOnSelect = true;
+		}
+	
+	
+	/*	var clickToLoad = false;
 		if(clickToLoad){
 			$('#loader').fadeOut(1000);
 			$('#clickToLoad').delay(1000).fadeIn(1000).click(function() {
@@ -131,7 +145,7 @@ app.u.initMVC = function(attempts){
 		} else {
 			app.u.loadApp();
 			}
-		}
+	*/	}
 // *** 201324 -> increase # of attempts to reduce pre-timeout error reporting. will help to load app on slow connection/computer.
 	else if(attempts > 250)	{
 		app.u.dump("WARNING! something went wrong in init.js");
@@ -144,6 +158,28 @@ app.u.initMVC = function(attempts){
 		}
 
 	}
+
+
+//checks button clicked in preview to determine which option to show	
+app.u.selectPreference = function(preference, save){
+	if(!app.preferenceSelected){
+		app.preferenceSelected = true;
+		if(typeof preference !== "undefined"){
+			app.u.dump("Preference Selected: " + preference);
+			if(save){
+				app.u.myPref = preference; //save to use in appInitComplete later
+			} else {
+				//don't save the preference
+			}
+		}
+		if(app.loadOnSelect){
+			app.u.loadApp();
+		}
+	} else {
+		//app preference is already set, don't do it again! (might screw with the loading process)
+	}
+}
+
 
 app.u.loadApp = function() {
 //instantiate controller. handles all logic and communication between model and view.
@@ -159,6 +195,26 @@ app.u.loadApp = function() {
 //Any code that needs to be executed after the app init has occured can go here.
 //will pass in the page info object. (pageType, templateID, pid/navcat/show and more)
 app.u.appInitComplete = function(P)	{
+	//load the based corresponding to the user selection
+	app.u.dump('--* app.preferenceSelected is:'); app.u.dump(app.preferenceSelected);
+	if(app.preferenceSelected == true) {
+		app.u.dump('--* app.u.myPref is:'); app.u.dump(app.u.myPref);
+		switch(app.u.myPref) {
+			case "guest" : //user is guest, just load homepage
+				app.u.dump('--* IN GUEST');
+				break;
+			case "signUp" : //user is new, load createAccount
+				app.u.dump('--* IN SIGN UP');
+		//TODO: Account creation needs to be changed to modal in order to be shown this early.
+		//		will also need modal to respond to window resize.
+				break;
+			case "logIn" : //user isn't new, show login
+				app.u.dump('--* IN LOG IN');
+				return showContent('customer',{'show':'myaccount'});
+				break;
+		}
+	}
+	
 	app.u.dump("Executing myAppIsLoaded code...");
 	}
 

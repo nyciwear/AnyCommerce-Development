@@ -123,30 +123,30 @@ var store_nyci = function() {
 
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
-		u : {
-		
-					//make crawl-able links
-				bindOnclick : function() {
-					$('body').off('click', 'a[data-onclick]').on('click', 'a[data-onclick]', function(event){
-						 var $this = $(this);
-						 var P = app.ext.myRIA.u.parseAnchor($this.data('onclick'));
-						 return app.ext.myRIA.a.showContent('',P);
-					});
-				},
+		u : {		
+			
+				//make crawl-able links
+			bindOnclick : function() {
+				$('body').off('click', 'a[data-onclick]').on('click', 'a[data-onclick]', function(event){
+					 var $this = $(this);
+					 var P = app.ext.myRIA.u.parseAnchor($this.data('onclick'));
+					 return app.ext.myRIA.a.showContent('',P);
+				});
+			},
+			
+				//loads sub cat created for the header drop-downs	
+			loadSubCatsAsList :function(passedCat,element) {
 				
-					//loads sub cat created for the header drop-downs	
-				loadSubCatsAsList :function(passedCat,element) {
-					
-					var _tag = {
-						"callback"	: "renderSubCatsAsList",
-						"extension"	: "store_nyci",
-						"element"	: element	//the element to put the sub cat in
-					}
-					app.ext.store_navcats.calls.appNavcatDetailMax.init(passedCat, _tag,'immutable');
-		
-					app.model.dispatchThis('immutable');
-				
-				}, //loadSubCatsAsList
+				var _tag = {
+					"callback"	: "renderSubCatsAsList",
+					"extension"	: "store_nyci",
+					"element"	: element	//the element to put the sub cat in
+				}
+				app.ext.store_navcats.calls.appNavcatDetailMax.init(passedCat, _tag,'immutable');
+	
+				app.model.dispatchThis('immutable');
+			
+			}, //loadSubCatsAsList
 		
 		}, //u [utilities]
 
