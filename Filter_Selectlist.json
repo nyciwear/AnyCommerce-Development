@@ -1,0 +1,248 @@
+	{
+	'index' => 'filter_type',
+	 'options' => [
+				  {
+					'p' => 'Sunglasses',
+					'v' => 'sunglasses'
+				  },
+				  {
+					'p' => 'Eyeglasses',
+					'v' => 'eyeglasses'
+				  }
+				],
+	 'id' => 'user:filter_type',
+	 'title' => 'Select the product type',
+	 'type' => 'select'
+	},
+	{
+	'index' => 'filter_lens_type',
+	 'options' => [
+				  {
+					'p' => 'Polarized',
+					'v' => 'polarized'
+				  },
+				  {
+					'p' => 'Mirrored',
+					'v' => 'mirrored'
+				  },
+				  {
+					'p' => 'Gradient',
+					'v' => 'gradient'
+				  },
+				  {
+					'p' => 'Glass',
+					'v' => 'glass'
+				  }
+				],
+	 'id' => 'user:filter_lens_type',
+	 'title' => 'Select the lens type',
+	 'type' => 'select'
+	},
+	{
+	'index' => 'filter_lens_color',
+	 'options' => [
+				  {
+					'p' => 'Blue',
+					'v' => 'blue'
+				  },
+				  {
+					'p' => 'Gold',
+					'v' => 'gold'
+				  },
+				  {
+					'p' => 'Green',
+					'v' => 'green'
+				  },
+				  {
+					'p' => 'Grey',
+					'v' => 'grey'
+				  },
+				  {
+					'p' => 'Orange',
+					'v' => 'orange'
+				  },
+				  {
+					'p' => 'Pink',
+					'v' => 'pink'
+				  },
+				  {
+					'p' => 'Purple',
+					'v' => 'purple'
+				  },
+				  {
+					'p' => 'Red',
+					'v' => 'red'
+				  },
+				  {
+					'p' => 'Silver',
+					'v' => 'silver'
+				  },
+				  {
+					'p' => 'Yellow',
+					'v' => 'yellow'
+				  }
+				  ],
+	 'id' => 'user:filter_lens_color',
+	 'title' => 'Select the lens color',
+	 'type' => 'select'
+	},
+	{
+	'index' => 'filter_frame_type',
+	 'options' => [
+				  {
+					'p' => 'Aviator',
+					'v' => 'aviator'
+				  },
+				  {
+					'p' => 'Butterfly',
+					'v' => 'butterfly'
+				  },
+				  {
+					'p' => 'Cat Eye',
+					'v' => 'cateye'
+				  },
+				  {
+					'p' => 'Oval',
+					'v' => 'oval'
+				  },
+				  {
+					'p' => 'Rectangle',
+					'v' => 'rectangle'
+				  },
+				  {
+					'p' => 'Round',
+					'v' => 'round'
+				  },
+				  {
+					'p' => 'Rimless',
+					'v' => 'rimless'
+				  },
+				  {
+					'p' => 'Shield',
+					'v' => 'shield'
+				  },
+				  {
+					'p' => 'Square',
+					'v' => 'square'
+				  },
+				  {
+					'p' => 'Wayfarer',
+					'v' => 'wayfarer'
+				  },
+				  {
+					'p' => 'Wrap',
+					'v' => 'wrap'
+				  }
+				  ],
+	 'id' => 'user:filter_frame_type',
+	 'title' => 'Select the frame type',
+	 'type' => 'select'
+	},
+	{
+	'index' => 'filter_gender',
+	 'options' => [
+				  {
+					'p' => 'Men',
+					'v' => 'men'
+				  },
+				  {
+					'p' => 'Women',
+					'v' => 'women'
+				  }
+				  ],
+	 'id' => 'user:filter_gender',
+	 'title' => 'Select who will wear',
+	 'type' => 'select'
+	},
+	{
+	'index' => 'filter_frame_color',
+	 'options' => [
+				  {
+					'p' => 'Black',
+					'v' => 'black'
+				  },
+				   {
+					'p' => 'Blue',
+					'v' => 'blue'
+				  },
+				   {
+					'p' => 'Brown',
+					'v' => 'brown'
+				  },
+				   {
+					'p' => 'Gold',
+					'v' => 'Gold'
+				  },
+				   {
+					'p' => 'Green',
+					'v' => 'green'
+				  },
+				   {
+					'p' => 'Grey',
+					'v' => 'grey'
+				  },
+				   {
+					'p' => 'Gunmetal',
+					'v' => 'gunmetal'
+				  },
+				   {
+					'p' => 'Havana',
+					'v' => 'havana'
+				  },
+				   {
+					'p' => 'Orange',
+					'v' => 'orange'
+				  },
+				   {
+					'p' => 'Pink',
+					'v' => 'pink'
+				  },
+				   {
+					'p' => 'Purple',
+					'v' => 'purple'
+				  },
+				   {
+					'p' => 'Red',
+					'v' => 'red'
+				  },
+				   {
+					'p' => 'Ruthenium',
+					'v' => 'ruthenium'
+				  },
+				   {
+					'p' => 'Silver',
+					'v' => 'silver'
+				  },
+				   {
+					'p' => 'White',
+					'v' => 'white'
+				  },
+				  {
+					'p' => 'Yellow',
+					'v' => 'yellow'
+				  }
+				  ],
+	 'id' => 'user:filter_frame_color',
+	 'title' => 'Select the frame color',
+	 'type' => 'select'
+	},
+	{
+	'index' => 'filter_frame_material',
+	 'options' => [
+				  {
+					'p' => 'Metal',
+					'v' => 'metal'
+				  },
+				  {
+					'p' => 'Plastic',
+					'v' => 'plastic'
+				  },
+				  {
+					'p' => 'Titanium',
+					'v' => 'titanium'
+				  }
+				  ],
+	 'id' => 'user:filter_frame_material',
+	 'title' => 'Select what the frame is made of',
+	 'type' => 'select'
+	},
