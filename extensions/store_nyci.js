@@ -38,6 +38,11 @@ var store_nyci = function() {
 				app.u.dump('--> NYCI Ext Started');
 				app.ext.store_nyci.u.bindOnclick();
 				
+				app.rq.push(['templateFunction','customerTemplate','onCompletes',function(infoObj) {
+					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.u.dump('--* customer infoObj:'); app.u.dump(infoObj);
+				}]);
+				
 			//	setTimeout(function(){
 					//app.ext.store_nyci.u.loadSubCatsAsList('.sunglasses');
 			//	},2000);
@@ -124,6 +129,15 @@ var store_nyci = function() {
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
 		u : {		
+		
+			infoObjToCreateAccount : function(infoObj) {
+				infoObj.datapointer = "appNavcatDetail|customer"
+				infoObj.navcat = "";
+				infoObj.pageType = "customer";
+				infoObj.parentID = "mainContentArea_customer";
+				infoObj.templateID = "customerTemplate"; 
+				return infoObj;
+			},
 			
 				//make crawl-able links
 			bindOnclick : function() {
