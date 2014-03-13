@@ -119,18 +119,21 @@ ANIMATION TESTING
 <div id='globalMessaging' class='appMessaging'></div><!-- DO NOT REMOVE - used for some high level error handling (usually appears below breadcrumb nav or top bar) -->
 
 
-	<div class='floatRight liveHelp hideMed sideChat'>
-		<!-- BEGIN ProvideSupport.com Text Chat Link Code --> 
-		<div id="ci5ALC" style="z-index:100;position:absolute"></div>
-		<div id="sc5ALC" style="display:inline"></div>
-		<div id="sd5ALC" style="display:none"></div>
-		<script type="text/javascript">var se5ALC=document.createElement("script");se5ALC.type="text/javascript";var se5ALCs=(location.protocol.indexOf("https")==0?"https":"http")+"://image.providesupport.com/js/nyciwear/safe-standard.js?ps_h=5ALC&ps_t="+new Date().getTime();setTimeout("se5ALC.src=se5ALCs;document.getElementById('sd5ALC').appendChild(se5ALC)",1)</script>
-		<noscript>
-			<div style="display:inline">
-				<a href="http://www.providesupport.com?messenger=nyciwear">Live Assistance Chat</a>
-			</div>
-		</noscript>
-		<!-- END ProvideSupport.com Text Chat Link Code -->	
+	<div class='floatRight liveHelp hideMed sideChat pointer' onmouseover="app.ext.store_nyci.a.animateThis($(this),'-1.7em',500);" onmouseout="app.ext.store_nyci.a.animateThis($(this),'-2.2em',500);" onclick="app.ext.store_nyci.a.clickThat($('a',$(this)));">
+		CHAT!
+		<div class='displayNone'>
+			<!-- BEGIN ProvideSupport.com Text Chat Link Code --> 
+			<div id="ci5ALC" style="z-index:100;position:absolute"></div>
+			<div id="sc5ALC" style="display:inline"></div>
+			<div id="sd5ALC" style="display:none"></div>
+			<script type="text/javascript">var se5ALC=document.createElement("script");se5ALC.type="text/javascript";var se5ALCs=(location.protocol.indexOf("https")==0?"https":"http")+"://image.providesupport.com/js/nyciwear/safe-standard.js?ps_h=5ALC&ps_t="+new Date().getTime();setTimeout("se5ALC.src=se5ALCs;document.getElementById('sd5ALC').appendChild(se5ALC)",1)</script>
+			<noscript>
+				<div style="display:inline">
+					<a href="http://www.providesupport.com?messenger=nyciwear">Live Assistance Chat</a>
+				</div>
+			</noscript>
+			<!-- END ProvideSupport.com Text Chat Link Code -->	
+		</div>
 	</div>
 
 

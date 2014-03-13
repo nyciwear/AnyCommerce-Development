@@ -72,8 +72,12 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 .tagSprite.is_clearance {background-position:0 -79px;}
 
 /*chat*/
-.sideChat {position:fixed; top:5em; right:0;}
-
+.sideChat {
+	height:2.4em; width:4.3em; border:3px solid #97AE3C; background:#ffffff; color:#97AE3C; position:fixed; top:5em; right:-2.2em; font-size:1.4em; font-weight:bold; line-height:1.6em; text-align:center;
+	transform:rotate(270deg); 
+	-ms-transform:rotate(270deg); /* IE 9 */
+	-webkit-transform:rotate(270deg); /* Opera, Chrome, and Safari */
+}
 
 /*****************************************************************
 end global

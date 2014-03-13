@@ -105,7 +105,17 @@ var store_nyci = function() {
 //actions are functions triggered by a user interaction, such as a click/tap.
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
-		
+				
+				//will trigger a click on the element passed in
+			clickThat : function($tag) {
+				$tag.triggerHandler('click');
+			},
+			
+				//animates chat tag "right" property. 
+			animateThis : function($tag,value,duration) {
+				$tag.animate({'right':value},duration);
+			},
+			
 			showSizeGuide : function() {
 				$('#sizingGuideTemplate').dialog({'modal':'true', 'title':'Sizing Guide','width':'38%', 'max-height':275});
 			},
