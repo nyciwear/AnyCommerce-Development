@@ -73,7 +73,7 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 
 /*chat*/
 .sideChat {
-	height:2.4em; width:4.3em; border:3px solid #97AE3C; background:#ffffff; color:#97AE3C; position:fixed; top:5em; right:-2.2em; font-size:1.4em; font-weight:bold; line-height:1.6em; text-align:center;
+	height:2.4em; width:4.3em; border:3px solid #97AE3C; background:#ffffff; color:#97AE3C; position:fixed; top:5em; right:-2.2em; font-size:1.4em; font-weight:bold; line-height:1.6em; text-align:center; z-index:100;
 	transform:rotate(270deg); 
 	-ms-transform:rotate(270deg); /* IE 9 */
 	-webkit-transform:rotate(270deg); /* Opera, Chrome, and Safari */
@@ -120,8 +120,13 @@ header
 .headerRight .links a:hover {color:#f05524;}
 .headerCall {text-align:right; padding:0 0 0 0.375em;}
 .headerCall a {padding:0.2em 0;}
+.headerCall span {margin:0 0 0 0.3em;}
 .headerCall span, .headerCall a {font-size:0.7em; color:#cccccc;}
 
+.buyerLoggedIn .loginHide {display:none;}
+.loginShow {display:none;}
+.buyerLoggedIn .loginShow {display:inline;}
+.headerCall .username {font-size:1em;}
 header .separator {height:0.5em; margin:0 0 0.5em 0; width:100%; clear:both;} /*border-bottom:1px dashed #000000;*/
 
 /*header drop-downs*/

@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201346.20140311183700",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201346.20140312205600",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -152,7 +152,11 @@ ANIMATION TESTING
 			</div>
 			<div class='headerRight floatRight'>
 				<div class='headerCall floatRight'>
-					<a class='pointer' data-onclick="#!customer?show=myaccount" href="#!customer?show=myaccount">Log In</a> | <a href="#!company?show=contact" data-onclick="#!company?show=contact">Contact Us</a>
+					<a class='loginHide pointer' data-onclick="#!customer?show=myaccount" href="#!customer?show=myaccount">Log In</a>
+					<a href="#!customer?show=myaccount" data-onclick="#!customer?show=myaccount"></a>
+					<a href="#!customer?show=myaccount" data-onclick="#!customer?show=myaccount"><span class="loginShow username"></span></a> | 
+					<a class="loginShow" href="#" onClick="app.ext.myRIA.u.handleLogoutActions(); return false;">Log Out</a><p class='loginShow'> | </p>
+					<a href="#!company?show=contact" data-onclick="#!company?show=contact">Contact Us</a>
 					<span>Call Us at </span>800-830-9003
 				</div>
 			</div>
