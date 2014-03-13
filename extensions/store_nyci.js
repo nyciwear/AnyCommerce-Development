@@ -38,11 +38,6 @@ var store_nyci = function() {
 				app.u.dump('--> NYCI Ext Started');
 				app.ext.store_nyci.u.bindOnclick();
 				
-				app.rq.push(['templateFunction','customerTemplate','onCompletes',function(infoObj) {
-					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.u.dump('--* customer infoObj:'); app.u.dump(infoObj);
-				}]);
-				
 			//	setTimeout(function(){
 					//app.ext.store_nyci.u.loadSubCatsAsList('.sunglasses');
 			//	},2000);

@@ -195,7 +195,6 @@ app.u.loadApp = function() {
 //Any code that needs to be executed after the app init has occured can go here.
 //will pass in the page info object. (pageType, templateID, pid/navcat/show and more)
 app.u.appInitComplete = function(P)	{
-	app.u.dump('--* infoObj is: '); app.u.dump(P);
 	//load the based corresponding to the user selection
 	app.u.dump('--* app.preferenceSelected is:'); app.u.dump(app.preferenceSelected);
 	if(app.preferenceSelected == true) {
@@ -206,10 +205,7 @@ app.u.appInitComplete = function(P)	{
 				break;
 			case "signUp" : //user is new, load createAccount
 				app.u.dump('--* IN SIGN UP');
-		//TODO: Account creation needs to be changed to modal in order to be shown this early.
-		//		will also need modal to respond to window resize.
-		//		var runThis = app.ext.store_nyci.u.infoObjToCreateAccount(P);
-		//		app.ext.myRIA.u.handleAppInit(runThis);
+				window.location.hash = "#customer?show=createaccount";
 				break;
 			case "logIn" : //user isn't new, show login
 				app.u.dump('--* IN LOG IN');

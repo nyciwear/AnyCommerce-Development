@@ -98,8 +98,8 @@ body #appPreView	{width:auto;}
 
 .categorySelectorButtonContainer {width:33%; padding:0 5%; text-align:center;}
 .categorySelectorButton {color: white; font-weight: bold; font-size: 1.3em;}
-.categorySelectorButton a {color:#97AE3C;}
-.categorySelectorButton a:hover {color:#f05524;}
+.categorySelectorButton {color:#97AE3C;}
+.categorySelectorButton:hover {color:#f05524;}
 
 /*****************************************************************
 end appPreview
