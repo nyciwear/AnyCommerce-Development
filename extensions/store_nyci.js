@@ -35,8 +35,13 @@ var store_nyci = function() {
 			onSuccess : function()	{
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 				
-				app.u.dump('--> NYCI Ext Started');
+//				app.u.dump('--> NYCI Ext Started');
 				app.ext.store_nyci.u.bindOnclick();
+				
+				app.rq.push(['templateFunction','companyTemplate','onCompletes',function(infoObj) {
+					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+					app.ext.store_nyci.u.getArticle($context,infoObj.show);
+				}]);
 				
 			//	setTimeout(function(){
 					//app.ext.store_nyci.u.loadSubCatsAsList('.sunglasses');
@@ -133,7 +138,37 @@ var store_nyci = function() {
 
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
-		u : {		
+		u : {	
+
+			getArticle : function($context,thisPlace) {
+				app.u.dump('---- Start store_nyci getArticle');  app.u.dump(thisPlace); 
+				var $title = $('.articleTitle',$context);
+				switch(thisPlace) {
+					case "about" :
+						$title.empty().text('About NyciWear');
+						break;
+					case "contact" :
+						$title.empty().text('Contact NyciWear');
+						break;
+					case "faq" :
+						$title.empty().text('Frequently Asked Questions');
+						break;
+					case "payment" :
+						$title.empty().text('Payment Policy');
+						break;
+					case "privacy" :
+						$title.empty().text('Privacy Policy');
+						break;
+					case "return" :
+						$title.empty().text('Return Policy');
+						break;
+					case "shipping" :
+						$title.empty().text('Shipping Policy');
+					break;
+					
+				}
+				
+			},
 		
 			infoObjToCreateAccount : function(infoObj) {
 				infoObj.datapointer = "appNavcatDetail|customer"

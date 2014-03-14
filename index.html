@@ -1153,8 +1153,11 @@ if you change these, you should move them above this comment so that when you (o
 
 
 <!-- loadingBG needed on this for app init (content may take a moment to load) -->
-<div id='companyTemplate' class='clearfix'>
-
+<div id='companyTemplate' class='clearfix bannerTop'>
+	<p class='articleTitle'>something</p>
+	<div class='bTopTriangle'></div>
+	<div class='clear'></div>
+	
 	<div class='sideline' >
 <nav id='companyNav'>
 <ul class='listStyleNone noPadOrMargin'>
@@ -1166,13 +1169,32 @@ if you change these, you should move them above this comment so that when you (o
 	<div class='mainColumn'>
 <!-- .textContentArea is used as a selector in quickstart.js because article tag type isn't ie8 friendly -->
 		<div id='aboutArticle' class='textContentArea article'>
-			<h1>About Us</h1>
-			<div data-bind='var: profile(zoovy:about); format:wiki; wikiFormats:myRIA;' id='aboutUsContent'></div>
+			<h1 class='displayNone'>About Us</h1>
+			<p>
+				NycIwear has been selling Top designer products online since 2006. We specialize in Top Designer brands and styles for Discount Prices. 
+				All Of our products are directly from the manufacturers with full Manufacturer warranty. No middle men, No distributor, we are authorized 
+				resellers and have accounts for every Brand we sell. All Items are in Stock Ready to ship. Every Order goes through a Detailed 5 step process 
+				to ensure the item ordered is 100&#37; correct and Defect Free. Please Shop with confidence as it is our goal to make every purchase a good experience. 
+			</p>
+			<p><b>ALL OUR PRODUCTS ARE 100&#37; AUTHENTIC GUARANTEED</b></p>
+			<p>
+				<b>Attention International Buyers <br></b>
+				You are responsible for assuring that the product can be lawfully imported to the destination country. When ordering from NycIwear.com, the recipient 
+				is the importer of record and must comply with all laws and regulations of the destination country. Orders that are shipped to countries outside of the 
+				United States may be subject to import taxes, customs duties and fees levied by the destination country. The recipient of an international shipment may be 
+				subject to such import taxes, customs duties and fees, which are levied once a shipment reaches your country. Additional charges for customs clearance 
+				must be borne by the recipient&#59; we have no control over these charges and cannot predict what they may be. Customs policies vary widely from country to 
+				country&#59; you should contact your local customs office for further information. When customs clearance procedures are required, it can cause delays beyond our 
+				original delivery estimates. Purchases of Kindle may be subject to these import taxes, custom duties and fees. These fees can vary widely from country to country. 
+				Please contact your local customs office for further information.
+			</p>
+			<!-- <div data-bind='var: profile(zoovy:about); format:wiki; wikiFormats:myRIA;' id='aboutUsContent'></div> -->
+			<div class='clearfix'></div>
 		</div>
 
 
 		<div id='contactArticle' class='displayNone textContentArea'>
-			<h1>Contact Information</h1>
+			<h1 class='displayNone'>Contact Information</h1>
 			<form action='#' onSubmit="app.calls.appSendMessage.init($(this).serializeJSON(),{'callback':'showMessaging','parentID':'contactFormMessaging','message':'Thank you, your message has been sent'},'immutable'); app.model.dispatchThis('immutable');  return false;" id='contactForm' name='contactForm'>
 			<fieldset>
 				<legend>Contact Us</legend>
@@ -1191,20 +1213,20 @@ if you change these, you should move them above this comment so that when you (o
 
 
 		<div id='faqArticle' class='displayNone textContentArea'>
-			<h1>Frequently Asked Questions</h1>
+			<h1 class='displayNone'>Frequently Asked Questions</h1>
 			<div id='faqContent' class='loadingBG ui-accordion ui-widget ui-helper-reset ui-accordion-icons appAccordianesque'></div>
 		</div>
 
 
 
 		<div class='displayNone textContentArea' id='paymentArticle'>
-			<h1>Payment Policy</h1>
+			<h1 class='displayNone'>Payment Policy</h1>
 			<div data-bind='var: profile(zoovy:payment_policy); format:wiki; wikiFormats:myRIA;' id='paymentContent'></div>
 		</div>
 
 
 		<div class='displayNone textContentArea' id='privacyArticle'>
-			<h1>Privacy Statement</h1>
+			<h1 class='displayNone'>Privacy Statement</h1>
 	<h4>About this Privacy Policy:</h4>
 	<p>The entire site, or at least specific portions of this site are assisted by Zoovy technology. Zoovy has created this privacy policy as a template for customers who are using Zoovy technology with their websites. Zoovy in no way takes responsibility for the accuracy or enforcement of this policy. For a copy of Zoovy's privacy policy (which does not necessarily apply to the customers of its customers) visit http://www.zoovy.com/legal</p>
 
@@ -1248,14 +1270,14 @@ if you change these, you should move them above this comment so that when you (o
 
 
 		<div class='displayNone textContentArea' id='returnArticle'>
-			<h1>Return Policy</h1>
+			<h1 class='displayNone'>Return Policy</h1>
 			<div data-bind='var: profile(zoovy:return_policy); format:wiki; wikiFormats:myRIA;' id='returnContent'></div>
 		</div>
 
 
 
 		<div class='displayNone textContentArea' id='shippingArticle'>
-			<h1>Shipping Information</h1>
+			<h1 class='displayNone'>Shipping Information</h1>
 			<div data-bind='var: profile(zoovy:shipping_policy); format:wiki; wikiFormats:myRIA;' id='shippingContent'></div>
 		</div>
 
