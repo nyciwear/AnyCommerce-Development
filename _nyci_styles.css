@@ -39,6 +39,10 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 .listCarPrev:hover {background-position:0 -6.362em}
 .listCarNext:hover {background-position:-11.9em -6.362em}
 
+.bannerTop {height:1.75em; width:100%; background:#ffffff url(images/df_footer_tit_bg-7x29.gif) repeat-x; margin:0 0 0.5em 0;}
+.bannerTop > p {background-color:#2e2e2e; color:#ffffff; float:left; line-height:1.75em; margin:0; padding:0 1em;}
+.bTopTriangle {height:28px; width:21px; float:left; background:transparent url('images/df_mid_tit_bg_right-20x28.png') no-repeat center left;}
+
 /*tabs*/
 .tabbedProductContent.ui-tabs .ui-tabs-nav li{
 	background:none; border:none; margin:1px 0 -1px 0;
@@ -187,6 +191,7 @@ footer {width:100%; background:#ffffff url(images/df_footer_tit_bg-7x29.gif) rep
 .footerListItem > img {float:right;}
 .footerListItem ul {list-style:none; padding:0 0 0 1em;}
 .footerListItem ul li {font-size:0.8em; color:#2e2e2e;}
+footer .bTopTriangle {width:20%;}
 
 .footerPurchase {float:right; margin:0.5em 0.5em 0 0;}
 .policyGraphics > div:first-child {background:#ffffff url('images/nyci_10_bnr_left_bestqua_164x163.jpg') no-repeat center center; background-size:100%}
@@ -209,9 +214,6 @@ homepage
 *****************************************************************/
 
 .homeBannersCont {max-height:25.875em; width:100%; font-style:italic; clear:both; margin:0 0 0.5em 0; overflow:hidden;}
-.bannerTop {height:1.75em; width:100%; background:#ffffff url(images/df_footer_tit_bg-7x29.gif) repeat-x; margin:0 0 0.5em 0;}
-.bannerTop > p {background-color:#2e2e2e; color:#ffffff; float:left; line-height:1.75em; margin:0; padding:0 1em;}
-.bannerTop > img {float:left;}
 
 .mainBannerCont {max-height:22.875em; width:75%; position:relative;}
 .mainBanner {overflow:hidden; }
@@ -494,6 +496,8 @@ media queries
 	.wrapper {height:100%; max-width:40em; margin:0 auto;}
 /*header*/
 	.navListList {width:72%;}
+/*footer*/
+	footer .bTopTriangle {width:21px;}
 /*homepage*/
 	.sideBannerCont {max-height:25.6875em;}
 /*product page*/
