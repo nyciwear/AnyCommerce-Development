@@ -444,7 +444,7 @@ end Filter search styles
 Company Articles
 *************************************************************************************/
 
-.article {margin:1em 0 0 1em;}
+.textContentArea {margin:1em 0 0 1em; color:#58595B;}
 /*contact*/
 #contactForm {float:left;}
 #contactForm fieldset {border:none; padding:1em;}
