@@ -172,6 +172,27 @@ header .cart span {color:#97AE3C;}
 .navListItem {float:left; padding:0 0 0 9%;}
 .navListItem:first-child {float:left; padding:0 0 0 5%;}
 .navListItem .dropdown {width:58.125em; position:absolute; left:0; top:2em; z-index:100; background:#ffffff; border-top:1px solid #000;}
+
+.dropdownCarton {box-shadow:3px 3px 3px 1px #2b2b2b; margin:0.9em; padding:0.9em;}
+.dropdownTopper {column-count:4; -moz-column-count:4; -webkit-column-count:4;}
+.brandDD {font-size:0.8em;}
+.dropdownCarton ul.dropdownTopper {column-count:4; -moz-column-count:4; -webkit-column-count:4; list-style:none; margin:0; padding:0;}
+
+/*dropdownCategoryTemplates*/
+
+/*.dropdownCategoryList li {height:7.5em; width:8.75em;}*/
+.dropdownCategoryList li {height:145px; width:150px; padding:0 5px; box-shadow:1px 1px 1px 1px #2b2b2b;}
+.dropdownCategoryList li:hover {box-shadow:0 0 0 0; border:1px solid #cccccc;}
+.dropdownCategoryList li .thumbContainer {height:120px; width:100%;}
+
+.dropdownBrandsCategoryList {width:auto;}
+.dropdownCarton ul {column-count:7; -moz-column-count:7; -webkit-column-count:7;} /*columns will be alpha by row in IE9*/
+.dropdownBrandsCategoryList li {height:1em; width:10.6em; margin:0.5em 0 0.1em 0.5em; float:none;}
+.dropdownBrandsCategoryList .catName {text-align:left;}
+
+/*end dropdownCategoryTemplates*/
+
+
 /*end header drop-downs*/
 
 .discountBanner {height:2em; width:100%; background-color:#97AE3C; color:#ffffff; clear:both; font-size:1.5em; line-height:2em; margin:0 0 0.5em 0; text-align:center;}
@@ -250,20 +271,6 @@ homepage
 
 /*****************************************************************
 end homepage
-*****************************************************************/
-
-
-/*****************************************************************
-dropdownCategoryTemplate
-*****************************************************************/
-
-/*.dropdownCategoryList li {height:7.5em; width:8.75em;}*/
-.dropdownCategoryList li {height:145px; width:150px; padding:0 5px; box-shadow:1px 1px 1px 1px #2b2b2b;}
-.dropdownCategoryList li:hover {box-shadow:0 0 0 0; border:1px solid #cccccc;}
-.dropdownCategoryList li .thumbContainer {height:120px; width:100%;}
-
-/*****************************************************************
-end dropdownCategoryTemplate
 *****************************************************************/
 
 

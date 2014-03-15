@@ -217,6 +217,21 @@ ANIMATION TESTING
 		
 				<!-- This list shows until 480res -->
 			<div class='navListList hidePhoneLandscape hidePhonePortrait'>
+				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+					Brands
+					<div class='dropdown wrapper displayNone '>
+						<div class='dropdownCarton'>
+							<ul class='dropdownTopper'>
+								<li>FEATUTRED BRANDS</li>
+								<li>Some products</li>
+								<li>Some products</li>
+								<li>Some products</li>
+								<li></li>
+							</ul>
+						</div>
+						<div class='brandDD floatLeft dropdownCarton'></div>
+					</div>
+				</div>
 				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));' onclick="return showContent('category',{'navcat':'.sunglasses'});">
 					Sunglasses
 					<div class='dropdown wrapper displayNone sunglassesDD'></div> <!--  data-height='402' -->
@@ -224,10 +239,6 @@ ANIMATION TESTING
 				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));' onclick="return showContent('category',{'navcat':'.eyeglasses'});">
 					Eyeglasses
 					<div class='dropdown wrapper displayNone eyeglassesDD'></div>
-				</div>
-				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
-					Brands
-					<div class='dropdown wrapper displayNone brandDD'></div>
 				</div>
 				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
 					Any
@@ -254,9 +265,9 @@ ANIMATION TESTING
 			
 				<!-- This list shows after 480res -->
 			<div class='navListList displayNone showPhoneLandscape showPhonePortrait'>
+				<div class='navListItem'>Brands</div>
 				<div class='navListItem pointer' onclick="return showContent('category',{'navcat':'.sunglasses'});">Sunglassed</div>
 				<div class='navListItem pointer' onclick="return showContent('category',{'navcat':'.eyeglasses'});">Eyeglasses</div>
-				<div class='navListItem'>Brands</div>
 				<div class='navListItem'>Any</div>
 				<div class='navListItem'>Other</div>
 				<div class='navListItem'>Nav</div>
@@ -529,6 +540,10 @@ don't modify the 'data-templateid' unless you are changing template names and up
 	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: dropdownCategoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList dropdownCategoryList'></ul><!-- outputs a list of subcategories -->
 </div>
 
+<div id='subBrandsCategoryTemplate'>
+	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: dropdownBrandsCategoryListTemplate; detail:max;" class='listStyleNone fluidList noPadOrMargin categoryList dropdownBrandsCategoryList'></ul><!-- outputs a list of subcategories -->
+</div>
+
 
 
 
@@ -553,6 +568,13 @@ don't modify the 'data-templateid' unless you are changing template names and up
 <li id='dropdownCategoryListTemplate'>
 	<div onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});" class='pointer'>
 		<div class='thumbContainer'><img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='140' height='120' /></div>
+		<div class='catName white2LGray'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
+	</div>
+</li>
+
+
+<li id='dropdownBrandsCategoryListTemplate'>
+	<div onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});" class='pointer'>
 		<div class='catName white2LGray'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
 	</div>
 </li>

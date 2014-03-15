@@ -69,9 +69,9 @@ var store_nyci = function() {
 				onSuccess : function() {
 					app.u.dump('app.ext.store_nyci.callbacks.startExtension started');
 					if(app.ext.myRIA && app.ext.myRIA.template && app.ext.store_navcats){
-						app.ext.store_nyci.u.loadSubCatsAsList('.sunglasses','.sunglassesDD');
-						app.ext.store_nyci.u.loadSubCatsAsList('.eyeglasses','.eyeglassesDD');
-						app.ext.store_nyci.u.loadSubCatsAsList('.shop_by_brand','.brandDD');
+						app.ext.store_nyci.u.loadSubCatsAsList('subCategoryTemplate','.sunglasses','.sunglassesDD');
+						app.ext.store_nyci.u.loadSubCatsAsList('subCategoryTemplate','.eyeglasses','.eyeglassesDD');
+						app.ext.store_nyci.u.loadSubCatsAsList('subBrandsCategoryTemplate','.shop_by_brand','.brandDD');
 						app.u.dump('loadSubCatsAsList just ran in startExtension');
 					} else	{
 						setTimeout(function(){app.ext.store_nyci.callbacks.startExtension.onSuccess()},250);
@@ -88,7 +88,7 @@ var store_nyci = function() {
 			renderSubCatsAsList : {
 				onSuccess : function(rd) {
 // 					app.u.dump(app.data[rd.datapointer]);
-					$(rd.element).anycontent({"templateID":"subCategoryTemplate","datapointer":rd.datapointer});
+					$(rd.element).anycontent({"templateID":rd.template,"datapointer":rd.datapointer});
 				},
 				onError : function(rd){
 					app.u.dump('Error in extension: store_nyci_renderSubCatsAsList');
@@ -189,12 +189,13 @@ var store_nyci = function() {
 			},
 			
 				//loads sub cat created for the header drop-downs	
-			loadSubCatsAsList :function(passedCat,element) {
+			loadSubCatsAsList :function(template,passedCat,element) {
 				
 				var _tag = {
 					"callback"	: "renderSubCatsAsList",
 					"extension"	: "store_nyci",
-					"element"	: element	//the element to put the sub cat in
+					"element"	: element,	//the element to put the sub cat in
+					"template"	: template
 				}
 				app.ext.store_navcats.calls.appNavcatDetailMax.init(passedCat, _tag,'immutable');
 	
