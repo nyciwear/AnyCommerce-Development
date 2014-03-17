@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201346.20140316210800",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201346.20140317122200",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -311,20 +311,20 @@ ANIMATION TESTING
 						</div>
 					</div>
 				</div>
-				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
-					<a data-onclick='#!category?navcat=.sunglasses' href='#!category?navcat=.sunglasses'>Sunglasses</a>
-					<div class='dropdown wrapper displayNone sunglassesDD'></div> <!--  data-height='402' -->
-				</div>
-				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
-					<a data-onclick='#!category?navcat=.eyeglasses' href='#!category?navcat=.eyeglasses'>Eyeglasses</a>
-					<div class='dropdown wrapper displayNone eyeglassesDD'></div>
-				</div>
 				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
 					Nav
 					<div class='dropdown wrapper displayNone'>
 						<img class='dynamicImage' src='images/test/2008-05-15_baby-banz-sunglasses.jpg' alt='baby sunglasses'>
 						<div class='imageDropdownText'>Say something quick and catchy here for clicks!!</div>
 					</div>
+				</div>
+				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+					<a data-onclick='#!category?navcat=.sunglasses' href='#!category?navcat=.sunglasses'>Sunglasses</a>
+					<div class='dropdown wrapper displayNone sunglassesDD'></div> <!--  data-height='402' -->
+				</div>
+				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+					<a data-onclick='#!category?navcat=.eyeglasses' href='#!category?navcat=.eyeglasses'>Eyeglasses</a>
+					<div class='dropdown wrapper displayNone eyeglassesDD' data-height=90></div>
 				</div>
 			</div>
 			
@@ -632,7 +632,7 @@ don't modify the 'data-templateid' unless you are changing template names and up
 	<!-- used to display a targeted category's subcats, created for the drop-down menus in header -->
 <li id='dropdownCategoryListTemplate'>
 	<div onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});" class='pointer'>
-		<div class='thumbContainer'><img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='140' height='120' /></div>
+		<div class='thumbContainer'><img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='90' height='40' /></div>
 		<div class='catName white2LGray'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
 	</div>
 </li>

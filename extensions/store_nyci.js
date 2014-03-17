@@ -70,7 +70,7 @@ var store_nyci = function() {
 					app.u.dump('app.ext.store_nyci.callbacks.startExtension started');
 					if(app.ext.myRIA && app.ext.myRIA.template && app.ext.store_navcats){
 						app.ext.store_nyci.u.loadSubCatsAsList('subCategoryTemplate','.sunglasses','.sunglassesDD');
-						app.ext.store_nyci.u.loadSubCatsAsList('subCategoryTemplate','.eyeglasses','.eyeglassesDD');
+						app.ext.store_nyci.u.loadSubCatsAsList('subBrandsCategoryTemplate','.eyeglasses','.eyeglassesDD');
 						app.ext.store_nyci.u.loadSubCatsAsList('subBrandsCategoryTemplate','.shop_by_brand','.brandDD');
 						app.u.dump('loadSubCatsAsList just ran in startExtension');
 					} else	{
