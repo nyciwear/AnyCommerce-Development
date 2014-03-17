@@ -217,8 +217,8 @@ ANIMATION TESTING
 		
 				<!-- This list shows until 480res -->
 			<div class='navListList hidePhoneLandscape hidePhonePortrait'>
-				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
-					Brands
+				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+					<a data-onclick='#!category?navcat=.shop_by_brand' href='#!category?navcat=.shop_by_brand'>Brands</a>
 					<div class='dropdown wrapper displayNone' data-height=270>
 						<div class='dropdownCarton'>
 							<ul class='dropdownTopper'>
@@ -232,12 +232,12 @@ ANIMATION TESTING
 						<div class='brandDD floatLeft dropdownCarton'></div>
 					</div>
 				</div>
-				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));' onclick="return showContent('category',{'navcat':'.sunglasses'});">
-					Sunglasses
+				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+					<a data-onclick='#!category?navcat=.sunglasses' href='#!category?navcat=.sunglasses'>Sunglasses</a>
 					<div class='dropdown wrapper displayNone sunglassesDD'></div> <!--  data-height='402' -->
 				</div>
-				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));' onclick="return showContent('category',{'navcat':'.eyeglasses'});">
-					Eyeglasses
+				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+					<a data-onclick='#!category?navcat=.eyeglasses' href='#!category?navcat=.eyeglasses'>Eyeglasses</a>
 					<div class='dropdown wrapper displayNone eyeglassesDD'></div>
 				</div>
 				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
@@ -265,9 +265,9 @@ ANIMATION TESTING
 			
 				<!-- This list shows after 480res -->
 			<div class='navListList displayNone showPhoneLandscape showPhonePortrait'>
-				<div class='navListItem'>Brands</div>
-				<div class='navListItem pointer' onclick="return showContent('category',{'navcat':'.sunglasses'});">Sunglassed</div>
-				<div class='navListItem pointer' onclick="return showContent('category',{'navcat':'.eyeglasses'});">Eyeglasses</div>
+				<div class='navListItem'><a data-onclick='#!category?navcat=.shop_by_brand' href='#!category?navcat=.shop_by_brand'>Brands</a></div>
+				<div class='navListItem pointer'><a data-onclick='#!category?navcat=.sunglasses' href='#!category?navcat=.sunglasses'>Sunglasses</a></div>
+				<div class='navListItem pointer'><a data-onclick='#!category?navcat=.eyeglasses' href='#!category?navcat=.eyeglasses'>Eyeglasses</a></div>
 				<div class='navListItem'>Any</div>
 				<div class='navListItem'>Other</div>
 				<div class='navListItem'>Nav</div>
