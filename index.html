@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201346.20140312205600",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201346.20140316210800",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -219,14 +219,14 @@ ANIMATION TESTING
 			<div class='navListList hidePhoneLandscape hidePhonePortrait'>
 				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
 					Brands
-					<div class='dropdown wrapper displayNone '>
+					<div class='dropdown wrapper displayNone' data-height=270>
 						<div class='dropdownCarton'>
 							<ul class='dropdownTopper'>
 								<li>FEATUTRED BRANDS</li>
-								<li>Some products</li>
-								<li>Some products</li>
-								<li>Some products</li>
-								<li></li>
+								<li><a data-onclick='#!category?navcat=.sunglasses.arnette' href='#!category?navcat=.sunglasses.arnette'>Arnette</a></li>
+								<li><a data-onclick='#!category?navcat=.eyeglasses.burberry' href='#!category?navcat=.eyeglasses.burberry'>Burberry</a></li>
+								<li><a data-onclick='#!category?navcat=.sunglasses.tom_ford' href='#!category?navcat=.sunglasses.tom_ford'>Tom Ford</a></li>
+								<li><a data-onclick='#!category?navcat=.sunglasses.carrera' href='#!category?navcat=.sunglasses.carrera'>Carrera</a></li>
 							</ul>
 						</div>
 						<div class='brandDD floatLeft dropdownCarton'></div>
