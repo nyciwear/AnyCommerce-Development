@@ -1,3 +1,4 @@
+[
 	{
 	'index' => 'filter_type',
 	 'options' => [
@@ -246,3 +247,28 @@
 	 'title' => 'Select what the frame is made of',
 	 'type' => 'select'
 	},
+	{
+	'index' => 'filter_face_type',
+	 'options' => [
+				  {
+					'p' => 'Oval',
+					'v' => 'oval'
+				  },
+				  {
+					'p' => 'Square',
+					'v' => 'square'
+				  },
+				  {
+					'p' => 'Round',
+					'v' => 'round'
+				  },
+				  {
+					'p' => 'Heart',
+					'v' => 'heart'
+				  }
+				  ],
+	 'id' => 'user:filter_face_type',
+	 'title' => 'Select a face shape this goes with',
+	 'type' => 'select'
+	}
+]
