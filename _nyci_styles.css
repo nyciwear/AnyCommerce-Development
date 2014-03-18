@@ -189,13 +189,16 @@ header .cart span {color:#97AE3C;}
 .dropdownBrandsCategoryList li {height:1em; width:10.6em; margin:0.5em 0 0.1em 0.5em; float:none;}
 .dropdownBrandsCategoryList .catName {text-align:left;}
 /*he / she*/
-.heSheWrapper {height:auto; width:50%;}
-.heSheWrapper.she {height:auto; width:33%;}
-.heSheWrapper .dropdownCarton{height:auto; width:96%; margin:0.9em auto;}
-.heSheWrapper.she .dropdownCarton{width:95%;}
-.heSheWrapper .dropdownCarton:nth-child(2){height:9em; margin:0 auto 0.9em auto;}
-.heSheWrapper ul {margin:0; padding:0; list-style:none;}
-.heSheWrapper li {width:50%; padding:0.5em; font-size:0.8em; float:left; cursor:pointer;}
+.halfWrapper {height:auto; width:50%;}
+.halfWrapper.thirdWrapper {width:33%;}
+.halfWrapper .dropdownCarton{height:auto; width:96%; margin:0.9em auto;}
+.halfWrapper.thirdWrapper .dropdownCarton{width:95%;}
+.halfWrapper .dropdownCarton:nth-child(2){height:9em; margin:0 auto 0.9em auto;}
+.halfWrapper ul {margin:0; padding:0; list-style:none;}
+.halfWrapper li {width:50%; padding:0.5em; font-size:0.8em; float:left; cursor:pointer;}
+/*how to*/
+.halfWrapper.faceShape li {width:25%; text-align:center;}
+
 /*end dropdownCategoryTemplates*/
 
 .eyeglassesDD ul {box-shadow:3px 3px 3px 1px #2b2b2b; margin:1em; padding:0.5em;}
