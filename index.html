@@ -217,7 +217,7 @@ ANIMATION TESTING
 		
 				<!-- This list shows until 480res -->
 			<div class='navListList hidePhoneLandscape hidePhonePortrait'>
-				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
 					<a data-onclick='#!category?navcat=.shop_by_brand' href='#!category?navcat=.shop_by_brand'>Brands</a>
 					<div class='dropdown wrapper displayNone' data-height=270>
 						<div class='dropdownCarton'>
@@ -233,53 +233,22 @@ ANIMATION TESTING
 					</div>
 				</div>
 				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
-					He
-					<div class='dropdown wrapper displayNone' data-height=205>
-						<div class='heSheWrapper floatLeft'>
-							<div class='dropdownCarton'>
-								Shop By...
-							</div>
-							<div class='dropdownCarton'>
-								<ul>
-									<li>New</li>
-									<li>Best Sellers</li>
-									<li>Exclusive</li>
-									<li>Top Rated</li>
-									<li>Accessories</li>
-									<li>All Men's</li>
-								</ul>
-							</div>
-						</div>
-						<div class='heSheWrapper floatLeft'>
-							<div class='dropdownCarton'>
-								Featured Brands...
-							</div>
-							<div class='dropdownCarton'>
-								<ul>
-									<li>Arnette</li>
-									<li>Burberry</li>
-									<li>Tom Ford</li>
-									<li>Carrera</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
-					She
-					<div class='dropdown wrapper displayNone' data-height=205>
+					<a href='#!' onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'women'}}}});">Hers</a>
+					<div class='dropdown wrapper displayNone' data-height=235>
 						<div class='heSheWrapper she floatLeft'>
 							<div class='dropdownCarton'>
 								Shop By...
 							</div>
 							<div class='dropdownCarton'>
 								<ul>
-									<li>New</li>
-									<li>Best Sellers</li>
-									<li>Exclusive</li>
-									<li>Top Rated</li>
-									<li>Accessories</li>
-									<li>All Women's</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">New</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'IS_BESTSELLER'}},{'term':{'filter_gender':'women'}}]}}});">Best Sellers</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Exclusive</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Top Rated</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Accessories</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'filter_type':'sunglasses'}},{'term':{'filter_gender':'women'}}]}}});">Sunglasses</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'filter_type':'eyeglasses'}},{'term':{'filter_gender':'women'}}]}}});">Eyeglasses</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'women'}}}});">All Women's</li>
 								</ul>
 							</div>
 						</div>
@@ -289,10 +258,10 @@ ANIMATION TESTING
 							</div>
 							<div class='dropdownCarton'>
 								<ul>
-									<li>Arnette</li>
-									<li>Burberry</li>
-									<li>Tom Ford</li>
-									<li>Carrera</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Arnette'}},{'term':{'filter_gender':'women''}}]}}});">Arnette</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Burberry'}},{'term':{'filter_gender':'women''}}]}}});">Burberry</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'MARK'}},{'term':{'filter_gender':'women''}}]}}});">Tom Ford</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Carrera'}},{'term':{'filter_gender':'women''}}]}}});">Carrera</li>
 								</ul>
 							</div>
 						</div>
@@ -302,27 +271,62 @@ ANIMATION TESTING
 							</div>
 							<div class='dropdownCarton'>
 								<ul>
-									<li>Arnette</li>
-									<li>Burberry</li>
-									<li>Tom Ford</li>
-									<li>Carrera</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Arnette'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Arnette</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Burberry'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Burberry</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'MARK'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Tom Ford</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Carrera'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Carrera</li>
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
-					Nav
+					<a href='#!' onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'men'}}}});">His</a>
+					<div class='dropdown wrapper displayNone' data-height=235>
+						<div class='heSheWrapper floatLeft'>
+							<div class='dropdownCarton'>
+								Shop By...
+							</div>
+							<div class='dropdownCarton'>
+								<ul>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'men'}}]}}});">New</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'IS_BESTSELLER'}},{'term':{'filter_gender':'men'}}]}}});">Best Sellers</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'men'}}]}}});">Exclusive</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'men'}}]}}});">Top Rated</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'men'}}]}}});">Accessories</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'filter_type':'sunglasses'}},{'term':{'filter_gender':'men'}}]}}});">Sunglasses</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'filter_type':'eyeglasses'}},{'term':{'filter_gender':'men'}}]}}});">Eyeglasses</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'men'}}}});">All Men's</li>
+								</ul>
+							</div>
+						</div>
+						<div class='heSheWrapper floatLeft'>
+							<div class='dropdownCarton'>
+								Featured Brands...
+							</div>
+							<div class='dropdownCarton'>
+								<ul>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Arnette'}},{'term':{'filter_gender':'men''}}]}}});">Arnette</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Burberry'}},{'term':{'filter_gender':'men''}}]}}});">Burberry</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'IS_FRESH'}},{'term':{'filter_gender':'men''}}]}}});">Tom Ford</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Carrera'}},{'term':{'filter_gender':'men''}}]}}});">Carrera</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+					How To
 					<div class='dropdown wrapper displayNone'>
 						<img class='dynamicImage' src='images/test/2008-05-15_baby-banz-sunglasses.jpg' alt='baby sunglasses'>
 						<div class='imageDropdownText'>Say something quick and catchy here for clicks!!</div>
 					</div>
 				</div>
-				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
 					<a data-onclick='#!category?navcat=.sunglasses' href='#!category?navcat=.sunglasses'>Sunglasses</a>
 					<div class='dropdown wrapper displayNone sunglassesDD'></div> <!--  data-height='402' -->
 				</div>
-				<div class='navListItem pointer' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
+				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
 					<a data-onclick='#!category?navcat=.eyeglasses' href='#!category?navcat=.eyeglasses'>Eyeglasses</a>
 					<div class='dropdown wrapper displayNone eyeglassesDD' data-height=90></div>
 				</div>
@@ -331,11 +335,11 @@ ANIMATION TESTING
 				<!-- This list shows after 480res -->
 			<div class='navListList displayNone showPhoneLandscape showPhonePortrait'>
 				<div class='navListItem'><a data-onclick='#!category?navcat=.shop_by_brand' href='#!category?navcat=.shop_by_brand'>Brands</a></div>
+				<div class='navListItem'><a onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'men'}}}});">His</a></div>
+				<div class='navListItem'><a onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'women'}}}});">Hers</a></div>
+				<div class='navListItem'>How To</div>
 				<div class='navListItem pointer'><a data-onclick='#!category?navcat=.sunglasses' href='#!category?navcat=.sunglasses'>Sunglasses</a></div>
 				<div class='navListItem pointer'><a data-onclick='#!category?navcat=.eyeglasses' href='#!category?navcat=.eyeglasses'>Eyeglasses</a></div>
-				<div class='navListItem'>Any</div>
-				<div class='navListItem'>Other</div>
-				<div class='navListItem'>Nav</div>
 			</div>
 		</div>
 		
