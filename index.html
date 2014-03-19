@@ -283,7 +283,7 @@ ANIMATION TESTING
 				<div class='navListItem' onmouseover='app.ext.store_dropdown.a.showDropDown($(this));' onmouseout='app.ext.store_dropdown.a.hideDropDown($(this));'>
 					<a href='#!' onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'men'}}}});">His</a>
 					<div class='dropdown wrapper displayNone' data-height=235>
-						<div class='halfWrapper floatLeft'>
+						<div class='halfWrapper thirdWrapper floatLeft'>
 							<div class='dropdownCarton'>
 								Shop By...
 							</div>
@@ -300,7 +300,7 @@ ANIMATION TESTING
 								</ul>
 							</div>
 						</div>
-						<div class='halfWrapper floatLeft'>
+						<div class='halfWrapper thirdWrapper floatLeft'>
 							<div class='dropdownCarton'>
 								Featured Brands...
 							</div>
@@ -310,6 +310,19 @@ ANIMATION TESTING
 									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Burberry'}},{'term':{'filter_gender':'men''}}]}}});">Burberry</li>
 									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'IS_FRESH'}},{'term':{'filter_gender':'men''}}]}}});">Tom Ford</li>
 									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Carrera'}},{'term':{'filter_gender':'men''}}]}}});">Carrera</li>
+								</ul>
+							</div>
+						</div>
+						<div class='halfWrapper thirdWrapper floatLeft'>
+							<div class='dropdownCarton'>
+								New...
+							</div>
+							<div class='dropdownCarton'>
+								<ul>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Arnette'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Arnette</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Burberry'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Burberry</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'MARK'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Tom Ford</li>
+									<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Carrera'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Carrera</li>
 								</ul>
 							</div>
 						</div>
