@@ -198,6 +198,8 @@ header .cart span {color:#97AE3C;}
 .halfWrapper li {width:50%; padding:0.5em; font-size:0.8em; float:left; cursor:pointer;}
 /*how to*/
 .halfWrapper.faceShape li {width:25%; text-align:center;}
+.halfWrapper .threeCol ul {column-count:3; -moz-column-count:3; -webkit-column-count:3;}
+.halfWrapper .threeCol li {height:2.2em; width:100%; float:none;}
 
 /*end dropdownCategoryTemplates*/
 
