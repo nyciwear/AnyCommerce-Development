@@ -3,12 +3,12 @@
 	'index' => 'filter_type',
 	 'options' => [
 				  {
-					'p' => 'Sunglasses',
-					'v' => 'sunglasses'
+					"p":"Sunglasses",
+					"v":"sunglasses"
 				  },
 				  {
-					'p' => 'Eyeglasses',
-					'v' => 'eyeglasses'
+					"p":"Eyeglasses",
+					"v":"eyeglasses"
 				  }
 				],
 	 'id' => 'user:filter_type',
@@ -19,20 +19,20 @@
 	'index' => 'filter_lens_type',
 	 'options' => [
 				  {
-					'p' => 'Polarized',
-					'v' => 'polarized'
+					"p":"Polarized",
+					"v":"polarized"
 				  },
 				  {
-					'p' => 'Mirrored',
-					'v' => 'mirrored'
+					"p":"Mirrored",
+					"v":"mirrored"
 				  },
 				  {
-					'p' => 'Gradient',
-					'v' => 'gradient'
+					"p":"Gradient",
+					"v":"gradient"
 				  },
 				  {
-					'p' => 'Glass',
-					'v' => 'glass'
+					"p":"Glass",
+					"v":"glass"
 				  }
 				],
 	 'id' => 'user:filter_lens_type',
@@ -43,44 +43,44 @@
 	'index' => 'filter_lens_color',
 	 'options' => [
 				  {
-					'p' => 'Blue',
-					'v' => 'blue'
+					"p":"Blue",
+					"v":"blue"
 				  },
 				  {
-					'p' => 'Gold',
-					'v' => 'gold'
+					"p":"Gold",
+					"v":"gold"
 				  },
 				  {
-					'p' => 'Green',
-					'v' => 'green'
+					"p":"Green",
+					"v":"green"
 				  },
 				  {
-					'p' => 'Grey',
-					'v' => 'grey'
+					"p":"Grey",
+					"v":"grey"
 				  },
 				  {
-					'p' => 'Orange',
-					'v' => 'orange'
+					"p":"Orange",
+					"v":"orange"
 				  },
 				  {
-					'p' => 'Pink',
-					'v' => 'pink'
+					"p":"Pink",
+					"v":"pink"
 				  },
 				  {
-					'p' => 'Purple',
-					'v' => 'purple'
+					"p":"Purple",
+					"v":"purple"
 				  },
 				  {
-					'p' => 'Red',
-					'v' => 'red'
+					"p":"Red",
+					"v":"red"
 				  },
 				  {
-					'p' => 'Silver',
-					'v' => 'silver'
+					"p":"Silver",
+					"v":"silver"
 				  },
 				  {
-					'p' => 'Yellow',
-					'v' => 'yellow'
+					"p":"Yellow",
+					"v":"yellow"
 				  }
 				  ],
 	 'id' => 'user:filter_lens_color',
@@ -91,48 +91,48 @@
 	'index' => 'filter_frame_type',
 	 'options' => [
 				  {
-					'p' => 'Aviator',
-					'v' => 'aviator'
+					"p":"Aviator",
+					"v":"aviator"
 				  },
 				  {
-					'p' => 'Butterfly',
-					'v' => 'butterfly'
+					"p":"Butterfly",
+					"v":"butterfly"
 				  },
 				  {
-					'p' => 'Cat Eye',
-					'v' => 'cateye'
+					"p":"Cat Eye",
+					"v":"cateye"
 				  },
 				  {
-					'p' => 'Oval',
-					'v' => 'oval'
+					"p":"Oval",
+					"v":"oval"
 				  },
 				  {
-					'p' => 'Rectangle',
-					'v' => 'rectangle'
+					"p":"Rectangle",
+					"v":"rectangle"
 				  },
 				  {
-					'p' => 'Round',
-					'v' => 'round'
+					"p":"Round",
+					"v":"round"
 				  },
 				  {
-					'p' => 'Rimless',
-					'v' => 'rimless'
+					"p":"Rimless",
+					"v":"rimless"
 				  },
 				  {
-					'p' => 'Shield',
-					'v' => 'shield'
+					"p":"Shield",
+					"v":"shield"
 				  },
 				  {
-					'p' => 'Square',
-					'v' => 'square'
+					"p":"Square",
+					"v":"square"
 				  },
 				  {
-					'p' => 'Wayfarer',
-					'v' => 'wayfarer'
+					"p":"Wayfarer",
+					"v":"wayfarer"
 				  },
 				  {
-					'p' => 'Wrap',
-					'v' => 'wrap'
+					"p":"Wrap",
+					"v":"wrap"
 				  }
 				  ],
 	 'id' => 'user:filter_frame_type',
@@ -143,12 +143,12 @@
 	'index' => 'filter_gender',
 	 'options' => [
 				  {
-					'p' => 'Men',
-					'v' => 'men'
+					"p":"Men",
+					"v":"men"
 				  },
 				  {
-					'p' => 'Women',
-					'v' => 'women'
+					"p":"Women",
+					"v":"women"
 				  }
 				  ],
 	 'id' => 'user:filter_gender',
@@ -159,68 +159,68 @@
 	'index' => 'filter_frame_color',
 	 'options' => [
 				  {
-					'p' => 'Black',
-					'v' => 'black'
+					"p":"Black",
+					"v":"black"
 				  },
 				   {
-					'p' => 'Blue',
-					'v' => 'blue'
+					"p":"Blue",
+					"v":"blue"
 				  },
 				   {
-					'p' => 'Brown',
-					'v' => 'brown'
+					"p":"Brown",
+					"v":"brown"
 				  },
 				   {
-					'p' => 'Gold',
-					'v' => 'Gold'
+					"p":"Gold",
+					"v":"Gold"
 				  },
 				   {
-					'p' => 'Green',
-					'v' => 'green'
+					"p":"Green",
+					"v":"green"
 				  },
 				   {
-					'p' => 'Grey',
-					'v' => 'grey'
+					"p":"Grey",
+					"v":"grey"
 				  },
 				   {
-					'p' => 'Gunmetal',
-					'v' => 'gunmetal'
+					"p":"Gunmetal",
+					"v":"gunmetal"
 				  },
 				   {
-					'p' => 'Havana',
-					'v' => 'havana'
+					"p":"Havana",
+					"v":"havana"
 				  },
 				   {
-					'p' => 'Orange',
-					'v' => 'orange'
+					"p":"Orange",
+					"v":"orange"
 				  },
 				   {
-					'p' => 'Pink',
-					'v' => 'pink'
+					"p":"Pink",
+					"v":"pink"
 				  },
 				   {
-					'p' => 'Purple',
-					'v' => 'purple'
+					"p":"Purple",
+					"v":"purple"
 				  },
 				   {
-					'p' => 'Red',
-					'v' => 'red'
+					"p":"Red",
+					"v":"red"
 				  },
 				   {
-					'p' => 'Ruthenium',
-					'v' => 'ruthenium'
+					"p":"Ruthenium",
+					"v":"ruthenium"
 				  },
 				   {
-					'p' => 'Silver',
-					'v' => 'silver'
+					"p":"Silver",
+					"v":"silver"
 				  },
 				   {
-					'p' => 'White',
-					'v' => 'white'
+					"p":"White",
+					"v":"white"
 				  },
 				  {
-					'p' => 'Yellow',
-					'v' => 'yellow'
+					"p":"Yellow",
+					"v":"yellow"
 				  }
 				  ],
 	 'id' => 'user:filter_frame_color',
@@ -231,16 +231,16 @@
 	'index' => 'filter_frame_material',
 	 'options' => [
 				  {
-					'p' => 'Metal',
-					'v' => 'metal'
+					"p":"Metal",
+					"v":"metal"
 				  },
 				  {
-					'p' => 'Plastic',
-					'v' => 'plastic'
+					"p":"Plastic",
+					"v":"plastic"
 				  },
 				  {
-					'p' => 'Titanium',
-					'v' => 'titanium'
+					"p":"Titanium",
+					"v":"titanium"
 				  }
 				  ],
 	 'id' => 'user:filter_frame_material',
@@ -251,20 +251,20 @@
 	'index' => 'filter_face_type',
 	 'options' => [
 				  {
-					'p' => 'Oval',
-					'v' => 'oval'
+					"p":"Oval",
+					"v":"oval"
 				  },
 				  {
-					'p' => 'Square',
-					'v' => 'square'
+					"p":"Square",
+					"v":"square"
 				  },
 				  {
-					'p' => 'Round',
-					'v' => 'round'
+					"p":"Round",
+					"v":"round"
 				  },
 				  {
-					'p' => 'Heart',
-					'v' => 'heart'
+					"p":"Heart",
+					"v":"heart"
 				  }
 				  ],
 	 'id' => 'user:filter_face_type',
