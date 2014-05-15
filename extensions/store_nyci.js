@@ -24,7 +24,7 @@ var store_nyci = function() {
 	var theseTemplates = new Array('');
 	var r = {
 
-
+vars : {},
 ////////////////////////////////////   CALLBACKS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
@@ -35,8 +35,16 @@ var store_nyci = function() {
 			onSuccess : function()	{
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 				
+				
 //				app.u.dump('--> NYCI Ext Started');
 				app.ext.store_nyci.u.bindOnclick();
+				
+		//		REVISIT AFTER 2014XX UPGRADE, FOR SIGN-UP BUTTON AT LOAD TIME.
+		//		app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
+		//			dump('---Got to onCompletes');
+		//			if(app.ext.store_nyci.vars = "createAccount") { app.ext.store_nyci.u.goToMyAccount(); }
+		//			dump(app.ext.store_nyci.vars);
+		//		}]);
 				
 				app.rq.push(['templateFunction','companyTemplate','onCompletes',function(infoObj) {
 					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
@@ -138,7 +146,12 @@ var store_nyci = function() {
 
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
-		u : {	
+		u : {
+			
+			goToMyAccount : function() {
+			app.u.dump('----Got to goToMyAccount'); 
+				return showContent('customer',{'show':'createaccount'});
+			},
 
 			getArticle : function($context,thisPlace) {
 				app.u.dump('---- Start store_nyci getArticle');  app.u.dump(thisPlace); 

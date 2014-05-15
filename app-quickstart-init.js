@@ -205,7 +205,8 @@ app.u.appInitComplete = function(P)	{
 				break;
 			case "signUp" : //user is new, load createAccount
 				app.u.dump('--* IN SIGN UP');
-				window.location.hash = "#customer?show=createaccount";
+				//window.location.hash = "#customer?show=createaccount";
+				//app.ext.store_nyci.vars = "createAccount";
 				break;
 			case "logIn" : //user isn't new, show login
 				app.u.dump('--* IN LOG IN');
