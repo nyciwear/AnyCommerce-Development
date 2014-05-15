@@ -20,7 +20,7 @@ var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPL
 var myCreole;
 
 var app = {vars:{
-	"release":"201346.20140319124900",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+	"release":"201346.20140505095600",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 	"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 	"baseURL":"", //used in non-local mode.
 	"checkoutAuthMode" : "active",//can be passive, active or required
@@ -413,6 +413,7 @@ ANIMATION TESTING
 		</div>
 		
 		<div class='discountBanner'>Ya&#33; We&#39;ll put some righteous discounts here for sure&#33;&#33;</div>
+		<div class='ppFinancingHeader'>Paypal Financing Banner</div>
 		
 
 	</header>
@@ -455,6 +456,7 @@ ANIMATION TESTING
 		<div class='policyGraphics floatRight'>
 			<div></div>
 			<div></div>
+			<div class='ppFinancingFooter'>Paypal Financing Banner</div>
 		</div>
 		
 		<div class='copyright'>	
@@ -1076,6 +1078,7 @@ this will likely become more flexible in the future. ###
 				<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Qty: ; defaultValue:1;' class='borderNone floatRight'></fieldset>
 			</form>
 			
+			<div class='ppFinancingProduct'>Paypal Financing Banner</div>
 			
 			<div data-bind='var:product(zoovy:prod_cpsiawarning); format:cpsiaWarning; extension:myRIA;'></div>
 			<div data-bind='var:product(zoovy:qty_price);format:quantityDiscounts; extension:store_product; pretext:Quantity Discounts:; className:marginBottom;'></div>
@@ -2541,7 +2544,7 @@ put all filters into the appFilters container.
 			</div>
 		</fieldset>
 		
-    </form> <!-- //BIKINI SETS FILTERS -->
+    </form> <!-- //sunglassesForm -->
 	
 	
 </div> <!-- //Filter search forms -->
