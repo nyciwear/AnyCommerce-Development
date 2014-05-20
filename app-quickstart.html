@@ -200,9 +200,9 @@ ANIMATION TESTING
 				<div class='popOutLinks floatRight'>
 					<div class='popSearch floatLeft' onmouseover='myApp.ext.store_dropdown.a.showDropDown($(this));' onmouseout='myApp.ext.store_dropdown.a.hideDropDown($(this));'>
 						<div class='dropdown displayNone'>
-							<form id="headerSearchFrm" name="headerSearchFrm" action="#" class="productSearchForm" method="get">
-								<input name="KEYWORDS" value="" placeholder=' Enter Keyword' class="productSearchKeyword handleDefault" type="search">
-								<input class="searchButton pointer" id="headerSearchSubmit" value="SEARCH" type="submit">
+							<form name="headerSearchFrm" action="#" id="headerSearchFrm" class="productSearchForm" method="get" data-app-submit='quickstart|searchFormSubmit'>
+								<input type="search" name="KEYWORDS" value="" placeholder=' Enter Keyword' class="productSearchKeyword handleDefault">
+								<button id="headerSearchSubmit" class="searchButton pointer">SEARCH</button>
 							</form>
 						</div>
 					</div>
