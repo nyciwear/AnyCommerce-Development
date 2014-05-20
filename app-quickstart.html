@@ -684,7 +684,8 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 			</p>
 			<div class='bTopTriangle'></div>
 		</div>
-		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"30","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResultsNoPreview;' class='listStyleNone fluidList clearfix noPadOrMargin productList bestSellerCar listCar'></ul>
+		
+		<ul data-tlc="quickstart#searchbytag --tag='IS_BESTSELLER' --size='16' --templateid='productListTemplateResultsNoPreview';" id='homeProdSearchBestSellers' class='listStyleNone fluidList clearfix noPadOrMargin productList bestSellerCar listCar'></ul>
 		<div class='bestPrev smPrvArrow listCarPrev floatLeft'></div>
 		<div class='bestNext smNxtArrow listCarNext floatRight'></div>
 		<div class='bestBannerPagination carPagination carPaginationCont'></div>	
@@ -953,17 +954,26 @@ SANITY -> if you change the height and width of this image, change the .minimalM
 	<a class="hideInMinimalMode pointer moreDetails" data-tlc="bind $seoname '.prod_name'; bind $var '.'; store_routing#seoanchor --type='product' --seo --seoname=$seoname; apply --attrib='href';">more details</a>
 </li>
 
-<li id="productListTemplateResultsNoPreview" class="loadingBG searchResultsProduct ">
+<li id="productListTemplateResultsNoPreview" class="loadingBG searchResultsProduct pLTR" onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();">
+	<button class="floatRight pointer quickView displayNone" data-app-click="quickstart|quickviewShow" data-loadstemplate="productTemplateQuickView">Quickview</button>
 	<a data-tlc="bind $var '.'; store_routing#seoanchor --type='product' --seo; apply --attrib='href';" class="pointer">
 		<div class="prodThumbContainer">
-		<img data-tlc="bind $var '.images.0'; if (is $var --notblank;) {{apply --img --media=$var --width=120 --height=120 --bgcolor='#ffffff' --replace;}};" src="blank.gif" class="prodThumb" alt="" height="120" width="120">
+			<img data-tlc="bind $var '.images.0'; if (is $var --notblank;) {{apply --img --media=$var --width=150 --height=120 --bgcolor='#ffffff' --replace;}};" src="blank.gif" class="prodThumb" alt="" height="150" width="120">
 		</div>
-
-		<h5 data-tlc="bind $var '.prod_name'; if (is $var --notblank;) {{apply --append;}};" class="hideInMinimalMode"></h5>
-
-		<h6 data-tlc="bind $var '.base_price';  if (is $var --notblank;) {{format --currency='USD'; format --prepend='Our Price: ';  apply --append;}};" class="hideInMinimalMode"></h6>
 	</a>
-	<a class="hideInMinimalMode pointer moreDetails" data-tlc="bind $seoname '.prod_name'; bind $var '.'; store_routing#seoanchor --type='product' --seo --seoname=$seoname; apply --attrib='href';">more details</a>
+
+	<h5 data-tlc="bind $var '.prod_name'; if (is $var --notblank;) {{format --truncate='60'; apply --append;}};"></h5>
+	
+	<div data-tlc="bind $var '.cart_price'; if(is $var --notblank;) {{format --hide;}};">
+		<h6 data-tlc="bind $var '.base_price';  if (is $var --notblank;) {{math --div='100'; format --currency='USD'; format --prepend='<span>Our Price: </span>';  apply --append;}};" class="price hideInMinimalMode"></h6>
+	</div>
+	<div data-tlc="bind $var '.cart_price'; if(is $var --notblank;) {{format --show;}};" class='displayNone seeInCartCont'>
+		<h6 class='hideInMinimalMode price'><span class="pretext">Our Price: </span>See in cart</h6>
+		<span class='whyInCart'>
+			Why?<span class='displayNone whyHover'>Some manufacturers do this... <br>Please provide specific text for this feature.</span>
+		</span>
+	</div>
+	<a data-tlc="bind $var '.'; store_routing#seoanchor --type='product' --seo; apply --attrib='href';" class="hideInMinimalMode pointer moreDetails cornerButton">MORE DETAILS</a>
 </li>
 </ul>
 

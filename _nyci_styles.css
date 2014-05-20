@@ -23,7 +23,8 @@ a:visited, a:hover {color:#f05524;}
 
 .whyHover {position:absolute; z-index:50;}
 
-button.cornerButton, input.cornerButton, .cornerButton {height:1.5em; width:100%; background:#97AE3C url('images/prodList_atc_corner-16x16.png') no-repeat left top; border: 1px outset; border-radius:0; color:#ffffff; text-align:center; padding:0;}
+button.cornerButton, input.cornerButton, a.cornerButton, .cornerButton {height:1.5em; width:100%; background:#97AE3C url('images/prodList_atc_corner-16x16.png') no-repeat left top; border: 1px outset; border-radius:0; color:#ffffff; text-align:center; padding:0;}
+a.cornerButton {display:block;}
 button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:#1C94C4;}
 .selectArrow {background:#ffffff url('images/select_arrow-30x30.jpg') no-repeat left top;}
 
