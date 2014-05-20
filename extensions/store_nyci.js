@@ -20,7 +20,7 @@
 
 //    !!! ->   TODO: replace 'username' in the line below with the merchants username.     <- !!!
 
-var store_nyci = function() {
+var store_nyci = function(_app) {
 	var theseTemplates = new Array('');
 	var r = {
 
@@ -36,8 +36,8 @@ vars : {},
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 				
 				
-//				app.u.dump('--> NYCI Ext Started');
-				app.ext.store_nyci.u.bindOnclick();
+//				_app.u.dump('--> NYCI Ext Started');
+	//			_app.ext.store_nyci.u.bindOnclick();
 				
 		//		REVISIT AFTER 2014XX UPGRADE, FOR SIGN-UP BUTTON AT LOAD TIME.
 		//		app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
@@ -45,11 +45,7 @@ vars : {},
 		//			if(app.ext.store_nyci.vars = "createAccount") { app.ext.store_nyci.u.goToMyAccount(); }
 		//			dump(app.ext.store_nyci.vars);
 		//		}]);
-				
-				app.rq.push(['templateFunction','companyTemplate','onCompletes',function(infoObj) {
-					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_nyci.u.getArticle($context,infoObj.show);
-				}]);
+
 				
 			//	setTimeout(function(){
 					//app.ext.store_nyci.u.loadSubCatsAsList('.sunglasses');
@@ -69,38 +65,42 @@ vars : {},
 			onError : function()	{
 //errors will get reported for this callback as part of the extensions loading.  This is here for extra error handling purposes.
 //you may or may not need it.
-				app.u.dump('BEGIN admin_orders.callbacks.init.onError');
+				_app.u.dump('BEGIN admin_orders.callbacks.init.onError');
 				}
 			},
 			
 			startExtension : {
 				onSuccess : function() {
-					app.u.dump('app.ext.store_nyci.callbacks.startExtension started');
-					if(app.ext.myRIA && app.ext.myRIA.template && app.ext.store_navcats){
-						app.ext.store_nyci.u.loadSubCatsAsList('subCategoryTemplate','.sunglasses','.sunglassesDD');
-						app.ext.store_nyci.u.loadSubCatsAsList('subBrandsCategoryTemplate','.eyeglasses','.eyeglassesDD');
-						app.ext.store_nyci.u.loadSubCatsAsList('subBrandsCategoryTemplate','.shop_by_brand','.brandDD');
-						app.u.dump('loadSubCatsAsList just ran in startExtension');
+					_app.u.dump('_app.ext.store_nyci.callbacks.startExtension started');
+					
+					if(_app.ext.quickstart && _app.templates && _app){
+						_app.ext.store_nyci.u.loadSubCatsAsList('subCategoryTemplate','.sunglasses','.sunglassesDD');
+						_app.ext.store_nyci.u.loadSubCatsAsList('subBrandsCategoryTemplate','.eyeglasses','.eyeglassesDD');
+						_app.ext.store_nyci.u.loadSubCatsAsList('subBrandsCategoryTemplate','.shop_by_brand','.brandDD');
+//						_app.u.dump('loadSubCatsAsList just ran in startExtension');
+						
+						_app.templates.companyTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
+							_app.ext.store_nyci.u.getArticle($context,infoObj.show);
+						});
+					
 					} else	{
-						setTimeout(function(){app.ext.store_nyci.callbacks.startExtension.onSuccess()},250);
-						var count = 0;
-						count += 1;
-						app.u.dump(count);
+						setTimeout(function(){ _app.ext.store_nyci.callbacks.startExtension.onSuccess() },250);
 					}
+					
 				},
 				onError : function (){
-					app.u.dump('BEGIN app.ext.store_nyci.callbacks.startExtension.onError');
+					_app.u.dump('BEGIN _app.ext.store_nyci.callbacks.startExtension.onError');
 				}
 			},
 			
 			renderSubCatsAsList : {
 				onSuccess : function(rd) {
-// 					app.u.dump(app.data[rd.datapointer]);
-					$(rd.element).anycontent({"templateID":rd.template,"datapointer":rd.datapointer});
+// 					_app.u.dump(_app.data[rd.datapointer]);dump(rd.datapointer);
+					$(rd.element).tlc({"templateid":rd.template,"datapointer":rd.datapointer,verb:"transmogrify"});
 				},
 				onError : function(rd){
-					app.u.dump('Error in extension: store_nyci_renderSubCatsAsList');
-					app.u.dump(rd);
+					_app.u.dump('Error in extension: store_nyci_renderSubCatsAsList');
+					_app.u.dump(rd);
 				}
 			}
 			
@@ -138,7 +138,7 @@ vars : {},
 		renderFormats : {
 		
 			test : function($tag, data) {
-				app.u.dump('--> Test Function'); app.u.dump(data.value);
+				_app.u.dump('--> Test Function'); _app.u.dump(data.value);
 			}
 
 		}, //renderFormats
@@ -149,12 +149,12 @@ vars : {},
 		u : {
 			
 			goToMyAccount : function() {
-			app.u.dump('----Got to goToMyAccount'); 
+			_app.u.dump('----Got to goToMyAccount'); 
 				return showContent('customer',{'show':'createaccount'});
 			},
 
 			getArticle : function($context,thisPlace) {
-				app.u.dump('---- Start store_nyci getArticle');  app.u.dump(thisPlace); 
+				_app.u.dump('---- Start store_nyci getArticle');  _app.u.dump(thisPlace); 
 				var $title = $('.articleTitle',$context);
 				switch(thisPlace) {
 					case "about" :
@@ -196,8 +196,8 @@ vars : {},
 			bindOnclick : function() {
 				$('body').off('click', 'a[data-onclick]').on('click', 'a[data-onclick]', function(event){
 					 var $this = $(this);
-					 var P = app.ext.myRIA.u.parseAnchor($this.data('onclick'));
-					 return app.ext.myRIA.a.showContent('',P);
+					 var P = _app.ext.quickstart.u.parseAnchor($this.data('onclick'));
+					 return _app.ext.quickstart.a.showContent('',P);
 				});
 			},
 			
@@ -210,9 +210,9 @@ vars : {},
 					"element"	: element,	//the element to put the sub cat in
 					"template"	: template
 				}
-				app.ext.store_navcats.calls.appNavcatDetailMax.init(passedCat, _tag,'immutable');
+				_app.calls.appNavcatDetail.init({"path":passedCat,"detail":"max"}, _tag,'immutable');
 	
-				app.model.dispatchThis('immutable');
+				_app.model.dispatchThis('immutable');
 			
 			}, //loadSubCatsAsList
 		

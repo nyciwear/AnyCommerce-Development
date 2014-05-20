@@ -20,7 +20,7 @@
 
 //    !!! ->   TODO: replace 'username' in the line below with the merchants username.     <- !!!
 
-var store_dropdown = function() {
+var store_dropdown = function(_app) {
 	var theseTemplates = new Array('');
 	var r = {
 
@@ -43,7 +43,7 @@ var store_dropdown = function() {
 			onError : function()	{
 //errors will get reported for this callback as part of the extensions loading.  This is here for extra error handling purposes.
 //you may or may not need it.
-				app.u.dump('BEGIN admin_orders.callbacks.init.onError');
+				_app.u.dump('BEGIN admin_orders.callbacks.init.onError');
 				}
 			}
 		}, //callbacks
@@ -84,7 +84,7 @@ var store_dropdown = function() {
 			},
 		
 			showDropDown : function ($tag) {
-				//app.u.dump('showing');
+				//_app.u.dump('showing');
 				//console.log($tag.data('timeoutNoShow'));
 				if(!$tag.data('timeoutNoShow') || $tag.data('timeoutNoShow')=== "false") {
 					var $dropdown = $(".dropdown", $tag);
@@ -109,21 +109,21 @@ var store_dropdown = function() {
 			},
 			
 			showDropDownClick : function($tag){
-				//app.u.dump('showClick');
+				//_app.u.dump('showClick');
 				if(this.showDropDown($tag)){
 					$('.dropdown',$tag).unbind('click');
 					$('.dropdown',$tag).click(function(event){event.stopPropagation()});
 					$tag.attr('onClick','').unbind('click');
 					setTimeout(function(){
 						$('body').click(function(){
-							app.ext.cubworld.a.hideDropDownClick($tag);
+							_app.ext.store_dropdown.a.hideDropDownClick($tag);
 						});
 					}, 500);
 				}
 			},
 			
 			hideDropDown : function ($tag) {
-				//app.u.dump('hiding');
+				//_app.u.dump('hiding');
 				$(".dropdown", $tag).stop().animate({"height":"0px"}, 500);
 				if($tag.data('timeout') && $tag.data('timeout')!== "false"){
 					$tag.data('timeout')
@@ -134,9 +134,9 @@ var store_dropdown = function() {
 			},
 			
 			hideDropDownClick : function($tag){
-				//app.u.dump('hideClick');
+				//_app.u.dump('hideClick');
 				if(this.hideDropDown($tag)){
-					$tag.click(function(){app.ext.cubworld.a.showDropDownClick($(this));});
+					$tag.click(function(){_app.ext.store_dropdown.a.showDropDownClick($(this));});
 					$('body').unbind('click');
 				}
 			},

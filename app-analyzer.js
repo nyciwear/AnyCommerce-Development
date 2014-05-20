@@ -88,7 +88,7 @@ $('#tabs-4').append(app.ext.analyzer.u.buildTagsList({'id':'tagList'}));
 
 			showRootCategories : {
 				onSuccess : function(tagObj)	{
-					app.ext.store_navcats.u.getChildDataOf('.',{'parentID':'categoryTree','callback':'addCatToDom','templateID':'catInfoTemplate','extension':'store_navcats'},'appNavcatDetailMore');  //generate left nav.
+					app.ext.store_navcats.u.getChildDataOf('.',{'parentID':'categoryTree','callback':'addCatToDom','templateID':'catInfoTemplate','extension':'store_navcats'},'more');  //generate left nav.
 					app.model.dispatchThis();
 					},
 				onError : function(responseData,uuid)	{
@@ -173,7 +173,7 @@ $('#tabs-4').append(app.ext.analyzer.u.buildTagsList({'id':'tagList'}));
 //				app.u.dump(" -> size() = "+$('#'+parentID+' li').size());
 //once the parentID has children, the subcats have already been loaded. don't load them twice.
 				if($('#'+parentID+' li').size() == 0)	{ 
-					app.ext.store_navcats.u.getChildDataOf(path,{'parentID':parentID,'callback':'addCatToDom','templateID':'catInfoTemplate','extension':'store_navcats'},'appNavcatDetailMore');
+					app.ext.store_navcats.u.getChildDataOf(path,{'parentID':parentID,'callback':'addCatToDom','templateID':'catInfoTemplate','extension':'store_navcats'},'more');
 					app.model.dispatchThis();
 					}
 				}, //showSubcats
@@ -188,7 +188,7 @@ $('#tabs-4').append(app.ext.analyzer.u.buildTagsList({'id':'tagList'}));
 				$('#tagList li').removeClass('ui-state-active'); //remove any previously active states from list item choiced.
 				$('#'+tag).addClass('ui-state-active'); //add active state to list item now in focus.
 				$('#tagProdlist').empty().addClass('loadingBG'); //empty results container so new list isn't appended to previous list, if present.
-				app.ext.store_search.calls.appPublicProductSearch.init({'size':250,'mode':'elastic-native','filter':{'term':{'tags':tag}}},{'callback':'handleElasticResults','extension':'analyzer','datapointer':'appPublicSearch|'+tag,'parentID':'tagProdlist'});
+				app.ext.store_search.calls.appPublicProductSearch.init({'size':250,'mode':'elastic-search','filter':{'term':{'tags':tag}}},{'callback':'handleElasticResults','extension':'analyzer','datapointer':'appPublicSearch|'+tag,'parentID':'tagProdlist'});
 				app.model.dispatchThis();
 				}, //showItemsTaggedAs
 
