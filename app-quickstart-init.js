@@ -37,7 +37,7 @@ myApp.rq.push(['script',0,myApp.vars.baseURL+'resources/jquery.touchSwipe-1.3.3.
 
 myApp.rq.push(['extension',0,'store_nyci','extensions/store_nyci.js','startExtension']); //general app specific functions
 myApp.rq.push(['extension',0,'store_dropdown','extensions/store_dropdown.js']); //creates drop-downs
-//myApp.rq.push(['extension',0,'store_carousel','extensions/store_carousel.js']); //creates carousels using carouFedSel
+myApp.rq.push(['extension',0,'store_carousel','extensions/store_carousel.js','startExtension']); //creates carousels using carouFedSel
 //myApp.rq.push(['extension',0,'tools_zoom','extensions/tools_zoom/tools_zoom.js']); //enables zoomed images
 	//app.rq.push(['extension',0,'tools_lightbox','extensions/tools_lightbox/tools_lightbox.js']); //opens lightbox to show larger version of images
 myApp.rq.push(['extension',0,'store_recently_viewed','extensions/store_recently_viewed.js','startExtension']); //products that have been viewed previously

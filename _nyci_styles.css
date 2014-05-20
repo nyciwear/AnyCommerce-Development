@@ -259,6 +259,7 @@ homepage
 .sideBannerCont {height:100%; width:25%; background:#2e2e2e; font-style:normal; color:#97AE3C; overflow:hidden; position:relative;}
 .sideBannerCont .title {height:1.55em; width:100%; background-color:#666666; color:#ffffff; font-family:Courier; font-size:2em; text-align:center; line-height:1.7em;}
 .sideBannerCont .title span {height:100%; width:13%; background:#666666 url(images/nyc11_tit_hotitemsblock-29x51.jpg) no-repeat left top; float:left;}
+.sideBannerCont .title p {margin:0;}
 .sideBannerCont .mpControlContainer {display:none;} /*can be removed if this goes to search from $list*/
 .sideBannerCont .sideBannerProductListTemplate {height:317px; width:100%; margin:0; padding:2em;}
 .sideBannerCont .prodThumbContainer {margin:0 0 0.5em 0;}
@@ -269,6 +270,8 @@ homepage
 .sideBannerNext {left:auto; right:0.3em;}
 .sideBannerPrev:hover {background-position:-5em -6.362em;}
 .sideBannerNext:hover {background-position:-16.9em -6.362em;}
+a.more {color:#97AE3C;}
+a.more:hover {color:#97AE3C;}
 .sideBannerProductListTemplate .more > span  {height:1em; width:1em; background:#2e2e2e url(images/orange_arrow_seedetails-10x11.png) no-repeat center bottom; display:inline-block;}
 .sideBannerCont .all {width:100%; color:#2E2E2E; background-color:#97AE3C; padding:0.3em 0 0.1em 0; text-align:center; position:absolute; bottom:0; left:0;}	
 .sideBannerCont .all:hover {color:#97AE3C; background-color:#2E2E2E;}

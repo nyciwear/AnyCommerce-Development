@@ -593,20 +593,113 @@ COMMONLY EDITED TEMPLATES
 <!--
 the homepageTemplate template is loaded into mainContentArea by default when the application loads
 -->
-<div id="homepageTemplate" class="homeTemplate">
+<div id='homepageTemplate' class='homeTemplate'>
+
+	<div class='homeBannersCont hidePhoneLandscape hidePhonePortrait'>
+	<!-- <ul data-bind="var: category(@subcategoryDetail); format: categoryList; bgcolor: TTTTTT; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin'></ul> -->
+		<div class='bannerTop'>
+			<p>
+				Discount Designer Sunglasses Satisfaction Guaranteed
+			</p>
+			<div class='bTopTriangle'></div>
+		</div>
+
+		<div class='mainBannerCont'>
+			<div class='mainBanner floatLeft'>
+				<img src='images/rbneverhidebanner.png'>
+				<img src='images/ps_ad.jpg'>
+				<img src='images/tf_ad.jpg'>
+				<img src='images/carrera_banner_6000s_600w.jpg'>
+				<img src='images/gucci_banner.jpg'>
+			</div>
+			<div class='mainBannerPagination carPagination'></div>
+		</div>
+			
+		<div class='sideBannerCont floatRight'>
+			<div class='title'>
+				<span></span>
+				<p>BRAND NEW</p>
+			</div>
+			<ul data-tlc="quickstart#searchbytag --tag='IS_NEWARRIVAL' --size='10' --templateid='sideBannerProductSearchTemplate';" id='homeSideBanner' class='listStyleNone fluidList clearfix noPadOrMargin productList sideBanner'></ul>
+			
+			<!-- UNCOMMENT THE UL BELOW, AND COMMENT OUT THE ONE ABOVE TO WORK W/ LISTS IN THE AREA INSTEAD OF SEARCH RESULTS (MAY ALSO NEED TO CHANGE THE LIST ;P )
+			<ul data-bind="var: list($arnette.@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: sideBannerProductListTemplate; withReviews:1; items_per_page: 25;" class="listStyleNone fluidList clearfix noPadOrMargin productList sideBanner"></ul> -->
+			<div class='sideBannerPrev smPrvArrow'></div>
+			<div class='sideBannerNext smNxtArrow'></div>
+			
+			<a class='all' href="#!search/tag/IS_NEWARRIVAL">SEE THEM ALL</a>
+		</div>
+	</div>
 	
+	<div class="clear"></div>
+	<div class='homeSellMid'>
+		<div class='bannerTop'>
+			<p>
+				Special Offers...
+			</p>
+			<div class='bTopTriangle'></div>
+		</div>
+		<div class='upSell'>
+			<div class='left'>
+				<div class='displayNone pointer' onclick="return showContent('category',{'navcat':'.sunglasses.arnette'});">
+					<h3>Arnette...</h3>
+					<p>
+						Put some content here to describe how awesome this product is
+						<br>and why the user should buy!
+					</p>
+					<span>Shop Arnette Now &#62; &#62;</span>
+				</div>
+				<img src='images/test/arnette-341x227.jpeg' alt='Arnette Promo'>
+			</div>
+			<div class='middle'>
+				<div class='displayNone pointer' onclick="return showContent('search',{'KEYWORDS':'polarized'});">
+					<h3>Polarized...</h3>
+					<p>
+						Why buy polarized sunglasses? 
+						<br>because they block more light waves giving you a better scene.
+					</p>
+					<span>Checkout Polarized Specials &#62; &#62;</span>
+				</div>
+				<img src='images/test/polarized_light-341x227.jpg' alt='Polorized Promo'>
+			</div>
+			<div class='right'>
+				<div class='displayNone pointer' onclick="return showContent('category',{'navcat':'.eyeglasses'});">
+					<h3>Eyeglasses...</h3>
+					<p>
+						Not everybody needs them
+						<br>but you can stand apart in style with these. 
+					</p>
+					<span>Get the eyeglasses that are you &#62; &#62;</span>
+				</div>
+				<img src='images/test/clear-341x227.jpg' alt='Eyeglasses Promo'>
+			</div>
+		</div>
+	</div>
+	
+	<div class="clear"></div>
+	<div class='homeSellBottom'>
+		<div class='bannerTop'>
+			<p>
+				Best Sellers
+			</p>
+			<div class='bTopTriangle'></div>
+		</div>
+		<ul id='homeProdSearchBestSellers' data-bind='var: elastic-native({"size":"30","mode":"elastic-native","filter":{"term":{"tags":"IS_BESTSELLER"}}}); format: productSearch; extension: myRIA; loadsTemplate: productListTemplateResultsNoPreview;' class='listStyleNone fluidList clearfix noPadOrMargin productList bestSellerCar listCar'></ul>
+		<div class='bestPrev smPrvArrow listCarPrev floatLeft'></div>
+		<div class='bestNext smNxtArrow listCarNext floatRight'></div>
+		<div class='bestBannerPagination carPagination carPaginationCont'></div>	
+	</div>
+	
+	<div class="clear"></div>
+	
+<!-- ORIG HP TEMPLATE CONTENT
 	<ul data-tlc="bind $var '.@subcategoryDetail'; store_navcats#categorylist  --detail='max' --templateid='categoryListTemplate'  --legacy;" class="listStyleNone fluidList clearfix noPadOrMargin categoryList"></ul>
-
 	<ul data-tlc="bind $var '.@products'; store_prodlist#productlist  --hideSummary='1' --withReviews='1' --withVariations='1' --withInventory='1' --templateid='productListTemplate'  --legacy;" class="listStyleNone fluidList clearfix noPadOrMargin productList"></ul>
-
 	<p data-tlc="bind $var '.%page.description'; if (is $var --notblank;) {{ render --wiki='quickstart'; apply --append;}};"></p>
-
 	<ul data-tlc="quickstart#searchbytag --tag='IS_BESTSELLER' --title='Best Sellers' --size='8' --templateid='productListTemplateResultsNoPreview';" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
-
-	<!--
 	<ul data-tlc="bind $var '.$listName.@products'; store_prodlist#productlist  --hideSummary='1' --withReviews='1' --withVariations='1' --withInventory='1' --templateid='productListTemplate'  --legacy;" class="listStyleNone fluidList clearfix noPadOrMargin productList"></ul>
-	-->
-</div>
+-->
+</div> <!-- //homepage -->
 
 
 
@@ -779,6 +872,56 @@ container ul should have lineItemProdlist class on it instead of productList
 
 
 	</div>
+</li>
+
+
+<!-- **NEEDS UPDATING TO TLC** Used with $list on homepage for small banner next to main banner. Only has link to product, no quickview or atc -->
+<li id='sideBannerProductListTemplate' class='loadingBG sideBannerProductListTemplate floatLeft' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" >
+	
+	<button class='floatRight pointer quickView displayNone' onClick="quickView('product',{'templateID':'productTemplateQuickView','pid':$(this).closest('[data-pid]').attr('data-pid')});">Quickview</button>
+	
+	<div onClick="showContent('product',{'pid':$(this).attr('data-pid')})" data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='pointer'>
+		<div class='prodThumbContainer' data-bind='var:product(pid); format:addPicSlider; extension:myRIA;'>
+			<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='181' height='181' />
+		</div>
+	</div>
+	<h5 data-bind='var: product(zoovy:prod_name); format:truncText; numCharacters:45;'></h5>
+<!-- Orig price call.	
+	<h2 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Only: ;'></h2>
+-->	
+	<div data-bind='var:product(user:cart_price); format:hideIfSet;'>
+		<h2 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: <span class="pretext">Our Price: </span>;'></h2>
+	</div>
+	<div class='displayNone seeInCartCont' data-bind='var:product(user:cart_price); format:showIfSet;'>
+		<h2 class='basePrice'><span class="pretext">Our Price: </span>See in cart</h2>
+		<h6 class='whyInCart'>
+			Why?<span class='displayNone whyHover'>Some manufacturers do this... <br>Please provide specific text for this feature.</span>
+		</h6>
+	</div>
+	
+	<div class='pointer more' onClick="showContent('product',{'pid':$(this).parent().attr('data-pid')})"><span></span>more details</div>
+</li>
+
+
+<!-- Used with elastic search on homepage for small banner next to main banner. Only has link to product, no quickview or atc -->
+<li id='sideBannerProductSearchTemplate' class='loadingBG sideBannerProductListTemplate floatLeft' onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();" >
+	<button class="floatRight pointer quickView displayNone" data-app-click="quickstart|quickviewShow" data-loadstemplate="productTemplateQuickView">Quickview</button>
+	
+	<a data-tlc="bind $var '.'; store_routing#seoanchor --type='product' --seo; apply --attrib='href';">
+		<img data-tlc="bind $var '.images.0'; apply --img --media=$var --width=170 --height=170 --bgcolor='#ffffff' --replace;" src="blank.gif" class="prodThumb" alt="" height="170" width="170">
+	</a>
+	<h5 data-tlc="bind $var '.prod_name'; if (is $var --notblank;) {{format --truncate='60'; apply --append;}};"></h5>
+	
+	<div data-tlc="bind $var '.cart_price'; if(is $var --notblank;) {{format --hide;}};">
+		<h2 data-tlc="bind $var '.base_price';  if (is $var --notblank;) {{math --div='100'; format --currency='USD'; format --prepend='<span>Our Price: </span>';  apply --append;}};" class="price hideInMinimalMode"></h2>
+	</div>
+	<div data-tlc="bind $var '.cart_price'; if(is $var --notblank;) {{format --show;}};" class='displayNone seeInCartCont'>
+		<h2 class='hideInMinimalMode price'><span class="pretext">Our Price: </span>See in cart</h2>
+		<span class='whyInCart'>
+			Why?<span class='displayNone whyHover'>Some manufacturers do this... <br>Please provide specific text for this feature.</span>
+		</span>
+	</div>
+	<a data-tlc="bind $var '.'; store_routing#seoanchor --type='product' --seo; apply --attrib='href';" class="more"><span></span>more details</a>
 </li>
 
 

@@ -18,9 +18,9 @@
 
 
 
-//    !!! ->   TODO: replace 'username' in the line below with the merchants username.     <- !!!
 
-var store_carousel = function() {
+
+var store_carousel = function(_app) {
 	var theseTemplates = new Array('');
 	var r = {
 
@@ -35,19 +35,6 @@ var store_carousel = function() {
 			onSuccess : function()	{
 				var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
 				
-				app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
-					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_carousel.u.runHomeBannerCarousel($context);
-					app.ext.store_carousel.u.runSideBannerCarousel($context);
-					app.ext.store_carousel.u.runHomeBestSellerCarousel($context);
-				}]);
-
-				app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj) {
-					var $context = $(app.u.jqSelector('#'+infoObj.parentID));
-					app.ext.store_carousel.u.runProdPageRelatedCarCarousel($context);
-				}]);
-
-				
 				//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
 				r = true;
 
@@ -56,7 +43,26 @@ var store_carousel = function() {
 			onError : function()	{
 //errors will get reported for this callback as part of the extensions loading.  This is here for extra error handling purposes.
 //you may or may not need it.
-				app.u.dump('BEGIN admin_orders.callbacks.init.onError');
+				_app.u.dump('BEGIN admin_orders.callbacks.init.onError');
+				}
+			},
+			
+			startExtension : {
+				onSuccess : function() {
+					_app.u.dump('_app.ext.store_carousel.callbacks.startExtension started');
+										
+					_app.templates.homepageTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
+						_app.ext.store_carousel.u.runHomeBannerCarousel($context);
+						_app.ext.store_carousel.u.runSideBannerCarousel($context);
+						_app.ext.store_carousel.u.runHomeBestSellerCarousel($context);
+					});
+					
+					_app.templates.productTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
+						_app.ext.store_carousel.u.runProdPageRelatedCarCarousel($context);
+					});
+				},
+				onError : function (){
+					_app.u.dump('BEGIN _app.ext.store_recently_viewed.callbacks.startExtension.onError');
 				}
 			}
 		}, //callbacks
