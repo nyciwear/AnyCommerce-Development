@@ -281,8 +281,9 @@ a.more:hover {color:#97AE3C;}
 
 .upSell {width:100%;}
 .upSell .left, .upSell .middle, .upSell .right {height:auto; width:33%; margin:0; display:inline-block; position:relative;}
+.upSell .left a, .upSell .middle a, .upSell .right a {color:#2e2e2e;}
 .upSell .middle {margin:0 auto;}
-.upSell .left:hover div, .upSell .middle:hover div, .upSell .right:hover div {height:100%; width:100%; display:block; position:absolute; top:0; left:0; padding:1em; background-color:#ffffff; background-color:rgba(255,255,255,0.75);}
+.upSell .left:hover a, .upSell .middle:hover a, .upSell .right:hover a {height:100%; width:100%; display:block; position:absolute; top:0; left:0; padding:1em; background-color:#ffffff; background-color:rgba(255,255,255,0.75);}
 .upSell h3, .upSell span {font-style:italic; margin:0 0 1em 0;}
 .upSell span:hover {color:#F05524;}
 .upSell div img {max-width:100%;}
