@@ -237,22 +237,22 @@ ANIMATION TESTING
 					<!-- This list shows until 480res -->
 				<div class='navListList hidePhoneLandscape hidePhonePortrait'>
 					<div class='navListItem' onmouseover='myApp.ext.store_dropdown.a.showDropDown($(this));' onmouseout='myApp.ext.store_dropdown.a.hideDropDown($(this));'>
-						<a data-onclick='#!category?navcat=.shop_by_brand' href='#!category?navcat=.shop_by_brand'>Brands</a>
+						<a href='#!category/.shop_by_brand'>Brands</a>
 						<div class='dropdown wrapper displayNone' data-height=270>
 							<div class='dropdownCarton'>
 								<ul class='dropdownTopper'>
 									<li>FEATUTRED BRANDS</li>
-									<li><a data-onclick='#!category?navcat=.sunglasses.arnette' href='#!category?navcat=.sunglasses.arnette'>Arnette</a></li>
-									<li><a data-onclick='#!category?navcat=.eyeglasses.burberry' href='#!category?navcat=.eyeglasses.burberry'>Burberry</a></li>
-									<li><a data-onclick='#!category?navcat=.sunglasses.tom_ford' href='#!category?navcat=.sunglasses.tom_ford'>Tom Ford</a></li>
-									<li><a data-onclick='#!category?navcat=.sunglasses.carrera' href='#!category?navcat=.sunglasses.carrera'>Carrera</a></li>
+									<li><a href='#!category/.sunglasses.arnette'>Arnette</a></li>
+									<li><a href='#!category/.eyeglasses.burberry'>Burberry</a></li>
+									<li><a href='#!category/.sunglasses.tom_ford'>Tom Ford</a></li>
+									<li><a href='#!category/.sunglasses.carrera'>Carrera</a></li>
 								</ul>
 							</div>
 							<div class='brandDD floatLeft dropdownCarton'></div>
 						</div>
 					</div>
 					<div class='navListItem' onmouseover='myApp.ext.store_dropdown.a.showDropDown($(this));' onmouseout='myApp.ext.store_dropdown.a.hideDropDown($(this));'>
-						<a href='#!' onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'women'}}}});">Hers</a>
+						<a href="#!search/attrib/filter_gender/women">Hers</a>
 						<div class='dropdown wrapper displayNone' data-height=235>
 							<div class='halfWrapper thirdWrapper floatLeft'>
 								<div class='dropdownCarton'>
@@ -260,14 +260,14 @@ ANIMATION TESTING
 								</div>
 								<div class='dropdownCarton'>
 									<ul>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">New</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'IS_BESTSELLER'}},{'term':{'filter_gender':'women'}}]}}});">Best Sellers</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Exclusive</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Top Rated</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Accessories</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'filter_type':'sunglasses'}},{'term':{'filter_gender':'women'}}]}}});">Sunglasses</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'filter_type':'eyeglasses'}},{'term':{'filter_gender':'women'}}]}}});">Eyeglasses</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'women'}}}});">All Women's</li>
+										<li><a href="#!search/tagattrib/IS_FRESH/filter_gender/women">New</a></li> <!-- tag case is converted to upper in store_routing -->
+										<li><a href="#!search/tagattrib/is_bestseller/filter_gender/women">Best Sellers</a></li>
+										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Exclusive-!</li>
+										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Top Rated-!</li>
+										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Accessories-!</li>
+										<li><a href="#!search/attribattrib/filter_type/sunglasses/filter_gender/women">Sunglasses</a></li>
+										<li><a href="#!search/attribattrib/filter_type/eyeglasses/filter_gender/women">Eyeglasses</a></li>
+										<li><a href="#!search/attrib/filter_type/women">All Women's</a></li>
 									</ul>
 								</div>
 							</div>
@@ -290,7 +290,8 @@ ANIMATION TESTING
 								</div>
 								<div class='dropdownCarton'>
 									<ul>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Arnette'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Arnette</li>
+										<!-- <li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Arnette'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Arnette</li> -->
+										<li><a href="#!search/tagattribattrib/is_fresh/prod_mfg/arnette/filter_gender/women">Arnette</a></li>
 										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Burberry'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Burberry</li>
 										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'MARK'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Tom Ford</li>
 										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Carrera'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Carrera</li>
@@ -411,11 +412,11 @@ ANIMATION TESTING
 						</div>
 					</div>
 					<div class='navListItem' onmouseover='myApp.ext.store_dropdown.a.showDropDown($(this));' onmouseout='myApp.ext.store_dropdown.a.hideDropDown($(this));'>
-						<a data-onclick='#!category?navcat=.sunglasses' href='#!category?navcat=.sunglasses'>Sunglasses</a>
+						<a data-onclick='#!category?navcat=.sunglasses' href='#!category/.sunglasses'>Sunglasses</a>
 						<div class='dropdown wrapper displayNone sunglassesDD'></div> <!--  data-height='402' -->
 					</div>
 					<div class='navListItem' onmouseover='myApp.ext.store_dropdown.a.showDropDown($(this));' onmouseout='myApp.ext.store_dropdown.a.hideDropDown($(this));'>
-						<a data-onclick='#!category?navcat=.eyeglasses' href='#!category?navcat=.eyeglasses'>Eyeglasses</a>
+						<a data-onclick='#!category?navcat=.eyeglasses' href='#!category/.eyeglasses'>Eyeglasses</a>
 						<div class='dropdown wrapper displayNone eyeglassesDD' data-height=90></div>
 					</div>
 				</div>
