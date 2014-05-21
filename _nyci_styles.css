@@ -84,6 +84,8 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 	-webkit-transform:rotate(270deg); /* Opera, Chrome, and Safari */
 }
 
+.fluidList li {margin:0.9em;}
+
 /*****************************************************************
 end global
 *****************************************************************/

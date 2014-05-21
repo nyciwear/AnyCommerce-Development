@@ -940,18 +940,27 @@ remember to NOT put the button inside the 'href' container or two events will oc
 
 SANITY -> if you change the height and width of this image, change the .minimalMode .searchResultsProduct in qs_styles.css to match
 -->
-<li id="productListTemplateResults" class="loadingBG searchResultsProduct ">
+<li id="productListTemplateResults" class="loadingBG searchResultsProduct pLTR">
 	<div data-app-click="quickstart|inlineProductPreviewShow" class="pointer">
+		<!-- <div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div> -->
+		<div data-tlc="bind $var '.tags'; if(is $var --notblank;){{ quickstart#tags --legacy; }};" class="tagsContainer prodListTagsContainer"></div>
 		<div class="prodThumbContainer">
-		<img data-tlc="bind $var '.images.0'; apply --img --media=$var --width=120 --height=120 --bgcolor='#ffffff' --replace;" src="blank.gif" class="prodThumb" alt="" height="120" width="120">
+			<img data-tlc="bind $var '.images.0'; apply --img --media=$var --width=150 --height=120 --bgcolor='#ffffff' --replace;" src="blank.gif" class="prodThumb" alt="" height="150" width="120">
 		</div>
 
 		<h5 data-tlc="bind $var '.prod_name'; if (is $var --notblank;) {{apply --append;}};" class="hideInMinimalMode"></h5>
 
-		<h6 data-tlc="bind $var '.base_price';  if (is $var --notblank;) {{math --div='100'; format --currency='USD'; format --prepend='Our Price: ';  apply --append;}};" class="hideInMinimalMode"></h6>
-		
+		<div data-tlc="bind $var '.cart_price'; if(is $var --notblank;) {{format --hide;}};">
+			<h6 data-tlc="bind $var '.base_price';  if (is $var --notblank;) {{math --div='100'; format --currency='USD'; format --prepend='<span>Our Price: </span>';  apply --append;}};" class="price hideInMinimalMode"></h6>
+		</div>
+		<div data-tlc="bind $var '.cart_price'; if(is $var --notblank;) {{format --show;}};" class='displayNone seeInCartCont'>
+			<h6 class='hideInMinimalMode price'><span class="pretext">Our Price: </span>See in cart</h6>
+			<span class='whyInCart'>
+				Why?<span class='displayNone whyHover'>Some manufacturers do this... <br>Please provide specific text for this feature.</span>
+			</span>
+		</div>
 	</div>
-	<a class="hideInMinimalMode pointer moreDetails" data-tlc="bind $seoname '.prod_name'; bind $var '.'; store_routing#seoanchor --type='product' --seo --seoname=$seoname; apply --attrib='href';">more details</a>
+	<a class="hideInMinimalMode pointer moreDetails cornerButton" data-tlc="bind $seoname '.prod_name'; bind $var '.'; store_routing#seoanchor --type='product' --seo --seoname=$seoname; apply --attrib='href';">MORE DETAILS</a>
 </li>
 
 <li id="productListTemplateResultsNoPreview" class="loadingBG searchResultsProduct pLTR" onMouseOver="$('.quickView',$(this)).show();" onMouseOut="$('.quickView').hide();">
