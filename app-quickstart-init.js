@@ -43,7 +43,7 @@ myApp.rq.push(['extension',0,'store_carousel','extensions/store_carousel.js','st
 	//app.rq.push(['extension',0,'tools_lightbox','extensions/tools_lightbox/tools_lightbox.js']); //opens lightbox to show larger version of images
 myApp.rq.push(['extension',0,'store_recently_viewed','extensions/store_recently_viewed.js','startExtension']); //products that have been viewed previously
 //myApp.rq.push(['extension',0,'store_acct_create','extensions/store_acct_create.js']); //login and acct creation workings
-//myApp.rq.push(['extension',0,'store_filter','extensions/store_filter.js']); //handles filter search 
+myApp.rq.push(['extension',0,'store_filter','extensions/store_filter.js','startExtension']); //handles filter search 
 
 myApp.rq.push(['script',0,myApp.vars.baseURL+'resources/jquery.showloading-v1.0.jt.js']); //used pretty early in process..
 myApp.rq.push(['script',0,myApp.vars.baseURL+'resources/jquery.ui.anyplugins.js']); //in zero pass because it's essential to rendering and error handling.

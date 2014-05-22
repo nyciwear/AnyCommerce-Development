@@ -2128,5 +2128,203 @@ The 'data-action' attribute is used to assign an onclick.
 
 </div>
 
+
+
+<!--
+#################################
+
+LAYERED SEARCH FILTERS
+
+put all filters into the appFilters container.
+
+#################################
+-->
+
+
+
+<div id='appFilters' class='displayNone'>
+
+<!-- ARNETTE FILTERS -->
+    <form action='#' name='sunglassesForm' id='sunglassesForm' class='layeredSearch'>
+<!-- These are to test w/...
+		<fieldset data-elastic-key="suit_style2 suit_style3" data-filtertype="checkboxes">
+            <legend>Test</legend>
+			<label class='break'><input type='checkbox' value='butterfly' /> Butterfly</label>
+			<label class='break'><input type='checkbox' value='calypso' /> Calypso</label>
+	    </fieldset>
+		
+		<fieldset data-elastic-key="suit_style5 suit_style8" data-filtertype="checkboxes">
+            <legend>Test 2</legend>
+			<label class='break'><input type='checkbox' value='crochet' /> Crochet</label>
+			<label class='break'><input type='checkbox' value='gauze' /> Gauze</label>
+	    </fieldset>        
+-->		
+        
+		<!-- HIDDEN CHECKBOX THAT IS PROGRAMATICALLY CHECKED TO RETURN RESULTS FOR IT'S KEYS. ALLOWS A CATEGORY TO BE POPULATED W/ DATA THROUGH SEARCH W/OUT USER INTERACTION. -->
+		<!--
+		<fieldset class='triggerBox displayNone' data-elastic-key="item_category1 item_category2 item_category3 item_category4 item_category5 item_category6 item_category7 item_category8" data-filtertype="checkboxes">
+			<input type='checkbox' value="bikini+set"></input>
+		</fieldset>
+		-->
+		
+		<!-- HIDDEN FIELD TO LIMIT RESULTS TO A CATEGORY. MAY ALSO BE ADDED DYNAMICALLY IN STORE_FILTER IF MULTIPLE CATEGORIES USE THE SAME FORM. -->
+		<!--
+		<fieldset class='displayNone' data-elastic-key="item_category1 item_category2 item_category3 item_category4 item_category5 item_category6 item_category7 item_category8" data-filtertype="hidden">
+            <input type='hidden' name="h-bikiniset" value="bikini+set" />
+		</fieldset>
+        -->
+		
+		<button class='resetButton'>RESET OPTIONS</button>
+		
+		<fieldset data-elastic-key="pogs" data-filtertype="checkboxes">
+			<legend >Brands</legend>
+			<div class='filterView' data-filterview=0>
+		<!-- no pog for Arnette yet	<label class='break'><input type='checkbox' value='Arnette' /> Arnette</label> -->
+				<label class='break'><input type='checkbox' value='A500' /> Burberry</label>
+				<label class='break'><input type='checkbox' value='A502' /> Carrera</label>
+				<label class='break'><input type='checkbox' value='A504' /> Chloe</label>
+				<label class='break'><input type='checkbox' value='A501' /> Diesel</label>
+				<label class='break'><input type='checkbox' value='A505' /> Dior</label>
+				<label class='break'><input type='checkbox' value='A50O' /> DKNY</label>
+				<label class='break'><input type='checkbox' value='A507' /> Dolce &#38; Gabbana</label>
+				<label class='break'><input type='checkbox' value='A508' /> Dsquared</label>
+				<label class='break'><input type='checkbox' value='A509' /> Ed Hardy</label>
+				<label class='break'><input type='checkbox' value='A50A' /> Gucci</label>
+				<label class='break'><input type='checkbox' value='A50B' /> Juicy Couture</label>
+				<label class='break'><input type='checkbox' value='A50C' /> Maui Jim</label>
+				<label class='break'><input type='checkbox' value='A50P' /> POLO</label>
+				<label class='break'><input type='checkbox' value='A50D' /> Persol</label>
+				<label class='break'><input type='checkbox' value='A50E' /> Prada</label>
+				<label class='break'><input type='checkbox' value='A50N' /> Prada Linea Rossa &#40;Sport&#41;</label>
+				<label class='break'><input type='checkbox' value='A50Q' /> Ralph Lauren</label>
+				<label class='break'><input type='checkbox' value='A50F' /> Ray Ban</label>
+				<label class='break'><input type='checkbox' value='A50R' /> Ray Ban Jr.</label>
+				<label class='break'><input type='checkbox' value='A50G' /> Roberto Cavalli</label>
+				<label class='break'><input type='checkbox' value='A50S' /> Swarovski</label>
+				<label class='break'><input type='checkbox' value='A50H' /> Tom Ford</label>
+				<label class='break'><input type='checkbox' value='A50I' /> Tory Burch</label>
+				<label class='break'><input type='checkbox' value='A50J' /> Valentino</label>
+				<label class='break'><input type='checkbox' value='A50K' /> Versace</label>
+				<label class='break'><input type='checkbox' value='A50L' /> Vogue</label>
+				<label class='break'><input type='checkbox' value='A503' /> Von Zipper</label>
+				<label class='break'><input type='checkbox' value='A50M' /> YSL</label>
+			</div>
+        </fieldset>
+		
+		<fieldset data-elastic-key="filter_type" data-filtertype="checkboxes">
+            <legend>Type</legend>
+            <div class='filterView' data-filterview=1>
+				<label class='break'><input type='checkbox' value='sunglasses' /> Sunglasses</label>
+				<label class='break'><input type='checkbox' value='eyeglasses' /> Eyeglasses</label>
+			</div>
+		</fieldset>
+		
+		<fieldset data-elastic-key="filter_lens_type" data-filtertype="checkboxes">
+            <legend>Lens Type</legend>
+            <div class='filterView' data-filterview=1>
+				<label class='break'><input type='checkbox' value='polarized' /> Polarized</label>
+				<label class='break'><input type='checkbox' value='mirrored' /> Mirrored -</label>
+				<label class='break'><input type='checkbox' value='gradient' /> Gradient -</label>
+				<label class='break'><input type='checkbox' value='glass' /> Glass</label>
+			</div>
+		</fieldset>
+		
+		<fieldset data-elastic-key="filter_lens_color" data-filtertype="checkboxes">
+            <legend>Lens Color</legend>
+            <div class='filterView' data-filterview=0>
+				<label class='break'><input type='checkbox' value='blue' /> Blue -</label>
+				<label class='break'><input type='checkbox' value='gold' /> Gold -</label>
+				<label class='break'><input type='checkbox' value='green' /> Green -</label>
+				<label class='break'><input type='checkbox' value='grey' /> Grey -</label>
+				<label class='break'><input type='checkbox' value='orange' /> Orange -</label>
+				<label class='break'><input type='checkbox' value='pink' /> Pink -</label>
+				<label class='break'><input type='checkbox' value='purple' /> Purple -</label>
+				<label class='break'><input type='checkbox' value='red' /> Red -</label>
+				<label class='break'><input type='checkbox' value='silver' /> Silver -</label>
+				<label class='break'><input type='checkbox' value='yellow' /> Yellow -</label>
+			</div>
+		</fieldset>
+         
+        <fieldset data-elastic-key="filter_frame_type" data-filtertype="checkboxes">
+            <legend>Style</legend>
+            <div class='filterView' data-filterview=0>
+				<label class='break'><input type='checkbox' value='aviator' /> Aviator</label>
+				<label class='break'><input type='checkbox' value='butterfly' /> Butterfly</label>
+				<label class='break'><input type='checkbox' value='cateye' /> CatEye</label>
+				<label class='break'><input type='checkbox' value='oval' /> Oval</label>
+				<label class='break'><input type='checkbox' value='rectangle' /> Rectangle</label>
+				<label class='break'><input type='checkbox' value='round' /> Round</label>
+				<label class='break'><input type='checkbox' value='rimless' /> Rimless</label>
+				<label class='break'><input type='checkbox' value='shield' /> Shield</label>
+				<label class='break'><input type='checkbox' value='square' /> Square</label>
+				<label class='break'><input type='checkbox' value='wayfarer' /> Wayfarer</label>
+				<label class='break'><input type='checkbox' value='wrap' /> Wrap</label>
+			</div>
+		</fieldset>
+		
+        <fieldset data-elastic-key="filter_gender" data-filtertype="checkboxes">
+			<legend >Gender</legend>
+			<div class='filterView' data-filterview=1>
+				<label class='break'><input type='checkbox' value='men' /> Men</label>
+				<label class='break'><input type='checkbox' value='women' /> Women</label>
+			</div>
+        </fieldset>
+		
+		<fieldset data-elastic-key="base_price" data-filtertype="slider">
+            <legend>Price</legend>
+			<div class='filterView' data-filterview=0>
+				<input type="text"  class='sliderValue' />
+				<div class="slider-range"></div>
+			</div>
+		</fieldset>
+        
+        <fieldset data-elastic-key="filter_frame_color" data-filtertype="checkboxes">
+            <legend>Frame Color</legend>
+			<div class='filterView' data-filterview=0>
+				<label class='break'><input type='checkbox' value='black' /> Black</label>
+				<label class='break'><input type='checkbox' value='blue' /> Blue</label>
+				<label class='break'><input type='checkbox' value='brown' /> Brown</label>
+				<label class='break'><input type='checkbox' value='Gold' /> Gold</label>
+				<label class='break'><input type='checkbox' value='green' /> Green -</label>
+				<label class='break'><input type='checkbox' value='grey' /> Grey -</label>
+				<label class='break'><input type='checkbox' value='gunmetal' /> Gunmetal</label>
+				<label class='break'><input type='checkbox' value='havana' /> Havana -</label>
+				<label class='break'><input type='checkbox' value='orange' /> Orange -</label>
+				<label class='break'><input type='checkbox' value='pink' /> Pink</label>
+				<label class='break'><input type='checkbox' value='purple' /> Purple -</label>
+				<label class='break'><input type='checkbox' value='red' /> Red</label>
+				<label class='break'><input type='checkbox' value='ruthenium' /> Ruthenium</label>
+				<label class='break'><input type='checkbox' value='silver' /> Silver</label>
+				<label class='break'><input type='checkbox' value='white' /> White</label>
+				<label class='break'><input type='checkbox' value='yellow' /> Yellow -</label>
+			</div>
+		</fieldset>
+
+		<fieldset data-elastic-key="filter_frame_materia" data-filtertype="checkboxes">
+            <legend>Frame Material</legend>
+			<div class='filterView' data-filterview=1>
+				<label class='break'><input type='checkbox' value='metal' /> Metal</label>
+				<label class='break'><input type='checkbox' value='plastic' /> Plastic</label>
+				<label class='break'><input type='checkbox' value='titanium' /> Titanium</label>
+			</div>
+		</fieldset>
+		
+		<fieldset data-elastic-key="filter_face_type" data-filtertype="checkboxes">
+            <legend>Face Type</legend>
+			<div class='filterView' data-filterview=1>
+				<label class='break'><input type='checkbox' value='oval' /> Oval</label>
+				<label class='break'><input type='checkbox' value='square' /> Square</label>
+				<label class='break'><input type='checkbox' value='round' /> Round</label>
+				<label class='break'><input type='checkbox' value='heart' /> Heart</label>
+			</div>
+		</fieldset>
+		
+    </form> <!-- //sunglassesForm -->
+	
+	
+</div> <!-- //Filter search forms -->
+
+
+
 </body>
 </html>

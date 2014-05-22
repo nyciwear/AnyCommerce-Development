@@ -145,6 +145,12 @@ It is run once, executed by the renderFormat.
 
 			addProductToPage : function($tag)	{
 				_app.u.dump("BEGIN prodlist_infinite.u.addProductToPage");
+//nyci, filtered attrib is added to product list when filter search is used, 
+//prevents infinite from loading additional products when filtered items are shown.
+				if($tag.data('filtered')) {
+					return;
+				}
+//nyci
 				$tag.data('isDispatching',true);
 				
 				var plObj = _app.ext.store_prodlist.u.setProdlistVars($tag.data('bindData')),
