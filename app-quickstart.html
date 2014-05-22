@@ -260,7 +260,7 @@ ANIMATION TESTING
 								</div>
 								<div class='dropdownCarton'>
 									<ul>
-										<li><a href="#!search/tagattrib/IS_FRESH/filter_gender/women">New</a></li> <!-- tag case is converted to upper in store_routing -->
+										<li><a href="#!search/tagattrib/is_fresh/filter_gender/women">New</a></li> <!-- tag case is converted to upper in store_routing -->
 										<li><a href="#!search/tagattrib/is_bestseller/filter_gender/women">Best Sellers</a></li>
 										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Exclusive-!</li>
 										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'women'}}]}}});">Top Rated-!</li>
@@ -277,10 +277,10 @@ ANIMATION TESTING
 								</div>
 								<div class='dropdownCarton'>
 									<ul>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Arnette'}},{'term':{'filter_gender':'women''}}]}}});">Arnette</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Burberry'}},{'term':{'filter_gender':'women''}}]}}});">Burberry</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'MARK'}},{'term':{'filter_gender':'women''}}]}}});">Tom Ford</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Carrera'}},{'term':{'filter_gender':'women''}}]}}});">Carrera</li>
+										<li><a href="#!search/attribattrib/prod_mfg/arnette/filter_gender/women">Arnette</a></li>
+										<li><a href="#!search/attribattrib/prod_mfg/burberry/filter_gender/women">Burberry</a></li>
+										<li><a href="#!search/attribattrib/prod_mfg/MARK/filter_gender/women">Tom Ford-!</a></li>
+										<li><a href="#!search/attribattrib/prod_mfg/carrera/filter_gender/women">Carrera</a></li>
 									</ul>
 								</div>
 							</div>
@@ -292,16 +292,16 @@ ANIMATION TESTING
 									<ul>
 										<!-- <li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Arnette'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Arnette</li> -->
 										<li><a href="#!search/tagattribattrib/is_fresh/prod_mfg/arnette/filter_gender/women">Arnette</a></li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Burberry'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Burberry</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'MARK'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Tom Ford</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Carrera'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Carrera</li>
+										<li><a href="#!search/tagattribattrib/is_fresh/prod_mfg/burberry/filter_gender/women">Burberry</a></li>
+										<li><a href="#!search/tagattribattrib/is_fresh/prod_mfg/MARK/filter_gender/women">Tom Ford-!</a></li>
+										<li><a href="#!search/tagattribattrib/is_fresh/prod_mfg/carrera/filter_gender/women">Carrera</a></li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class='navListItem' onmouseover='myApp.ext.store_dropdown.a.showDropDown($(this));' onmouseout='myApp.ext.store_dropdown.a.hideDropDown($(this));'>
-						<a href='#!' onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'men'}}}});">His</a>
+						<a href="#!search/attrib/filter_gender/men">His</a>
 						<div class='dropdown wrapper displayNone' data-height=235>
 							<div class='halfWrapper thirdWrapper floatLeft'>
 								<div class='dropdownCarton'>
@@ -309,14 +309,13 @@ ANIMATION TESTING
 								</div>
 								<div class='dropdownCarton'>
 									<ul>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'men'}}]}}});">New</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'IS_BESTSELLER'}},{'term':{'filter_gender':'men'}}]}}});">Best Sellers</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'men'}}]}}});">Exclusive</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'men'}}]}}});">Top Rated</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'men'}}]}}});">Accessories</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'filter_type':'sunglasses'}},{'term':{'filter_gender':'men'}}]}}});">Sunglasses</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'filter_type':'eyeglasses'}},{'term':{'filter_gender':'men'}}]}}});">Eyeglasses</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'men'}}}});">All Men's</li>
+										<li><a href="#!search/tagattrib/is_fresh/filter_gender/men">New</a></li> <!-- tag case is converted to upper in store_routing -->
+										<li><a href="#!search/tagattrib/is_bestseller/filter_gender/men">Best Sellers</a></li>
+										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'men'}}]}}});">Exclusive-!</li>
+										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'men'}}]}}});">Top Rated-!</li>
+										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'tags':'MARK'}},{'term':{'filter_gender':'men'}}]}}});">Accessories-!</li>
+										<li><a href="#!search/attribattrib/filter_type/sunglasses/filter_gender/men">Sunglasses</a></li>
+										<li><a href="#!search/attribattrib/filter_type/eyeglasses/filter_gender/men">Eyeglasses</a></li>
 									</ul>
 								</div>
 							</div>
@@ -326,10 +325,10 @@ ANIMATION TESTING
 								</div>
 								<div class='dropdownCarton'>
 									<ul>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Arnette'}},{'term':{'filter_gender':'men''}}]}}});">Arnette</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Burberry'}},{'term':{'filter_gender':'men''}}]}}});">Burberry</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'IS_FRESH'}},{'term':{'filter_gender':'men''}}]}}});">Tom Ford</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Carrera'}},{'term':{'filter_gender':'men''}}]}}});">Carrera</li>
+										<li><a href="#!search/attribattrib/prod_mfg/arnette/filter_gender/men">Arnette</a></li>
+										<li><a href="#!search/attribattrib/prod_mfg/burberry/filter_gender/men">Burberry</a></li>
+										<li><a href="#!search/attribattrib/prod_mfg/MARK/filter_gender/men">Tom Ford-!</a></li>
+										<li><a href="#!search/attribattrib/prod_mfg/carrera/filter_gender/men">Carrera</a></li>
 									</ul>
 								</div>
 							</div>
@@ -339,10 +338,10 @@ ANIMATION TESTING
 								</div>
 								<div class='dropdownCarton'>
 									<ul>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Arnette'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Arnette</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Burberry'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Burberry</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'MARK'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Tom Ford</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'and':[{'term':{'prod_mfg':'Carrera'}},{'term':{'tags':'IS_FRESH'}},{'term':{'filter_gender':'women'}}]}}});">Carrera</li>
+										<li><a href="#!search/tagattribattrib/is_fresh/prod_mfg/arnette/filter_gender/men">Arnette</a></li>
+										<li><a href="#!search/tagattribattrib/is_fresh/prod_mfg/burberry/filter_gender/men">Burberry</a></li>
+										<li><a href="#!search/tagattribattrib/is_fresh/prod_mfg/MARK/filter_gender/men">Tom Ford-!</a></li>
+										<li><a href="#!search/tagattribattrib/is_fresh/prod_mfg/carrera/filter_gender/men">Carrera</a></li>
 									</ul>
 								</div>
 							</div>
@@ -357,21 +356,29 @@ ANIMATION TESTING
 								</div>
 								<div class='dropdownCarton'>
 									<ul>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_faceshape':'oval'}}}});">
-											<div>Oval</div>
-											<img src='images/heart_62x85.jpg' alt='heart shape face' width='62' height='85'>
+										<li>
+											<a href="#!search/attrib/filter_face_type/oval">
+												<div>Oval</div>
+												<img src='images/heart_62x85.jpg' alt='heart shape face' width='62' height='85'>
+											</a>
 										</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_faceshape':'square'}}}});">
-											<div>Square</div>
-											<img src='images/heart_62x85.jpg' alt='heart shape face' width='62' height='85'>
+										<li>
+											<a href="#!search/attrib/filter_face_type/square">
+												<div>Square</div>
+												<img src='images/heart_62x85.jpg' alt='heart shape face' width='62' height='85'>
+											</a>
 										</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_faceshape':'round'}}}});">
-											<div>Round</div>
-											<img src='images/heart_62x85.jpg' alt='heart shape face' width='62' height='85'>
+										<li>
+											<a href="#!search/attrib/filter_face_type/round">
+												<div>Round</div>
+												<img src='images/heart_62x85.jpg' alt='heart shape face' width='62' height='85'>
+											</a>
 										</li>
-										<li onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_faceshape':'heart'}}}});">
-											<div>Heart</div>
-											<img src='images/heart_62x85.jpg' alt='heart shape face' width='62' height='85'>
+										<li>
+											<a href="#!search/attrib/filter_face_type/heart">
+												<div>Heart</div>
+												<img src='images/heart_62x85.jpg' alt='heart shape face' width='62' height='85'>
+											</a>
 										</li>
 									</ul>
 								</div>
@@ -395,40 +402,39 @@ ANIMATION TESTING
 								</div>
 								<div class='dropdownCarton threeCol'>
 									<ul>
-										<li>Aviator</li>
-										<li>Butterfly</li>
-										<li>Cat Eye</li>
-										<li>Oval</li>
-										<li>Rectangle</li>
-										<li>Round</li>
-										<li>Rimless</li>
-										<li>Shield</li>
-										<li>Square</li>
-										<li>Wayfarer</li>
-										<li>Wrap</li>
+										<li><a href="#!search/attrib/filter_frame_type/aviator">Aviator</a></li>
+										<li><a href="#!search/attrib/filter_frame_type/butterfly">Butterfly</a></li>
+										<li><a href="#!search/attrib/filter_frame_type/cateye">Cat Eye</a></li>
+										<li><a href="#!search/attrib/filter_frame_type/oval">Oval</a></li>
+										<li><a href="#!search/attrib/filter_frame_type/rectangle">Rectangle</a></li>
+										<li><a href="#!search/attrib/filter_frame_type/round">Round</a></li>
+										<li><a href="#!search/attrib/filter_frame_type/rimless">Rimless</a></li>
+										<li><a href="#!search/attrib/filter_frame_type/shield">Shield</a></li>
+										<li><a href="#!search/attrib/filter_frame_type/square">Square</a></li>
+										<li><a href="#!search/attrib/filter_frame_type/wayfarer">Wayfarer</a></li>
+										<li><a href="#!search/attrib/filter_frame_type/wrap">Wrap</a></li>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class='navListItem' onmouseover='myApp.ext.store_dropdown.a.showDropDown($(this));' onmouseout='myApp.ext.store_dropdown.a.hideDropDown($(this));'>
-						<a data-onclick='#!category?navcat=.sunglasses' href='#!category/.sunglasses'>Sunglasses</a>
+						<a href='#!category/.sunglasses'>Sunglasses</a>
 						<div class='dropdown wrapper displayNone sunglassesDD'></div> <!--  data-height='402' -->
 					</div>
 					<div class='navListItem' onmouseover='myApp.ext.store_dropdown.a.showDropDown($(this));' onmouseout='myApp.ext.store_dropdown.a.hideDropDown($(this));'>
-						<a data-onclick='#!category?navcat=.eyeglasses' href='#!category/.eyeglasses'>Eyeglasses</a>
+						<a href='#!category/.eyeglasses'>Eyeglasses</a>
 						<div class='dropdown wrapper displayNone eyeglassesDD' data-height=90></div>
 					</div>
 				</div>
 				
 					<!-- This list shows after 480res -->
 				<div class='navListList displayNone showPhoneLandscape showPhonePortrait'>
-					<div class='navListItem'><a data-onclick='#!category?navcat=.shop_by_brand' href='#!category?navcat=.shop_by_brand'>Brands</a></div>
-					<div class='navListItem'><a onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'men'}}}});">His</a></div>
-					<div class='navListItem'><a onclick="return showContent('search',{'elasticsearch':{'filter':{'term':{'filter_gender':'women'}}}});">Hers</a></div>
-					<div class='navListItem'>How To</div>
-					<div class='navListItem pointer'><a data-onclick='#!category?navcat=.sunglasses' href='#!category?navcat=.sunglasses'>Sunglasses</a></div>
-					<div class='navListItem pointer'><a data-onclick='#!category?navcat=.eyeglasses' href='#!category?navcat=.eyeglasses'>Eyeglasses</a></div>
+					<div class='navListItem'><a href='#!category/.shop_by_brand'>Brands</a></div>
+					<div class='navListItem'><a href="#!search/attrib/filter_gender/men">Hers</a></div>
+					<div class='navListItem'><a href="#!search/attrib/filter_gender/men">His</a></div>
+					<div class='navListItem pointer'><a href='#!category/.sunglasses'>Sunglasses</a></div>
+					<div class='navListItem pointer'><a href='#!category/.eyeglasses'>Eyeglasses</a></div>
 				</div>
 			</div>
 			

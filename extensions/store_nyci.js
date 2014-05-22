@@ -129,6 +129,26 @@ vars : {},
 			},
 		
 			}, //Actions
+			
+////////////////////////////////////   TLCFORMATS   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+			
+		tlcFormats : {
+		
+				//works like the quickstart version, but you can pass whatever filter you want which allows multiple parameters, AND/OR, etc.
+			searchbytag : function(data,thisTLC) {
+				var argObj = thisTLC.args2obj(data.command.args,data.globals); //this creates an object of the args
+					//check if there is a $var value to replace in the filter object (THERE IS PROBABLY A BETTER WAY TO DO THIS)
+				if(argObj.replacify) {argObj.filter = argObj.filter.replace('replacify',data.value);}
+	//			dump(argObj.replacify);
+				var query = JSON.parse(argObj.filter);
+	//	dump('----search by tag'); dump(data.value); dump(argObj.filter); dump(query);
+				_app.ext.store_search.calls.appPublicProductSearch.init(query,$.extend({'datapointer':'appPublicSearch|tag|'+argObj.tag,'templateID':argObj.templateid,'extension':'store_search','callback':'handleElasticResults','list':data.globals.tags[data.globals.focusTag]},argObj));
+				_app.model.dispatchThis('mutable');
+				return false; //in this case, we're off to do an ajax request. so we don't continue the statement.
+			}
+			
+		},
+			
 
 ////////////////////////////////////   RENDERFORMATS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 

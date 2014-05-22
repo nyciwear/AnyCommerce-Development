@@ -53,8 +53,50 @@ var store_routing = function(_app) {
 				_app.router.addAlias('customer', 	function(routeObj){showContent('customer',	routeObj.params);});
 				_app.router.addAlias('checkout', 	function(routeObj){showContent('checkout',	routeObj.params);});
 
-				_app.router.addAlias('search', 		function(routeObj){showContent('search',	routeObj.params);});
-
+				_app.router.addAlias('search', 		function(routeObj){showContent('search',	routeObj.params);dump(routeObj);dump(routeObj.params);});
+				
+				_app.router.addAlias('attrib', 		function(routeObj){
+					var fObj = {'term':{}};
+					var elasticsearch = {'filter':[]};
+					fObj.term[routeObj.params.filter] = routeObj.params.key;
+					elasticsearch.filter.push(fObj); dump(elasticsearch);
+					showContent('search',	{'elasticsearch':elasticsearch});
+					//var filter = routeObj.params.filter; showContent('search',	{'elasticsearch':{'filter':{'term':{filter:routeObj.params.key}}}}); dump(routeObj);dump(routeObj.params);
+				});
+				_app.router.addAlias('twoattrib', 	function(routeObj){
+					var elasticsearch = {'filter':{'and':[]}};
+					var fObj = {'term':{}};
+					fObj.term[routeObj.params.filter1] = routeObj.params.key1;
+					elasticsearch.filter.and.push(fObj);
+					fObj.term[routeObj.params.filter2] = routeObj.params.key2;
+					elasticsearch.filter.and.push(fObj); //dump(elasticsearch);
+					showContent('search', {'elasticsearch':elasticsearch}); 
+					//var filter1 = routeObj.params.filter; var filter2 = routeObj.params.filter; 
+					//showContent('search',	{'elasticsearch':{'filter':{'and':[{'term':{filter1:routeObj.params.key1}},{'term':{filter2:routeObj.params.key2}}]}}}); dump(routeObj);dump(routeObj.params);
+				});
+				_app.router.addAlias('tagattrib',  function(routeObj){ 
+					var tag = routeObj.params.tag.toUpperCase(); 
+					var elasticsearch = {'filter':{'and':[{'term':{'tags':tag}}]}};
+					var fObj = {'term':{}};
+					fObj.term[routeObj.params.filter] = routeObj.params.key;
+					elasticsearch.filter.and.push(fObj); //dump(elasticsearch);
+					showContent('search', {'elasticsearch':elasticsearch}); 
+					//showContent('search',	{'elasticsearch':{'filter':{'and':[{'term':{'tags':tag}},{'term':{filter2:routeObj.params.key2}}]}}}); dump(routeObj);dump(routeObj.params);
+				});
+				_app.router.addAlias('tagtwoattrib', 	function(routeObj){
+					var tag = routeObj.params.tag.toUpperCase(); 
+					var elasticsearch = {'filter':{'and':[{'term':{'tags':tag}}]}};
+					var fObj = {'term':{}};
+					fObj.term[routeObj.params.filter1] = routeObj.params.key1;
+					elasticsearch.filter.and.push(fObj);
+					fObj = {'term':{}};
+					fObj.term[routeObj.params.filter2] = routeObj.params.key2;
+					elasticsearch.filter.and.push(fObj); dump(elasticsearch);
+					showContent('search', {'elasticsearch':elasticsearch}); 
+					//var filter1 = routeObj.params.filter1; var filter2 = routeObj.params.filter2; 
+					//showContent('search',	{'elasticsearch':{'filter':{'and':[{'term':{'tags':tag}},{'term':{filter1:routeObj.params.key1}},{'term':{filter2:routeObj.params.key2}}]}}}); dump(routeObj);dump(routeObj.params);
+				});
+				
 
 				_app.router.appendHash({'type':'exact','route':'cart','callback':function(routeObj){showContent('cart',routeObj.params);}});
 				_app.router.appendHash({'type':'exact','route':'home','callback':'homepage'});
@@ -69,6 +111,11 @@ var store_routing = function(_app) {
 				_app.router.appendHash({'type':'match','route':'checkout*','callback':'checkout'});
 				_app.router.appendHash({'type':'match','route':'search/tag/{{tag}}*','callback':'search'});
 				_app.router.appendHash({'type':'match','route':'search/keywords/{{KEYWORDS}}*','callback':'search'});
+
+				_app.router.appendHash({'type':'match','route':'search/attrib/{{filter}}/{{key}}*','callback':'attrib'}); //elastic search for attrib
+				_app.router.appendHash({'type':'match','route':'search/attribattrib/{{filter1}}/{{key1}}/{{filter2}}/{{key2}}*','callback':'twoattrib'}); //elastic search for attrib AND attrib
+				_app.router.appendHash({'type':'match','route':'search/tagattrib/{{tag}}/{{filter}}/{{key}}*','callback':'tagattrib'}); //elastic search for tag AND attrib
+				_app.router.appendHash({'type':'match','route':'search/tagattribattrib/{{tag}}/{{filter1}}/{{key1}}/{{filter2}}/{{key2}}*','callback':'tagtwoattrib'}); //elastic search for tag AND attrib AND attrib
 
 
 /*
