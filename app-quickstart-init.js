@@ -15,6 +15,7 @@ myApp.rq.push(['extension',0,'cco','extensions/cart_checkout_order.js']);
 myApp.rq.push(['extension',0,'store_routing','extensions/store_routing.js']);
 
 myApp.rq.push(['extension',0,'store_prodlist','extensions/store_prodlist.js']);
+myApp.rq.push(['extension',0,'prodlist_infinite','extensions/prodlist_infinite.js']); //removes pagination in product lists and allows population w/ scroll
 myApp.rq.push(['extension',0,'store_navcats','extensions/store_navcats.js']);
 myApp.rq.push(['extension',0,'store_search','extensions/store_search.js']);
 myApp.rq.push(['extension',0,'store_product','extensions/store_product.js']);
