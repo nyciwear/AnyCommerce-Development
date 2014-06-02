@@ -28,7 +28,7 @@ myApp.rq.push(['extension',0,'quickstart','app-quickstart.js','startMyProgram'])
 
 //myApp.rq.push(['extension',1,'google_analytics','extensions/partner_google_analytics.js','startExtension']);
 //myApp.rq.push(['extension',1,'tools_ab_testing','extensions/tools_ab_testing.js']);
-//myApp.rq.push(['extension',0,'partner_addthis','extensions/partner_addthis.js']);
+myApp.rq.push(['extension',0,'partner_addthis','extensions/partner_addthis.js','startExtension']);
 //myApp.rq.push(['extension',1,'resellerratings_survey','extensions/partner_buysafe_guarantee.js','startExtension']); /// !!! needs testing.
 //myApp.rq.push(['extension',1,'buysafe_guarantee','extensions/partner_buysafe_guarantee.js','startExtension']);
 //myApp.rq.push(['extension',1,'powerReviews_reviews','extensions/partner_powerreviews_reviews.js','startExtension']);
@@ -39,7 +39,7 @@ myApp.rq.push(['script',0,myApp.vars.baseURL+'resources/jquery.touchSwipe-1.3.3.
 myApp.rq.push(['extension',0,'store_nyci','extensions/store_nyci.js','startExtension']); //general app specific functions
 myApp.rq.push(['extension',0,'store_dropdown','extensions/store_dropdown.js']); //creates drop-downs
 myApp.rq.push(['extension',0,'store_carousel','extensions/store_carousel.js','startExtension']); //creates carousels using carouFedSel
-//myApp.rq.push(['extension',0,'tools_zoom','extensions/tools_zoom/tools_zoom.js']); //enables zoomed images
+myApp.rq.push(['extension',0,'tools_zoom','extensions/tools_zoom/tools_zoom.js']); //enables zoomed images
 	//app.rq.push(['extension',0,'tools_lightbox','extensions/tools_lightbox/tools_lightbox.js']); //opens lightbox to show larger version of images
 myApp.rq.push(['extension',0,'store_recently_viewed','extensions/store_recently_viewed.js','startExtension']); //products that have been viewed previously
 //myApp.rq.push(['extension',0,'store_acct_create','extensions/store_acct_create.js']); //login and acct creation workings
@@ -101,7 +101,7 @@ myApp.u.showProgress = function(progress)	{
 			//the app will handle hiding the loading screen.
 			myApp.u.appInitComplete();
 			}
-		else if(attempt > 150)	{
+		else if(attempt > 200)	{
 			//hhhhmmm.... something must have gone wrong.
 			clearTimeout(progress.passZeroTimeout); //end the resource loading timeout.
 			$('.appMessaging','#appPreView').anymessage({'message':'Init failed to load all the resources within a reasonable number of attempts.','gMessage':true,'persistent':true});

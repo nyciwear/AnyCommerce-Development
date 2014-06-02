@@ -32,7 +32,7 @@ var quickstart = function(_app) {
 			'productListTemplateQuickCart',
 	//		'sideBannerProductListTemplate',
 	//		'sideBannerProductSearchTemplate',
-	//		'productListTemplateThumb',
+			'productListTemplateThumb',
 			'recentlyListTemplate',
 			'subCategoryTemplate',
 			'subBrandsCategoryTemplate',
