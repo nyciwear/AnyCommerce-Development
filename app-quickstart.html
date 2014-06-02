@@ -1328,28 +1328,52 @@ if you change these, you should move them above this comment so that when you (o
 
 
 
-<div id="companyTemplate" class="clearfix">
-
+<div id="companyTemplate" class="clearfix bannerTop displayNone">
+	
+	<p class='articleTitle'>NyciWear</p> <!-- This is populated by store_nyci.u.getArticle()  based on article shown -->
+	<div class='bTopTriangle'></div>
+	<div class='clear'></div>
+	
 	<div class="sideline">
-<nav id="companyNav">
-<ul class="listStyleNone noPadOrMargin">
-<!-- these are generated via javascript, based on the quickstart.pages object. -->
-</ul>
-</nav>
+		<nav id="companyNav">
+			<ul class="listStyleNone noPadOrMargin">
+				<!-- these are generated via javascript, based on the quickstart.pages object. -->
+			</ul>
+		</nav>
 	</div>
 
-	<div class="mainColumn">
+	<div class="mainColumn floatLeft">
 <!-- .textContentArea is used as a selector in quickstart.js because article tag type isn't ie8 friendly -->
 		<div id="aboutArticle" class="textContentArea article">
-			<h1>About Us</h1>
+			<h1 class="displayNone">About Us</h1>
 			<div>
 			<!-- ::: add your about us information here -->
+				<p>
+					NycIwear has been selling Top designer products online since 2006. We specialize in Top Designer brands and styles for Discount Prices. 
+					All Of our products are directly from the manufacturers with full Manufacturer warranty. No middle men, No distributor, we are authorized 
+					resellers and have accounts for every Brand we sell. All Items are in Stock Ready to ship. Every Order goes through a Detailed 5 step process 
+					to ensure the item ordered is 100&#37; correct and Defect Free. Please Shop with confidence as it is our goal to make every purchase a good experience. 
+				</p>
+				<p><h3>ALL OUR PRODUCTS ARE 100&#37; AUTHENTIC GUARANTEED</h3></p>
+				<p>
+					<b>Attention International Buyers <br></b>
+					You are responsible for assuring that the product can be lawfully imported to the destination country. When ordering from NycIwear.com, the recipient 
+					is the importer of record and must comply with all laws and regulations of the destination country. Orders that are shipped to countries outside of the 
+					United States may be subject to import taxes, customs duties and fees levied by the destination country. The recipient of an international shipment may be 
+					subject to such import taxes, customs duties and fees, which are levied once a shipment reaches your country. Additional charges for customs clearance 
+					must be borne by the recipient&#59; we have no control over these charges and cannot predict what they may be. Customs policies vary widely from country to 
+					country&#59; you should contact your local customs office for further information. When customs clearance procedures are required, it can cause delays beyond our 
+					original delivery estimates. Purchases of Kindle may be subject to these import taxes, custom duties and fees. These fees can vary widely from country to country. 
+					Please contact your local customs office for further information.
+				</p>
+				<!-- <div data-bind='var: profile(zoovy:about); format:wiki; wikiFormats:myRIA;' id='aboutUsContent'></div> -->
+				<div class='clearfix'></div>
 			</div>
 		</div>
 
 
 		<div id="contactArticle" class="displayNone textContentArea">
-			<h1>Contact Information</h1>
+			<h1 class="displayNone">Contact Information</h1>
 			<div class="companyAddress">
 			<!-- ::: add your contact information here ::: -->
 			</div>
@@ -1357,12 +1381,12 @@ if you change these, you should move them above this comment so that when you (o
 			<form action="#" data-app-submit="store_crm|contactFormSubmit" name="contactForm" class='alignedForm'>
 			<input name="msgtype" value="feedback" type="hidden">
 			<fieldset>
-				<legend>Contact Us</legend>
+				<!-- <legend>Contact Us</legend> -->
 				<div id="contactFormMessaging"></div>
-				<label><span class="prompt">Email Address</span><input name="sender" required type="email" class='alignInput'></label>
-				<label><span class="prompt">Subject</span><input name="subject" required type="text" class='alignInput'></label>
-				<label><span class="prompt">Order ID</span><input name="OID" type="text" class='alignInput'></label>
-				<label><span class="prompt">Message</span><textarea name="body" required rows='6' class='alignInput'></textarea></label>
+				<div><label for='contactFormSender'>Email Address: </label><input type='email' name='sender' required='required' id='contactFormSender' /></div>
+				<div><label for='contactFormSubject'>Subject: </label><input type='text' name='subject' id='contactFormSubject' /></div>
+				<div><label for='contactFormOID'>Order ID: </label><input type='text' name='OID' id='contactFormOID' /></div>
+				<div><label for='contactFormBody'>Message: </label><textarea name='body' required='required' id='contactFormBody'></textarea></div>
 				<div class="alignRight"><input class="applyButton" value="Send Message" type="submit"></div>
 			</fieldset>
 			</form>
@@ -1371,77 +1395,153 @@ if you change these, you should move them above this comment so that when you (o
 
 		<!-- faq are generated through the faq manager in the admin UI. do not add content in the faqContent area -->
 		<div id="faqArticle" class="displayNone textContentArea">
-			<h1>Frequently Asked Questions</h1>
+			<h1 class="displayNone">Frequently Asked Questions</h1>
 			<div id="faqContent" class=" ui-accordion ui-widget ui-helper-reset ui-accordion-icons appAccordianesque"></div>
 		</div>
 
 
 
 		<div class="displayNone textContentArea" id="paymentArticle">
-			<h1>Payment Policy</h1>
+			<h1 class="displayNone">Payment Policy</h1>
 			<div>
 			<!-- ::: add your payment policy here ::: -->
+				<h3>Accepted Payment Methods</h3>
+				<ul>
+					<li>PayPal</li>
+					<li>Visa &#47; Mastercard &#40;Via PayPal&#41;.</li>
+					<li>Discover &#40;Via PayPal&#41;.</li>
+					<li>American Express &#40;Via PayPal&#41;.</li>
+				</ul>
+			<h3>INTERNATIONAL BUYERS</h3>
+				<ul>
+					<li>PayPal Only&#33;</li>
+					<li>Import duties, taxes and charges are not included in the item price or shipping charges. These charges are the buyer&#39;s responsibility</li>
+					<li>Please check with your country&#39;s customs office to determine what these additional cost will be prior to buying.</li>
+				</ul>
+			<p><h4>NyciWear DOES NOT use false claims or statement of Lesser value on the Customs Forms. PLEASE do not ask us to do so as this puts our business at risk.</h4></p>
 			</div>
 		</div>
 
 
 		<div class="displayNone textContentArea" id="privacyArticle">
-			<h1>Privacy Statement</h1>
-	<h4>About this Privacy Policy:</h4>
-	<p>The entire site, or at least specific portions of this site are assisted by Zoovy technology. Zoovy has created this privacy policy as a template for customers who are using Zoovy technology with their websites. Zoovy in no way takes responsibility for the accuracy or enforcement of this policy. For a copy of Zoovy's privacy policy (which does not necessarily apply to the customers of its customers) visit http://www.zoovy.com/legal</p>
+			<h1 class="displayNone">Privacy Statement</h1>
+			<h4>About this Privacy Policy:</h4>
+			<p>The entire site, or at least specific portions of this site are assisted by Zoovy technology. Zoovy has created this privacy policy as a template for customers who are using Zoovy technology with their websites. Zoovy in no way takes responsibility for the accuracy or enforcement of this policy. For a copy of Zoovy's privacy policy (which does not necessarily apply to the customers of its customers) visit http://www.zoovy.com/legal</p>
 
-	<p>Zoovy, Inc. has created this privacy statement for this Company in order to demonstrate our joint commitment to privacy. The following discloses the information gathering and dissemination practices for this website:</p>
+			<p>Zoovy, Inc. has created this privacy statement for this Company in order to demonstrate our joint commitment to privacy. The following discloses the information gathering and dissemination practices for this website:</p>
 
-	<h5>Zoovy.com tracks IP Addresses</h5>
-	<p>Your IP address is used to help diagnose problems with our server, and to administer the Web site, in addition your IP address is used to help identify you and your shopping cart (in conjunction with a cookie.) We also use cookies to deliver content specific to your interests and to save your password so you don't have to re-enter it each time you visit our site.</p>
-
-
-	<h3>This site may contains links to other sites.</h3>
-	<p>This Company is not responsible for the privacy practices or the content of such Web sites, unless otherwise specified below your information is never shared with other companies, even those who are also using Zoovy technology. In the future Zoovy may provide you the ability to share your information across multiple websites which all utilize Zoovy technology however this will only be done at your explicit request.</p>
-
-	<h3>This site requires Unique Identifiers.</h3>
-	<p>This site uses an order form for customers to request information, products, and services, it also collects visitor's contact information (like their email address), in some circumstances their unique identifiers (like their pets name, or mothers maiden name), and financial information (like their account or credit card numbers). Contact information from the order form is used to send orders and information about our company to customers. The customer's contact information is also used to get in touch with the visitor when necessary. Users may opt-out of receiving future informational mailings; see the choice/opt-out section below, users may NOT opt out of receiving order notifications, or other contacts which are deemed essential by this Company.</p>
-
-	<h3>This site requires Financial Information.</h3>
-	<p>Financial information that is collected is used to bill the customer for products and services. Unique identifiers (such as pets name, and mothers maiden name) are collected from Web site visitors to verify the user's identity.</p>
-
-	<h3>This site may have Surveys and/or Contests.</h3>
-	<p>Our online surveys ask visitors for contact information (like their email address). We use contact data from our surveys to send the user information about our company. The customer's contact information is also used to contact the visitor when necessary. Users may opt-out of receiving future mailings; see the choice/opt-out section below. This site may also run contests in which case we may ask visitors for contact information (like their email address). Generally this information is used to verify eligibility, however we may also use contact data from our contests to send users information about this Company. The customer's contact information is also used to contact the visitor when necessary (for example winners). Users may opt-out of receiving future mailings; see the choice/opt-out section below. Financial information that is collected from our users is used to check the users' qualifications for registration and bill the user for products and services.</p>
+			<h5>Zoovy.com tracks IP Addresses</h5>
+			<p>Your IP address is used to help diagnose problems with our server, and to administer the Web site, in addition your IP address is used to help identify you and your shopping cart (in conjunction with a cookie.) We also use cookies to deliver content specific to your interests and to save your password so you don't have to re-enter it each time you visit our site.</p>
 
 
-	<h3>Third Party Cookies</h3>
-	<p>Third party vendors, including Google, use cookies to serve the badge on the website and to serve ads based on a user's prior visits to the website.  Users may opt out of Google's use of cookies by visiting the Google advertising opt-out page.</p>
+			<h3>This site may contains links to other sites.</h3>
+			<p>This Company is not responsible for the privacy practices or the content of such Web sites, unless otherwise specified below your information is never shared with other companies, even those who are also using Zoovy technology. In the future Zoovy may provide you the ability to share your information across multiple websites which all utilize Zoovy technology however this will only be done at your explicit request.</p>
 
-	<h3>This site may contain Public Forums</h3>
-	<p>This site may include chat rooms, forums, message boards, and/or news groups available to its users. Please remember that any information that is disclosed in these areas becomes public information and you should exercise caution when deciding to disclose your personal information.</p>
+			<h3>This site requires Unique Identifiers.</h3>
+			<p>This site uses an order form for customers to request information, products, and services, it also collects visitor's contact information (like their email address), in some circumstances their unique identifiers (like their pets name, or mothers maiden name), and financial information (like their account or credit card numbers). Contact information from the order form is used to send orders and information about our company to customers. The customer's contact information is also used to get in touch with the visitor when necessary. Users may opt-out of receiving future informational mailings; see the choice/opt-out section below, users may NOT opt out of receiving order notifications, or other contacts which are deemed essential by this Company.</p>
 
-	<h3>About our System Security</h3>
-	<p>This site has security measures in place to protect the loss, misuse and alteration of the information under our control. Information is stored behind a firewall, against a password protected database system. Whenever sensitive information is accessed it is transmitted using strong SSL encryption. this Company may keep a copy of your information on its own system using Zoovy's WebAPI system, this system may have its own security measures in place.</p>
+			<h3>This site requires Financial Information.</h3>
+			<p>Financial information that is collected is used to bill the customer for products and services. Unique identifiers (such as pets name, and mothers maiden name) are collected from Web site visitors to verify the user's identity.</p>
 
-	<h3>This site provides the choice to Opt In or Out</h3>
-	<p>Our site provides users the opportunity to opt-out of receiving communications from us at the point where we request information about the visitor. This site gives users the following options for removing their information from our database to not receive future communications or to no longer receive our service. Each time an information email is distributed, you have the option to use unique unsubscribe url which is attached to each outgoing email. Customers may unsubscribe at any time by simply logging into their accounts.</p>
+			<h3>This site may have Surveys and/or Contests.</h3>
+			<p>Our online surveys ask visitors for contact information (like their email address). We use contact data from our surveys to send the user information about our company. The customer's contact information is also used to contact the visitor when necessary. Users may opt-out of receiving future mailings; see the choice/opt-out section below. This site may also run contests in which case we may ask visitors for contact information (like their email address). Generally this information is used to verify eligibility, however we may also use contact data from our contests to send users information about this Company. The customer's contact information is also used to contact the visitor when necessary (for example winners). Users may opt-out of receiving future mailings; see the choice/opt-out section below. Financial information that is collected from our users is used to check the users' qualifications for registration and bill the user for products and services.</p>
 
-	<h3>We provide the ability to Correct/Update YOUR information.</h3>
-	<p>This site gives users the following options for changing and modifying information previously provided. Simply visit the customer login area of this website.</p>
-	<!-- !!! load amendments here -->
+
+			<h3>Third Party Cookies</h3>
+			<p>Third party vendors, including Google, use cookies to serve the badge on the website and to serve ads based on a user's prior visits to the website.  Users may opt out of Google's use of cookies by visiting the Google advertising opt-out page.</p>
+
+			<h3>This site may contain Public Forums</h3>
+			<p>This site may include chat rooms, forums, message boards, and/or news groups available to its users. Please remember that any information that is disclosed in these areas becomes public information and you should exercise caution when deciding to disclose your personal information.</p>
+
+			<h3>About our System Security</h3>
+			<p>This site has security measures in place to protect the loss, misuse and alteration of the information under our control. Information is stored behind a firewall, against a password protected database system. Whenever sensitive information is accessed it is transmitted using strong SSL encryption. this Company may keep a copy of your information on its own system using Zoovy's WebAPI system, this system may have its own security measures in place.</p>
+
+			<h3>This site provides the choice to Opt In or Out</h3>
+			<p>Our site provides users the opportunity to opt-out of receiving communications from us at the point where we request information about the visitor. This site gives users the following options for removing their information from our database to not receive future communications or to no longer receive our service. Each time an information email is distributed, you have the option to use unique unsubscribe url which is attached to each outgoing email. Customers may unsubscribe at any time by simply logging into their accounts.</p>
+
+			<h3>We provide the ability to Correct/Update YOUR information.</h3>
+			<p>This site gives users the following options for changing and modifying information previously provided. Simply visit the customer login area of this website.</p>
+			<!-- !!! load amendments here -->
 		</div>
 
 
 
 
 		<div class="displayNone textContentArea" id="returnArticle">
-			<h1>Return Policy</h1>
+			<h1 class='displayNone'>Return Policy</h1>
 			<div>
 			<!-- ::: add your return policy here ::: -->
+				<p>
+					You may return all unused items purchased at Nyciwear within 30 days of the original delivery. We will only pay the return shipping costs if it is our error. 
+					If the item is returned for any other reason you are responsible for the return shipping costs and WILL be charged a restocking fee of 10 percent. 
+					Incomplete returns, or used products not in new condition will be assessed additional restocking fees depending on condition and Nyciwear&#39;s ability to 
+					remarket the returned product. No returned merchandise will be accepted without a Return Material Authorization &#40;RMA&41;. We will credit you in the same 
+					manner as your original payment within 7 days of receiving the returned item. All returned items are inspected upon receipt.
+				</p>
+				<h3>Exchanges</h3>
+				<p>
+					Exchanging an item: Nyciwear gladly accepts all requests for an exchange as long as Return policy guidelines are met. There is never a restocking fee 
+					for exchanges. Unfortunately we do not provide shipping fees for exchanges. You can either send a prepaid label with your return or we can invoice you 
+					for the shipping fees only. New shipments are mailed out within 72 hrs of receiving returned merchandise in original condition. We do occasionally experience 
+					BackOrders and will immediately let you know estimated time of shipment if applicable.
+				</p>
+				<h3>Damaged Items</h3>
+				<p>
+					All damage claims must be reported within 72hrs of delivery otherwise return shipping will not be supplied by NyciWear. All Damaged Items will be replaced 
+					unless the product is no longer available Refund Requests for damaged items will be charged 10&#37; restocking fee. All Refund Requests will be Charged A 10&#37; 
+					restocking Fee, NO EXCEPTIONS&#33;&#33;
+				</p>
+				<p>
+					<h4>How To Avoid Restocking Fees&#58; Full Store Credit is available to any return that meets return policy guidelines:</h4>
+					Ship authorized returns to the following address&#58; NycIwear.com 2417 Jericho Tpke. &#35;300 Garden City Park, N.Y. 11040
+				</p>
 			</div>
 		</div>
 
 
 
 		<div class="displayNone textContentArea" id="shippingArticle">
-			<h1>Shipping Information</h1>
+			<h1 class="displayNone">Shipping Information</h1>
 			<div>
 			<!-- ::: add your shipping information here ::: -->
+				<h3>FREE Shipping within the United States</h3>
+				<ul>
+					<li>All packages shiped from NyciWear are fully inspected prior to shipment.</li>
+					<li>Method of shipping is determined by weight of the product you purchased.</li>
+					<li>Nyciwear ships FED EX, and USPS.</li>
+				</ul>
+				<h5>Domestic FREE Shipping Services</h5>
+				<ul>
+					<li>Fed Ex Ground, Smart Post and Home Delivery.</li>
+					<li>USPS Parcel Post and First Class.</li>
+				</ul>
+				<h3>Domestic upgraded Shipping services</h3>
+				<p>
+					<h5>Overnight Services Used:</h5>
+					<ul>
+						<li>Fed Ex Standard Overnight.</li>
+						<li>USPS Express mail.</li>
+					</ul>
+					<h5>Expedited Services Used:</h5>
+					<ul>
+						<li>USPS First Class.</li>
+						<li>USPS Priority.></li>
+						<li>Fed Ex Air Saver &#40;3 Business Days&#41;</li>
+					</ul>
+				</p>
+				<p>
+					All Shipping times are provided by carrier, and always in Business Days Mon&#45;Fri. Fed Ex DOES NOT deliver on Sat or Sun. If you need Saturday Delivery 
+					please contact us Before Friday 2&#58;00pm EST. Saturday service is not available in all areas and surcharges apply.
+				</p>
+				<h3>International Shipping Options</h3>
+				<ul>
+					<li>USPS Priority International.</li>
+					<li>USPS Express International.</li>
+				</ul>
+				<p>These rates DO NOT include taxes duties and or brokerage fees incurred by your country. Please check with your local customs to determine these fees.</p>
+				<h3>International Buyers</h3>
+				<p>Buyer &#40;importer&#41; is responsible for any and all import taxes, duties, and brokerage fees incurred at customs NO EXCEPTIONS&#33;&#33;</p>
+				<p><h5>Carrier &#40;Fed Ex, USPS, UPS&#41; is responsible for actual ship times not nyciwear</h5></p>
 			</div>
 		</div>
 

@@ -488,12 +488,13 @@ Company Articles
 
 .textContentArea {margin:1em 0 0 1em; color:#58595B;}
 /*contact*/
-#contactForm {float:left;}
-#contactForm fieldset {border:none; padding:1em;}
-#contactForm label {width:7em; margin:0 0.5em 0 0;}
-#contactForm input {width:20em;}
-#contactForm .alignRight input {margin:0;}
-#contactForm textarea {height:10em; width:20.5em;}
+#contactArticle .alignedForm {float:left;}
+#contactArticle .alignedForm fieldset {border:none; padding:1em;}
+#contactArticle .alignedForm div {margin:0 0 5px 0;}
+#contactArticle .alignedForm label {width:7em; margin:0 0.5em 0 0; display:inline-block; text-align:right;}
+#contactArticle .alignedForm input {width:20em;}
+#contactArticle .alignedForm .alignRight input {margin:0;}
+#contactArticle .alignedForm textarea {height:10em; width:20.5em;}
 
 /*************************************************************************************
 end Company Articles
