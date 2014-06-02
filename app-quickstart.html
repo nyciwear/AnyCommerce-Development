@@ -1187,55 +1187,60 @@ this will likely become more flexible in the future. ###
 
 
 <!-- a template used for a quickview link off of a category page -->
-<div id="productTemplateQuickView">
-
+<div id="productTemplateQuickView" class="productTemplateQuickView">
 <table class="prodViewerContainer">
-<tbody><tr>
-	<td class="imageContainer">
-<div>
+<tbody>
+	<tr>
+		<td class="imageContainer">
+			<div>
+				<div data-tlc="bind $var '.pid'; quickstart#addpicslider  --legacy; apply --append;"><img data-tlc="bind $var '.%attribs.zoovy:prod_image1'; apply --img --media=$var --width=240 --height=240 --bgcolor='#ffffff' --replace;" src="blank.gif" class="prodBigImage" alt="" height="240" width="240"></div>
+			</div>
+		</td>
 
-	<div data-tlc="bind $var '.%attribs.zoovy:prod_is_tags'; quickstart#tags --legacy; if (is $var --notblank;) {{apply --append;}};" class="tagsContainer"></div>
-	<div data-tlc="bind $var '.pid'; quickstart#addpicslider  --legacy; apply --append;"><img data-tlc="bind $var '.%attribs.zoovy:prod_image1'; apply --img --media=$var --width=240 --height=240 --bgcolor='#ffffff' --replace;" src="blank.gif" class="prodBigImage" alt="" height="240" width="240"></div>
+		<td class="prodSummaryContainer marginBottom no_underline">
+			<h1 data-tlc="bind $var '.%attribs.zoovy:prod_name'; if (is $var --notblank;) {{apply --append;}};"></h1>
+			<h6 data-tlc="bind $var '.pid'; if (is $var --notblank;) {{ format --prepend='Sku#: ';apply --append;}};" class="ztable_row_small stid"></h6>
 
-</div>
+			<div class="priceContainer marginBottom">
+				<h5 data-tlc="bind $var '.%attribs.zoovy:prod_msrp';  if (is $var --notblank;) {{format --currency='USD'; format --prepend='MSRP: ';  apply --append;}};" class="prodMSRP msrpPrice"></h5>
+				<div data-tlc="bind $var '.%attribs.user:cart_price'; if(is $var --notblank;) {{format --hide;}};">
+					<h4 data-tlc="bind $var '.%attribs.zoovy:base_price';  if (is $var --notblank;) {{format --currency='USD'; format --prepend='<span>Our Price: </span>';  apply --append;}};" class="basePrice"></h4>
+					<span class="savings">
+						<span data-tlc="bind $var '.pid'; format --prepend='You save: '; quickstart#priceretailsavingsdifference  --legacy; apply --append;" class="savingsDifference"></span>
+						<span data-tlc="bind $var '.pid'; format --prepend='('; format --append=')'; quickstart#priceretailsavingspercentage  --legacy; apply --append;" class="savingsPercentage"></span>
+					</span>
+				</div>
+				<div data-tlc="bind $var '.%attribs.user:cart_price'; if(is $var --notblank;) {{format --show;}};" class='displayNone seeInCartCont'>
+					<h4 class='basePrice price'><span class="pretext">Our Price: </span>See in cart</h4>
+					<h6 class='whyInCart'>
+						Why?<span class='displayNone whyHover'>Some manufacturers do this... <br>Please provide specific text for this feature.</span>
+					</h6>
+				</div>
+				<span data-tlc="bind $var '.%attribs.zoovy:prod_mfg'; if(is $var --notblank;) {{format --show;}};" class="searchLink">More Products by </span>
+				<a href='#' data-tlc="bind $var '.%attribs.zoovy:prod_mfg'; if(is $var --notblank;) {{apply --append; format --prepend='#!search/keywords/'; apply --attrib='href';}};" class="searchLink"></a>
+				<div data-tlc="bind $var '.%attribs.zoovy:prod_is_tags'; quickstart#tags --legacy; if (is $var --notblank;) {{apply --append;}};" class="tagsContainer"></div>
+			</div>
 
-	</td>
+			<div data-tlc="bind $var '.%attribs.zoovy:ship_latency'; format --prepend='Normally ships in '; format --append=' day(s)'; if (is $var --notblank;) {{apply --append;}};" class="latency"></div>
 
-	<td class="prodSummaryContainer marginBottom no_underline">
-	<h1 data-tlc="bind $var '.%attribs.zoovy:prod_name'; if (is $var --notblank;) {{apply --append;}};"></h1>
-	<h6 data-tlc="bind $var '.pid'; if (is $var --notblank;) {{ format --prepend='Sku#: ';apply --append;}};" class="ztable_row_small stid"></h6>
+			<section class="marginBottom">
+				<span data-tlc="bind $var '.reviews.average'; if(is $var --notblank) {{format --prepend='review_'; apply --add --class=$var; }};" class="reviewSprite"></span>
+				<span data-tlc="bind $var '.reviews.total';  if (is $var --notblank;) {{format --prepend=' from ' --append=' reviews' ;apply --append;}};"></span>
+			</section>
 
+			<div data-tlc="bind $var '.%attribs.zoovy:prod_desc'; if (is $var --notblank;) {{render --wiki='quickstart'; apply --append;}};"></div>
+			<a data-tlc="bind $var '.'; store_routing#seoanchor --type='product' --seo; apply --attrib='href';" class='quickViewDetails pointer'>VIEW DETAILS</a>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
 
-	<div class="priceContainer">
-		<h4 data-tlc="bind $var '.%attribs.zoovy:base_price';  if (is $var --notblank;) {{format --currency='USD'; format --prepend='Our Price: ';  apply --append;}};" class="basePrice"></h4>
-		<h5 data-tlc="bind $var '.%attribs.zoovy:prod_msrp';  if (is $var --notblank;) {{format --currency='USD'; format --prepend='MSRP: ';  apply --append;}};" class="prodMSRP"></h5>
-		<span class="savings">
-			<span data-tlc="bind $var '.pid'; format --prepend='You save: '; quickstart#priceretailsavingsdifference  --legacy; apply --append;" class="savingsDifference"></span>
-			<span data-tlc="bind $var '.pid'; format --prepend='('; format --append=')'; quickstart#priceretailsavingspercentage  --legacy; apply --append;" class="savingsPercentage"></span>
-		</span>
-	</div>
+		<ul data-tlc="bind $var '.reviews.@reviews'; controller#loop --templateid='productReviewsTemplateDetail'; if (is $var --notblank;) {{apply --append;}};" class="listStyleNone clearfix productReviewsList"></ul>
 
-	<div data-tlc="bind $var '.%attribs.zoovy:ship_latency'; format --prepend='Normally ships in '; format --append=' day(s)'; if (is $var --notblank;) {{apply --append;}};" class="latency"></div>
-
-	<section class="marginBottom">
-		<span data-tlc="bind $var '.reviews.average'; if(is $var --notblank) {{format --prepend='review_'; apply --add --class=$var; }};" class="reviewSprite"></span>
-		<span data-tlc="bind $var '.reviews.total';  if (is $var --notblank;) {{format --prepend=' from ' --append=' reviews' ;apply --append;}};"></span>
-	</section>
-
-	<div data-tlc="bind $var '.%attribs.zoovy:prod_desc'; if (is $var --notblank;) {{render --wiki='quickstart'; apply --append;}};"></div>
-
-	</td>
-</tr>
-<tr>
-	<td colspan="2">
-
-	<ul data-tlc="bind $var '.reviews.@reviews'; controller#loop --templateid='productReviewsTemplateDetail'; if (is $var --notblank;) {{apply --append;}};" class="listStyleNone clearfix productReviewsList"></ul>
-
-	</td>
-</tr>
-</tbody></table>
-
-
+		</td>
+	</tr>
+</tbody>
+</table>
 </div><!-- productTemplateQuickView -->
 
 
