@@ -23,6 +23,24 @@
 var store_acct_create = function(_app) {
 	var theseTemplates = new Array('');
 	var r = {
+	
+////////////////////////////////////   CALLS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+	
+	calls : {
+	
+		appBuyerCreate : {
+			init : function(obj,_tag)	{
+				this.dispatch(obj,_tag);
+				return 1;
+			},
+			dispatch : function(obj,_tag){
+				obj._tag = _tag || {};
+				obj._cmd = "appBuyerCreate";
+				_app.model.addDispatchToQ(obj,'immutable');
+			}
+		}, //appBuyerCreate
+		
+	}, //calls
 
 
 ////////////////////////////////////   CALLBACKS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -58,9 +76,31 @@ var store_acct_create = function(_app) {
 			onError : function()	{
 //errors will get reported for this callback as part of the extensions loading.  This is here for extra error handling purposes.
 //you may or may not need it.
-				_app.u.dump('BEGIN admin_orders.callbacks.init.onError');
+				_app.u.dump('BEGIN store_acct_create.callbacks.init.onError');
 				}
-			}
+			},
+			
+			
+			startExtension : {
+				onSuccess : function() {
+					_app.templates.customerTemplate.on('complete.store_accountcreate',function(event,$context,infoObj) {
+						var $sideline = $('.customerSideline', $context);
+						var $customerMainCol = $('.customerMainCol', $context);
+						if(infoObj.show == "createaccount"){
+							$sideline.hide();
+							$customerMainCol.css('width','100%')
+						}
+						else {
+							$sideline.show();
+							$customerMainCol.css('width','75%');
+						}
+					});
+				},
+				onError : function() {
+					_app.u.dump('START store_acct_create.callbacks.startExtension.onError');
+				}
+			},
+			
 		}, //callbacks
 
 
@@ -71,30 +111,10 @@ var store_acct_create = function(_app) {
 //these are going the way of the do do, in favor of _app events. new extensions should have few (if any) actions.
 		a : {
 		
-				//copied from _app-quickstart.js so additional parameter could be used to assign the error location (for diff. login screens)
-			loginFrmSubmit : function(email,password,errorDiv)	{
-				var errors = '';
-				$errorDiv = errorDiv.empty(); //make sure error screen is empty. do not hide or callback errors won't show up.
-
-				if(_app.u.isValidEmail(email) == false){
-					errors += "Please provide a valid email address<br \/>";
-					}
-				if(!password)	{
-					errors += "Please provide your password<br \/>";
-					}
-				if(errors == ''){
-					_app.calls.appBuyerLogin.init({"login":email,"password":password},{'callback':'authenticateBuyer','extension':'myRIA'});
-					_app.calls.refreshCart.init({},'immutable'); //cart needs to be updated as part of authentication process.
-//					_app.calls.buyerProductLists.init('forgetme',{'callback':'handleForgetmeList','extension':'store_prodlist'},'immutable');
-					if(localStorage.appPreferences !== 'signedUp') {localStorage.appPreferences = 'signedUp';} //set preference to bypass loading offer in case it was nuked elsewhere
-					_app.model.dispatchThis('immutable');
-					}
-				else {
-					$errorDiv.anymessage({'message':errors});
-					}
-				showContent('customer',{'show':'myaccount'})
-				//showContent('homepage',{})
-			}, //loginFrmSubmit
+			togglerecover : function($tag) {
+				dump('Retrieve password toggled');
+				$("[data-slide='toggle']",$tag.parent()).slideToggle();
+			}
 
 		}, //Actions
 
@@ -134,7 +154,7 @@ var store_acct_create = function(_app) {
 					}
 					
 					formObj._vendor = "nyciwear";
-					_app.calls.appBuyerCreate.init(formObj,tagObj,'immutable');				
+					_app.ext.store_acct_create.calls.appBuyerCreate.init(formObj,tagObj,'immutable');				
 					_app.model.dispatchThis('immutable');
 				}
 				else {
@@ -150,6 +170,24 @@ var store_acct_create = function(_app) {
 //while no naming convention is stricly forced, 
 //when adding an event, be sure to do off('click.appEventName') and then on('click.appEventName') to ensure the same event is not double-added if app events were to get run again over the same template.
 		e : {
+		
+			//showContent at end was necessary to show login success container on second login form, all else is same as form in quickstart.
+			accountLoginSubmit : function($ele,p)	{
+				p.preventDefault();
+				if(_app.u.validateForm($ele))	{
+					var sfo = $ele.serializeJSON();
+					_app.ext.cco.calls.cartSet.init({"bill/email":sfo.login,"_cartid":_app.model.fetchCartID()}) //whether the login succeeds or not, set bill/email in the cart.
+					sfo._cmd = "appBuyerLogin";
+					sfo.method = 'unsecure';
+					sfo._tag = {"datapointer":"appBuyerLogin",'callback':'authenticateBuyer','extension':'quickstart'}
+					_app.model.addDispatchToQ(sfo,"immutable");
+					_app.calls.refreshCart.init({},'immutable'); //cart needs to be updated as part of authentication process.
+					_app.model.dispatchThis('immutable');
+					showContent('customer',{'show':'myaccount'})
+				}
+				else	{} //validateForm will handle the error display.
+			}
+			
 			} //e [app Events]
 		} //r object.
 	return r;

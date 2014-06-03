@@ -2449,7 +2449,7 @@ either templateID needs to be set OR showloading must be true. TemplateID will t
 								_app.model.addDispatchToQ({"_cmd":"buyerAddressList","_tag":{'callback':'tlc','jqObj':$article,'verb':'translate','datapointer':'buyerAddressList'}},'mutable');
 								break;
 /*nyci*/					case 'createaccount':
-/*nyci*/						app.ext.cco.calls.appCheckoutDestinations.init({},'mutable'); //needed for country list in address entry.
+/*nyci*/						_app.ext.cco.calls.appCheckoutDestinations.init({},'mutable'); //needed for country list in address entry.
 /*nyci*/						break;
 							
 							case 'logout':

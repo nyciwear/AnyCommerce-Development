@@ -170,10 +170,10 @@ ANIMATION TESTING
 			<div class='headerRight floatRight'>
 				<div class='headerCall floatRight'>
 					<span class='loginHide pointer' onclick="myApp.ext.quickstart.u.showLoginModal();">Log In</span>
-					<a href="#!/customer/myaccount"></a>
-					<a href="#!/customer/myaccount"><span class="loginShow username"></span></a> | 
-					<a class="loginShow" href="#!/customer/logout">Log Out</a><span class='loginShow loginPipe'> | </span>
-					<a href="#!/company/contact">Contact Us</a> |
+					<a href="#!customer/myaccount"></a>
+					<a href="#!customer/myaccount"><span class="loginShow username"></span></a> | 
+					<a class="loginShow" href="#!customer/logout">Log Out</a><span class='loginShow loginPipe'> | </span>
+					<a href="#!company/contact">Contact Us</a> |
 					<span>Call Us at </span>800-830-9003
 				</div>
 			</div>
@@ -1553,20 +1553,20 @@ if you change these, you should move them above this comment so that when you (o
 
 <div id="customerTemplate" class="clearfix smallButton">
 
-	<div class="sideline">
-	<nav id="customerNav">
-	<ul class="listStyleNone noPadOrMargin">
-		<li><a href='#!customer/subscriberLists'>Newsletter Subscription</a></li>
-		<li><a href="#!customer/myaccount">My Account</a></li>
-		<li><a href="#!customer/changepassword">Change Password</a></li>
-		<li><a href="#!customer/orders">Order History</a></li>
-		<li><a href="#!customer/lists">Manage Lists</a></li>
-		<li class="hideIfLoggedOut"><a href="#!customer/logout">Log Out</a></li>
-	</ul>
-	</nav>
+	<div class="sideline customerSideline">
+		<nav id="customerNav">
+			<ul class="listStyleNone noPadOrMargin">
+				<li><a href='#!customer/subscriberLists'>Newsletter Subscription</a></li>
+				<li><a href="#!customer/myaccount">My Account</a></li>
+				<li><a href="#!customer/changepassword">Change Password</a></li>
+				<li><a href="#!customer/orders">Order History</a></li>
+				<li><a href="#!customer/lists">Manage Lists</a></li>
+				<li class="hideIfLoggedOut"><a href="#!customer/logout">Log Out</a></li>
+			</ul>
+		</nav>
 	</div>
 
-	<div class="mainColumn">
+	<div class="mainColumn customerMainCol"> <!-- If createAccountArticle showing, this will be set to 100%, else 75% -->
 <!-- .textContentArea is used as a selector because IE8 doesn't play well  with tag type article as a selector -->
 
 <!--
@@ -1577,14 +1577,11 @@ newsletterArticle is intended for buyers who are not logged in or do not have an
 			<form action="#" name="subscribeFrm" data-app-submit="quickstart|subscribeSubmit" class='alignedForm'>
 				<fieldset class="userInfo borderNone">
 					<label>
-					<input placeholder="email address" maxlength="50" size="30" required name="email" value="" type="email" data-tlc="bind $var '.customer.login'; if(is $var --notblank;) {{apply --select=$var;}};">
+						<input placeholder="email address" maxlength="50" size="30" required name="email" value="" type="email" data-tlc="bind $var '.customer.login'; if(is $var --notblank;) {{apply --select=$var;}};">
 					</label>
 				</fieldset>
-				
 				<fieldset data-tlc="apply --empty; bind $var '.@lists'; controller#loop --templateid='subscriberListItemTemplate'; apply --append;" class="borderNone subscriberLists"></fieldset>
-			
 				<input class="applyButton" value="Subscribe" type="submit">
-			
 			</form>
 		</div>
 <!--
@@ -1592,14 +1589,143 @@ subscribeListsArticle is used for authenticated buyers.
 -->
 		<div id="subscriberListsArticle" class="displayNone textContentArea">
 			<h1>Manage your Subscriptions</h1>
-
 			<form action="#" name="subscribeFrm" data-app-submit="store_crm|buyerUpdate" class='alignedForm' onSubmit="return false">
 				<!-- buyer is logged in. Don't need email/name inputs -->
 				<fieldset data-update-verb='tags' data-tlc="apply --empty; bind $tags '.%info.@tags'; bind $var '.@lists'; controller#loop --templateid='subscriberListItemTemplate'; apply --append;" class="borderNone subscriberLists"></fieldset>
 				<input class="applyButton" value="Subscribe" type="submit">
 			</form>
-
 		</div>
+		
+		
+		<div id="createaccountArticle" class="displayNone textContentArea">
+			<p id="loginMessagingInline" class="marginBottom appMessaging loginMessaging"></p> <!-- MARK .loginMessaging? -->
+			<div class="creatAccount">
+				<div id="gotAccount1" class="gotAccount"> 
+					<h1 class="smallcaps">WELCOME BACK</h1>
+					<!-- Third parameter is id of message destination -->
+					<form action="#" data-app-submit="store_acct_create|accountLoginSubmit" id="modalLoginForm1"> 
+						<input type="hidden" name="method" value="unsecure">
+						<input type="hidden" name="loginCallbackinline" id="loginCallbackinline" value=""><!-- used to save a callback action in -->
+						<fieldset>
+							<input type="email" class="zform_textbox zform_email" required="required" name="login" value="" size="39" placeholder="E-mail address" id="modalLoginLogin">
+							<input type="password" class="zform_textbox zform_password" required="required" name="password" value="" size="39" placeholder="Password" id="modalLoginpassword">
+							<input type="submit" value="SIGN IN" class="ui-button-text ui-button ui-corner-all">
+						</fieldset>
+					</form>
+					<div id="recoverPasswordContainer" class="marginBottom recoverPasswordContainer">
+						<div id="recoverPasswordMessaging" class="appMessaging recoverPasswordMessaging"></div>
+						<form action="#" data-app-submit="quickstart|accountPasswordRecoverSubmit">
+							<fieldset>
+								<legend onclick="myApp.ext.store_acct_create.a.togglerecover($(this));">Recover Password</legend>
+								<div data-slide="toggle">
+									<div class="marginBottom">
+										<label>
+											<span>Enter your e-mail address:</span>
+											<input type="text" name="login" required="required" size="25">
+										</label>
+									</div>
+									<div><input type="submit" class="applyButton" value="Email Password to Me"></div>
+								</div>
+							</fieldset>
+						</form>
+					</div><!-- /recoverPasswordContainer -->
+				</div>
+				<div class="Account" >
+					<form action="#" class="inputsAsBreaks"  onSubmit="myApp.ext.store_acct_create.u.handleAppLoginCreate($(this)); return false;">
+					<!-- <form action="#" submit="return false;" class="inputsAsBreaks"> For testing form to prevent reload-->
+						<input type="hidden" name="_script" value="nyciwear"/>
+						<h1>First Time With Us?</h1><input type="hidden" name="form" value="wholesale" />
+						<div class="fieldM"><span class="field">First Name</span> <input name="firstname" type="text" size="30" class="textfname" placeholder="First Name" required="required" />
+						<b>Last Name</b> <input name="lastname" type="text" size="30" placeholder="Last Name" required="required" class="textflast"/></div>
+						<!--<div class="passwordInput"><b>Password</b><input name="password" size="30" placeholder="Password" required /></div>-->
+						<div class="fieldM"><span class="field">Address</span> <input name="address1" type="text" size="30" placeholder="Address" class="textfadd" required="required" /> 
+						<input name="address2" type="text" size="30" placeholder="Address (Line 2)" class="textfadd1"/></div>
+						<div class="fieldM stateFix"><span class="field">City</span> <input name="city" type="text" size="30" placeholder="City" required="required" class="textfcity"/> 	
+							<b>State</b> 
+							<div class="selectWrapperS selectWrapper">
+								<select name="region" class="textfstate selectArrow">
+									<option value="AL">AL</option>
+									<option value="AK">AK</option>
+									<option value="AZ">AZ</option>
+									<option value="AR">AR</option>
+									<option value="CA">CA</option>
+									<option value="CO">CO</option>
+									<option value="CT">CT</option>
+									<option value="DE">DE</option>
+									<option value="DC">DC</option>
+									<option value="FL">FL</option>
+									<option value="GA">GA</option>
+									<option value="HI">HI</option>
+									<option value="ID">ID</option>
+									<option value="IL">IL</option>
+									<option value="IN">IN</option>
+									<option value="IA">IA</option>
+									<option value="KS">KS</option>
+									<option value="KY">KY</option>
+									<option value="LA">LA</option>
+									<option value="ME">ME</option>
+									<option value="MD">MD</option>
+									<option value="MA">MA</option>
+									<option value="MI">MI</option>
+									<option value="MN">MN</option>
+									<option value="MS">MS</option>
+									<option value="MO">MO</option>
+									<option value="MT">MT</option>
+									<option value="NE">NE</option>
+									<option value="NV">NV</option>
+									<option value="NH">NH</option>
+									<option value="NJ">NJ</option>
+									<option value="NM">NM</option>
+									<option value="NY">NY</option>
+									<option value="NC">NC</option>
+									<option value="ND">ND</option>
+									<option value="OH">OH</option>
+									<option value="OK">OK</option>
+									<option value="OR">OR</option>
+									<option value="PA">PA</option>
+									<option value="RI">RI</option>
+									<option value="SC">SC</option>
+									<option value="SD">SD</option>
+									<option value="TN">TN</option>
+									<option value="TX">TX</option>
+									<option value="UT">UT</option>
+									<option value="VT">VT</option>
+									<option value="VA">VA</option>
+									<option value="WA">WA</option>
+									<option value="WV">WV</option>
+									<option value="WI">WI</option>
+									<option value="WY">WY</option>
+								</select>
+							</div>
+							<b>Zip</b> <input name="postal" type="text" size="10" placeholder="00000-0000" class="textfzip"/>
+						</div>
+						<div class="fieldM">
+							<div class="field selectField">Country</div> 
+							<div class="selectWrapperC selectWrapper">
+								<select name="country" class="textfcountry selectArrow">
+									<option value="USA">United States of America</option>
+								</select>
+							</div>
+						</div>
+						<div class="fieldM">
+							<span class="field">E-mail</span>
+							<input name="email" type="email" size="30" class="textfmailpass" placeholder="E-mail Address" required="required" /> 
+							<b>Phone Number</b> 
+							<input name="phone" type="tel" size="12" placeholder="Phone Number" class="textfphone" required="required"/> 
+						</div>
+						<div class="fieldM">
+							<span class="field">Password</span> 
+							<input name="pass" type="password" size="30" class="textfmailpass" placeholder="7-18 Characters" required="required" /> 
+							<b>Confirm Password</b> 
+							<input name="pass2" type="password" size="12" placeholder="Must be a match" class="textfmailpass" required="required"/> 
+						</div>
+						<input type="submit" value="Create an Account" class="createButton pointer"/>
+						<!-- <button onclick="myApp.ext.store_createaccount.u.handleAppLoginCreate($(this).parent());" class="createButton ui-button">Create an Account</button> For testing form to prevent reload-->
+					</form>
+				</div>
+			</div>
+		</div>
+		
 
 		<div id="myaccountArticle" class="displayNone textContentArea">
 			<h1>My Account</h1>
@@ -2178,54 +2304,56 @@ The 'data-action' attribute is used to assign an onclick.
 
 <!-- the contents of this div/id are toggled on/off when login/logout occurs. don't change the ID -->
 
-
 	<p id='loginMessaging' class='marginBottom appMessaging'></p>
 
 	<div id='loginFormContainer'>
-		<form action='#' data-app-submit='quickstart|accountLoginSubmit' class='marginBottom alignedForm'>
-		<input type='hidden' name='method' value='unsecure' />
-		<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
-			<fieldset>
-			<legend>Account Login</legend>
-			<label>
-				<span class='prompt'>Login/Email</span>
-				<input type='email' class='alignInput' required='required'  name='login' value='' size='25'  />
-			</label>
-			<label>
-				<span class='prompt'>Password</span>
-				<input type='password' class='alignInput' required='required'  name='password' value='' size='25'  />	
-			</label>
-			<div class='alignRight'>
-			<input type='submit' value='log in' class='applyButton ' />
-			</div>
-			</fieldset>
-		</form>
+		<div class='createAccount'>
+			<h2 class='smallcaps'>First Time With Us?</h2>
+			<p>If you have never made a purchase at this web site and have never subscribed to this store's mailing list,
+				please choose this option.
+			</p>
+			<a href="#!customer/createaccount/" class='modalCreateButton'>Create an Account</a>
+				<!-- USE THIS BUTTON WHEN CREATING WITH A MODAL (will need createAccount template added as well)
+			<button class='modalCreateButton tertiaryColorHover' onClick="app.ext.acctCreate.a.showAccountCreate();">Create an Account</button> -->
+		</div>
 
-		<div id='recoverPasswordContainer' class='marginBottom'>
-			<div id='recoverPasswordMessaging' class='appMessaging'></div>
-			<form action='#' data-app-submit='quickstart|accountPasswordRecoverSubmit' class='alignedForm'>
-			<fieldset>
-			<legend>Recover Password</legend>
-			<label>
-				<span class='prompt'>Login/Email</span>
-				<input type='text' name='login' required='required' size='25' class='alignInput' />
-			</label>
-			<div class='alignRight'><input type='submit' class='applyButton' value='Email Password to Me' /></div>
-			</fieldset>
+		<div id="gotAccount" class='gotAccount'> 
+			<h1 class='smallcaps'>Welcome Back</h1>
+			<!-- Third parameter is id of message destination -->
+			<form action='#' data-app-submit='quickstart|accountLoginSubmit' id='modalLoginForm'>
+				<input type='hidden' name='method' value='unsecure'>
+				<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
+				<fieldset>
+					<input type='email' class='zform_textbox zform_email' name='login' id='modalLoginlogin' value='' size='20' placeholder='E-mail address' />
+					<input type='password' class='zform_textbox zform_password' name='password' id='modalLoginpassword' value='' size='20' placeholder='Password' />
+					<input type='submit' value='Log In' class='smallcaps ui-button-text ui-button ui-corner-all logInModalSubmit' />
+				</fieldset>
 			</form>
-		</div><!-- /recoverPasswordContainer -->
-
-		<div>
-		<a class='applyButton' href='#!customer/newsletter'>Create Account</a>
+			<div class='marginBottom recoverPasswordContainer'>
+				<div class='appMessaging recoverPasswordMessaging'></div>
+				<form action='#' data-app-submit='quickstart|accountPasswordRecoverSubmit'>
+					<fieldset>
+						<legend onclick="myApp.ext.store_acct_create.a.togglerecover($(this));">Recover Password</legend>
+						<div data-slide='toggle'>
+							<div class='marginBottom'>
+								<label>
+									<span>Enter your e-mail address:</span>
+									<input type='text' name='login' required='required' size='25'>
+								</label>
+							</div>
+							<div><input type='submit' class='applyButton' value='Email Password to Me'></div>
+						</div>
+					</fieldset>
+				</form>
+			</div><!-- /recoverPasswordContainer -->
 		</div>
 	</div>
-
-<!-- this div will appear after a successful login. if you bind a new action to the button, best to empty the div and re-add the button, so the actions don't statck. -->
+	<!-- this div will appear after a successful login. if you bind a new action to the button, best to empty the div and re-add the button, so the actions don't statck. -->
 	<div id='loginSuccessContainer' class='center displayNone'>
-		<button class='applyButton' id='modalLoginContinueButton' data-app-click="quickstart|dialogCloseExec">Continue</button>
+		<button class='ui-button-text ui-button ui-state-default ui-corner-all ' id='modalLoginContinueButton' data-app-click="quickstart|dialogCloseExec">Continue</button>
 	</div>
-
 </div>
+
 
 
 

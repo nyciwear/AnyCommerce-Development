@@ -397,7 +397,7 @@ LOGIN MODAL #F05524 #97AE3C
 .createAccount p {font-size:1.3em;}
 .createAccount .modalCreateButton {padding:0.3em; margin:0.6em; border:none; font-size:1.6em; background:#F05524; color:#ffffff; box-shadow:0 0 14px 2px #999999;} 
 
-.gotAccount {height:270px; width:44%; margin:0.875em 3% 0 3%; float:right; background:#97AE3C; font-weight:normal; box-shadow:0 0 14px 2px #999999;}
+.gotAccount {height:auto; width:44%; margin:0.875em 3% 0 3%; float:right; background:#97AE3C; font-weight:normal; box-shadow:0 0 14px 2px #999999;}
 .gotAccount h1 {color:#ffffff; text-align:center; margin:0.6em 0 0 0;}
 .gotAccount fieldset {padding:0; border:0;}
 .gotAccount input {height:auto; width:90%; margin:0.4em auto; display:block; border:none; padding:0.3em 0 0.3em 0.3em; font-size:1.6em;}
@@ -405,6 +405,10 @@ LOGIN MODAL #F05524 #97AE3C
 .gotAccount a {color:#ffffff; font-size:12px; text-align:center; text-decoration:underline; margin:auto; display:block;}
 
 #recoverPasswordContainer .recoverField {margin:5px 0 12px 12px; float:left;}
+.recoverPasswordContainer {text-align:center; overflow:hidden;}
+.recoverPasswordContainer legend {width:100%; cursor:pointer;}
+.recoverPasswordContainer legend:hover {color:#E0463A;}
+.recoverPasswordContainer div[data-slide='toggle']{display:none;}
 
 
 /*************************************************************************************
@@ -438,8 +442,8 @@ createaccountTemplate
 .selectWrapperC {width:213px; bottom:auto;}
 .fieldM select.textfcountry {width:17.8125em; padding:0.3em 0.1875em 0.1875em 0.1875em; background-position:13.6em 0; border:none; margin:0;}
 
-.fieldM input.textfmailpass {width:25.4%;}
-/*.fieldM input.textfphone {width:145px;}*/
+.fieldM input.textfmailpass {width:25.4%;} 
+/*.fieldM input.textfphone {width:145px;} 0 2.438em 0em 0.4375em */
 .Account .createButton {color:#ffffff; padding:0.5em; margin:0.4em auto; border:none; display:block; font-weight:bold; font-size:1.8em; background:#F05524;}
 .Account .createButton:hover {color:#2b2b2b; background:#97AE3C;}
 
