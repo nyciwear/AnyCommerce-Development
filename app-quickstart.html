@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 
 <!-- do not populate or add meta data, the SEO layer will add it -->
-<title>NYCI Wear</title><!-- this will get populated by the SEO layer -->
+<title>Discount Designer Sunglasses Satisfaction Guaranteed at NyciWear</title><!-- this will get populated by the SEO layer -->
 
 <!-- used for optional social media extensions -->
 <meta property="og:type" content="" id='ogType' >
@@ -725,7 +725,9 @@ don't modify the 'data-templateid' unless you are changing template names and up
 -->
 <div id="categoryTemplate" class=" categoryTemplate"> <!-- class filteredCat will be added here to change styles for pages w/ filtered search -->
 	<span class="displayNone" data-tlc="store_routing#seoanchor --seo='1' apply --attrib='data-routing-hash';"></span>
-	<!-- MARK need to add meta spans for seo title and description -->
+	<span class="displayNone" data-tlc="bind $var '.%page.seo_title'; if(is $var --null) {{bind $var '.%page.head_title';}}; if(is $var --null;){{bind $var '.page_title';}}; if(is $var --blank;){{bind $var '.pretty';}}; apply --attrib='data-seo-title';"></span>
+	<span class="displayNone" data-tlc="bind $var '.%page.meta_description'; if(is $var --null;){{bind $var '.%page.description';}}; if(is $var --null;){{set $var '';}}; apply --attrib='data-seo-desc';"></span>
+	
 	<ul data-tlc="bind $var '.path'; store_navcats#breadcrumb  --templateid='breadcrumbTemplate'  --legacy;" class="breadcrumb clearfix noPadOrMargin fluidList"></ul>
 	<div class='filterContainer clearfix'></div> <!-- categories w/ filter search forms will use this to split the screen and reduce the category list width -->	
 	<div class='catContainer'> 
@@ -1041,7 +1043,9 @@ this will likely become more flexible in the future. ###
 
 <div data-tlc="bind $var '.pid'; apply --attrib='data-pid';" id="productTemplate" class="productPage">
 	<span class="displayNone" data-tlc="store_routing#seoanchor --seo='1' apply --attrib='data-routing-hash';"></span>
-	<!-- MARK need to add meta spans for seo title and description -->
+	<span class="displayNone" data-tlc="bind $var '.%attribs.zoovy:seo_title'; if(is $var --blank) {{bind $var '.%attribs.zoovy:prod_name';}}; apply --attrib='data-seo-title';"></span>
+	<span class="displayNone" data-tlc="bind $var '.%attribs.zoovy:meta_description'; if(is $var --blank;){{bind $var '.%attribs.zoovy:prod_desc';}}; apply --attrib='data-seo-desc';"></span>
+	
 	<ul data-tlc="bind $var '.recentCategories.0'; store_navcats#breadcrumb  --templateid='breadcrumbTemplate'  --legacy; apply --append;" class="clearfix noPadOrMargin fluidList breadcrumb"></ul>
 	
 	<div class='prodViewerContainer'>
@@ -1345,6 +1349,9 @@ if you change these, you should move them above this comment so that when you (o
 	<div class="mainColumn floatLeft">
 <!-- .textContentArea is used as a selector in quickstart.js because article tag type isn't ie8 friendly -->
 		<div id="aboutArticle" class="textContentArea article">
+			<span class="displayNone" data-seo-title-about="About NyciWear at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-about="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1 class="displayNone">About Us</h1>
 			<div>
 			<!-- ::: add your about us information here -->
@@ -1373,6 +1380,9 @@ if you change these, you should move them above this comment so that when you (o
 
 
 		<div id="contactArticle" class="displayNone textContentArea">
+			<span class="displayNone" data-seo-title-contact="Contact-us at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-contact="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+		
 			<h1 class="displayNone">Contact Information</h1>
 			<div class="companyAddress">
 			<!-- ::: add your contact information here ::: -->
@@ -1395,6 +1405,9 @@ if you change these, you should move them above this comment so that when you (o
 
 		<!-- faq are generated through the faq manager in the admin UI. do not add content in the faqContent area -->
 		<div id="faqArticle" class="displayNone textContentArea">
+			<span class="displayNone" data-seo-title-faq="Frequently Asked Questions at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-faq="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1 class="displayNone">Frequently Asked Questions</h1>
 			<div id="faqContent" class=" ui-accordion ui-widget ui-helper-reset ui-accordion-icons appAccordianesque"></div>
 		</div>
@@ -1402,6 +1415,9 @@ if you change these, you should move them above this comment so that when you (o
 
 
 		<div class="displayNone textContentArea" id="paymentArticle">
+			<span class="displayNone" data-seo-title-payment="Payment Policy at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-payment="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1 class="displayNone">Payment Policy</h1>
 			<div>
 			<!-- ::: add your payment policy here ::: -->
@@ -1424,6 +1440,9 @@ if you change these, you should move them above this comment so that when you (o
 
 
 		<div class="displayNone textContentArea" id="privacyArticle">
+			<span class="displayNone" data-seo-title-privacy="Privacy Statement at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-privacy="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1 class="displayNone">Privacy Statement</h1>
 			<h4>About this Privacy Policy:</h4>
 			<p>The entire site, or at least specific portions of this site are assisted by Zoovy technology. Zoovy has created this privacy policy as a template for customers who are using Zoovy technology with their websites. Zoovy in no way takes responsibility for the accuracy or enforcement of this policy. For a copy of Zoovy's privacy policy (which does not necessarily apply to the customers of its customers) visit http://www.zoovy.com/legal</p>
@@ -1468,6 +1487,9 @@ if you change these, you should move them above this comment so that when you (o
 
 
 		<div class="displayNone textContentArea" id="returnArticle">
+			<span class="displayNone" data-seo-title-return="Return Policy at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-return="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1 class='displayNone'>Return Policy</h1>
 			<div>
 			<!-- ::: add your return policy here ::: -->
@@ -1501,6 +1523,9 @@ if you change these, you should move them above this comment so that when you (o
 
 
 		<div class="displayNone textContentArea" id="shippingArticle">
+			<span class="displayNone" data-seo-title-shipping="Shipping Information at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-shipping="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1 class="displayNone">Shipping Information</h1>
 			<div>
 			<!-- ::: add your shipping information here ::: -->
@@ -1573,6 +1598,9 @@ if you change these, you should move them above this comment so that when you (o
 newsletterArticle is intended for buyers who are not logged in or do not have an account.
 -->
 		<div id="newsletterArticle" class="displayNone textContentArea">
+			<span class="displayNone" data-seo-title-newsletter="Newsletter Subscription at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-newsletter="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1>Subscribe to our Newsletter and Save!</h1>
 			<form action="#" name="subscribeFrm" data-app-submit="quickstart|subscribeSubmit" class='alignedForm'>
 				<fieldset class="userInfo borderNone">
@@ -1588,6 +1616,9 @@ newsletterArticle is intended for buyers who are not logged in or do not have an
 subscribeListsArticle is used for authenticated buyers.
 -->
 		<div id="subscriberListsArticle" class="displayNone textContentArea">
+			<span class="displayNone" data-seo-title-subscriberLists="Manage Subscriptions at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-subscriberLists="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1>Manage your Subscriptions</h1>
 			<form action="#" name="subscribeFrm" data-app-submit="store_crm|buyerUpdate" class='alignedForm' onSubmit="return false">
 				<!-- buyer is logged in. Don't need email/name inputs -->
@@ -1598,6 +1629,9 @@ subscribeListsArticle is used for authenticated buyers.
 		
 		
 		<div id="createaccountArticle" class="displayNone textContentArea">
+			<span class="displayNone" data-seo-title-createaccount="Create Account at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-createaccount="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<p id="loginMessagingInline" class="marginBottom appMessaging loginMessaging"></p> <!-- MARK .loginMessaging? -->
 			<div class="creatAccount">
 				<div id="gotAccount1" class="gotAccount"> 
@@ -1728,6 +1762,9 @@ subscribeListsArticle is used for authenticated buyers.
 		
 
 		<div id="myaccountArticle" class="displayNone textContentArea">
+			<span class="displayNone" data-seo-title-myaccount="My Account at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-myaccount="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1>My Account</h1>
 			<section>
 				<div class="billAddressContainer" data-app-role="addressContainer" data-app-addresstype="bill">
@@ -1750,18 +1787,25 @@ subscribeListsArticle is used for authenticated buyers.
 
 
 		<div id="ordersArticle" class="displayNone textContentArea">
+			<span class="displayNone" data-seo-title-orders="Order History at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-orders="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1>Order History</h1>
 			<div data-tlc="bind $var '.@orders'; controller#loop --templateid='orderLineItemTemplate'; if (is $var --notblank;) {{apply --append;}};" data-app-role="orderList" class="ui-accordion ui-widget ui-helper-reset ui-accordion-icons "></div>
 		</div>
 
 
-		<div id="invoiceArticle" class="displayNone textContentArea">
+		<div id="invoiceArticle" class="displayNone textContentArea"> invoice
+		
 			<div data-tlc="bind $var '.'; transmogrify --dataset=$var --templateid='invoiceTemplate'; apply --append;" data-bind="format:loadsTemplate; loadsTemplate: invoiceTemplate; useParentData:true;"></div>
 		</div>
 
 
 
 		<div id="changepasswordArticle" class="displayNone textContentArea">
+			<span class="displayNone" data-seo-title-changepassword="Password Update at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-changepassword="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1>Change Password</h1>
 			<form action="#" name="changePasswordForm" data-app-submit="quickstart|passwordChangeSubmit" class='alignedForm'>
 				<fieldset class="borderNone">
@@ -1775,6 +1819,9 @@ subscribeListsArticle is used for authenticated buyers.
 		</div>
 
 		<div id="listsArticle" class="displayNone textContentArea">
+			<span class="displayNone" data-seo-title-lists="List Manager at NyciWear"></span>
+			<span class="displayNone" data-seo-desc-lists="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
+			
 			<h1>List Manager</h1>
 			<div class='applyAccordion' data-tlc="apply --empty; bind $var '.@lists'; controller#loop --templateid='buyerListTemplate'; apply --append; bind $content '.@lists'; controller#loop --templateid='buyerListProdlistContainerTemplate'; apply --append;"></div>
 		</div>
@@ -1898,6 +1945,7 @@ This is the template used both within a dialog and inline, unless implicitly ove
 -->
 
 <div id="cartTemplate" class="clearfix"><!-- template role gets added by the myApp. don't add it yourself -->
+	<span class="displayNone" data-seo-desc-cart="Discount Designer Sunglasses and Eyeglasses, Prada, Ray-ban, Tom ford, Carrera, Tory Burch and more at nycIwear.com.  Always Free shipping, 20-50% off and a hassle free 30 day return/exchange policy."></span>
 
 	<form action="#" onsubmit="return false">
 
