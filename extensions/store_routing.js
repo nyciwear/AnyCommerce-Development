@@ -101,6 +101,7 @@ var store_routing = function(_app) {
 				_app.router.appendHash({'type':'exact','route':'cart','callback':function(routeObj){showContent('cart',routeObj.params);}});
 				_app.router.appendHash({'type':'exact','route':'home','callback':'homepage'});
 				_app.router.appendHash({'type':'exact','route':'','callback':'homepage'});
+				_app.router.appendHash({'type':'exact','route':'/','callback':'homepage'});
 				_app.router.appendHash({'type':'match','route':'category/{{navcat}}*','callback':'category'});
 				_app.router.appendHash({'type':'match','route':'product/{{pid}}/{{name}}*','callback':'product'});
 				_app.router.appendHash({'type':'match','route':'product/{{pid}}*','callback':'product'});
@@ -279,22 +280,22 @@ optional params:
 			setHash : function(hash){
 				if(_app.vars.showContentHashChange){
 					dump('forcing a hash change');
-					window.location.href = window.location.href.split("#")[0]+hash;
+					window.location.href = window.location.href.split("#")[0]+hash+"/";
 					}
 				},
 			productAnchor : function(pid, seo){
-				return "#!product/"+pid+"/"+(seo ? encodeURIComponent(seo) : '');
+				return "#!product/"+pid+"/"+(seo ? encodeURIComponent(seo) : '')+"/";
 				},
 			categoryAnchor : function(path,seo)	{
-				return "#!category/"+path+((seo) ? "/"+encodeURIComponent(seo) : '');
+				return "#!category/"+path+((seo) ? "/"+encodeURIComponent(seo) : '')+"/";
 				},
 			searchAnchor : function(type,value)	{
 				var r;
 				if(type == 'tag')	{
-					r = '#!search/tag/'+value;
+					r = '#!search/tag/'+value+"/";
 					}
 				else if(type == 'keywords')	{
-					r = '#!search/keywords/'+value;
+					r = '#!search/keywords/'+value+"/";
 					}
 // ### FUTURE -> support ability to search for a match on a specific attribute.
 //				else if(type == 'attrib')	{
@@ -303,7 +304,7 @@ optional params:
 				else	{
 					//unrecognized type
 					}
-				return "#!category/"+path+((seo) ? "/"+encodeURIComponent(seo) : '');
+				return "#!category/"+path+((seo) ? "/"+encodeURIComponent(seo) : '')+"/";
 				}
 			}, //u [utilities]
 
