@@ -19,18 +19,22 @@
 
 
 <script type="text/javascript">
-var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPLOYMENT!
-var myCreole, baseURL;
+	var _gaq = _gaq || {'push':function(){}} //here for testing. REPLACE BEFORE DEPLOYMENT!
+//	var _gaq = _gaq || [];
+//	_gaq.push(['_setAccount','UA-6014773-1']);
+//	_gaq.push(['_trackPageview']);
 
-//set base url so images, css, js, etc all load from appropriate location once deployed.
-//baseURL as blank lets loadScript function run off local copy when testing locally.
-if(document.location.protocol == 'file:')	{
-	baseURL  = "";
-	}
-else	{
-	baseURL = document.location.protocol+"//"+document.domain+"/";
-	}
-document.getElementsByTagName('base')[0].href = baseURL;
+	var myCreole, baseURL;
+
+	//set base url so images, css, js, etc all load from appropriate location once deployed.
+	//baseURL as blank lets loadScript function run off local copy when testing locally.
+	if(document.location.protocol == 'file:')	{
+		baseURL  = "";
+		}
+	else	{
+		baseURL = document.location.protocol+"//"+document.domain+"/";
+		}
+	document.getElementsByTagName('base')[0].href = baseURL;
 </script>
 
 
@@ -59,7 +63,7 @@ css files should be included before any .js file to ensure they are downloaded i
 $(document).ready(function(){
 
 	window.myApp = new initApp({
-		"release":"201404.20140519230900",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+		"release":"201404.20140605161200",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 		"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 		"baseURL":baseURL, //used in non-local mode.
 		"checkoutAuthMode" : "active",//can be passive, active or required
