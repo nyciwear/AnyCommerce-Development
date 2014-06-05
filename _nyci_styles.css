@@ -94,12 +94,13 @@ end global
 appPreview
 *****************************************************************/
 
-body #appPreView	{width:auto;}
-#appPreView #loader {height:70%; width:100%;}
-#appPreView #loader .alignCenter {height:60%; width:100%; position:relative; overflow:hidden;}
-.loderwrapper {height:25em; width:65%; margin:6em auto; background:#ffffff url('images/city_sunset-600x400.jpg') no-repeat center top;}
-.previewLogo {height:27%; width:10.8em; margin:0 0 0 -5.4em; background:transparent url('images/nyci_logo_168x47.png') no-repeat center center; position:absolute; left:50%; top:9%;}
-#appPreViewProgressBar {height:41%; width:4.7em; background-color:#f9fa57; margin:0 0 0.5em -2.3em; box-shadow:0 0s 4px 1px orange; border-radius:50%; position:absolute; left:50%; top:0;}
+body #appPreView	{height:100%; width:100%; max-width:100%; position:absolute; z-index:9999; background-color:rgba(0,0,0,0.6);}
+/*#appPreView #loader {height:70%; width:100%;}
+#appPreView #loader .alignCenter {height:60%; width:100%; position:relative; overflow:hidden;}*/
+.loderwrapper {height:15em; width:35%; margin:10% 0 0 50%; background-color:#ffffff; position:absolute; left:-17.5%; top:3em;}
+/*.previewLogo {height:27%; width:10.8em; margin:-15% 0 0 -5.4em; background:transparent url('images/nyci_logo_168x47.png') no-repeat center center; position:absolute; left:50%; top:50%;}*/
+.previewLogo {height:4em; width:10.8em; margin:15% auto 0 auto; background:transparent url('images/nyci_logo_168x47.png') no-repeat center center;}
+.previewSun {height:29%; width:4.7em; background-color:#f9fa57; margin:-15% 0 0.5em -2.3em; box-shadow:0 0s 4px 1px orange; border-radius:50%; position:absolute; left:50%; top:50%;}
 #appPreViewProgressText {text-align:center;}
 .eyeClub {padding:1em; text-align:center;}
 

@@ -112,7 +112,8 @@ myApp.u.showProgress = function(progress)	{
 			var percentComplete = Math.round(progress.passZeroResourcesLength * percentPerInclude); //used to sum how many includes have successfully loaded.
 //			dump(" -> percentPerInclude: "+percentPerInclude+" and percentComplete: "+percentComplete);
 			$('#appPreViewProgressBar').val(percentComplete);
-			$('#appPreViewProgressText').empty().append(percentComplete+"% Complete");
+			$('#appPreViewProgressText').empty().append(percentComplete+"% Loaded");
+			if(percentComplete == 100) { $('#appPreViewProgressText').append(" ...Tidying up."); }
 			attempt++;
 			setTimeout(function(){showProgress(attempt);},250);
 			}
