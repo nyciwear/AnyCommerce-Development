@@ -82,6 +82,10 @@ vars : {},
 						_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingHeader"),"800x66");
 						_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingFooter"),"120x90");
 						
+						_app.templates.homepageTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
+							_app.ext.store_nyci.u.showSignUp($context);
+						});
+						
 						_app.templates.productTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
 							_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingProduct",$context),"120x90");
 						});
@@ -179,9 +183,42 @@ vars : {},
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
 		u : {
+		
+			//shows modal asking user to create an account after app load. Only shows on first homepage view on non-secure
+			showSignUp : function($context) {
+				if(!$context.data('no-sign-up')) { //if it hasn't been shown before, show it.
+					if(document.location.protocol !== 'https:') { //if on secure, skip it (prevents showing on switch to secure for login/checkout)
+						var $parent = $('#signUpTemplate');
+						var w = '38%';
+						var win = $(window).width();
+						if (win < 720) { w = '80%'; }
+						else if (win < 900) { w = '60%'; }
+						else if (win < 1100) { w = '50%'; }
+						else {} //leave width at default
+//						dump('WINDOW dimensions are:'); dump($(window).height()); dump($(window).width());
+						$parent.dialog({
+							'modal'		:'true',
+							'title'		:'Sign-up with NyciWear',
+							'width'		:w, 
+							'max-height':275,
+							open : function(event, ui){ 
+								$('.ui-widget-overlay').on('click.closeModal', function(){$parent.dialog('close')});
+								$('[data-popup-login]',$parent).on('click.closeModal', function(){$parent.dialog('close')});
+								$('[data-popup-bypass]',$parent).on('click.closeModal', function(){$parent.dialog('close')});
+							},
+							close : function(event, ui){ 
+								$('.ui-widget-overlay').off('click.closeModal');
+								$('[data-popup-login]',$parent).off('click.closeModal');
+								$('[data-popup-bypass]',$parent).off('click.closeModal');
+							}
+						});
+						$context.data('no-sign-up',true); //it's been seen, set condition to prevent additional showing.
+					}
+				}
+			},
 
+			//appends Paypal bill me later script to the element passed as $container using the size passes as placementType.
 			addBillMeLater : function($container, placementType) {
-		dump('!!!!!!!!!!!!!!!!!!Billmelater'); dump($container);
 				var script = document.createElement("script");
 				script.type = "text/javascript";
 				script.setAttribute("data-pp-pubid","1a46db62a0");

@@ -103,7 +103,8 @@ body #appPreView	{width:auto;}
 #appPreViewProgressText {text-align:center;}
 .eyeClub {padding:1em; text-align:center;}
 
-.categorySelectorButtonContainer {width:33%; padding:0 5%; text-align:center;}
+#signUpTemplate {background:url("images/city_sunset-600x400.jpg") no-repeat scroll center bottom #ffffff; color:#ffffff; text-shadow:0.1em 0.1em #000000;}
+.categorySelectorButtonContainer {width:33%; padding:0 5%; text-align:center; margin:0 0 1em 0;}
 .categorySelectorButton {color: white; font-weight: bold; font-size: 1.3em;}
 .categorySelectorButton {color:#97AE3C;}
 .categorySelectorButton:hover {color:#f05524;}
