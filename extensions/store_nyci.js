@@ -79,6 +79,13 @@ vars : {},
 						_app.ext.store_nyci.u.loadSubCatsAsList('subBrandsCategoryTemplate','.shop_by_brand','.brandDD');
 //						_app.u.dump('loadSubCatsAsList just ran in startExtension');
 						
+						_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingHeader"),"800x66");
+						_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingFooter"),"120x90");
+						
+						_app.templates.productTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
+							_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingProduct",$context),"120x90");
+						});
+						
 						_app.templates.companyTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
 							_app.ext.store_nyci.u.getArticle($context,infoObj.show);
 						});
@@ -113,6 +120,11 @@ vars : {},
 //actions are functions triggered by a user interaction, such as a click/tap.
 //these are going the way of the do do, in favor of app events. new extensions should have few (if any) actions.
 		a : {
+		
+			slideThatUp : function($tag) {
+				dump('slideItUp triggered');
+				$tag.slideUp();
+			},
 				
 				//will trigger a click on the element passed in
 			clickThat : function($tag) {
@@ -167,6 +179,22 @@ vars : {},
 //utilities are typically functions that are exected by an event or action.
 //any functions that are recycled should be here.
 		u : {
+
+			addBillMeLater : function($container, placementType) {
+		dump('!!!!!!!!!!!!!!!!!!Billmelater'); dump($container);
+				var script = document.createElement("script");
+				script.type = "text/javascript";
+				script.setAttribute("data-pp-pubid","1a46db62a0");
+				script.setAttribute("data-pp-placementtype","placementType");
+				script.text = '(function (d, t) {'
+				+	'"use strict";'
+				+	'var s = d.getElementsByTagName(t)[0], n = d.createElement(t);'
+				+	'n.src = "//paypal.adtag.where.com/merchant.js";'
+				+	's.parentNode.insertBefore(n, s);'
+				+	'}(document, "script"));';
+				
+				$container.append(script);
+			},
 			
 			goToMyAccount : function() {
 			_app.u.dump('----Got to goToMyAccount'); 
