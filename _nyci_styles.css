@@ -523,6 +523,8 @@ cartTemplate / productListTemplateCart
 end CartTemplate
 *************************************************************************************/
 
+/*404 template*/
+.searchButton#searchSubmit404 {color:#ffffff; background:#f05524; border:2px solid #f05524;}
 
 /*****************************************************************
 media queries

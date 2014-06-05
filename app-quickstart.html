@@ -1263,9 +1263,29 @@ this will likely become more flexible in the future. ###
 
 
 <!-- 404 page -->
-<div id="pageNotFoundTemplate">
+<div id="pageNotFoundTemplate" class="marginLeft">
 
-	<h1>Unable to find page...</h1>
+	<h1>Requested page not found (404 error)</h1>
+	<div>
+		We're sorry, but the page you've requested could not be found. 
+		Please <a>click here</a> to visit our homepage or try the following:
+		<ul>
+			<li>Check the spelling of the url you entered.</li>
+			<li><a>Click Here</a> to get your order staus.</li>
+			<li><a>Contact us </a>directly.</li>
+		</ul>
+	</div>
+	<div class="marginBottom">
+		<h2>Looking for something specific? Try searching for it:</h2>
+		<form name="SearchFrm404" action="#" id="SearchFrm404" class="productSearchForm" method="get" data-app-submit='quickstart|searchFormSubmit'>
+			<input type="search" name="KEYWORDS" value="" placeholder=' Enter Keyword' class="handleDefault">
+			<button id="SearchSubmit404" class="searchButton pointer">SEARCH</button>
+		</form>
+	</div>
+	<div class="marginBottom">
+		Thank you,
+		NyciWear
+	</div>
 
 </div>
 
