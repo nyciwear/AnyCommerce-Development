@@ -503,6 +503,8 @@ Company Articles
 #contactArticle .alignedForm input {width:20em;}
 #contactArticle .alignedForm .alignRight input {margin:0;}
 #contactArticle .alignedForm textarea {height:10em; width:20.5em;}
+/*shipping*/
+#shippingArticle, #paymentArticle {margin:0 0 1em 0;}
 
 /*************************************************************************************
 end Company Articles

@@ -64,7 +64,7 @@ which renderformat element resides.
 
 This renderformat is intended to be on a stand-alone element such as a div.
 ex: 
-<div data-bind="useParentData:true; format:imageZoom; extension:tools_zoom; isthumbs:1;" data-thumbclass='thumbCarousel' height='296' width='296' zheight='800' zwidth='800' theight='50' twidth='50'>
+<div data-bind="useParentData:true; format:imageZoom; extension:tools_zoom; isthumbs:1;" data-thumbclass='thumbCarousel' data-height='296' data-width='296' data-zheight='800' data-zwidth='800' data-theight='50' data-twidth='50'>
 
 Do not specify a var, ALWAYS set useParentData to true.
 
@@ -85,12 +85,12 @@ optional:
 					 It's value is added as a class to that container.
 	data-zoomheader - A zoovy: attrib that can be used to put a header above the zoomed images	
 					  if the zoomclass is used for a separate zoom container (usually prod_name).
-	height - A height to be passed to the _app.u.makeImage call for the main, standard size image.
-	width -	A width to be passed to the _app.u.makeImage call for the main, standard size image.
-	theight - A height to be passed to the _app.u.makeImage call for the thumbnail image(s).
-	twidth - A width to be passed to the _app.u.makeImage call for the thumbnail image(s).
-	zheight - A height to be passed to the _app.u.makeImage call for the larger, zoom size image.
-	zwidth - TA width to be passed to the _app.u.makeImage call for the larger, zoom size image.
+	data-height - A height to be passed to the _app.u.makeImage call for the main, standard size image.
+	data-width - A width to be passed to the _app.u.makeImage call for the main, standard size image.
+	data-theight - A height to be passed to the _app.u.makeImage call for the thumbnail image(s).
+	data-twidth - A width to be passed to the _app.u.makeImage call for the thumbnail image(s).
+	data-zheight - A height to be passed to the _app.u.makeImage call for the larger, zoom size image.
+	data-zwidth - A width to be passed to the _app.u.makeImage call for the larger, zoom size image.
 	
 !!This extension loads lightbox.js, but works independently of the lightbox extension. Lightbox can be used 
 here, but if the lightbox extension is turned on for other uses, be sure to only load lightbox.js in one of
@@ -99,6 +99,7 @@ these extensions.
 ****************************************/
 		
 			imagezoom : function($tag, data) {
+				dump('START IMAGE ZOOM data- attribute is:'); dump($tag.attr('data-height'));
 //				_app.u.dump('data.value:'); _app.u.dump(data.value); _app.u.dump('thumbclass'); _app.u.dump($tag.data('thumbclass'));
 				var pid = _app.u.makeSafeHTMLId(data.value.pid);
 				
@@ -135,8 +136,8 @@ these extensions.
 				var image = data.bindData.isElastic ? data.value.images[0] : data.value['%attribs']['zoovy:prod_image1'];
 				var imageURL = _app.u.makeImage({
 					"name" 	: image,
-					"w" 	: $tag.attr('width'),
-					"h" 	: $tag.attr('height'),
+					"w" 	: $tag.attr('data-width'),
+					"h" 	: $tag.attr('data-height'),
 					"b" 	: bgcolor
 				}); 
 				
@@ -153,8 +154,8 @@ these extensions.
 					//create zoom image
 				var zoomURL = _app.u.makeImage({
 					"name" 	: image,
-					"w" 	: $tag.attr('zwidth'),
-					"h" 	: $tag.attr('zheight'),
+					"w" 	: $tag.attr('data-zwidth'),
+					"h" 	: $tag.attr('data-zheight'),
 					"b"		: bgcolor
 				});
 				
@@ -204,7 +205,7 @@ these extensions.
 //							_app.u.dump(" -> "+i+": "+thumbName);
 								//make thumb and assign path as attr for use in swaping later
 							if(!data.bindData.hrefattr) {	//if lightbox isn't being used make thumb container an empty div
-								$thumbImageCont.append('<div><img src="'+_app.u.makeImage({'tag':0,'name':thumbName,'w':$tag.attr('twidth'),'h':$tag.attr('theight'),'b':bgcolor})+'" data-imgsrc="'+thumbName+'"/></div>');
+								$thumbImageCont.append('<div><img src="'+_app.u.makeImage({'tag':0,'name':thumbName,'w':$tag.attr('data-twidth'),'h':$tag.attr('data-theight'),'b':bgcolor})+'" data-imgsrc="'+thumbName+'"/></div>');
 							}
 							else { //if lightbox is being used, make thumb container a anchor w/ lightbox attributes
 								var thumbImgObj = {
@@ -215,7 +216,7 @@ these extensions.
 								if(data.bindData.b){ thumbImgObj.b = data.bindData.b; }
 								
 								var thumbHREF = _app.u.makeImage(thumbImgObj);
-								$thumbImageCont.append('<a href="'+thumbHREF+'" rel="lightbox[prodPageThumb_'+pid+']"><img src="'+_app.u.makeImage({'tag':0,'name':thumbName,'w':$tag.attr('twidth'),'h':$tag.attr('theight'),'b':bgcolor})+'" data-imgsrc="'+thumbName+'"/></a>');
+								$thumbImageCont.append('<a href="'+thumbHREF+'" rel="lightbox[prodPageThumb_'+pid+']"><img src="'+_app.u.makeImage({'tag':0,'name':thumbName,'w':$tag.attr('data-twidth'),'h':$tag.attr('data-theight'),'b':bgcolor})+'" data-imgsrc="'+thumbName+'"/></a>');
 							}
 						}
 					}
@@ -248,8 +249,8 @@ these extensions.
 								//change image source for main image
 							 var newHREF = _app.u.makeImage({
 								"name" 	: newImage,
-								"w" 	: $tag.attr('width'),
-								"h" 	: $tag.attr('height'),
+								"w" 	: $tag.attr('data-width'),
+								"h" 	: $tag.attr('data-height'),
 								"b" 	: bgcolor
 							});
 							
@@ -259,8 +260,8 @@ these extensions.
 								//make new zoom image
 							var newImageURL = _app.u.makeImage({
 								"name" 	: newImage,
-								"w" 	: $tag.attr('zwidth'),
-								"h" 	: $tag.attr('zheight'),
+								"w" 	: $tag.attr('data-zwidth'),
+								"h" 	: $tag.attr('data-zheight'),
 								"b" 	: bgcolor
 							});
 							
