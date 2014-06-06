@@ -805,7 +805,7 @@ fallback is to just output the value.
 				
 				var className, price, buttonState, buttonText = 'Add to Cart',
 				pid = data.value.pid, //...pid set in both elastic and appProductGet
-				inv = _app.ext.store_product.u.getProductInventory(pid),
+				inv = _app.ext.store_product.u.getProductInventory(_app.data['appProductGet|'+pid]),
 				$form = $tag.closest('form');
 				
 //				dump(" -> $form.length: "+$form.length);
@@ -964,6 +964,7 @@ for legacy browsers. That means old browsers will use the anchor to retain 'back
 				switch(pageType)	{
 
 					case 'product':
+
 //nyci 	THIS CONTENT MOVED TO store_recentlyViewed.js for to afford more control over it.
 	//add item to recently viewed list IF it is not already in the list.	
 //nyci					if($.inArray(infoObj.pid,_app.ext.quickstart.vars.session.recentlyViewedItems) < 0)	{
@@ -1000,7 +1001,9 @@ for legacy browsers. That means old browsers will use the anchor to retain 'back
 						break;
 	
 					case 'customer':
-						if('file:' == document.location.protocol || !_app.ext.quickstart.u.thisArticleRequiresLogin(infoObj) || 'https:' == document.location.protocol)	{
+//						if('file:' == document.location.protocol || !_app.ext.quickstart.u.thisArticleRequiresLogin(infoObj) || 'https:' == document.location.protocol)	{
+//201404 -> change in logic so that secure or file always hit before checking if authentication is required. reduces overhead.
+						if('https:' == document.location.protocol || 'file:' == document.location.protocol || !_app.ext.quickstart.u.thisArticleRequiresLogin(infoObj))	{
 							 //perform jump can be forced on. authenticate/require login indicate a login dialog is going to show and a jump should NOT occur so that the dialog is not off screen after the jump.
 							if(!infoObj.performJumpToTop && !_app.u.buyerIsAuthenticated() && _app.ext.quickstart.u.thisArticleRequiresLogin(infoObj))	{
 								infoObj.performJumpToTop = false;
@@ -2190,9 +2193,9 @@ effects the display of the nav buttons only. should be run just after the handle
 					   "filter":{
 						  "and" : [
 							 {"term":{"tags":decodeURIComponent(infoObj.tag)}},
-							 {"has_child":{"type":"sku","query": {"range":{"available":{"gte":1}}}}}//, //only return item w/ inventory
-							 //{"term" : {"is_app":"1"}} //only show app items
-							]
+/*nyci*/						 {"has_child":{"type":"sku","query": {"range":{"available":{"gte":1}}}}}//, //only return item w/ inventory
+/*nyci*/							 //{"term" : {"is_app":"1"}} //only show app items
+							 ]
 						  }});
 					}
 				else if (infoObj.KEYWORDS) {
@@ -2201,8 +2204,8 @@ effects the display of the nav buttons only. should be run just after the handle
 					   "filter":{
 						  "and" : [
 							 {"query":{"query_string":{"query":decodeURIComponent(infoObj.KEYWORDS), "fields":["prod_name^5","pid","prod_desc"]}}},
-							 {"has_child":{"type":"sku","query": {"range":{"available":{"gte":1}}}}}//, //only return item w/ inventory
-							 //{"term" : {"is_app":"1"}} //only show app items
+/*nyci*/						 {"has_child":{"type":"sku","query": {"range":{"available":{"gte":1}}}}}//, //only return item w/ inventory
+/*nyci*/						 //{"term" : {"is_app":"1"}} //only show app items
 							 ]
 						  }});
 					}
@@ -2327,6 +2330,7 @@ either templateID needs to be set OR showloading must be true. TemplateID will t
 //Customer pages differ from company pages. In this case, special logic is needed to determine whether or not content can be displayed based on authentication.
 // plus, most of the articles require an API request for more data.
 //handleTemplateEvents gets executed in showContent, which should always be used to execute this function.
+//by the time showCustomer is run, we are already on https if it is required.
 			showCustomer : function(infoObj)	{
 //				dump("BEGIN showCustomer. infoObj: "); dump(infoObj);
 				infoObj = infoObj || {};
@@ -2852,7 +2856,7 @@ else	{
 				$('.cartItemCount',$appView).text(itemCount);
 				$('.cartSubtotal',$appView).text(_app.u.formatMoney(subtotal,'$',2,false));
 				$('.cartTotal',$appView).text(_app.u.formatMoney(total,'$',2,false));
-				
+
 /*nyci*/		$('.quickCart',$appView).empty().tlc({'templateid':'quickCartTemplate','datapointer':'cartDetail|'+_app.model.fetchCartID(),'verb':'transmogrify'});
 
 				//no error for cart data not being present. It's a passive function.
@@ -2900,8 +2904,7 @@ else	{
 						}
 					}
 				return data;
-				},
-
+				}
 			
 			}, //util
 

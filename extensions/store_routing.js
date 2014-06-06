@@ -98,6 +98,7 @@ var store_routing = function(_app) {
 				});
 				
 
+
 				_app.router.appendHash({'type':'exact','route':'cart','callback':function(routeObj){showContent('cart',routeObj.params);}});
 				_app.router.appendHash({'type':'exact','route':'home','callback':'homepage'});
 				_app.router.appendHash({'type':'exact','route':'','callback':'homepage'});
@@ -117,7 +118,6 @@ var store_routing = function(_app) {
 				_app.router.appendHash({'type':'match','route':'search/attribattrib/{{filter1}}/{{key1}}/{{filter2}}/{{key2}}*','callback':'twoattrib'}); //elastic search for attrib AND attrib
 				_app.router.appendHash({'type':'match','route':'search/tagattrib/{{tag}}/{{filter}}/{{key}}*','callback':'tagattrib'}); //elastic search for tag AND attrib
 				_app.router.appendHash({'type':'match','route':'search/tagattribattrib/{{tag}}/{{filter1}}/{{key1}}/{{filter2}}/{{key2}}*','callback':'tagtwoattrib'}); //elastic search for tag AND attrib AND attrib
-
 
 /*
 some other things we could do

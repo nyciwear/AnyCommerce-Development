@@ -55,6 +55,7 @@ var partner_addthis = function(_app) {
 					
 					//This is an example of how to add an addthis toolbox to a product page
 		/*			_app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj){
+					_app.rq.push(['templateFunction','productTemplate','onCompletes',function(infoObj){
 						var $context = $(_app.u.jqSelector('#',infoObj.parentID));
 						var $toolbox = $('.socialLinks', $context);
 						if($toolbox.hasClass('addThisRendered')){
@@ -119,7 +120,6 @@ var partner_addthis = function(_app) {
 					_app.u.dump('BEGIN _app.ext.partner_addthis.callbacks.startExtension.onError');
 				}
 			}
-			
 		},
 		
 	u : {

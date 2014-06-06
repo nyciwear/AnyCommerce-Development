@@ -280,7 +280,7 @@ If the data is not there, or there's no data to be retrieved (a Set, for instanc
 						this.dispatch(obj,_tag,Q);
 						}
 //if the product record is in memory BUT the inventory is zero, go get updated record in case it's back in stock.
-					else if(_app.ext.store_product && (_app.ext.store_product.u.getProductInventory(obj.pid) === 0))	{
+					else if(_app.ext.store_product && (_app.ext.store_product.u.getProductInventory(_app.data[_tag.datapointer]) === 0))	{
 						r = 1;
 						this.dispatch(obj,_tag,Q);
 						}
@@ -2978,14 +2978,14 @@ return $r;
 	tlcFormats : {
 //The tlc should, for the most part, just update the bind that's in focus. It can do more, but that's the intent.
 //They should return a boolean. True will continue executing the rest of the statement. False will end it.
-		loop : function(data,thisTLC)	{ dump('THIS means the loop ran at least.');
+		loop : function(data,thisTLC)	{
 			var $tmp = $("<div>");
 
 			var
 				arr = data.globals.binds[data.globals.focusBind], 
 				argObj = thisTLC.args2obj(data.command.args,data.globals);
 			if(argObj.templateid)	{
-				dump(" -> templateid: "+argObj.templateid.value);// dump(arr);
+//				dump(" -> templateid: "+argObj.templateid.value);// dump(arr);
 				for(var i in arr)	{
 					arr[i].obj_index = i; //allows for the data object to be looked up in memory later.
 					$tmp.tlc({'templateid':argObj.templateid,'dataset':arr[i],'dataAttribs':arr[i]});

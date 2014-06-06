@@ -11,6 +11,23 @@ Any time you are upgrading to a new version of the MVC, you should create a new 
 ADMIN
 	enhancement - new FAQ manager
 	enhancement - added variations filter (inline search) for options
+	enhancement - some cleanup in the supplier interface
+	bug fix - adding a domain will refresh list of domains.
+	public files
+		bug fix - delete now working.
+		bug fix - file list will refresh after upload.
+	Integrations
+		enhancement - added GA Universal (not supported in checkout yet)
+		enhancemnet - ability to add a custom integration
+	enhancement - product editor 'sku finder' for product with a large # of skus*
+	enhancement - batch job status dialog will now show view/download button when finished (for report or file job types)
+	flexedit manager
+		enhancement - options for select based inputs will now validate JSON.
+		enhancement - attribute id and index will now disallow most special characters and convert to lowercase.
+	enhancement - sales tax rules can now be enabled/disabled.
+	bug fix - schedule prices saving again.
+	enhancement - price input for variation options (inventory-able or not) will show. Used for display purposes only.
+
 
 
 QUICKSTART
@@ -18,6 +35,12 @@ QUICKSTART
 	enhancement - some tlc on checkout/paypal buttons to hide if cart is empty
 	enhancement - DOM title updated w/ page change.
 	bug fix - breadcrumb li's were getting an id assigned and no data-catsafeid
+
+TLC
+	bug fix - negative amounts now working with currency format.
+
+
+* There was an issue where a PID with a large # of skus could crash the browser. The sku-finder will now show up if a product has more than 100 skus. This impacts the following tabs: attributes, variations, buy.com and competition.
 
 
 
