@@ -99,7 +99,6 @@ these extensions.
 ****************************************/
 		
 			imagezoom : function($tag, data) {
-				dump('START IMAGE ZOOM data- attribute is:'); dump($tag.attr('data-height'));
 //				_app.u.dump('data.value:'); _app.u.dump(data.value); _app.u.dump('thumbclass'); _app.u.dump($tag.data('thumbclass'));
 				var pid = _app.u.makeSafeHTMLId(data.value.pid);
 				

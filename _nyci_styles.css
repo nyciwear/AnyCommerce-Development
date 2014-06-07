@@ -100,7 +100,7 @@ body #appPreView	{height:100%; width:100%; max-width:100%; position:absolute; z-
 .loderwrapper {height:15em; width:35%; margin:10% 0 0 50%; background-color:#ffffff; position:absolute; left:-17.5%; top:3em;}
 /*.previewLogo {height:27%; width:10.8em; margin:-15% 0 0 -5.4em; background:transparent url('images/nyci_logo_168x47.png') no-repeat center center; position:absolute; left:50%; top:50%;}*/
 .previewLogo {height:4em; width:10.8em; margin:15% auto 0 auto; background:transparent url('images/nyci_logo_168x47.png') no-repeat center center;}
-.previewSun {height:29%; width:4.7em; background-color:#f9fa57; margin:-15% 0 0.5em -2.3em; box-shadow:0 0s 4px 1px orange; border-radius:50%; position:absolute; left:50%; top:50%;}
+.previewSun {height:29%; width:4.7em; background-color:#f9fa57; margin:-15% 0 0.5em -2.3em; box-shadow:0 0 4px 1px orange; border-radius:50%; position:absolute; left:50%; top:50%;}
 #appPreViewProgressText {text-align:center;}
 .eyeClub {padding:1em; text-align:center;}
 
@@ -439,7 +439,7 @@ createaccountTemplate
 
 .fieldM.stateFix {position:relative; top:-0.3em;}
 .selectWrapper {height:1.9em; width:60px; display:inline-block; overflow:hidden; border:2px solid #2b2b2b; margin:0 0.45em; position:relative; bottom:-0.625em;}
-@media screen and (-webkit-min-device-pixel-ratio:0) {.selectWrapperS{bottom:-0.625em;}}
+/*@media screen and (-webkit-min-device-pixel-ratio:0) {.selectWrapperS{bottom:-0.625em;}}*/
 .fieldM select.textfstate {height:2em; width:6em; padding:0.375em 0 0.1875em .125em; border:none; background-position:30px 0px; margin:0;}
 .fieldM input.textfzip {width:20%;}
 .fieldM .selectField {position:relative; bottom:0.6em;}
