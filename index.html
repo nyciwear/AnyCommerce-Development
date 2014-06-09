@@ -696,9 +696,11 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 		</div>
 		
 		<ul data-tlc="quickstart#searchbytag --tag='IS_BESTSELLER' --size='16' --templateid='productListTemplateResultsNoPreview';" id='homeProdSearchBestSellers' class='listStyleNone fluidList clearfix noPadOrMargin productList bestSellerCar listCar'></ul>
-		<div class='bestPrev smPrvArrow listCarPrev floatLeft'></div>
-		<div class='bestNext smNxtArrow listCarNext floatRight'></div>
-		<div class='bestBannerPagination carPagination carPaginationCont'></div>	
+		<div class="carPaginationCont">
+			<div class='bestPrev smPrvArrow listCarPrev floatLeft'></div>
+			<div class='bestNext smNxtArrow listCarNext floatRight'></div>
+			<div class='bestBannerPagination carPagination'></div>	
+		</div>
 	</div>
 	
 	<div class="clear"></div>
@@ -1183,9 +1185,11 @@ this will likely become more flexible in the future. ###
 			<div class='bTopTriangle'></div>
 		</div>
 		<ul data-tlc="bind $var '.%attribs.zoovy:related_products'; store_prodlist#productlist  --hidePagination='true' --hideSummary='true' --withReviews='1' --templateid='productListTemplate'  --legacy; apply --append;" class="listStyleNone fluidList clearfix noPadOrMargin productList prodPageRelatedCar listCar"></ul>
-		<div class='prodlistRelatedPrev smPrvArrow listCarPrev floatLeft'></div>
-		<div class='prodlistRelatedNext smNxtArrow listCarNext floatRight'></div>
-		<div class='prodlistRelatedPagination carPagination carPaginationCont'></div>
+		<div class="carPaginationCont">
+			<div class='prodlistRelatedPrev smPrvArrow listCarPrev floatLeft'></div>
+			<div class='prodlistRelatedNext smNxtArrow listCarNext floatRight'></div>
+			<div class='prodlistRelatedPagination carPagination'></div>
+		</div>
 	</div>
 
 </div><!-- productTemplate -->

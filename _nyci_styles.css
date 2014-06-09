@@ -35,8 +35,8 @@ button.cornerButton:hover, input.cornerButton:hover, .cornerButton:hover {color:
 .carPagination .selected {background-color:#ffffff; color:#97AE3C;}
 .smPrvArrow {height:1.5em; width:1.1em; background:url(images/carousel_nav_nyc_v1-290x139.png) no-repeat 0 -6.362em; display:none; cursor:pointer;}
 .smNxtArrow {height:1.5em; width:1.1em; background:url(images/carousel_nav_nyc_v1-290x139.png) no-repeat -11.9em -6.362em;  display:none; cursor:pointer;}
-.listCarPrev {margin:0 0 0 12em; background-position:-5em -6.362em;}
-.listCarNext {margin:0 12em 0 0; background-position:-16.9em -6.362em;}
+.listCarPrev {background-position:-5em -6.362em; margin:0 0 0.5em 0;}
+.listCarNext {background-position:-16.9em -6.362em; margin:0 0 0.5em 0;}
 .listCarPrev:hover {background-position:0 -6.362em}
 .listCarNext:hover {background-position:-11.9em -6.362em}
 
@@ -573,6 +573,7 @@ media queries
 	.policyGraphics {font-size:0.8em;}
 /*homepage*/	
 	.sideBannerCont {height:27.3875em;}
+	.carPaginationCont {width:70%;}
 /*filter search*/
 	.filteredCat.categoryTemplate {width:33em;}
 	.filteredCat .catContainer {width:22em;}
@@ -632,6 +633,8 @@ media queries
 	.navList {height:6.5em;}
 	.navListItem {padding:2% 0 0 18%;}
 	.navListItem:first-child {padding:2% 0 0 6%;}
+	.carPaginationCont {width:40%;}
+	.carPagination a {display:none;}
 /*product page*/
 	.prodViewerContainer {font-size:0.8em;}
 	.imageContainer {width:70%; margin:0 auto; padding:0; float:none;}

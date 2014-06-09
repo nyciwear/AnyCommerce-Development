@@ -171,12 +171,14 @@ var store_carousel = function(_app) {
 					setTimeout(function(){
 						$target.carouFredSel({
 							width		: '99%',
-							responsive	: true,
-							items		: 
-							{
-								minimum : 1,
-								visible	: 5
-							},
+					//		height		: 'auto',
+					//		responsive	: true,
+					//		items		: 
+					//		{
+					//			width	: 150,
+					//			minimum : 1
+						//		visible	: 5
+					//		},
 							auto		: false,
 						//	{
 						//		pauseOnHover	: 'immediate'
@@ -202,12 +204,12 @@ var store_carousel = function(_app) {
 					setTimeout(function(){
 						$target.carouFredSel({
 							width		: '99%',
-							responsive	: true,
-							items		: 
-							{
-								minimum : 1,
-								visible	: 5
-							},
+					//		responsive	: true,
+					//		items		: 
+					//		{
+					//			minimum : 1,
+					//			visible	: 5
+					//		},
 							auto		: 
 							{
 								pauseOnHover	: 'immediate'
