@@ -547,6 +547,7 @@ media queries
 	.sideBannerNext {background-position:-17.4em -9.362em;}
 	.sideBannerPrev:hover {background-position:-7.2em -9.462em;}
 	.sideBannerNext:hover {background-position:-24.6em -9.462em;}
+	.upSell .left, .upSell .middle, .upSell .right {width:32%;}
 	#homepageTemplate_ {max-width:52.5em;}
 	#homeProdSearchBestSellers {max-width:50em;}
 /*product page*/
@@ -574,6 +575,7 @@ media queries
 /*homepage*/	
 	.sideBannerCont {height:27.3875em;}
 	.carPaginationCont {width:70%;}
+	.upSell .left:hover a p, .upSell .middle:hover a p, .upSell .right:hover a p {display:none;}
 /*filter search*/
 	.filteredCat.categoryTemplate {width:33em;}
 	.filteredCat .catContainer {width:22em;}
@@ -633,6 +635,8 @@ media queries
 	.navList {height:6.5em;}
 	.navListItem {padding:2% 0 0 18%;}
 	.navListItem:first-child {padding:2% 0 0 6%;}
+	.upSell {margin:0 auto; width:70%;}
+	.upSell .left, .upSell .middle, .upSell .right {width:100%;}
 	.carPaginationCont {width:40%;}
 	.carPagination a {display:none;}
 /*product page*/
