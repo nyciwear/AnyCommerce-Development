@@ -62,10 +62,11 @@ _app.u.dump("BEGIN buysafe_guarantee.startExtension.onSuccess.");
 
 //http://developer.buysafe.com/bsg_overview.php
 //http://www.buysafe.com/web/general/kickerpreview.aspx
-buySAFE.Hash = ''; //ADD HASH HERE.
+buySAFE.Hash = 'TEKsw6dQAzjfGl311zhqOzQCbM%2BDOBJYleFcfcHdKbbdsWHt2EHPopTjsC2S4LJ%2BgVzIMQoeZtpVz4MdD6IIMA%3D%3D'; //ADD HASH HERE.
 
 if(buySAFE.Hash.length > 0)	{
 	//the showContent function may have already executed prior to startExtension getting executed.
+	WriteBuySafeSeal("BuySafeSealSpan", "GuaranteedSeal");
 	WriteBuySafeKickers();
 
 	_app.templates.productTemplate.on('complete.buysafe',function(event,$ele,P) {
@@ -84,10 +85,11 @@ if(buySAFE.Hash.length > 0)	{
 		_app.u.dump("BEGIN buysafe_guarantee code pushed on order_create.checkoutCompletes");
 		var order = _app.data['order|'+P.orderID].cart;
 	
+	   buySAFE.Hash = 'TEKsw6dQAzjfGl311zhqOzQCbM%2BDOBJYleFcfcHdKbbdsWHt2EHPopTjsC2S4LJ%2BgVzIMQoeZtpVz4MdD6IIMA%3D%3D';
 	   buySAFE.Guarantee.order = P.orderID;
 	   buySAFE.Guarantee.subtotal = order['sum/items_total'];
 	   buySAFE.Guarantee.email = order['bill/email'];
-	   WriteBuySafeGuarantee("JavaScript");
+	   WriteBuySafeGuarantee("JavaScript", "buySAFE_GuaranteeSpan");
 	
 		}); // end .push					
 	}

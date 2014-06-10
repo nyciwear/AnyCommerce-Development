@@ -63,7 +63,7 @@ css files should be included before any .js file to ensure they are downloaded i
 $(document).ready(function(){
 
 	window.myApp = new initApp({	//versionhere
-		"release":"201404.20140606174600",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+		"release":"201404.2014060610124600",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 		"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 		"baseURL":baseURL, //used in non-local mode.
 		"checkoutAuthMode" : "active",//can be passive, active or required
@@ -1124,7 +1124,7 @@ this will likely become more flexible in the future. ###
 			
 		</div>
 		
-		<span id="buySAFE_Kicker"></span> <!-- These don't validate: name="buySAFE_Kicker" type="Kicker Guaranteed Transparent 33 175x30" -->
+		<span id="buySAFE_Kicker" name="buySAFE_Kicker" type="Kicker Guaranteed Transparent 33 175x30"></span> <!-- These don't validate: name="buySAFE_Kicker" type="Kicker Guaranteed Transparent 33 175x30" -->
 		
 		<div class="tabbedProductContentTD">
 			<!--
@@ -2041,6 +2041,7 @@ This is the template used both within a dialog and inline, unless implicitly ove
 				</div>
 			</div>
 		</div>
+		<span id="buySAFE_Kicker"></span> <!-- These don't validate: name="buySAFE_Kicker" type="Kicker Guaranteed Corners Icons 200x70" -->
 	</form>
 </div>
 
@@ -2651,7 +2652,7 @@ put all filters into the appFilters container.
 	
 </div> <!-- //Filter search forms -->
 
-
+<span id="BuySafeSealSpan"></span>
 
 </body>
 </html>
