@@ -59,22 +59,25 @@ _app.u.dump("BEGIN buysafe_guarantee.startExtension.onSuccess.");
 
 //make sure the templates have been loaded. all the quickstart templates are loaded at the same time.
 					if(_app.templates && _app.templates.productTemplate && typeof WriteBuySafeKickers == 'function' && typeof buySAFE == 'object')	{
+						dump('typeof WriteBuySafeKickers & buySAFE object:'); dump(WriteBuySafeKickers); dump(buySAFE);
 
 //http://developer.buysafe.com/bsg_overview.php
 //http://www.buysafe.com/web/general/kickerpreview.aspx
 buySAFE.Hash = 'TEKsw6dQAzjfGl311zhqOzQCbM%2BDOBJYleFcfcHdKbbdsWHt2EHPopTjsC2S4LJ%2BgVzIMQoeZtpVz4MdD6IIMA%3D%3D'; //ADD HASH HERE.
 
 if(buySAFE.Hash.length > 0)	{
+	dump('buySAFE.Hash.length & value:'); dump(buySAFE.Hash.length); dump(buySAFE.Hash);
 	//the showContent function may have already executed prior to startExtension getting executed.
 	WriteBuySafeSeal("BuySafeSealSpan", "GuaranteedSeal");
 	WriteBuySafeKickers();
 
 	_app.templates.productTemplate.on('complete.buysafe',function(event,$ele,P) {
-//		_app.u.dump("Execute WriteBuySafeKicker");
+		_app.u.dump("Execute productTemplate WriteBuySafeKicker");
 		//buysafe trigger goes here.
 		WriteBuySafeKickers();
 		})
 	_app.templates.cartTemplate.on('complete.buysafe',function(event,$ele,P) {
+		_app.u.dump("Execute cartTemplate WriteBuySafeKicker");
 		//buysafe trigger goes here.
 		WriteBuySafeKickers();
 		})
