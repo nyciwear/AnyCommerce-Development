@@ -189,7 +189,7 @@ vars : {},
 				if(!$context.data('no-sign-up')) { //if it hasn't been shown before, show it.
 					if(document.location.protocol !== 'https:') { //if on secure, skip it (prevents showing on switch to secure for login/checkout)
 						var $parent = $('#signUpTemplate');
-						var w = '38%';
+						var w = '32%';
 						var win = $(window).width();
 						if (win < 720) { w = '80%'; }
 						else if (win < 900) { w = '60%'; }
@@ -219,7 +219,7 @@ vars : {},
 
 			//appends Paypal bill me later script to the element passed as $container using the size passes as placementType.
 			addBillMeLater : function($container, dimensions) {
-				dump('bill me later object:'); dump(dimensions.LW); dump(dimensions.LH); dump(dimensions.MW); dump(dimensions.MH); dump(dimensions.SW); dump(dimensions.SH);
+//				dump('bill me later object:'); dump(dimensions.LW); dump(dimensions.LH); dump(dimensions.MW); dump(dimensions.MH); dump(dimensions.SW); dump(dimensions.SH);
 				var placementType = dimensions.LW+"x"+dimensions.LH;
 				var continerSize = {"width":dimensions.LW,"height":dimensions.LH};
 				var win = $(window).width();
@@ -234,13 +234,8 @@ vars : {},
 					continerSize.height = dimensions.MH
 				}
 				else {} //Large dimension originally assigned will be used at res over 800 wide
-//		var frame = document.createElement("iframe");
-//		$(frame).addClass("displayNone");
-//		$("body").append(frame);
-//		setTimeout(function() {
 			
 				var script = document.createElement("script");
-//			var script = frame.contentWindow.document.createElement("script");
 				script.type = "text/javascript";
 				script.setAttribute("data-pp-pubid","1a46db62a0");
 				script.setAttribute("data-pp-placementtype",placementType);
@@ -248,15 +243,11 @@ vars : {},
 				+	'"use strict";'
 				+	'var s = d.getElementsByTagName(t)[0], n = d.createElement(t);'
 				+	'n.src = "//paypal.adtag.where.com/merchant.js";'
-//		+	'document.getElementsByClassName(ppFinancingHeader).insertBefore(n, s);'
 				+	's.parentNode.insertBefore(n, s);'
-		//		+	'myApp.u.dump("THIS IS S,D,T,N:"); myApp.u.dump(s); myApp.u.dump("THIS IS D"); myApp.u.dump(d); myApp.u.dump("THIS IS T"); myApp.u.dump(t); myApp.u.dump("THIS IS N"); myApp.u.dump(n);'
 				+	'}(document, "script"));';
 				
 				$container.append(script);
 				$container.css(continerSize);
-//			frame.contentWindow.document.body.appendChild(script);
-//		},250);
 			},
 			
 			goToMyAccount : function() {

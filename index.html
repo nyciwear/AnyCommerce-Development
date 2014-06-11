@@ -429,20 +429,11 @@ ANIMATION TESTING
 			
 			<div class='discountBanner'>Ya&#33; We&#39;ll put some righteous discounts here for sure&#33;&#33;</div>
 			<div class="hidePaypalHeader">
-				<div class='ppFinancingHeader' data-slide='toggle'>
+				<div class='ppFinancingHeader' data-slide='toggle'> <!-- Paypal Bill Me Later loaded here in store_nyci.u.addBillMeLater -->
 					<div onclick="myApp.ext.store_nyci.a.slideThatUp($(this).parent());" class="hideBillMeLaterButton ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close">
 						<span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
 					</div>
-	<!--				<script type="text/javascript" data-pp-pubid="1a46db62a0" data-pp-placementtype="800x66"> 
-						(function (d, t) {
-							"use strict";
-							var s = d.getElementsByTagName(t)[0], n = d.createElement(t);
-							n.src = "//paypal.adtag.where.com/merchant.js";
-							s.parentNode.insertBefore(n, s);
-						}
-						(document, "script"));
-					</script>
-	-->			</div>
+				</div>
 			</div>
 
 		</header>
@@ -485,7 +476,7 @@ ANIMATION TESTING
 			<div class='policyGraphics floatRight'>
 				<div></div>
 				<div></div>
-				<div class='ppFinancingFooter'></div>
+				<div class='ppFinancingFooter'></div> <!-- Paypal Bill Me Later loaded here in store_nyci.u.addBillMeLater -->
 			</div>
 			
 			<div class='copyright'>	
@@ -1107,7 +1098,7 @@ this will likely become more flexible in the future. ###
 				<!-- <fieldset data-tlc="bind $var '.'; format - -prepend='Qty: '; store_product#atcquantityinput  - -defaultvalue='1' - -legacy; apply - -append;" class="borderNone floatRight"></fieldset> -->
 			</form>
 
-			<div class='ppFinancingProduct'></div>
+			<div class='ppFinancingProduct'></div> <!-- Paypal Bill Me Later loaded here in store_nyci.u.addBillMeLater -->
 			
 			<div data-tlc="bind $var '.%attribs.zoovy:prod_cpsiawarning'; if(is $var --notblank) {{apply --add --class='marginBottom'}}; quickstart#cpsiawarning  --legacy;"></div>
 			<div data-tlc="bind $var '.%attribs.zoovy:qty_price'; if(is $var --notblank) {{apply --add --class='marginBottom'}}; store_product#quantitydiscounts  --legacy;"></div>
