@@ -238,7 +238,7 @@ footer .bTopTriangle {width:20%;}
 .footerPurchase {float:right; margin:0.5em 0.5em 0 0;}
 .policyGraphics > div:first-child {background:#ffffff url('images/nyci_10_bnr_left_bestqua_164x163.jpg') no-repeat center center; background-size:100%}
 .policyGraphics > div {height:6em; width:6em; background:#ffffff url('images/nyci_10_bnr_left_freedelivery_164x163.jpg') no-repeat center center; background-size:100%; margin:0.5em 0 0.5em 1em; float:right;}
-.policyGraphics .ppFinancingFooter {height:90px; width:120px; background:none; margin:0.5em 0 0.5em 1em; float:right; border:1px solid #777777;}
+.policyGraphics .ppFinancingFooter {height:90px; width:120px; background:none; margin:0.5em 0 0.5em 1em; float:right;}
 
 .deliciousFashions {text-align:center; padding:0 1em; line-height:3em; font-size:0.85em; color:#666666; background-color:#eeeeee;}
 .deliciousFashions img {padding:0.1em 0 0 0;}
@@ -371,7 +371,7 @@ productTemplate
 .variation_A3, .variation_A4, .variation_A5, .variation_A6, .variation_A7, .variation_A8, .variation_A9, .variation_AA {display:none;}
 .productPage .prodViewerAddToCartForm {height:auto; width:100%; float:right; color:#808284;}
 .productPage .prodViewerAddToCartForm .cornerButton {width:10em; margin:0 0 0 1em;}
-.ppFinancingProduct {height:90px; width:120px; border:1px solid #777777; float:right;}
+.ppFinancingProduct {height:90px; width:120px; float:right;}
 
 .tabbedProductContentTD {clear:both;}
 
