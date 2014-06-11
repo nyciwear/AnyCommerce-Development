@@ -59,7 +59,7 @@ _app.u.dump("BEGIN buysafe_guarantee.startExtension.onSuccess.");
 
 //make sure the templates have been loaded. all the quickstart templates are loaded at the same time.
 					if(_app.templates && _app.templates.productTemplate && typeof WriteBuySafeKickers == 'function' && typeof buySAFE == 'object')	{
-						dump('typeof WriteBuySafeKickers & buySAFE object:'); dump(WriteBuySafeKickers); dump(buySAFE);
+//						dump('typeof WriteBuySafeKickers & buySAFE object & templates:'); dump(WriteBuySafeKickers); dump(buySAFE);  dump(_app.templates); dump(_app.templates.productTemplate);
 
 //http://developer.buysafe.com/bsg_overview.php
 //http://www.buysafe.com/web/general/kickerpreview.aspx
@@ -72,12 +72,12 @@ if(buySAFE.Hash.length > 0)	{
 	WriteBuySafeKickers();
 
 	_app.templates.productTemplate.on('complete.buysafe',function(event,$ele,P) {
-		_app.u.dump("Execute productTemplate WriteBuySafeKicker");
+//		_app.u.dump("Execute productTemplate WriteBuySafeKicker");
 		//buysafe trigger goes here.
 		WriteBuySafeKickers();
 		})
 	_app.templates.cartTemplate.on('complete.buysafe',function(event,$ele,P) {
-		_app.u.dump("Execute cartTemplate WriteBuySafeKicker");
+//		_app.u.dump("Execute cartTemplate WriteBuySafeKicker");
 		//buysafe trigger goes here.
 		WriteBuySafeKickers();
 		})

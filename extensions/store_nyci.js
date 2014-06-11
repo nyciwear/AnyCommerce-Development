@@ -79,15 +79,15 @@ vars : {},
 						_app.ext.store_nyci.u.loadSubCatsAsList('subBrandsCategoryTemplate','.shop_by_brand','.brandDD');
 //						_app.u.dump('loadSubCatsAsList just ran in startExtension');
 						
-						_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingHeader"),"800x66");
-						_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingFooter"),"120x90");
+						_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingHeader"),{"LW":"800","LH":"66","MW":"468","MH":"60","SW":"234","SH":"60"});
+						_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingFooter"),{"LW":"120","LH":"90","MW":"120","MH":"90","SW":"120","SH":"90"});
 						
 						_app.templates.homepageTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
 							_app.ext.store_nyci.u.showSignUp($context);
 						});
 						
 						_app.templates.productTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
-							_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingProduct",$context),"120x90");
+							_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingProduct",$context),{"LW":"120","LH":"90","MW":"120","MH":"90","SW":"120","SH":"90"});
 						});
 						
 						_app.templates.companyTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
@@ -218,19 +218,45 @@ vars : {},
 			},
 
 			//appends Paypal bill me later script to the element passed as $container using the size passes as placementType.
-			addBillMeLater : function($container, placementType) {
+			addBillMeLater : function($container, dimensions) {
+				dump('bill me later object:'); dump(dimensions.LW); dump(dimensions.LH); dump(dimensions.MW); dump(dimensions.MH); dump(dimensions.SW); dump(dimensions.SH);
+				var placementType = dimensions.LW+"x"+dimensions.LH;
+				var continerSize = {"width":dimensions.LW,"height":dimensions.LH};
+				var win = $(window).width();
+				if(win < 480) {
+					placementType = dimensions.SW+"x"+dimensions.SH;
+					continerSize.width = dimensions.SW; 
+					continerSize.height = dimensions.SH
+				}
+				else if(win < 800) {
+					placementType = dimensions.MW+"x"+dimensions.MH;
+					continerSize.width = dimensions.MW; 
+					continerSize.height = dimensions.MH
+				}
+				else {} //Large dimension originally assigned will be used at res over 800 wide
+//		var frame = document.createElement("iframe");
+//		$(frame).addClass("displayNone");
+//		$("body").append(frame);
+//		setTimeout(function() {
+			
 				var script = document.createElement("script");
+//			var script = frame.contentWindow.document.createElement("script");
 				script.type = "text/javascript";
 				script.setAttribute("data-pp-pubid","1a46db62a0");
-				script.setAttribute("data-pp-placementtype","placementType");
+				script.setAttribute("data-pp-placementtype",placementType);
 				script.text = '(function (d, t) {'
 				+	'"use strict";'
 				+	'var s = d.getElementsByTagName(t)[0], n = d.createElement(t);'
 				+	'n.src = "//paypal.adtag.where.com/merchant.js";'
+//		+	'document.getElementsByClassName(ppFinancingHeader).insertBefore(n, s);'
 				+	's.parentNode.insertBefore(n, s);'
+		//		+	'myApp.u.dump("THIS IS S,D,T,N:"); myApp.u.dump(s); myApp.u.dump("THIS IS D"); myApp.u.dump(d); myApp.u.dump("THIS IS T"); myApp.u.dump(t); myApp.u.dump("THIS IS N"); myApp.u.dump(n);'
 				+	'}(document, "script"));';
 				
 				$container.append(script);
+				$container.css(continerSize);
+//			frame.contentWindow.document.body.appendChild(script);
+//		},250);
 			},
 			
 			goToMyAccount : function() {
