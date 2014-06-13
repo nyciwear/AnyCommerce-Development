@@ -99,7 +99,7 @@ body #appPreView	{height:100%; width:100%; max-width:100%; position:absolute; z-
 #appPreView #loader .alignCenter {height:60%; width:100%; position:relative; overflow:hidden;}*/
 .loderwrapper {height:15em; width:35%; margin:10% 0 0 50%; background-color:#ffffff; position:absolute; left:-17.5%; top:3em;}
 /*.previewLogo {height:27%; width:10.8em; margin:-15% 0 0 -5.4em; background:transparent url('images/nyci_logo_168x47.png') no-repeat center center; position:absolute; left:50%; top:50%;}*/
-.previewLogo {height:4em; width:10.8em; margin:15% auto 0 auto; background:transparent url('images/nyci_logo_168x47.png') no-repeat center center;}
+.previewLogo {height:4em; width:auto; margin:15% auto 0 auto; background:transparent url('images/nyci_logo_168x47.png') no-repeat center center;} /*10.8em*/
 .previewSun {height:29%; width:4.7em; background-color:#f9fa57; margin:-15% 0 0.5em -2.3em; box-shadow:0 0 4px 1px orange; border-radius:50%; position:absolute; left:50%; top:50%;}
 #appPreViewProgressText {text-align:center;}
 .eyeClub {padding:1em; text-align:center;}
@@ -601,7 +601,7 @@ media queries
 	.wrapper {height:100%; max-width:35.55555em; margin:0 auto;}
 	.centerAt640 {width:100%; margin:auto;}
 /*preview*/
-	.loderwrapper {width:85%;}
+	.loderwrapper {width:85%; margin:10% 0 0 25%;}
 /*header*/
 	.navList {height:4em;}
 	.navListList {width:90%; clear:both; float:none; margin:0 auto; padding:0.375em 0 0 0;}
@@ -616,6 +616,9 @@ media queries
 	.fieldM input, .fieldM input.textfadd, .fieldM input.textfmailpass {display:block; width:70%;}
 	.fieldM input.textfzip {display:inline-block; margin:1em 0 0 0;}
 	.selectWrapper {height:2.7em;}
+/*footer*/	
+	.footerListItem > div {text-align:center; text-indent:0;}
+	.ppFinancingFooter {clear:both;}
 }
 
 /*MEDIA 480*/
@@ -624,8 +627,9 @@ media queries
 	.displayNone.showPhoneLandscape {display:block;}
 	.wrapper {height:100%; max-width:26.66666em; margin:0 auto;}
 	.productList, .categoryList {width:21.8em;}
+	.bannerTop {overflow:hidden;}
 /*preview*/
-	.loderwrapper {width:95%;}
+	.loderwrapper {width:95%; margin:10% 0 0 20%;}
 	.loderwrapper p, .categorySelectorButtonContainer {font-size:0.7em;}
 /*header*/
 	.discountBanner {font-size:0.7em;}
@@ -649,20 +653,28 @@ media queries
 /*filter search*/
 	.filterContainer {display:none;}
 	.filteredCat.categoryTemplate {width:22em;}
+/*footer*/
+	footer {background:none;}
+	.footerListContainer {width:50%;float:left;}
+	footer .bTopTriangle {display:none;}
 }
 
 /*MEDIA 320*/
-@media screen and (max-width: 20em) {
+@media screen and (max-width: 20.3em) {
 	.hidePhonePortrait {display:none !important;}
 	.displayNone.showPhonePortrait {display:block;}
 	.wrapper {height:100%; max-width:17.77777em; margin:0 auto;}
 	.productList, .categoryList {width:11.2em;}
 /*header*/
+	.headerShip {margin:1em 0 2em 8em;}
 	.navList {height:6.5em;}
 	.navListItem {padding:2% 0 0 10%;}
 	.navListItem:first-child {padding:2% 0 0 17%;}
 /*filter search*/
 	.filteredCat.categoryTemplate, .filteredCat .catContainer {width:11.2em;}
+/*footer*/
+	footer {font-size:1.6em;}
+	.policyGraphics > div {width:5em}
 }
 
 

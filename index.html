@@ -4,13 +4,15 @@
 <meta charset="utf-8">
 
 <!-- do not populate or add meta data, the SEO layer will add it -->
-<title>Discount Designer Sunglasses Satisfaction Guaranteed at NyciWear</title><!-- this will get populated by the SEO layer -->
-<meta name="description" content="" >
+<title>Discount Designer Sunglasses Satisfaction Guaranteed at NyciWear</title><!-- title and meta description will get populated by the SEO layer -->
+<meta name="description" content="Save Big on all designer sunglasses.  100% Authentic Guarantee: Prada, Ray-ban, Tom ford, Versace, Chloe, & more eyewear.Free shipping great prices and a hassle free 30 day return policy."" >
 
 <!-- used for optional social media extensions -->
 <meta property="og:type" content="" id='ogType' >
 <meta property="og:image" content="" id='ogImage' >
 <meta property="og:description" content="" id='ogDescription' >
+
+<!-- <meta name="google-site-verification" content="YXEBpE39L3yNMKJC4ZAliJosBKyDrHN3LZghiiszMEs"></meta> MARK uncomment for deploy -->
 
 <meta name=viewport content="width=device-width, initial-scale=1">
 
@@ -445,7 +447,7 @@ ANIMATION TESTING
 			
 
 		<footer>
-			<div>
+			<div class="footerListContainer">
 				<div class='footerListItem'>
 					<div>Customer Service</div>
 					<ul>
@@ -596,6 +598,13 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 -->
 <div id='homepageTemplate' class='homeTemplate'>
 
+<!-- hardcoded for the time being. pages.json not getting homepage content for undetermined reason. 	
+	<span class="displayNone" data-tlc="bind $var '.%page.seo_title'; if(is $var --null) {{bind $var '.%page.head_title';}}; if(is $var --null;){{bind $var '.page_title';}}; if(is $var --blank;){{bind $var '.pretty';}}; apply --attrib='data-seo-title';"></span>
+	<span class="displayNone" data-tlc="bind $var '.%page.meta_description'; if(is $var --null;){{bind $var '.%page.description';}}; if(is $var --null;){{set $var '';}}; apply --attrib='data-seo-desc';"></span>
+-->
+	<span class="displayNone" data-seo-title="Discount Designer Sunglasses Satisfaction Guaranteed at NyciWear"></span>
+	<span class="displayNone" data-seo-desc="Save Big on all designer sunglasses.  100% Authentic Guarantee: Prada, Ray-ban, Tom ford, Versace, Chloe, & more eyewear.Free shipping great prices and a hassle free 30 day return policy."></span>
+	
 	<div class='homeBannersCont hidePhoneLandscape hidePhonePortrait'>
 	<!-- <ul data-bind="var: category(@subcategoryDetail); format: categoryList; bgcolor: TTTTTT; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin'></ul> -->
 		<div class='bannerTop'>
