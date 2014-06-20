@@ -79,8 +79,10 @@ vars : {},
 						_app.ext.store_nyci.u.loadSubCatsAsList('subBrandsCategoryTemplate','.shop_by_brand','.brandDD');
 //						_app.u.dump('loadSubCatsAsList just ran in startExtension');
 						
-						_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingHeader"),{"LW":"800","LH":"66","MW":"468","MH":"60","SW":"234","SH":"60"});
-						_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingFooter"),{"LW":"120","LH":"90","MW":"120","MH":"90","SW":"120","SH":"90"});
+						setTimeout(function() {
+							_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingHeader"),{"LW":"800","LH":"66","MW":"468","MH":"60","SW":"234","SH":"60"});
+							_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingFooter"),{"LW":"120","LH":"90","MW":"120","MH":"90","SW":"120","SH":"90"});
+						},3000);
 						
 						_app.templates.homepageTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
 							_app.ext.store_nyci.u.showSignUp($context);
@@ -247,7 +249,8 @@ vars : {},
 				+	'}(document, "script"));';
 				
 				$container.append(script);
-				$container.css(continerSize);
+				//$container.css(continerSize);
+				$container.animate(continerSize,500);
 			},
 			
 			goToMyAccount : function() {
