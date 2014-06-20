@@ -80,9 +80,10 @@ vars : {},
 //						_app.u.dump('loadSubCatsAsList just ran in startExtension');
 						
 						setTimeout(function() {
+							//delaying load on these helps w/ initial page render time. Time can use some tweaking before it's optimal. (last test was 10 secs)
 							_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingHeader"),{"LW":"800","LH":"66","MW":"468","MH":"60","SW":"234","SH":"60"});
 							_app.ext.store_nyci.u.addBillMeLater($(".ppFinancingFooter"),{"LW":"120","LH":"90","MW":"120","MH":"90","SW":"120","SH":"90"});
-						},10000);
+						},5000);
 						
 						_app.templates.homepageTemplate.on('complete.store_nyci',function(event,$context,infoObj) {
 							_app.ext.store_nyci.u.showSignUp($context);
