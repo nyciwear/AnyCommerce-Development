@@ -65,7 +65,7 @@ css files should be included before any .js file to ensure they are downloaded i
 $(document).ready(function(){
 
 	window.myApp = new initApp({	//versionhere
-		"release":"201404.20140620111400",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
+		"release":"201404.20140627211900",  //increment this with each change. should solve caching issues. format: YYYYMMDDHHMMSS
 		"_clientid":"zmvc", //zmvc for store app, 1pc for one page checkout.
 		"baseURL":baseURL, //used in non-local mode.
 		"checkoutAuthMode" : "active",//can be passive, active or required
@@ -2504,38 +2504,51 @@ put all filters into the appFilters container.
 		
 		<button class='resetButton'>RESET OPTIONS</button>
 		
-		<fieldset data-elastic-key="pogs" data-filtertype="checkboxes">
+		<fieldset data-elastic-key="prod_mfg" data-filtertype="checkboxes">
 			<legend >Brands</legend>
 			<div class='filterView' data-filterview=0>
-		<!-- no pog for Arnette yet	<label class='break'><input type='checkbox' value='Arnette' /> Arnette</label> -->
-				<label class='break'><input type='checkbox' value='A500' /> Burberry</label>
-				<label class='break'><input type='checkbox' value='A502' /> Carrera</label>
-				<label class='break'><input type='checkbox' value='A504' /> Chloe</label>
-				<label class='break'><input type='checkbox' value='A501' /> Diesel</label>
-				<label class='break'><input type='checkbox' value='A505' /> Dior</label>
-				<label class='break'><input type='checkbox' value='A50O' /> DKNY</label>
-				<label class='break'><input type='checkbox' value='A507' /> Dolce &#38; Gabbana</label>
-				<label class='break'><input type='checkbox' value='A508' /> Dsquared</label>
-				<label class='break'><input type='checkbox' value='A509' /> Ed Hardy</label>
-				<label class='break'><input type='checkbox' value='A50A' /> Gucci</label>
-				<label class='break'><input type='checkbox' value='A50B' /> Juicy Couture</label>
-				<label class='break'><input type='checkbox' value='A50C' /> Maui Jim</label>
-				<label class='break'><input type='checkbox' value='A50P' /> POLO</label>
-				<label class='break'><input type='checkbox' value='A50D' /> Persol</label>
-				<label class='break'><input type='checkbox' value='A50E' /> Prada</label>
-				<label class='break'><input type='checkbox' value='A50N' /> Prada Linea Rossa &#40;Sport&#41;</label>
-				<label class='break'><input type='checkbox' value='A50Q' /> Ralph Lauren</label>
-				<label class='break'><input type='checkbox' value='A50F' /> Ray Ban</label>
-				<label class='break'><input type='checkbox' value='A50R' /> Ray Ban Jr.</label>
-				<label class='break'><input type='checkbox' value='A50G' /> Roberto Cavalli</label>
-				<label class='break'><input type='checkbox' value='A50S' /> Swarovski</label>
-				<label class='break'><input type='checkbox' value='A50H' /> Tom Ford</label>
+				<label class='break'><input type='checkbox' value='armani exchange' /> Armani Exchange</label> 
+				<label class='break'><input type='checkbox' value='arnette' /> Arnette</label> 
+				<label class='break'><input type='checkbox' value='balenciaga' /> Balenciaga</label>
+				<label class='break'><input type='checkbox' value='burberry' /> Burberry</label>
+				<label class='break'><input type='checkbox' value='carrera' /> Carrera</label>
+				<label class='break'><input type='checkbox' value='celine' /> Celine</label>
+				<label class='break'><input type='checkbox' value='chloe' /> Chloe</label>
+				<label class='break'><input type='checkbox' value='coach' /> Coach</label>
+				<label class='break'><input type='checkbox' value='costa del mar' /> Costa Del Mar</label>
+				<label class='break'><input type='checkbox' value='diesel' /> Diesel</label>
+				<label class='break'><input type='checkbox' value='dkny' /> DKNY</label>
+				<label class='break'><input type='checkbox' value='dolce gabbana' /> Dolce &#38; Gabbana</label>
+				<label class='break'><input type='checkbox' value='dsquared2' /> Dsquared2</label>
+				<label class='break'><input type='checkbox' value='gucci' /> Gucci</label>
+				<label class='break'><input type='checkbox' value='hugo boss' /> Hugo Boss</label>
+				<label class='break'><input type='checkbox' value='jimmy choo' /> Jimmy Choo</label>
+				<label class='break'><input type='checkbox' value='juicy couture' /> Juicy Couture</label>
+				<label class='break'><input type='checkbox' value='just cavalli' /> Just Cavalli</label>
+				<label class='break'><input type='checkbox' value='kate spade' /> Kate Spade</label>
+				<label class='break'><input type='checkbox' value='marc by marc jacobs' /> Marc By Marc Jacobs</label>
+				<label class='break'><input type='checkbox' value='marc jacobs' /> Marc Jacobs</label>
+				<label class='break'><input type='checkbox' value='montblanc' /> Montblanc</label>
+				<label class='break'><input type='checkbox' value='persol' /> Persol</label>
+				<label class='break'><input type='checkbox' value='polo' /> POLO</label>
+				<label class='break'><input type='checkbox' value='prada' /> Prada</label>
+				<label class='break'><input type='checkbox' value='prada linea rossa' /> Prada Linea Rossa</label>
+				<label class='break'><input type='checkbox' value='ralph' /> Ralph</label>
+				<label class='break'><input type='checkbox' value='ralph lauren' /> Ralph Lauren</label>
+				<label class='break'><input type='checkbox' value='ray-ban' /> Ray-Ban</label>
+				<label class='break'><input type='checkbox' value='ray-ban jr.' /> Ray-Ban Jr.</label>
+				<label class='break'><input type='checkbox' value='revo' /> Revo</label>
+				<label class='break'><input type='checkbox' value='roberto cavalli' /> Roberto Cavalli</label>
+				<label class='break'><input type='checkbox' value='saint laurent' /> Saint Laurent</label>
+				<label class='break'><input type='checkbox' value='smith' /> Smith</label>
+				<label class='break'><input type='checkbox' value='tag heuer' /> TAG Heuer</label>
+				<label class='break'><input type='checkbox' value='tods' /> Tod's--</label>
+				<label class='break'><input type='checkbox' value='tom ford' /> Tom Ford</label>
+				<label class='break'><input type='checkbox' value='tommy hilfiger' /> Tommy Hilfiger</label>
 				<label class='break'><input type='checkbox' value='A50I' /> Tory Burch</label>
-				<label class='break'><input type='checkbox' value='A50J' /> Valentino</label>
-				<label class='break'><input type='checkbox' value='A50K' /> Versace</label>
-				<label class='break'><input type='checkbox' value='A50L' /> Vogue</label>
-				<label class='break'><input type='checkbox' value='A503' /> Von Zipper</label>
-				<label class='break'><input type='checkbox' value='A50M' /> YSL</label>
+				<label class='break'><input type='checkbox' value='versace' /> Versace</label>
+				<label class='break'><input type='checkbox' value='vogue' /> Vogue</label>
+				<label class='break'><input type='checkbox' value='von zipper' /> Von Zipper</label>
 			</div>
         </fieldset>
 		
@@ -2629,7 +2642,7 @@ put all filters into the appFilters container.
 		</fieldset>
 
 		<fieldset data-elastic-key="filter_frame_materia" data-filtertype="checkboxes">
-            <legend>Frame Material</legend>
+            <legend class="biLineLeg">Frame Material</legend>
 			<div class='filterView' data-filterview=1>
 				<label class='break'><input type='checkbox' value='metal' /> Metal</label>
 				<label class='break'><input type='checkbox' value='plastic' /> Plastic</label>

@@ -165,7 +165,7 @@ var store_filter = function(_app) {
 					_app.u.dump(" -> validated Filter Properties.")
 					var query = {
 						"mode":"elastic-search",
-						"size":100,
+						"size":500,
 						"filter" : _app.ext.store_filter.u.buildElasticFilters($form)
 					}//query
 					
@@ -404,18 +404,32 @@ var store_filter = function(_app) {
 			//false is returned in nothing is checked/selected.
 			//can be used on a series of inputs, such as hidden or checkbox 
 			buildElasticTerms : function($obj,attr)	{
-			
 				var r = false; //what is returned. will be term or terms object if valid.
-		
-					if($obj.length == 1) {
-						r = {term:{}};
-						r.term[attr] = (attr == 'pogs') ? $obj.val() : $obj.val().toLowerCase(); //pog searching is case sensitive.
+					if($obj.length == 1) {  
+						r = {"query":{"query_string":{"query":""+$obj.val()+"","fields":[attr]}}};	
+	// remnants for		r = {term:{}};
+	//	posterity		r.term[attr] = (attr == 'pogs') ? $obj.val() : $obj.val().toLowerCase(); //pog searching is case sensitive.
 					}
 					else if($obj.length > 1) {
-						r = {terms:{}};
-						r.terms[attr] = new Array();
+		dump('---buildElasticTerms attr obj > 1');	dump(attr);
+	// remnants for		r = {terms:{}};
+	// posterity		r.terms[attr] = new Array();
+						
+						r = {"query":{"bool":{"should":[]}}};
+						var thisKey = {};
+						var thisPair = {};
 						$obj.each(function() {
-							r.terms[attr].push((attr == 'pogs') ? $(this).val() : $(this).val().toLowerCase());
+							dump('$obj.each attr & val'); dump(attr); dump($(this).val())
+							thisKey[attr] = $(this).val().toLowerCase();
+							thisPair["match"] = thisKey;
+							r.query.bool.should.push(thisPair)
+							dump('survey says: '); dump(r);
+//							query object should look something like the following...
+//							r = {"query":{"bool":{"should":[{"match":{"prod_mfg":"carrera"}},{"match":{"prod_mfg":"dolce gabbana"}}]}}};
+							thisKey = {};
+							thisPair = {};
+		// remnants for 	r = {"query":{"query_string":{"query":""+$obj.val()+"","fields":[attr]}}};
+		// posterity 		r.terms[attr].push((attr == 'pogs') ? $(this).val() : $(this).val().toLowerCase());						
 						});
 					}
 					else {
